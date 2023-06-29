@@ -20,17 +20,13 @@ reg clk = 0;
 reg [DATA_WIDTH-1:0] rx_ipg_data;
 reg [5:0] rx_len;
 
-wire [519:0] tx_ipg_data;
+wire [519:0] ipg_reply;
+wire [63:0] ipg_reply_chunk;
 
-reg en_req;
-
-
-reg [63:0] req;
-reg qreset=0 , qread, qwrite, qen;
-
-wire [1:0] state, state_next;
+wire [2:0] state, state_next;
 wire [63:0] addr;
 wire [6:0] addr_count;
+wire [9:0] tx_payload_count;
 wire [9:0] rx_payload_count;
 wire [511:0] rx_payload;
 wire [HDR_WIDTH-1:0]rx_hdr;
@@ -46,11 +42,14 @@ initial begin
 
 end
 
-
+integer i;
 
 initial begin
 
-    #20
+    #10
+    rx_ipg_data = 64'haabb12332155dd;
+    rx_len = 24;
+    #2
     // rx_ipg_data[0] =0;//0 for read req
     rx_ipg_data = 64'h1122334455667700;
     rx_len = 6'd56;
@@ -60,8 +59,15 @@ initial begin
     #2
     rx_ipg_data = 64'hbb33445566990000;
     rx_len = 6'd56;
+    for (i=0;i<10;i=i+1) begin
+        #2
+        rx_ipg_data = 64'hbb33445566990000;
+        rx_len = 6'd56;
+
+    end
+    #2
     
-    // $finish;
+    $finish;
 
 
 
@@ -73,19 +79,17 @@ end
 debug_ipg_proc UUT(
     .clk(clk),
     .rx_ipg_data(rx_ipg_data),
-    .en_req(en_req),
-    .req(req),
-    .tx_ipg_data(tx_ipg_data),
     .state_reg(state),
     .state_next(state_next),
     .rx_hdr(rx_hdr),
     .addr(addr),
     .addr_count_reg(addr_count),
-    .rx_payload_count_reg(rx_payload_count),
+    .rx_payload_count(rx_payload_count),
+    .tx_payload_count(tx_payload_count),
+    .ipg_reply_chunk(ipg_reply_chunk),
+    .ipg_reply(ipg_reply),
     .rx_payload(rx_payload),
     .rx_len(rx_len)
-
-
 );
 
 endmodule

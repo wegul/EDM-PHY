@@ -1,96 +1,155 @@
-module net_fifo_buf #(
-    parameter DEPTH = 8,
-    parameter DWIDTH = 64,
-    parameter CWIDTH =2 //sync header
-)(
-    input [DWIDTH-1:0] data_ind,
-    input [CWIDTH-1:0] data_inc,
-    input       reset,
-                read,
-                write,
-                clk,
-    output reg [DWIDTH-1:0] data_outd,
-    output reg [CWIDTH-1:0] data_outc,
-    output reg       empty,
-                     full,
-                     netfin,
-    output reg [2:0] space // space left
-);
-
-localparam [1:0]
-    SYNC_DATA = 2'b10,
-    SYNC_CTRL = 2'b01;
+module net_fifo_buf
+    #(parameter DWIDTH = 64, CWIDTH = 2, DEPTH = 3)(
+         input wire clk, reset,
+         input wire rd, wr,
+         input wire [DWIDTH-1:0] w_data_d,
+         input wire [CWIDTH-1:0] w_data_c,
+         output wire empty , full,
+         output reg netfin,
+         output wire [DWIDTH-1:0] r_data_d,
+         output wire [CWIDTH-1:0] r_data_c,
+         output reg [DEPTH:0] space
+     );
+    localparam [1:0]
+               SYNC_DATA = 2'b10,
+               SYNC_CTRL = 2'b01;
 
 
-    reg [2:0] rd_ptr,
-              wr_ptr;
+    reg [DWIDTH - 1:0] darray_reg [2**DEPTH-1:0];
+    reg [CWIDTH - 1:0] carray_reg [2**DEPTH-1:0];
+    reg [DEPTH - 1:0] w_ptr_reg, w_ptr_next, w_ptr_succ;
+    reg [DEPTH - 1:0] r_ptr_reg, r_ptr_next, r_ptr_succ;
+    reg full_reg, empty_reg, full_next, empty_next;
 
-    reg [DWIDTH-1:0] dmemory [DEPTH-1:0];
-    reg [CWIDTH-1:0] cmemory [DEPTH-1:0];
+    wire wr_en;
 
-
-    initial begin
-        empty = 1;
-        full = 0;
-        rd_ptr = 0;
-        wr_ptr = 0;
-        space = DEPTH;
-        netfin=1;  
+    always @(posedge clk) begin
+        if (wr_en) begin
+            darray_reg[w_ptr_reg] <= w_data_d;
+            carray_reg[w_ptr_reg] <= w_data_c;
+        end
     end
 
-    always@(posedge clk or negedge reset) begin
+    assign r_data_d = darray_reg[r_ptr_reg];
+    assign r_data_c = carray_reg[r_ptr_reg];
+    assign wr_en = wr & (~full_reg);
 
-        if(reset) begin
-            empty = 1;
-            full = 0;
-            rd_ptr = 0;
-            wr_ptr = 0;
-            space = DEPTH;
-            netfin=1;
-        end else begin
-            if (wr_ptr>=rd_ptr) space = DEPTH - (wr_ptr-rd_ptr);
-            else space = rd_ptr - wr_ptr;
 
-            if(empty) netfin = 1;
+    initial
+    begin
+        w_ptr_reg = 0;
+        r_ptr_reg = 0;
+        full_reg = 1'b0;
+        empty_reg = 1'b1;
+        space = 2**DEPTH;
+        netfin=0;
+    end
 
-            if(read & !empty) begin
-                netfin=0;
-                full=0;
-                data_outd = dmemory[rd_ptr];
-                data_outc = cmemory[rd_ptr];
-
-                if(data_outd[7:0]>8'h86 && data_outc ==SYNC_CTRL) begin
-                    netfin=1;
-                end
-                if(rd_ptr < wr_ptr)
-                    rd_ptr = rd_ptr + 1;
-                else if (rd_ptr == DEPTH-1) begin
-                    rd_ptr=0;
-                end
-                if(rd_ptr==wr_ptr) empty=1;
-            end
-            else if (empty) begin
-                data_outd = {DWIDTH{1'bZ}};
-                data_outc = {CWIDTH{1'bZ}};
-            end
+    always @(posedge clk , posedge reset) begin
+        if(reset)
+        begin
+            w_ptr_reg <= 0;
+            r_ptr_reg <= 0;
+            full_reg <= 1'b0;
+            empty_reg <= 1'b1;
+            space <= 2**DEPTH;
+            netfin<=1;
         end
+        else
+        begin
+            w_ptr_reg <= w_ptr_next;
+            r_ptr_reg <= r_ptr_next;
+            full_reg <= full_next;
+            empty_reg <= empty_next;
 
-        // TODO: IF it is an IDLE frame, do not push in!
-        if (write && !full && data_inc>=0 && data_ind>=0) begin
-            dmemory[wr_ptr] = data_ind;
-            cmemory[wr_ptr] = data_inc;
-            empty = 0;    
-            // $display("net input %h, %d",data_ind, wr_ptr);
-            if(wr_ptr == DEPTH-1) begin
-                full = 1;
-                wr_ptr = 0;
+            if(w_ptr_reg >= r_ptr_reg) begin
+                space <= 2**DEPTH - (w_ptr_reg - r_ptr_reg);
             end
             else begin
-                wr_ptr = wr_ptr + 1;
-                full = 0;
+                space <= r_ptr_reg - w_ptr_reg;
             end
+
+
         end
     end
- 
-endmodule
 
+    always@(*) begin
+        if(empty) begin
+            netfin=1;
+        end
+        if(rd & ~empty) begin
+            if(r_data_c==SYNC_CTRL && r_data_d[7:0]>8'h86) begin
+                netfin=1;
+            end
+            else netfin=0;
+        end
+        // netfin<=netfin_next;
+        // // $display("===\n space %d, read %b, empty %b, rdatac %h, rdataD %h",space,rd,empty,r_data_c,r_data_d[7:0]);
+        // case(netfin)
+        //     1'b1://wait
+        //     begin
+        //         if (rd&~empty) begin
+        //             netfin_next<=1'b0;
+        //         end
+        //     end
+
+        //     1'b0://sending
+        //     begin
+        //         if(!rd) begin
+        //             netfin_next<=1'b1;
+        //         end
+        //         else begin
+        //             if(empty) netfin_next<=1'b1;
+        //             else if(r_data_c==SYNC_CTRL && r_data_d[7:0]>8'h86) begin
+        //                 netfin_next<=1;
+        //             end
+        //             else netfin_next<=0;
+        //         end
+        //     end
+
+        // endcase
+    end
+
+    always @*
+    begin
+        w_ptr_succ = w_ptr_reg + 1;
+        r_ptr_succ = r_ptr_reg + 1;
+        w_ptr_next = w_ptr_reg;
+        r_ptr_next = r_ptr_reg;
+        full_next = full_reg;
+        empty_next = empty_reg;
+
+        case ({wr, rd})
+            2'b01: begin
+                if(~empty_reg)
+                begin
+                    r_ptr_next = r_ptr_succ;
+                    full_next = 1'b0;
+                    if(r_ptr_succ == w_ptr_reg) begin
+                        empty_next = 1'b1;
+                    end
+                end
+            end
+            2'b10: begin
+                if(~full_reg)
+                begin
+                    w_ptr_next = w_ptr_succ;
+                    empty_next = 1'b0;
+                    if (w_ptr_succ == r_ptr_reg)
+                        full_next = 1'b1;
+                end
+            end
+            2'b11:
+            begin
+                w_ptr_next = w_ptr_succ;
+                r_ptr_next = r_ptr_succ;
+            end
+            2'b00:;
+        endcase
+    end
+
+    assign full = full_reg;
+    assign empty = empty_reg;
+
+
+endmodule
