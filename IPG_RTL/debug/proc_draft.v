@@ -70,6 +70,10 @@ module debug_ipg_proc(
 
     reg [519:0] ipg_reply; //will be put in queue by chunks
 
+    wire [63:0] req_addr;
+    wire [3:0] adrq_space;
+    reg adrq_read,adrq_write,adrq_reset;
+    wire adrq_empty,adrq_full;
 
 
     localparam [2:0]
@@ -78,8 +82,6 @@ module debug_ipg_proc(
                STATE_REPLY = 3'd2,
                STATE_WRITE = 3'd3,
                STATE_ENQ = 3'd4;
-
-
 
     initial begin
         state_reg =STATE_WAIT;
@@ -90,9 +92,6 @@ module debug_ipg_proc(
         addr = 0;
     end
 
-
-
-
     integer i =0;
 
 
@@ -100,6 +99,7 @@ module debug_ipg_proc(
         state_next = STATE_WAIT;
         case(state_reg)
             STATE_WAIT: begin
+                adrq_write=0;
                 if (rx_len > 0) begin
                     rx_hdr = rx_ipg_data[63:63-HDR_WIDTH+1];
                     addr_count_reg = addr_count_reg - rx_len + HDR_WIDTH;
@@ -130,51 +130,25 @@ module debug_ipg_proc(
                     addr_count_reg = 0;
                 end
                 // $display("===\n aaaaa%d\n===",addr_count_reg);
-
                 if (addr_count_reg == 0) begin
                     // finish addr
                     if (rx_hdr == READ_REQ) begin
-                        state_next = STATE_REPLY;
+                        //read request will go to AddrQ
+                        state_next = STATE_WAIT;
+                        //enqueue, datain is addr(64b)
+                        adrq_write =1;
+                        addr_count_reg=7'd64;
                     end
                     else if (rx_hdr == WRITE_REQ) begin
+                        //write request will be processed immediately
                         state_next = STATE_WRITE;
                     end
-
                 end
                 else begin
                     state_next = STATE_ADDR;
                 end
             end
 
-            STATE_REPLY: begin
-                //generate reply
-                ipg_reply = 0;
-                for (i = 0;i<520;i =i+16) begin
-                    ipg_reply[i +: 16] = i;
-                end
-                state_next = STATE_ENQ;
-                tx_payload_count = 10'd520;// TODO: could be variable.
-                addr = 0;
-                addr_count_reg=7'd64;
-            end
-
-            STATE_ENQ: begin
-                ipg_reply_chunk[7:0] = BLOCK_TYPE_CTRL;
-                if(tx_payload_count > 56) begin
-                    ipg_reply_chunk[64:8] = ipg_reply[tx_payload_count-1 -: 56];
-                    tx_payload_count = tx_payload_count - 56;
-                end
-                else begin
-                    for (i=0;i<tx_payload_count;i=i+1) begin
-                        ipg_reply_chunk[63-i] = ipg_reply[tx_payload_count-i-1];
-                    end
-                    tx_payload_count = 0;
-                end
-                if(tx_payload_count == 0) begin
-                    state_next = STATE_WAIT;
-                end
-                else state_next = STATE_ENQ;
-            end
             STATE_WRITE: begin
                 if (rx_len < rx_payload_count) begin
                     for (i=1;i<=rx_len;i=i+1) begin
@@ -212,11 +186,68 @@ module debug_ipg_proc(
 
     always @(posedge clk) begin
         state_reg<=state_next;
+        adr_state<=adr_state_next;
 
+    end
+
+    reg [2:0] adr_state=STATE_ADDR, adr_state_next;
+    always @(posedge clk) begin
+        case (adr_state)
+            STATE_REPLY: begin
+                //extract request from ReadQ and generate reply
+                if(~adrq_empty) begin
+                    adrq_read=1;
+
+                    ipg_reply = 0;
+                    for (i = 0;i<520;i =i+16) begin
+                        ipg_reply[i +: 16] = i;
+                    end
+                    state_next = STATE_ENQ;
+                    tx_payload_count = 10'd520;// TODO: could be variable.
+                end
+                else begin
+                    adrq_read=0;
+                end
+            end
+
+            STATE_ENQ: begin
+                adrq_read=0;
+
+                ipg_reply_chunk[7:0] = BLOCK_TYPE_CTRL;
+                if(tx_payload_count > 56) begin
+                    ipg_reply_chunk[64:8] = ipg_reply[tx_payload_count-1 -: 56];
+                    tx_payload_count = tx_payload_count - 56;
+                end
+                else begin
+                    for (i=0;i<tx_payload_count;i=i+1) begin
+                        ipg_reply_chunk[63-i] = ipg_reply[tx_payload_count-i-1];
+                    end
+                    tx_payload_count = 0;
+                end
+                if(tx_payload_count == 0) begin
+                    state_next = STATE_ADDR;
+                end
+                else state_next = STATE_ENQ;
+            end
+        endcase
     end
 
 
 
+
+
+    adr_fifo_buf adrq(
+                     .w_data (addr),
+                     .reset(adrq_reset),
+                     .rd(adrq_read),
+                     .wr(adrq_write),
+                     .clk (clk),
+
+                     .r_data (req_addr),
+                     .empty (adrq_empty),
+                     .full (adrq_full),
+                     .space(adrq_space)
+                 );
 
 
 endmodule

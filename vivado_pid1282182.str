@@ -17784,3 +17784,16 @@ dismissDialog("Relaunch Simulation"); // b
 // TclEventType: WAVEFORM_UPDATE_WAVEFORM
 // TclEventType: WAVEFORM_MODEL_EVENT
 selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "vivadotest_ipg_mac_phy_10g_2P_behav.wcfg*", 1); // o
+// Elapsed time: 150 seconds
+closeMainWindow("project_JUNE - [/home/weigao/project_JUNE/project_JUNE.xpr] - Vivado 2022.2"); // aK
+// Run Command: PAResourceCommand.PACommandNames_EXIT
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Exit Vivado"); // u
+// TclEventType: WAVEFORM_UPDATE_TITLE
+selectButton("OptionPane.button", "Save"); // JButton
+// Tcl Message: save_wave_config {/home/weigao/project_JUNE/vivadotest_ipg_mac_phy_10g_2P_behav.wcfg} 
+// TclEventType: WAVEFORM_CLOSE_WCFG
+// TclEventType: SIMULATION_CLOSE_SIMULATION
+// Tcl Message: close_sim 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: INFO: [Simtcl 6-16] Simulation closed 

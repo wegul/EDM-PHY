@@ -1,0 +1,2180 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Thu Jun 29 15:17:10 2023
+# Process ID: 1352304
+# Current directory: /home/weigao/PHY-Project
+# Command line: vivado
+# Log file: /home/weigao/PHY-Project/vivado.log
+# Journal file: /home/weigao/PHY-Project/vivado.jou
+# Running On: atlas3, OS: Linux, CPU Frequency: 1200.000 MHz, CPU Physical cores: 25, Host memory: 201351 MB
+#-----------------------------------------------------------
+start_gui
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.0 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/1.0/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.0 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es:part0:1.2 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/es/1.2/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es_revb:part0:1.0 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120_revb/es/1.0/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180_es:part0:1.0 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/es/1.0/board.xml as part xcvp1802-lsvc4072-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+open_project /home/weigao/project_JUNE/project_JUNE.xpr
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory '/home/weigao/project_JUNE/project_JUNE.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/Xilinx/Vivado/2022.2/data/ip'.
+update_compile_order -fileset sources_1
+set_property top test_ipg_proc [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/home/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'test_ipg_proc' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_ipg_proc_vlog.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:175]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.debug_ipg_proc
+Compiling module xil_defaultlib.test_ipg_proc
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_ipg_proc_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "test_ipg_proc_behav -key {Behavioral:sim_1:Functional:test_ipg_proc} -tclbatch {test_ipg_proc.tcl} -view {/home/weigao/project_JUNE/vivadotest_ipg_mac_phy_10g_2P_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config /home/weigao/project_JUNE/vivadotest_ipg_mac_phy_10g_2P_behav.wcfg
+WARNING: Simulation object /test_buf/clk was not found in the design.
+WARNING: Simulation object /test_buf/encoded_tx_data_next was not found in the design.
+WARNING: Simulation object /test_buf/netq_outd was not found in the design.
+WARNING: Simulation object /test_buf/netq_empty was not found in the design.
+WARNING: Simulation object /test_buf/netq_read was not found in the design.
+WARNING: Simulation object /test_buf/netfin was not found in the design.
+WARNING: Simulation object /test_buf/ipg_en was not found in the design.
+WARNING: Simulation object /test_buf/ipg_reply_chunk was not found in the design.
+WARNING: Simulation object /test_buf/tx_ipg_data was not found in the design.
+WARNING: Simulation object /test_buf/memq_read was not found in the design.
+WARNING: Simulation object /test_buf/memq_empty was not found in the design.
+WARNING: Simulation object /test_buf/netq_space was not found in the design.
+WARNING: Simulation object /test_buf/netq/netfin was not found in the design.
+source test_ipg_proc.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+$finish called at time : 38 ns : File "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" Line 70
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'test_ipg_proc_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:16 ; elapsed = 00:00:06 . Memory (MB): peak = 7509.586 ; gain = 61.207 ; free physical = 172411 ; free virtual = 231828
+current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
+vivadotest_ipg_mac_phy_10g_2P_behav.wcfg
+add_wave {{/test_ipg_proc/clk}} {{/test_ipg_proc/rx_ipg_data}} {{/test_ipg_proc/ipg_reply}} {{/test_ipg_proc/ipg_reply_chunk}} 
+current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
+vivadotest_ipg_mac_phy_10g_2P_behav.wcfg
+add_wave {{/test_ipg_proc/addr}} 
+current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
+vivadotest_ipg_mac_phy_10g_2P_behav.wcfg
+add_wave {{/test_ipg_proc/addr_count}} 
+current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
+vivadotest_ipg_mac_phy_10g_2P_behav.wcfg
+add_wave {{/test_ipg_proc/rx_payload_count}} 
+current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
+vivadotest_ipg_mac_phy_10g_2P_behav.wcfg
+add_wave {{/test_ipg_proc/tx_payload_count}} 
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/home/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'test_ipg_proc' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_ipg_proc_vlog.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:175]
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+$finish called at time : 38 ns : File "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" Line 70
+relaunch_sim: Time (s): cpu = 00:00:11 ; elapsed = 00:00:05 . Memory (MB): peak = 7518.770 ; gain = 0.035 ; free physical = 172418 ; free virtual = 231837
+current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
+vivadotest_ipg_mac_phy_10g_2P_behav.wcfg
+add_wave {{/test_ipg_proc/rx_hdr}} 
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_ipg_proc_vlog.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:175]
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+$finish called at time : 38 ns : File "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" Line 70
+relaunch_sim: Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 7520.770 ; gain = 0.000 ; free physical = 172447 ; free virtual = 231869
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_ipg_proc_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module debug_ipg_proc
+WARNING: [VRFC 10-3380] identifier 'HDR_WIDTH' is used before its declaration [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:21]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_ipg_proc
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:175]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.debug_ipg_proc
+Compiling module xil_defaultlib.test_ipg_proc
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_ipg_proc_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+$finish called at time : 38 ns : File "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" Line 70
+relaunch_sim: Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 7535.660 ; gain = 0.016 ; free physical = 172428 ; free virtual = 231850
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_ipg_proc_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module debug_ipg_proc
+WARNING: [VRFC 10-3380] identifier 'HDR_WIDTH' is used before its declaration [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:21]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_ipg_proc
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:175]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.debug_ipg_proc
+Compiling module xil_defaultlib.test_ipg_proc
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_ipg_proc_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+$finish called at time : 38 ns : File "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" Line 70
+relaunch_sim: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 7638.770 ; gain = 1.016 ; free physical = 172484 ; free virtual = 231908
+current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
+vivadotest_ipg_mac_phy_10g_2P_behav.wcfg
+add_wave {{/test_ipg_proc/state}} 
+current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
+vivadotest_ipg_mac_phy_10g_2P_behav.wcfg
+add_wave {{/test_ipg_proc/state_next}} 
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_ipg_proc_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module debug_ipg_proc
+WARNING: [VRFC 10-3380] identifier 'HDR_WIDTH' is used before its declaration [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:21]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_ipg_proc
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:169]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.debug_ipg_proc
+Compiling module xil_defaultlib.test_ipg_proc
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_ipg_proc_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+$finish called at time : 38 ns : File "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" Line 70
+relaunch_sim: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 7760.871 ; gain = 0.000 ; free physical = 172498 ; free virtual = 231923
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_ipg_proc_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module debug_ipg_proc
+WARNING: [VRFC 10-3380] identifier 'HDR_WIDTH' is used before its declaration [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:21]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_ipg_proc
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:172]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.debug_ipg_proc
+Compiling module xil_defaultlib.test_ipg_proc
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_ipg_proc_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+wait, rx=xxxxxxxxxxxxxxxx
+wait, rx=00aabb12332155dd
+addr, rx=00aabb12332155dd
+addr, rx=1122334455667700
+reply, rx=1122334455667700
+reply, rx=aa22334455661100
+$finish called at time : 38 ns : File "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" Line 70
+relaunch_sim: Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 7969.973 ; gain = 11.996 ; free physical = 172480 ; free virtual = 231906
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_ipg_proc_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module debug_ipg_proc
+WARNING: [VRFC 10-3380] identifier 'HDR_WIDTH' is used before its declaration [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:20]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_ipg_proc
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:172]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.debug_ipg_proc
+Compiling module xil_defaultlib.test_ipg_proc
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_ipg_proc_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+wait, rx=xxxxxxxxxxxxxxxx
+wait, rx=00aabb12332155dd
+addr, rx=00aabb12332155dd
+addr, rx=1122334455667700
+reply, rx=1122334455667700
+reply, rx=aa22334455661100
+$finish called at time : 38 ns : File "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" Line 69
+relaunch_sim: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 8046.012 ; gain = 0.996 ; free physical = 172499 ; free virtual = 231926
+current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
+vivadotest_ipg_mac_phy_10g_2P_behav.wcfg
+add_wave {{/test_ipg_proc/UUT/state_reg}} 
+current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
+vivadotest_ipg_mac_phy_10g_2P_behav.wcfg
+add_wave {{/test_ipg_proc/UUT/state_next}} 
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_ipg_proc_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module debug_ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_ipg_proc
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:173]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.debug_ipg_proc
+Compiling module xil_defaultlib.test_ipg_proc
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_ipg_proc_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+wait, rx=xxxxxxxxxxxxxxxx
+wait, rx=00aabb12332155dd
+addr, rx=00aabb12332155dd
+addr, rx=1122334455667700
+reply, rx=1122334455667700
+reply, rx=aa22334455661100
+$finish called at time : 38 ns : File "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" Line 62
+relaunch_sim: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 8387.176 ; gain = 0.000 ; free physical = 172479 ; free virtual = 231908
+current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
+vivadotest_ipg_mac_phy_10g_2P_behav.wcfg
+add_wave {{/test_ipg_proc/UUT/rx_hdr}} {{/test_ipg_proc/UUT/addr}} {{/test_ipg_proc/UUT/addr_count_reg}} {{/test_ipg_proc/UUT/ipg_reply}} 
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_ipg_proc_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module debug_ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_ipg_proc
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:173]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.debug_ipg_proc
+Compiling module xil_defaultlib.test_ipg_proc
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_ipg_proc_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+wait, rx=xxxxxxxxxxxxxxxx
+wait, rx=00aabb12332155dd
+addr, rx=00aabb12332155dd
+addr, rx=1122334455667700
+reply, rx=1122334455667700
+reply, rx=aa22334455661100
+$finish called at time : 38 ns : File "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" Line 62
+relaunch_sim: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 8387.176 ; gain = 0.000 ; free physical = 172471 ; free virtual = 231899
+current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
+vivadotest_ipg_mac_phy_10g_2P_behav.wcfg
+add_wave {{/test_ipg_proc/rx_len}} 
+current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
+vivadotest_ipg_mac_phy_10g_2P_behav.wcfg
+add_wave {{/test_ipg_proc/UUT/rx_payload_count}} 
+current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
+vivadotest_ipg_mac_phy_10g_2P_behav.wcfg
+add_wave {{/test_ipg_proc/UUT/tx_payload_count}} 
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_ipg_proc_vlog.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:173]
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Time resolution is 1 ps
+wait, rx=xxxxxxxxxxxxxxxx
+wait, rx=00aabb12332155dd
+addr, rx=00aabb12332155dd
+addr, rx=1122334455667700
+reply, rx=1122334455667700
+reply, rx=aa22334455661100
+$finish called at time : 38 ns : File "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" Line 62
+relaunch_sim: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 8387.176 ; gain = 0.000 ; free physical = 172454 ; free virtual = 231882
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_ipg_proc_vlog.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:173]
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Time resolution is 1 ps
+wait, rx=xxxxxxxxxxxxxxxx
+wait, rx=00aabb12332155dd
+addr, rx=00aabb12332155dd
+addr, rx=1122334455667700
+reply, rx=1122334455667700
+reply, rx=aa22334455661100
+$finish called at time : 38 ns : File "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" Line 62
+relaunch_sim: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 8387.176 ; gain = 0.000 ; free physical = 172462 ; free virtual = 231890
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_ipg_proc_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module debug_ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_ipg_proc
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:173]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.debug_ipg_proc
+Compiling module xil_defaultlib.test_ipg_proc
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_ipg_proc_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+wait, rx=xxxxxxxxxxxxxxxx
+wait, rx=00aabb12332155dd
+addr, rx=00aabb12332155dd
+addr, rx=1122334455667700
+reply, rx=1122334455667700
+reply, rx=aa22334455661100
+$finish called at time : 38 ns : File "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" Line 62
+relaunch_sim: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 8431.199 ; gain = 2.996 ; free physical = 172460 ; free virtual = 231890
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_ipg_proc_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module debug_ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_ipg_proc
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:174]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.debug_ipg_proc
+Compiling module xil_defaultlib.test_ipg_proc
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_ipg_proc_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Time resolution is 1 ps
+wait, rx=xxxxxxxxxxxxxxxx
+wait, rx=00aabb12332155dd
+wait, addr=aabb000000000000
+addr, rx=00aabb12332155dd
+addr, rx=1122334455667700
+reply, rx=1122334455667700
+reply, rx=aa22334455661100
+$finish called at time : 38 ns : File "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" Line 62
+relaunch_sim: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 8495.254 ; gain = 0.000 ; free physical = 172463 ; free virtual = 231894
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_ipg_proc_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module debug_ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_ipg_proc
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:174]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.debug_ipg_proc
+Compiling module xil_defaultlib.test_ipg_proc
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_ipg_proc_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+wait, rx=xxxxxxxxxxxxxxxx
+wait, rx=00aabb12332155dd
+wait, addr=aabb000000000000
+addr, rx=00aabb12332155dd
+addr, rx=1122334455667700
+reply, rx=1122334455667700
+reply, rx=aa22334455661100
+$finish called at time : 38 ns : File "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" Line 62
+relaunch_sim: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 8559.262 ; gain = 0.000 ; free physical = 172458 ; free virtual = 231890
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_ipg_proc_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module debug_ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_ipg_proc
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:175]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.debug_ipg_proc
+Compiling module xil_defaultlib.test_ipg_proc
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_ipg_proc_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+wait, rx=xxxxxxxxxxxxxxxx
+wait, rx=00aabb12332155dd
+wait, addr=aabb000000000000
+addr, rx=00aabb12332155dd
+addr, addr=aabb00aabb000000
+addr, rx=1122334455667700
+reply, rx=1122334455667700
+reply, rx=aa22334455661100
+$finish called at time : 38 ns : File "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" Line 62
+relaunch_sim: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 8597.277 ; gain = 6.000 ; free physical = 172472 ; free virtual = 231904
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_ipg_proc_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module debug_ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_ipg_proc
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:175]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.debug_ipg_proc
+Compiling module xil_defaultlib.test_ipg_proc
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_ipg_proc_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+wait, rx=xxxxxxxxxxxxxxxx
+wait, rx=00aabb12332155dd
+wait, addr=aabb000000000000
+addr, rx=00aabb12332155dd
+addr, addr=aabb00aabb000000
+addr, rx=1122334455667700
+reply, rx=1122334455667700
+reply, rx=aa22334455661100
+$finish called at time : 38 ns : File "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" Line 62
+relaunch_sim: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 8600.277 ; gain = 0.000 ; free physical = 172477 ; free virtual = 231910
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_ipg_proc_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module debug_ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_ipg_proc
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:175]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.debug_ipg_proc
+Compiling module xil_defaultlib.test_ipg_proc
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_ipg_proc_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+wait, rx=xxxxxxxxxxxxxxxx
+$finish called at time : 38 ns : File "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" Line 62
+relaunch_sim: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 8649.305 ; gain = 0.000 ; free physical = 172484 ; free virtual = 231917
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_ipg_proc_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module debug_ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_ipg_proc
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:175]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.debug_ipg_proc
+Compiling module xil_defaultlib.test_ipg_proc
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_ipg_proc_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Time resolution is 1 ps
+wait, rx=xxxxxxxxxxxxxxxx
+$finish called at time : 38 ns : File "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" Line 62
+relaunch_sim: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 8664.312 ; gain = 7.980 ; free physical = 172476 ; free virtual = 231909
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_ipg_proc_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module debug_ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_ipg_proc
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:175]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.debug_ipg_proc
+Compiling module xil_defaultlib.test_ipg_proc
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_ipg_proc_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Time resolution is 1 ps
+wait, rx=xxxxxxxxxxxxxxxx
+wait, rx=00aabb12332155dd
+wait, addr=aabb000000000000
+addr, rx=00aabb12332155dd
+addr, addr=aabb00aabb000000
+addr, rx=1122334455667700
+reply, rx=1122334455667700
+reply, rx=aa22334455661100
+$finish called at time : 38 ns : File "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" Line 62
+relaunch_sim: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 8776.367 ; gain = 6.996 ; free physical = 172463 ; free virtual = 231897
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_ipg_proc_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module debug_ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_ipg_proc
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:175]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.debug_ipg_proc
+Compiling module xil_defaultlib.test_ipg_proc
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_ipg_proc_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+wait, rx=00aabb12332155dd
+wait, addr=aabb000000000000
+addr, rx=1122334455667700
+reply, rx=aa22334455661100
+$finish called at time : 38 ns : File "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" Line 62
+relaunch_sim: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 8777.367 ; gain = 0.000 ; free physical = 172461 ; free virtual = 231895
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_ipg_proc_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module debug_ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_ipg_proc
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:175]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.debug_ipg_proc
+Compiling module xil_defaultlib.test_ipg_proc
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_ipg_proc_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+wait, rx=xxxxxxxxxxxxxxxx
+wait, rx=xxxxxxxxxxxxxxxx
+wait, rx=xxxxxxxxxxxxxxxx
+wait, rx=xxxxxxxxxxxxxxxx
+wait, rx=xxxxxxxxxxxxxxxx
+wait, rx=xxxxxxxxxxxxxxxx
+wait, rx=xxxxxxxxxxxxxxxx
+wait, rx=xxxxxxxxxxxxxxxx
+wait, rx=xxxxxxxxxxxxxxxx
+wait, rx=xxxxxxxxxxxxxxxx
+wait, rx=00aabb12332155dd
+wait, addr=aabb000000000000
+addr, rx=00aabb12332155dd
+addr, addr=aabb00aabb000000
+addr, rx=1122334455667700
+reply, rx=1122334455667700
+reply, rx=aa22334455661100
+wait, rx=bb33445566990000
+wait, addr=3344556699000000
+wait, rx=bb33445566990000
+wait, addr=3344556699000000
+addr, rx=bb33445566990000
+addr, addr=6699006699000000
+addr, rx=bb33445566990000
+wait, rx=bb33445566990000
+wait, addr=669900bb33445566
+wait, rx=bb33445566990000
+wait, addr=3344556633445566
+addr, rx=bb33445566990000
+addr, rx=bb33445566990000
+wait, rx=bb33445566990000
+wait, addr=33445566bb334455
+wait, rx=bb33445566990000
+wait, addr=33445566bb334455
+addr, rx=bb33445566990000
+addr, rx=bb33445566990000
+wait, rx=bb33445566990000
+wait, addr=33445566bb334455
+$finish called at time : 38 ns : File "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" Line 62
+relaunch_sim: Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 8824.391 ; gain = 6.996 ; free physical = 172466 ; free virtual = 231901
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_ipg_proc_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module debug_ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_ipg_proc
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:175]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.debug_ipg_proc
+Compiling module xil_defaultlib.test_ipg_proc
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_ipg_proc_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+wait, rx=xxxxxxxxxxxxxxxx
+wait, rx=xxxxxxxxxxxxxxxx
+wait, rx=xxxxxxxxxxxxxxxx
+wait, rx=xxxxxxxxxxxxxxxx
+wait, rx=xxxxxxxxxxxxxxxx
+wait, rx=00aabb12332155dd
+wait, addr=aabb000000000000
+addr, rx=1122334455667700
+reply, rx=aa22334455661100
+wait, rx=bb33445566990000
+wait, addr=3344556699000000
+$finish called at time : 38 ns : File "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" Line 62
+relaunch_sim: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 8829.391 ; gain = 5.000 ; free physical = 172470 ; free virtual = 231904
+current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
+vivadotest_ipg_mac_phy_10g_2P_behav.wcfg
+add_wave {{/test_ipg_proc/UUT/tx_payload_count}} 
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_ipg_proc_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module debug_ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_ipg_proc
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:166]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.debug_ipg_proc
+Compiling module xil_defaultlib.test_ipg_proc
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_ipg_proc_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+$finish called at time : 40 ns : File "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" Line 65
+relaunch_sim: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 9585.758 ; gain = 0.000 ; free physical = 172413 ; free virtual = 231851
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_ipg_proc_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module debug_ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_ipg_proc
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:166]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.debug_ipg_proc
+Compiling module xil_defaultlib.test_ipg_proc
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_ipg_proc_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+$finish called at time : 42 ns : File "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" Line 65
+relaunch_sim: Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 9596.766 ; gain = 7.996 ; free physical = 172424 ; free virtual = 231862
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_ipg_proc_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module debug_ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_ipg_proc
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:167]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.debug_ipg_proc
+Compiling module xil_defaultlib.test_ipg_proc
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_ipg_proc_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+addr = 0 
+addr = 0 
+addr = 0 
+addr = 0 
+addr = 0 
+$finish called at time : 42 ns : File "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" Line 65
+relaunch_sim: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 9646.789 ; gain = 0.000 ; free physical = 172436 ; free virtual = 231874
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_ipg_proc_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module debug_ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_ipg_proc
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:167]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.debug_ipg_proc
+Compiling module xil_defaultlib.test_ipg_proc
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_ipg_proc_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+addr = 0 xxxxxxxxxxxxxxxx
+addr = 0 xxxxxxxxxxxxxxxx
+addr = 0 xxxxxxxxxxxxxxxx
+addr = 0 xxxxxxxxxxxxxxxx
+addr = 0 xxxxxxxxxxxxxxxx
+$finish called at time : 42 ns : File "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" Line 65
+relaunch_sim: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 9678.805 ; gain = 0.000 ; free physical = 172430 ; free virtual = 231868
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_ipg_proc_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module debug_ipg_proc
+ERROR: [VRFC 10-2989] 'rx' is not declared [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:101]
+ERROR: [VRFC 10-8530] module 'debug_ipg_proc' is ignored due to previous errors [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:8]
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim/xvlog.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_ipg_proc_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module debug_ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_ipg_proc
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:166]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.debug_ipg_proc
+Compiling module xil_defaultlib.test_ipg_proc
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_ipg_proc_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+run: Time (s): cpu = 00:00:09 ; elapsed = 00:01:05 . Memory (MB): peak = 9775.031 ; gain = 0.180 ; free physical = 172429 ; free virtual = 231868
+INFO: [Common 17-344] 'run' was cancelled
+INFO: [Common 17-344] 'source' was cancelled
+relaunch_xsim_kernel: Time (s): cpu = 00:00:10 ; elapsed = 00:01:06 . Memory (MB): peak = 9775.031 ; gain = 15.188 ; free physical = 172429 ; free virtual = 231868
+INFO: [Common 17-344] 'relaunch_xsim_kernel' was cancelled
+INFO: [Common 17-344] 'relaunch_sim' was cancelled
+save_wave_config {/home/weigao/project_JUNE/vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
+close_sim
+INFO: xsimkernel Simulation Memory Usage: 111136 KB (Peak: 168408 KB), Simulation CPU Usage: 64500 ms
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/home/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'test_ipg_proc' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_ipg_proc_vlog.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:166]
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "test_ipg_proc_behav -key {Behavioral:sim_1:Functional:test_ipg_proc} -tclbatch {test_ipg_proc.tcl} -view {/home/weigao/project_JUNE/vivadotest_ipg_mac_phy_10g_2P_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config /home/weigao/project_JUNE/vivadotest_ipg_mac_phy_10g_2P_behav.wcfg
+source test_ipg_proc.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+run: Time (s): cpu = 00:00:07 ; elapsed = 00:00:46 . Memory (MB): peak = 9819.863 ; gain = 13.004 ; free physical = 172407 ; free virtual = 231846
+INFO: [Common 17-344] 'run' was cancelled
+INFO: [Common 17-344] 'source' was cancelled
+xsim: Time (s): cpu = 00:00:11 ; elapsed = 00:00:48 . Memory (MB): peak = 9819.863 ; gain = 17.004 ; free physical = 172407 ; free virtual = 231846
+INFO: [Common 17-344] 'xsim' was cancelled
+INFO: [Vivado 12-5357] 'simulate' step aborted
+launch_simulation: Time (s): cpu = 00:00:16 ; elapsed = 00:00:51 . Memory (MB): peak = 9819.863 ; gain = 17.004 ; free physical = 172407 ; free virtual = 231846
+INFO: [Common 17-344] 'launch_simulation' was cancelled
+relaunch_sim
+INFO: xsimkernel Simulation Memory Usage: 111136 KB (Peak: 168408 KB), Simulation CPU Usage: 45440 ms
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_ipg_proc_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module debug_ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_ipg_proc
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:165]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.debug_ipg_proc
+Compiling module xil_defaultlib.test_ipg_proc
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_ipg_proc_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+addr = 0 xxxxxxxxxxxxxxxx
+addr = 0 xxxxxxxxxxxxxxxx
+addr = 0 xxxxxxxxxxxxxxxx
+addr = 0 xxxxxxxxxxxxxxxx
+addr = 0 xxxxxxxxxxxxxxxx
+$finish called at time : 42 ns : File "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" Line 65
+relaunch_sim: Time (s): cpu = 00:00:54 ; elapsed = 00:00:06 . Memory (MB): peak = 9843.883 ; gain = 0.000 ; free physical = 172402 ; free virtual = 231842
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_ipg_proc_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module debug_ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_ipg_proc
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:165]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.debug_ipg_proc
+Compiling module xil_defaultlib.test_ipg_proc
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_ipg_proc_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+addr = 0 xxxxxxxxxxxxxxxx
+addr = 0 xxxxxxxxxxxxxxxx
+addr = 0 xxxxxxxxxxxxxxxx
+addr = 0 xxxxxxxxxxxxxxxx
+addr = 0 xxxxxxxxxxxxxxxx
+$finish called at time : 46 ns : File "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" Line 68
+relaunch_sim: Time (s): cpu = 00:00:12 ; elapsed = 00:00:06 . Memory (MB): peak = 9857.883 ; gain = 11.996 ; free physical = 172380 ; free virtual = 231820
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_ipg_proc_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module debug_ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_ipg_proc
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:165]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.debug_ipg_proc
+Compiling module xil_defaultlib.test_ipg_proc
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_ipg_proc_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+addr = 0 xxxxxxxxxxxxxxxx
+addr = 0 xxxxxxxxxxxxxxxx
+addr = 0 xxxxxxxxxxxxxxxx
+addr = 0 xxxxxxxxxxxxxxxx
+addr = 0 xxxxxxxxxxxxxxxx
+$finish called at time : 46 ns : File "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" Line 70
+relaunch_sim: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 10135.016 ; gain = 0.000 ; free physical = 172391 ; free virtual = 231834
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_ipg_proc_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module debug_ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_ipg_proc
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:165]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.debug_ipg_proc
+Compiling module xil_defaultlib.test_ipg_proc
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_ipg_proc_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+addr = 0 xxxxxxxxxxxxxxxx
+addr = 0 xxxxxxxxxxxxxxxx
+addr = 0 xxxxxxxxxxxxxxxx
+addr = 0 xxxxxxxxxxxxxxxx
+addr = 0 xxxxxxxxxxxxxxxx
+$finish called at time : 38 ns : File "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" Line 64
+relaunch_sim: Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 10161.031 ; gain = 6.996 ; free physical = 172381 ; free virtual = 231824
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_ipg_proc_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module debug_ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_ipg_proc
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:164]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.debug_ipg_proc
+Compiling module xil_defaultlib.test_ipg_proc
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_ipg_proc_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+$finish called at time : 46 ns : File "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" Line 65
+relaunch_sim: Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 10530.211 ; gain = 6.996 ; free physical = 172344 ; free virtual = 231794
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_ipg_proc_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module debug_ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_ipg_proc
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:164]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.debug_ipg_proc
+Compiling module xil_defaultlib.test_ipg_proc
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_ipg_proc_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+$finish called at time : 46 ns : File "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" Line 64
+relaunch_sim: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 10530.211 ; gain = 0.000 ; free physical = 172352 ; free virtual = 231802
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_ipg_proc_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module debug_ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_ipg_proc
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:164]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.debug_ipg_proc
+Compiling module xil_defaultlib.test_ipg_proc
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_ipg_proc_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+$finish called at time : 48 ns : File "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" Line 67
+relaunch_sim: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 10554.223 ; gain = 0.000 ; free physical = 172361 ; free virtual = 231812
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_ipg_proc_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module debug_ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_ipg_proc
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:164]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.debug_ipg_proc
+Compiling module xil_defaultlib.test_ipg_proc
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_ipg_proc_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+$finish called at time : 58 ns : File "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" Line 67
+relaunch_sim: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 10554.223 ; gain = 0.000 ; free physical = 172365 ; free virtual = 231815
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_ipg_proc_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module debug_ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_ipg_proc
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:164]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.debug_ipg_proc
+Compiling module xil_defaultlib.test_ipg_proc
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_ipg_proc_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+$finish called at time : 58 ns : File "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" Line 67
+relaunch_sim: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 10561.227 ; gain = 7.004 ; free physical = 172362 ; free virtual = 231812
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_ipg_proc_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module debug_ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_ipg_proc
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:164]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.debug_ipg_proc
+Compiling module xil_defaultlib.test_ipg_proc
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_ipg_proc_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+done writing...
+$finish called at time : 60 ns : File "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" Line 73
+relaunch_sim: Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 10793.336 ; gain = 0.000 ; free physical = 172351 ; free virtual = 231803
+current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
+vivadotest_ipg_mac_phy_10g_2P_behav.wcfg
+add_wave {{/test_ipg_proc/UUT/rx_payload}} 
+current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
+vivadotest_ipg_mac_phy_10g_2P_behav.wcfg
+add_wave {{/test_ipg_proc/UUT/rx_payload_count}} 
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_ipg_proc_vlog.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:164]
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+done writing...
+$finish called at time : 60 ns : File "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" Line 73
+relaunch_sim: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 10794.336 ; gain = 0.000 ; free physical = 172346 ; free virtual = 231798
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_ipg_proc_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module debug_ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_ipg_proc
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:164]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.debug_ipg_proc
+Compiling module xil_defaultlib.test_ipg_proc
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_ipg_proc_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Time resolution is 1 ps
+done writing...
+$finish called at time : 60 ns : File "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" Line 73
+relaunch_sim: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 10794.336 ; gain = 0.000 ; free physical = 172352 ; free virtual = 231805
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_ipg_proc_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module debug_ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_ipg_proc
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:164]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.debug_ipg_proc
+Compiling module xil_defaultlib.test_ipg_proc
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_ipg_proc_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+done writing... 
+$finish called at time : 60 ns : File "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" Line 73
+relaunch_sim: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 10929.402 ; gain = 0.000 ; free physical = 172345 ; free virtual = 231798
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_ipg_proc_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module debug_ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_ipg_proc
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:164]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.debug_ipg_proc
+Compiling module xil_defaultlib.test_ipg_proc
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_ipg_proc_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+done writing... 
+$finish called at time : 64 ns : File "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" Line 81
+relaunch_sim: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 11031.449 ; gain = 7.996 ; free physical = 172332 ; free virtual = 231786
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_ipg_proc_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module debug_ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_ipg_proc
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:164]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.debug_ipg_proc
+Compiling module xil_defaultlib.test_ipg_proc
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_ipg_proc_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+done writing... 
+$finish called at time : 64 ns : File "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" Line 81
+relaunch_sim: Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 11047.457 ; gain = 7.996 ; free physical = 172349 ; free virtual = 231803
+save_wave_config {/home/weigao/project_JUNE/vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
