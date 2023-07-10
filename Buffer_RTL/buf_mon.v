@@ -3,105 +3,101 @@ module buf_mon (
         input wire reset,
         input wire [3:0] memq_space,
         input wire [3:0] netq_space,
-        input wire netfin,
+        input wire [3:0] reqq_space,
+        input wire netfin, reqfin,
         memq_empty,
         netq_empty,
+        reqq_empty,
 
 
         output reg memq_read,
         netq_read,
+        reqq_read,
         memq_reset,
         netq_reset,
+        reqq_reset,
 
 
-        output reg ipg_en, // 1 for mem_queue
+        output reg [1:0] sel,
         output reg [1:0] tuser // set tuser[0] to enter IDLE line406 at axis_xgmii_tx
     );
 
     localparam thres = 3'd3;
 
+    localparam [1:0]
+               SYNC_DATA = 2'b10,
+               SYNC_CTRL = 2'b01;
 
+    localparam [1:0]
+               SEND_REQ = 2'b01,
+               SEND_MEM = 2'b10,
+               SEND_NET = 2'b11;
 
     always@(posedge clk, posedge reset) begin
         if(reset) begin
-            memq_reset=1;
-            netq_reset=1;
-            memq_read=0;
-            netq_read=0;
+            memq_reset<=1;
+            netq_reset<=1;
+            reqq_reset<=1;
+            reqq_read<=0;
+            memq_read<=0;
+            netq_read<=0;
         end
         else begin
-            memq_reset=0;
-            netq_reset=0;
+            memq_reset<=0;
+            netq_reset<=0;
+            reqq_reset<=0;
         end
+    end
 
-        case ({memq_empty, netq_empty, netfin})
-            //unfinished net transmission
-            3'b000: begin
-                ipg_en=0;
-                memq_read=0;
+    always @(*) begin
+        if(!netfin) begin
+            //send net
+            // if(s!netq_empty) begin
+            sel=SEND_NET;
+            netq_read=1;
+            memq_read=0;
+            reqq_read=0;
+            // end
+        end
+        else if (!reqfin) begin
+            sel=SEND_REQ;
+            netq_read=0;
+            memq_read=0;
+            reqq_read=1;
+        end
+        else if(!memq_empty) begin
+            sel=SEND_MEM;
+            netq_read=0;
+            memq_read=1;
+            reqq_read=0;
+        end
+        else if (!reqq_empty) begin
+            sel=SEND_REQ;
+            netq_read=0;
+            memq_read=0;
+            reqq_read=1;
+        end
+        else begin
+            if(!netq_empty) begin
+                sel=SEND_NET;
                 netq_read=1;
-            end
-            3'b100: begin
-                ipg_en=0;
                 memq_read=0;
-                netq_read=1;
+                reqq_read=0;
             end
-            3'b101: begin
-                ipg_en=0;
-                memq_read=0;
-                netq_read=1;
-            end
-            3'b110: begin
-                ipg_en=0;
-                memq_read=0;
+            else begin
+                //all empty
+                sel=2'b00;
                 netq_read=0;
-            end
-            3'b111: begin
-                ipg_en=0;
                 memq_read=0;
-                netq_read=0;
+                reqq_read=0;
             end
-            default: begin
-                ipg_en=1;
-                memq_read=1;
-                netq_read=0;
-            end
-        endcase
-        // if(memq_empty) begin
-        //     if(!netq_empty) begin
-        //         ipg_en=0;
-        //         memq_read=0;
-        //         netq_read=1;
-        //     end
-        //     else begin
-        //         ipg_en=0;
-        //         memq_read=0;
-        //         netq_read=0;
-        //     end
-        // end
-        // else begin
-        //     if (netfin) begin
-        //         ipg_en=1;
-        //         memq_read=1;
-        //         netq_read=0;
-        //     end
-        //     else if(!netq_empty) begin
-        //         ipg_en=0;
-        //         memq_read=0;
-        //         netq_read=1;
-        //     end
-        //     else begin
-        //         ipg_en=0;
-        //         memq_read=0;
-        //         netq_read=0;
-        //     end
-        // end
+
+        end
 
         if (netq_space < thres) begin
             tuser[1:0]= 2'b11;
         end
         else tuser[1:0]= 0;
-
     end
 
 

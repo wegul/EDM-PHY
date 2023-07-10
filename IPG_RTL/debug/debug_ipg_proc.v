@@ -7,14 +7,16 @@
 // 3. transmit the generated message to output [63:0] ipg_msg
 module debug_ipg_proc(
         input wire clk,
-
+        input wire reset,
 
 
         // The received frame.
         input wire [63:0] rx_ipg_data,
         input wire [5:0] rx_len,
+        input wire jobq_write,
 
-        output reg [63:0] ipg_reply_chunk
+        output reg [63:0] ipg_reply_chunk,
+        output reg memq_write
 
 
     );
@@ -33,7 +35,8 @@ module debug_ipg_proc(
      3. If write. ipg_proc should use the state machine to wait for 512bit memory data.
     */
 
-    parameter HDR_WIDTH=8;
+    parameter HDR_WIDTH=16;//packets must be bigger than 16bits.
+    //2bit req, 14bit write payload length
 
     localparam READ_REQ=0;
     localparam WRITE_REQ=1;
@@ -55,57 +58,58 @@ module debug_ipg_proc(
                BLOCK_TYPE_TERM_6   = 8'he1, // C7    D5 D4 D3 D2 D1 D0 BT
                BLOCK_TYPE_TERM_7   = 8'hff; //    D6 D5 D4 D3 D2 D1 D0 BT
 
-    // reg hdr = 0; // 0 for read, 1 for write
-    // reg [63:0] addr=0;
-    // reg [511:0] rx_payload = 0;
 
-    reg [HDR_WIDTH-1:0] tx_hdr= 0;
+
     reg [2:0] state_reg=3'd7, state_next;
-    reg [HDR_WIDTH-1:0] rx_hdr; // 0 for read, 1 for write
-    reg [63:0] addr;
-    reg [6:0] addr_count_reg;
-    reg [511:0] rx_payload;
-    reg [9:0] rx_payload_count;
+    reg [HDR_WIDTH-1:0] hdr; // 0 for read, 1 for write
+    wire [5:0] len;
+    wire [63:0] ipg_data;
+    reg [63:0] addr=0;
+    reg [6:0] addr_count_reg=7'd64;
+    reg [9:0] wr_payload_count;
+    reg[511:0] wr_payload=0; //bytes in this array is written to RAM together. Temporarily 64bytes, but could change
     reg [9:0] tx_payload_count;
 
-    reg [519:0] ipg_reply; //will be put in queue by chunks
+    reg [527:0] ipg_reply; //will be put in queue by chunks
 
-
+    wire [3:0] jobq_space;
+    reg jobq_reset;
+    reg jobq_read;
+    wire jobq_empty,jobq_full;
 
     localparam [2:0]
                STATE_WAIT = 3'd0,
                STATE_ADDR = 3'd1,
                STATE_REPLY = 3'd2,
                STATE_WRITE = 3'd3,
-               STATE_ENQ = 3'd4;
+               STATE_MEMQ = 3'd4;
 
 
 
-    initial begin
-        state_reg =STATE_WAIT;
-        state_next= STATE_WAIT;
-        addr_count_reg = 7'd64;
-        rx_payload_count = 10'd512;
-        rx_payload = 0;
-        addr = 0;
-    end
-
-
-
+    // assign jobq_read = jobq_empty?0:1;
 
     integer i =0;
+
+    always @(posedge clk, negedge reset) begin
+        if(reset)begin
+            jobq_reset=1;
+        end
+        else begin
+            jobq_reset=0;
+        end
+    end
 
 
     always @(posedge clk) begin
         state_next = STATE_WAIT;
         case(state_reg)
             STATE_WAIT: begin
-                if (rx_len > 0) begin
-                    rx_hdr = rx_ipg_data[63:63-HDR_WIDTH+1];
-                    addr_count_reg = addr_count_reg - rx_len + HDR_WIDTH;
-                    // addr[63:addr_count_reg] = rx_ipg_data[63-HDR_LEN:64-rx_len];
+                memq_write=0;
+                if (len > 0 && !jobq_empty) begin
+                    hdr = ipg_data[63:63-HDR_WIDTH+1];
+                    addr_count_reg = addr_count_reg - len + HDR_WIDTH;
                     for(i=63;i>=addr_count_reg;i=i-1) begin
-                        addr[i] = rx_ipg_data[i-HDR_WIDTH];
+                        addr[i] = ipg_data[i-HDR_WIDTH];
                     end
                     state_next = STATE_ADDR;
                     // $display("===\n case wait %h %d %d %d\n===",addr,j, state_reg,state_next);
@@ -115,52 +119,52 @@ module debug_ipg_proc(
                 end
             end
             STATE_ADDR: begin
-                if (rx_len < addr_count_reg) begin
+                // parse the address in RAM
+                if (len < addr_count_reg) begin
                     // addr[addr_count_reg-1:addr_count_reg-rx_len]=rx_ipg_data[63:64-rx_len];
-                    for (i=1;i<=rx_len;i=i+1) begin
-                        addr[addr_count_reg-i] = rx_ipg_data[64-i];
+                    for (i=1;i<=len;i=i+1) begin
+                        addr[addr_count_reg-i] = ipg_data[64-i];
                     end
-                    addr_count_reg = addr_count_reg - rx_len;
+                    addr_count_reg = addr_count_reg - len;
                 end
                 else begin
                     // addr[addr_count_reg-1:0]=rx_ipg_data[63:64-addr_count_reg];
                     for(i=1;i<=addr_count_reg;i=i+1) begin
-                        addr[addr_count_reg-i] = rx_ipg_data [64-i];
+                        addr[addr_count_reg-i] = ipg_data [64-i];
                     end
                     addr_count_reg = 0;
                 end
                 // $display("===\n aaaaa%d\n===",addr_count_reg);
-
                 if (addr_count_reg == 0) begin
                     // finish addr
-                    if (rx_hdr == READ_REQ) begin
+                    if (hdr[HDR_WIDTH-1 -: 2] == READ_REQ) begin
                         state_next = STATE_REPLY;
+                        tx_payload_count = 10'd512+HDR_WIDTH; //could be variable, obtained from hdr.
                     end
-                    else if (rx_hdr == WRITE_REQ) begin
+                    else if (hdr[HDR_WIDTH-1 -: 2] == WRITE_REQ) begin
                         state_next = STATE_WRITE;
+                        wr_payload_count=10'd512;//could be variable, obtained from hdr.
                     end
-
                 end
                 else begin
                     state_next = STATE_ADDR;
                 end
             end
-
             STATE_REPLY: begin
-                //generate reply
+                //generate reply, this should be variable
                 ipg_reply = 0;
-                for (i = 0;i<520;i =i+16) begin
+                for (i = 0;i<528;i =i+16) begin
                     ipg_reply[i +: 16] = i;
                 end
-                state_next = STATE_ENQ;
-                tx_payload_count = 10'd520;// TODO: could be variable.
-                addr = 0;
+                state_next = STATE_MEMQ;
+                addr=0;
                 addr_count_reg=7'd64;
             end
 
-            STATE_ENQ: begin
+            STATE_MEMQ: begin
+                memq_write=1;// writing to memq, which is to transmit mem replies...
                 ipg_reply_chunk[7:0] = BLOCK_TYPE_CTRL;
-                if(tx_payload_count > 56) begin
+                if (tx_payload_count > 56) begin
                     ipg_reply_chunk[64:8] = ipg_reply[tx_payload_count-1 -: 56];
                     tx_payload_count = tx_payload_count - 56;
                 end
@@ -173,28 +177,26 @@ module debug_ipg_proc(
                 if(tx_payload_count == 0) begin
                     state_next = STATE_WAIT;
                 end
-                else state_next = STATE_ENQ;
+                else state_next = STATE_MEMQ;
             end
+
             STATE_WRITE: begin
-                if (rx_len < rx_payload_count) begin
-                    for (i=1;i<=rx_len;i=i+1) begin
-                        rx_payload[rx_payload_count-i] = rx_ipg_data[64-i];
+                if (len < wr_payload_count) begin
+                    for (i=1;i<=len;i=i+1) begin
+                        wr_payload[wr_payload_count-i] = ipg_data[64-i];
                     end
-                    rx_payload_count = rx_payload_count - rx_len;
+                    wr_payload_count = wr_payload_count - len;
                 end
                 else begin
-                    for(i=1;i<=rx_payload_count;i=i+1) begin
-                        rx_payload[rx_payload_count-i] = rx_ipg_data [64-i];
+                    for(i=1;i<=wr_payload_count;i=i+1) begin
+                        wr_payload[wr_payload_count-i] = ipg_data [64-i];
                     end
-                    rx_payload_count = 0;
+                    wr_payload_count = 0;
                 end
-                if (rx_payload_count == 0) begin
+                if (wr_payload_count == 0) begin
                     // finish receiving payload
                     //TODO: write payload in memory
-                    $display("done writing... ");
-
-                    // rx_payload = 0;
-                    rx_payload_count =10'd512;
+                    // $display("done writing... ");
                     addr = 0;
                     addr_count_reg=7'd64;
                     state_next=STATE_WAIT;
@@ -205,18 +207,39 @@ module debug_ipg_proc(
             end
             default: begin
                 state_next=STATE_WAIT;
-                $display("===\ndefault called\n=== %h",rx_ipg_data);
             end
         endcase
     end
 
-    always @(posedge clk) begin
-        state_reg<=state_next;
-
+    always @(*) begin
+        case(state_next)
+            STATE_WAIT,STATE_ADDR,STATE_WRITE: begin
+                if(!jobq_empty) jobq_read=1;
+                else jobq_read=0;
+            end
+            default: jobq_read=0;
+        endcase
     end
 
 
+    always @(posedge clk) begin
+        state_reg<=state_next;
+    end
 
+    job_fifo_buf jobq(
+                     .w_data_d (rx_ipg_data),
+                     .w_data_c (rx_len),
+                     .reset(jobq_reset),
+                     .rd(jobq_read),
+                     .wr(jobq_write),
+                     .clk (clk),
+
+                     .r_data_d (ipg_data),
+                     .r_data_c (len),
+                     .empty (jobq_empty),
+                     .full (jobq_full),
+                     .space(jobq_space)
+                 );
 
 
 endmodule

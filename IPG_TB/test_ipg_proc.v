@@ -16,6 +16,8 @@ module test_ipg_proc;
 
     // Inputs
     reg clk = 0;
+    reg reset =1;
+    reg jobq_write=0;
 
     reg [DATA_WIDTH-1:0] rx_ipg_data;
     reg [5:0] rx_len;
@@ -26,7 +28,6 @@ module test_ipg_proc;
 
     initial begin
         clk = 1'b1;
-
         forever begin
             #1
              clk = ~clk;
@@ -37,47 +38,68 @@ module test_ipg_proc;
     integer i;
 
     initial begin
-
-        #10
+        reset=1;
+        #8
+         reset=0;
+        #2
          rx_ipg_data = 64'h00aabb12332155dd;
         rx_len = 24;
+        jobq_write=1;
         #2
          // rx_ipg_data[0] =0;//0 for read req
          rx_ipg_data = 64'h1122334455660000;
-        rx_len = 6'd48;
+        rx_len = 6'd56;
+        jobq_write=1;
+
+        // #2
+        //  //emulate netpacket preemption
+        //  jobq_write=0;
+        // rx_ipg_data = 0;
+        // rx_len = 0;
+
         #2
-         rx_ipg_data = 0;
-        rx_len = 0;
-        #22
-
-
-
-
          //write test
-
          //addr = add add add add add f
-         rx_ipg_data = 64'h01addaddffffffff;
+         jobq_write=1;
+        rx_ipg_data = 64'h0000addaddffffff;
+        rx_ipg_data[63:62]=2'b01;
         rx_len = 6'd32;
         #2
-         rx_ipg_data = 64'haddaddaddfffffff;
-        rx_len=6'd40;
-
-
+         rx_ipg_data = 64'hddaddaddaddfffff;
+        rx_len=6'd48;
         for (i=0;i<5;i=i+1) begin
             #2
              rx_ipg_data = 64'hbb3344556699ffff;
             rx_len = 6'd56;
         end
         #4
-         rx_ipg_data = 0;
+         jobq_write=0;
+        rx_ipg_data = 0;
         rx_len = 0;
-        for (i=0;i<5;i=i+1) begin
+        jobq_write=1;
+        for (i=0;i<3;i=i+1) begin
             #2
              rx_ipg_data = 64'hbb3344556699ffff;
             rx_len = 6'd56;
         end
         #2
+         rx_ipg_data = 64'h1616161616161616;
+        rx_len = 8;
 
+        #2
+         rx_ipg_data = 64'h0011111111111111;
+        rx_len = 24;
+        jobq_write=1;
+        #2
+         // rx_ipg_data[0] =0;//0 for read req
+         rx_ipg_data = 64'h2222222222222222;
+        rx_len = 6'd56;
+        jobq_write=1;
+        #2
+         rx_ipg_data=0;
+        rx_len=0;
+        jobq_write=0;
+        #40
          $finish;
 
 
@@ -89,6 +111,8 @@ module test_ipg_proc;
 
     debug_ipg_proc UUT(
                        .clk(clk),
+                       .reset(reset),
+                       .jobq_write(jobq_write),
                        .rx_ipg_data(rx_ipg_data),
                        .ipg_reply_chunk(ipg_reply_chunk),
                        .rx_len(rx_len)

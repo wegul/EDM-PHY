@@ -2,13 +2,13 @@
 # Vivado v2022.2 (64-bit)
 # SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
 # IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
-# Start of session at: Mon Jul  3 15:55:54 2023
-# Process ID: 1476339
+# Start of session at: Mon Jul 10 13:50:59 2023
+# Process ID: 2056566
 # Current directory: /home/weigao/PHY-Project
 # Command line: vivado
 # Log file: /home/weigao/PHY-Project/vivado.log
 # Journal file: /home/weigao/PHY-Project/vivado.jou
-# Running On: atlas3, OS: Linux, CPU Frequency: 1200.000 MHz, CPU Physical cores: 23, Host memory: 201351 MB
+# Running On: atlas3, OS: Linux, CPU Frequency: 1200.000 MHz, CPU Physical cores: 22, Host memory: 201351 MB
 #-----------------------------------------------------------
 start_gui
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.0 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/1.0/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
@@ -28,53 +28,262 @@ INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/Xilinx/Vivado/2022.2/data/ip'.
 update_compile_order -fileset sources_1
+add_files -norecurse -scan_for_includes /home/weigao/PHY-Project/Buffer_RTL/req_gen.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
 launch_simulation
 Command: launch_simulation 
-INFO: [Vivado 12-12493] Simulation top is 'test_ipg_proc'
+INFO: [Vivado 12-12493] Simulation top is 'test_new_ipg_tx'
 WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
 INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
 INFO: [SIM-utils-51] Simulation object is 'sim_1'
 INFO: [SIM-utils-72] Using boost library from '/home/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
-INFO: [SIM-utils-54] Inspecting design source files for 'test_ipg_proc' in fileset 'sim_1'...
+INFO: [SIM-utils-54] Inspecting design source files for 'test_new_ipg_tx' in fileset 'sim_1'...
 INFO: [USF-XSim-97] Finding global include files...
 INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
 INFO: [USF-XSim-2] XSim::Compile design
 INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
-xvlog --incr --relax -prj test_ipg_proc_vlog.prj
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module debug_ipg_proc
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module test_ipg_proc
+xvlog --incr --relax -prj test_new_ipg_tx_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module buf_mon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_tx
+ERROR: [VRFC 10-8414] extra comma in port association list is not allowed [/home/weigao/PHY-Project/IPG_RTL/ipg_tx.v:90]
+ERROR: [VRFC 10-8530] module 'ipg_tx' is ignored due to previous errors [/home/weigao/PHY-Project/IPG_RTL/ipg_tx.v:10]
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim/xvlog.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'test_new_ipg_tx'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/home/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'test_new_ipg_tx' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_new_ipg_tx_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module buf_mon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mem_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module net_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module req_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/req_gen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module req_gen
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_new_ipg_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_new_ipg_tx
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_new_ipg_tx_behav xil_defaultlib.test_new_ipg_tx xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_new_ipg_tx_behav xil_defaultlib.test_new_ipg_tx xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+ERROR: [VRFC 10-3180] cannot find port 'ipg_req_chunk' on this module [/home/weigao/PHY-Project/IPG_TB/test_new_ipg_tx.v:137]
+ERROR: [VRFC 10-3180] cannot find port 'reqq_write' on this module [/home/weigao/PHY-Project/IPG_TB/test_new_ipg_tx.v:133]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'test_new_ipg_tx'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/home/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'test_new_ipg_tx' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_new_ipg_tx_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module buf_mon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mem_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module net_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module req_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/req_gen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module req_gen
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_new_ipg_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_new_ipg_tx
 Waiting for jobs to finish...
 No pending jobs, compilation finished.
 INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
 INFO: [USF-XSim-3] XSim::Elaborate design
 INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
-xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_new_ipg_tx_behav xil_defaultlib.test_new_ipg_tx xil_defaultlib.glbl -log elaborate.log
 Vivado Simulator v2022.2
 Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
-Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_proc_behav xil_defaultlib.test_ipg_proc xil_defaultlib.glbl -log elaborate.log 
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_new_ipg_tx_behav xil_defaultlib.test_new_ipg_tx xil_defaultlib.glbl -log elaborate.log 
 Using 8 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v:164]
+ERROR: [VRFC 10-3180] cannot find port 'reqq_write' on this module [/home/weigao/PHY-Project/IPG_TB/test_new_ipg_tx.v:133]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'test_new_ipg_tx'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/home/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'test_new_ipg_tx' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_new_ipg_tx_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module buf_mon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mem_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module net_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module req_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/req_gen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module req_gen
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_new_ipg_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_new_ipg_tx
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_new_ipg_tx_behav xil_defaultlib.test_new_ipg_tx xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_new_ipg_tx_behav xil_defaultlib.test_new_ipg_tx xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 64 differs from formal bit length 1 for port 'ipg_req_chunk' [/home/weigao/PHY-Project/IPG_RTL/ipg_tx.v:89]
+ERROR: [VRFC 10-3236] concurrent assignment to a non-net 'reqq_write' is not permitted [/home/weigao/PHY-Project/IPG_RTL/ipg_tx.v:88]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-99] Step results log file:'/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'test_new_ipg_tx'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/home/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'test_new_ipg_tx' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_new_ipg_tx_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module buf_mon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mem_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module net_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module req_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/req_gen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module req_gen
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_new_ipg_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_new_ipg_tx
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_new_ipg_tx_behav xil_defaultlib.test_new_ipg_tx xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_new_ipg_tx_behav xil_defaultlib.test_new_ipg_tx xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 64 differs from formal bit length 1 for port 'ipg_req_chunk' [/home/weigao/PHY-Project/IPG_RTL/ipg_tx.v:89]
 Completed static elaboration
 Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" Line 1. Module buf_mon doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" Line 1. Module buf_mon doesn't have a timescale but at least one module in design has a timescale.
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.debug_ipg_proc
-Compiling module xil_defaultlib.test_ipg_proc
+Compiling module xil_defaultlib.req_gen
+Compiling module xil_defaultlib.req_fifo_buf
+Compiling module xil_defaultlib.mem_fifo_buf
+Compiling module xil_defaultlib.net_fifo_buf
+Compiling module xil_defaultlib.buf_mon
+Compiling module xil_defaultlib.ipg_tx
+Compiling module xil_defaultlib.test_new_ipg_tx
 Compiling module xil_defaultlib.glbl
-Built simulation snapshot test_ipg_proc_behav
+Built simulation snapshot test_new_ipg_tx_behav
 INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
 INFO: [USF-XSim-4] XSim::Simulate design
 INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
 INFO: [USF-XSim-98] *** Running xsim
-   with args "test_ipg_proc_behav -key {Behavioral:sim_1:Functional:test_ipg_proc} -tclbatch {test_ipg_proc.tcl} -view {/home/weigao/project_JUNE/vivadotest_ipg_mac_phy_10g_2P_behav.wcfg} -log {simulate.log}"
+   with args "test_new_ipg_tx_behav -key {Behavioral:sim_1:Functional:test_new_ipg_tx} -tclbatch {test_new_ipg_tx.tcl} -view {/home/weigao/project_JUNE/vivadotest_ipg_mac_phy_10g_2P_behav.wcfg} -log {simulate.log}"
 INFO: [USF-XSim-8] Loading simulator feature
 Time resolution is 1 ps
 open_wave_config /home/weigao/project_JUNE/vivadotest_ipg_mac_phy_10g_2P_behav.wcfg
-source test_ipg_proc.tcl
+WARNING: Simulation object /test_ipg_proc/UUT/clk was not found in the design.
+WARNING: Simulation object /test_ipg_proc/UUT/reset was not found in the design.
+WARNING: Simulation object /test_ipg_proc/UUT/rx_ipg_data was not found in the design.
+WARNING: Simulation object /test_ipg_proc/UUT/rx_len was not found in the design.
+WARNING: Simulation object /test_ipg_proc/UUT/ipg_reply_chunk was not found in the design.
+WARNING: Simulation object /test_ipg_proc/UUT/memq_write was not found in the design.
+WARNING: Simulation object /test_ipg_proc/UUT/state_reg was not found in the design.
+WARNING: Simulation object /test_ipg_proc/UUT/state_next was not found in the design.
+WARNING: Simulation object /test_ipg_proc/UUT/hdr was not found in the design.
+WARNING: Simulation object /test_ipg_proc/UUT/len was not found in the design.
+WARNING: Simulation object /test_ipg_proc/UUT/ipg_data was not found in the design.
+WARNING: Simulation object /test_ipg_proc/UUT/addr was not found in the design.
+WARNING: Simulation object /test_ipg_proc/UUT/addr_count_reg was not found in the design.
+WARNING: Simulation object /test_ipg_proc/UUT/wr_payload_count was not found in the design.
+WARNING: Simulation object /test_ipg_proc/UUT/wr_payload was not found in the design.
+WARNING: Simulation object /test_ipg_proc/UUT/tx_payload_count was not found in the design.
+WARNING: Simulation object /test_ipg_proc/UUT/ipg_reply was not found in the design.
+WARNING: Simulation object /test_ipg_proc/UUT/jobq_reset was not found in the design.
+WARNING: Simulation object /test_ipg_proc/UUT/jobq_read was not found in the design.
+WARNING: Simulation object /test_ipg_proc/UUT/jobq_write was not found in the design.
+WARNING: Simulation object /test_ipg_proc/UUT/jobq_empty was not found in the design.
+WARNING: Simulation object /test_ipg_proc/UUT/jobq_full was not found in the design.
+WARNING: Simulation object /test_ipg_proc/UUT/jobq/space was not found in the design.
+WARNING: Simulation object /test_ipg_proc/UUT/jobq/w_ptr_reg was not found in the design.
+WARNING: Simulation object /test_ipg_proc/UUT/jobq/r_ptr_reg was not found in the design.
+source test_new_ipg_tx.tcl
 # set curr_wave [current_wave_config]
 # if { [string length $curr_wave] == 0 } {
 #   if { [llength [get_objects]] > 0} {
@@ -85,8 +294,1789 @@ source test_ipg_proc.tcl
 #   }
 # }
 # run 1000ns
-done writing... 
-$finish called at time : 64 ns : File "/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v" Line 81
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'test_ipg_proc_behav' loaded.
+$finish called at time : 38 ns : File "/home/weigao/PHY-Project/IPG_TB/test_new_ipg_tx.v" Line 122
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'test_new_ipg_tx_behav' loaded.
 INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:16 ; elapsed = 00:00:08 . Memory (MB): peak = 7430.738 ; gain = 52.340 ; free physical = 172193 ; free virtual = 231871
+launch_simulation: Time (s): cpu = 00:00:13 ; elapsed = 00:00:07 . Memory (MB): peak = 7602.297 ; gain = 61.207 ; free physical = 171569 ; free virtual = 231762
+current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
+vivadotest_ipg_mac_phy_10g_2P_behav.wcfg
+add_wave {{/test_new_ipg_tx/proced_encoded_tx_data}} 
+current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
+vivadotest_ipg_mac_phy_10g_2P_behav.wcfg
+add_wave {{/test_new_ipg_tx/encoded_tx_data_next}} 
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_new_ipg_tx'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/home/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'test_new_ipg_tx' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_new_ipg_tx_vlog.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_new_ipg_tx'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_new_ipg_tx_behav xil_defaultlib.test_new_ipg_tx xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_new_ipg_tx_behav xil_defaultlib.test_new_ipg_tx xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 64 differs from formal bit length 1 for port 'ipg_req_chunk' [/home/weigao/PHY-Project/IPG_RTL/ipg_tx.v:89]
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+$finish called at time : 38 ns : File "/home/weigao/PHY-Project/IPG_TB/test_new_ipg_tx.v" Line 122
+relaunch_sim: Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 7602.488 ; gain = 0.000 ; free physical = 171588 ; free virtual = 231781
+current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
+vivadotest_ipg_mac_phy_10g_2P_behav.wcfg
+add_wave {{/test_new_ipg_tx/UUT/monitor/sel}} 
+current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
+vivadotest_ipg_mac_phy_10g_2P_behav.wcfg
+add_wave {{/test_new_ipg_tx/UUT/reqq/array_reg}} 
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_new_ipg_tx'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_new_ipg_tx_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module buf_mon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mem_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module net_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module req_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/req_gen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module req_gen
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_new_ipg_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_new_ipg_tx
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_new_ipg_tx'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_new_ipg_tx_behav xil_defaultlib.test_new_ipg_tx xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_new_ipg_tx_behav xil_defaultlib.test_new_ipg_tx xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" Line 1. Module buf_mon doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" Line 1. Module buf_mon doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.req_gen
+Compiling module xil_defaultlib.req_fifo_buf
+Compiling module xil_defaultlib.mem_fifo_buf
+Compiling module xil_defaultlib.net_fifo_buf
+Compiling module xil_defaultlib.buf_mon
+Compiling module xil_defaultlib.ipg_tx
+Compiling module xil_defaultlib.test_new_ipg_tx
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_new_ipg_tx_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+$finish called at time : 38 ns : File "/home/weigao/PHY-Project/IPG_TB/test_new_ipg_tx.v" Line 122
+relaunch_sim: Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 7617.203 ; gain = 0.000 ; free physical = 171603 ; free virtual = 231797
+set_property top test_eth_phy [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'test_eth_phy'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/home/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'test_eth_phy' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_eth_phy_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module buf_mon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/debug/debug_eth_phy_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module debug_eth_phy_10g
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module debug_ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_ber_mon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_ber_mon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_frame_sync.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_frame_sync
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx_if.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_if
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_watchdog.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_watchdog
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_tx
+ERROR: [VRFC 10-2989] 'SYNC_CTRL' is not declared [/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v:95]
+ERROR: [VRFC 10-2989] 'BLOCK_TYPE_CTRL' is not declared [/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v:96]
+ERROR: [VRFC 10-8530] module 'eth_phy_10g_tx' is ignored due to previous errors [/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v:9]
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim/xvlog.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'test_eth_phy'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/home/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'test_eth_phy' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_eth_phy_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module buf_mon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/debug/debug_eth_phy_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module debug_eth_phy_10g
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module debug_ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_ber_mon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_ber_mon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_frame_sync.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_frame_sync
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx_if.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_if
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_watchdog.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_watchdog
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx_if.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_tx_if
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_rx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_rx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/job_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module job_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/lfsr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lfsr
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mem_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module net_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module req_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/req_gen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module req_gen
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/xgmii_baser_dec_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xgmii_baser_dec_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/xgmii_baser_enc_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xgmii_baser_enc_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_eth_phy.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_eth_phy
+ERROR: [VRFC 10-8414] extra comma in port association list is not allowed [/home/weigao/PHY-Project/IPG_TB/test_eth_phy.v:151]
+ERROR: [VRFC 10-8530] module 'test_eth_phy' is ignored due to previous errors [/home/weigao/PHY-Project/IPG_TB/test_eth_phy.v:8]
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-99] Step results log file:'/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim/xvlog.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'test_eth_phy'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/home/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'test_eth_phy' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_eth_phy_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module buf_mon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/debug/debug_eth_phy_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module debug_eth_phy_10g
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module debug_ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_ber_mon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_ber_mon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_frame_sync.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_frame_sync
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx_if.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_if
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_watchdog.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_watchdog
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx_if.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_tx_if
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_rx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_rx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/job_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module job_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/lfsr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lfsr
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mem_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module net_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module req_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/req_gen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module req_gen
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/xgmii_baser_dec_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xgmii_baser_dec_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/xgmii_baser_enc_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xgmii_baser_enc_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_eth_phy.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_eth_phy
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_eth_phy_behav xil_defaultlib.test_eth_phy xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_eth_phy_behav xil_defaultlib.test_eth_phy xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+ERROR: [VRFC 10-3180] cannot find port 'ipg_reply' on this module [/home/weigao/PHY-Project/IPG_RTL/debug/debug_eth_phy_10g.v:83]
+ERROR: [VRFC 10-3180] cannot find port 'ipg_reply' on this module [/home/weigao/PHY-Project/IPG_RTL/debug/debug_eth_phy_10g.v:143]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-99] Step results log file:'/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'test_eth_phy'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/home/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'test_eth_phy' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_eth_phy_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module buf_mon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g
+ERROR: [VRFC 10-2989] 'ipg_req_chunk' is not declared [/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g.v:142]
+ERROR: [VRFC 10-8530] module 'eth_phy_10g' is ignored due to previous errors [/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g.v:9]
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-99] Step results log file:'/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim/xvlog.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'test_eth_phy'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/home/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'test_eth_phy' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_eth_phy_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module buf_mon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_ber_mon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_ber_mon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_frame_sync.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_frame_sync
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx_if.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_if
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_watchdog.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_watchdog
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx_if.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_tx_if
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_rx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_rx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/job_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module job_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/lfsr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lfsr
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mem_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module net_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module req_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/req_gen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module req_gen
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/xgmii_baser_dec_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xgmii_baser_dec_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/xgmii_baser_enc_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xgmii_baser_enc_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_eth_phy.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_eth_phy
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_eth_phy_behav xil_defaultlib.test_eth_phy xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_eth_phy_behav xil_defaultlib.test_eth_phy xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 11 for port 'space' [/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v:244]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 2 for port 'proced_encoded_tx_hdr' [/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v:134]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 2 for port 'encoded_tx_hdr' [/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v:149]
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v:171]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_gen.v" Line 1. Module req_gen doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" Line 1. Module req_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" Line 1. Module mem_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" Line 1. Module net_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" Line 1. Module buf_mon doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_gen.v" Line 1. Module req_gen doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" Line 1. Module req_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" Line 1. Module mem_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" Line 1. Module net_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" Line 1. Module buf_mon doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.job_fifo_buf
+Compiling module xil_defaultlib.ipg_proc
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=58,REVERSE=1,DAT...
+Compiling module xil_defaultlib.lfsr(REVERSE=1,DATA_WIDTH=66)
+Compiling module xil_defaultlib.eth_phy_10g_rx_frame_sync_defaul...
+Compiling module xil_defaultlib.eth_phy_10g_rx_ber_mon(COUNT_125...
+Compiling module xil_defaultlib.eth_phy_10g_rx_watchdog(COUNT_12...
+Compiling module xil_defaultlib.eth_phy_10g_rx_if(COUNT_125US=19...
+Compiling module xil_defaultlib.ipg_rx
+Compiling module xil_defaultlib.xgmii_baser_dec_64(CTRL_WIDTH=8)
+Compiling module xil_defaultlib.eth_phy_10g_rx(CTRL_WIDTH=8,SCRA...
+Compiling module xil_defaultlib.xgmii_baser_enc_64(CTRL_WIDTH=8)
+Compiling module xil_defaultlib.req_gen
+Compiling module xil_defaultlib.req_fifo_buf
+Compiling module xil_defaultlib.mem_fifo_buf
+Compiling module xil_defaultlib.net_fifo_buf
+Compiling module xil_defaultlib.buf_mon
+Compiling module xil_defaultlib.ipg_tx
+Compiling module xil_defaultlib.eth_phy_10g_tx_if(SCRAMBLER_DISA...
+Compiling module xil_defaultlib.eth_phy_10g_tx(CTRL_WIDTH=8,SCRA...
+Compiling module xil_defaultlib.eth_phy_10g(CTRL_WIDTH=8,COUNT_1...
+Compiling module xil_defaultlib.test_eth_phy
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_eth_phy_behav
+execute_script: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 7837.348 ; gain = 0.000 ; free physical = 171568 ; free virtual = 231765
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "test_eth_phy_behav -key {Behavioral:sim_1:Functional:test_eth_phy} -tclbatch {test_eth_phy.tcl} -view {/home/weigao/project_JUNE/vivadotest_ipg_mac_phy_10g_2P_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config /home/weigao/project_JUNE/vivadotest_ipg_mac_phy_10g_2P_behav.wcfg
+WARNING: Simulation object /test_ipg_proc/UUT/clk was not found in the design.
+WARNING: Simulation object /test_ipg_proc/UUT/reset was not found in the design.
+WARNING: Simulation object /test_ipg_proc/UUT/rx_ipg_data was not found in the design.
+WARNING: Simulation object /test_ipg_proc/UUT/rx_len was not found in the design.
+WARNING: Simulation object /test_ipg_proc/UUT/ipg_reply_chunk was not found in the design.
+WARNING: Simulation object /test_ipg_proc/UUT/memq_write was not found in the design.
+WARNING: Simulation object /test_ipg_proc/UUT/state_reg was not found in the design.
+WARNING: Simulation object /test_ipg_proc/UUT/state_next was not found in the design.
+WARNING: Simulation object /test_ipg_proc/UUT/hdr was not found in the design.
+WARNING: Simulation object /test_ipg_proc/UUT/len was not found in the design.
+WARNING: Simulation object /test_ipg_proc/UUT/ipg_data was not found in the design.
+WARNING: Simulation object /test_ipg_proc/UUT/addr was not found in the design.
+WARNING: Simulation object /test_ipg_proc/UUT/addr_count_reg was not found in the design.
+WARNING: Simulation object /test_ipg_proc/UUT/wr_payload_count was not found in the design.
+WARNING: Simulation object /test_ipg_proc/UUT/wr_payload was not found in the design.
+WARNING: Simulation object /test_ipg_proc/UUT/tx_payload_count was not found in the design.
+WARNING: Simulation object /test_ipg_proc/UUT/ipg_reply was not found in the design.
+WARNING: Simulation object /test_ipg_proc/UUT/jobq_reset was not found in the design.
+WARNING: Simulation object /test_ipg_proc/UUT/jobq_read was not found in the design.
+WARNING: Simulation object /test_ipg_proc/UUT/jobq_write was not found in the design.
+WARNING: Simulation object /test_ipg_proc/UUT/jobq_empty was not found in the design.
+WARNING: Simulation object /test_ipg_proc/UUT/jobq_full was not found in the design.
+WARNING: Simulation object /test_ipg_proc/UUT/jobq/space was not found in the design.
+WARNING: Simulation object /test_ipg_proc/UUT/jobq/w_ptr_reg was not found in the design.
+WARNING: Simulation object /test_ipg_proc/UUT/jobq/r_ptr_reg was not found in the design.
+source test_eth_phy.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+$finish called at time : 58 ns : File "/home/weigao/PHY-Project/IPG_TB/test_eth_phy.v" Line 115
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'test_eth_phy_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:14 ; elapsed = 00:00:11 . Memory (MB): peak = 7890.211 ; gain = 52.863 ; free physical = 171569 ; free virtual = 231766
+current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
+vivadotest_ipg_mac_phy_10g_2P_behav.wcfg
+add_wave {{/test_eth_phy/clk}} {{/test_eth_phy/xgmii_txd}} {{/test_eth_phy/xgmii_txc}} {{/test_eth_phy/serdes_rx_data}} {{/test_eth_phy/serdes_rx_hdr}} {{/test_eth_phy/xgmii_rxd}} {{/test_eth_phy/xgmii_rxc}} {{/test_eth_phy/serdes_tx_data}} {{/test_eth_phy/serdes_tx_hdr}} 
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_eth_phy'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_eth_phy_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module buf_mon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_ber_mon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_ber_mon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_frame_sync.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_frame_sync
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx_if.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_if
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_watchdog.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_watchdog
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx_if.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_tx_if
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_rx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_rx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/job_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module job_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/lfsr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lfsr
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mem_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module net_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module req_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/req_gen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module req_gen
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/xgmii_baser_dec_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xgmii_baser_dec_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/xgmii_baser_enc_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xgmii_baser_enc_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_eth_phy.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_eth_phy
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_eth_phy'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_eth_phy_behav xil_defaultlib.test_eth_phy xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_eth_phy_behav xil_defaultlib.test_eth_phy xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 11 for port 'space' [/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v:244]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 2 for port 'proced_encoded_tx_hdr' [/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v:134]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 2 for port 'encoded_tx_hdr' [/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v:149]
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v:171]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_gen.v" Line 1. Module req_gen doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" Line 1. Module req_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" Line 1. Module mem_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" Line 1. Module net_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" Line 1. Module buf_mon doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_gen.v" Line 1. Module req_gen doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" Line 1. Module req_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" Line 1. Module mem_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" Line 1. Module net_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" Line 1. Module buf_mon doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.job_fifo_buf
+Compiling module xil_defaultlib.ipg_proc
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=58,REVERSE=1,DAT...
+Compiling module xil_defaultlib.lfsr(REVERSE=1,DATA_WIDTH=66)
+Compiling module xil_defaultlib.eth_phy_10g_rx_frame_sync_defaul...
+Compiling module xil_defaultlib.eth_phy_10g_rx_ber_mon(COUNT_125...
+Compiling module xil_defaultlib.eth_phy_10g_rx_watchdog(COUNT_12...
+Compiling module xil_defaultlib.eth_phy_10g_rx_if(COUNT_125US=19...
+Compiling module xil_defaultlib.ipg_rx
+Compiling module xil_defaultlib.xgmii_baser_dec_64(CTRL_WIDTH=8)
+Compiling module xil_defaultlib.eth_phy_10g_rx(CTRL_WIDTH=8,SCRA...
+Compiling module xil_defaultlib.xgmii_baser_enc_64(CTRL_WIDTH=8)
+Compiling module xil_defaultlib.req_gen
+Compiling module xil_defaultlib.req_fifo_buf
+Compiling module xil_defaultlib.mem_fifo_buf
+Compiling module xil_defaultlib.net_fifo_buf
+Compiling module xil_defaultlib.buf_mon
+Compiling module xil_defaultlib.ipg_tx
+Compiling module xil_defaultlib.eth_phy_10g_tx_if(SCRAMBLER_DISA...
+Compiling module xil_defaultlib.eth_phy_10g_tx(CTRL_WIDTH=8,SCRA...
+Compiling module xil_defaultlib.eth_phy_10g(CTRL_WIDTH=8,COUNT_1...
+Compiling module xil_defaultlib.test_eth_phy
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_eth_phy_behav
+execute_script: Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 7905.266 ; gain = 0.000 ; free physical = 171556 ; free virtual = 231752
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+launch_simulation: Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 7905.266 ; gain = 0.000 ; free physical = 171556 ; free virtual = 231752
+Time resolution is 1 ps
+$finish called at time : 58 ns : File "/home/weigao/PHY-Project/IPG_TB/test_eth_phy.v" Line 113
+relaunch_sim: Time (s): cpu = 00:00:12 ; elapsed = 00:00:10 . Memory (MB): peak = 7905.266 ; gain = 0.027 ; free physical = 171557 ; free virtual = 231753
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_eth_phy'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_eth_phy_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module buf_mon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_ber_mon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_ber_mon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_frame_sync.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_frame_sync
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx_if.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_if
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_watchdog.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_watchdog
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx_if.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_tx_if
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_rx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_rx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/job_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module job_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/lfsr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lfsr
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mem_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module net_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module req_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/req_gen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module req_gen
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/xgmii_baser_dec_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xgmii_baser_dec_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/xgmii_baser_enc_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xgmii_baser_enc_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_eth_phy.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_eth_phy
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_eth_phy'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_eth_phy_behav xil_defaultlib.test_eth_phy xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_eth_phy_behav xil_defaultlib.test_eth_phy xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 11 for port 'space' [/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v:244]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 2 for port 'proced_encoded_tx_hdr' [/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v:134]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 2 for port 'encoded_tx_hdr' [/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v:149]
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v:171]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_gen.v" Line 1. Module req_gen doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" Line 1. Module req_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" Line 1. Module mem_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" Line 1. Module net_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" Line 1. Module buf_mon doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_gen.v" Line 1. Module req_gen doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" Line 1. Module req_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" Line 1. Module mem_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" Line 1. Module net_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" Line 1. Module buf_mon doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.job_fifo_buf
+Compiling module xil_defaultlib.ipg_proc
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=58,REVERSE=1,DAT...
+Compiling module xil_defaultlib.lfsr(REVERSE=1,DATA_WIDTH=66)
+Compiling module xil_defaultlib.eth_phy_10g_rx_frame_sync_defaul...
+Compiling module xil_defaultlib.eth_phy_10g_rx_ber_mon(COUNT_125...
+Compiling module xil_defaultlib.eth_phy_10g_rx_watchdog(COUNT_12...
+Compiling module xil_defaultlib.eth_phy_10g_rx_if(COUNT_125US=19...
+Compiling module xil_defaultlib.ipg_rx
+Compiling module xil_defaultlib.xgmii_baser_dec_64(CTRL_WIDTH=8)
+Compiling module xil_defaultlib.eth_phy_10g_rx(CTRL_WIDTH=8,SCRA...
+Compiling module xil_defaultlib.xgmii_baser_enc_64(CTRL_WIDTH=8)
+Compiling module xil_defaultlib.req_gen
+Compiling module xil_defaultlib.req_fifo_buf
+Compiling module xil_defaultlib.mem_fifo_buf
+Compiling module xil_defaultlib.net_fifo_buf
+Compiling module xil_defaultlib.buf_mon
+Compiling module xil_defaultlib.ipg_tx
+Compiling module xil_defaultlib.eth_phy_10g_tx_if(SCRAMBLER_DISA...
+Compiling module xil_defaultlib.eth_phy_10g_tx(CTRL_WIDTH=8,SCRA...
+Compiling module xil_defaultlib.eth_phy_10g(CTRL_WIDTH=8,COUNT_1...
+Compiling module xil_defaultlib.test_eth_phy
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_eth_phy_behav
+execute_script: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 7912.246 ; gain = 0.000 ; free physical = 171565 ; free virtual = 231761
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 7912.246 ; gain = 0.000 ; free physical = 171565 ; free virtual = 231761
+Time resolution is 1 ps
+$finish called at time : 58 ns : File "/home/weigao/PHY-Project/IPG_TB/test_eth_phy.v" Line 113
+relaunch_sim: Time (s): cpu = 00:00:13 ; elapsed = 00:00:11 . Memory (MB): peak = 7923.258 ; gain = 11.012 ; free physical = 171566 ; free virtual = 231763
+current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
+vivadotest_ipg_mac_phy_10g_2P_behav.wcfg
+add_wave {{/test_eth_phy/UUT/eth_phy_10g_tx_inst/netq_write}} {{/test_eth_phy/UUT/eth_phy_10g_tx_inst/twin}} 
+current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
+vivadotest_ipg_mac_phy_10g_2P_behav.wcfg
+add_wave {{/test_eth_phy/UUT/eth_phy_10g_tx_inst/proced_encoded_tx_hdr}} 
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_eth_phy'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_eth_phy_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module buf_mon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_ber_mon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_ber_mon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_frame_sync.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_frame_sync
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx_if.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_if
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_watchdog.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_watchdog
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx_if.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_tx_if
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_rx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_rx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/job_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module job_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/lfsr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lfsr
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mem_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module net_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module req_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/req_gen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module req_gen
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/xgmii_baser_dec_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xgmii_baser_dec_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/xgmii_baser_enc_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xgmii_baser_enc_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_eth_phy.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_eth_phy
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_eth_phy'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_eth_phy_behav xil_defaultlib.test_eth_phy xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_eth_phy_behav xil_defaultlib.test_eth_phy xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 11 for port 'space' [/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v:244]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 2 for port 'proced_encoded_tx_hdr' [/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v:134]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 2 for port 'encoded_tx_hdr' [/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v:149]
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v:171]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_gen.v" Line 1. Module req_gen doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" Line 1. Module req_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" Line 1. Module mem_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" Line 1. Module net_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" Line 1. Module buf_mon doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_gen.v" Line 1. Module req_gen doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" Line 1. Module req_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" Line 1. Module mem_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" Line 1. Module net_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" Line 1. Module buf_mon doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.job_fifo_buf
+Compiling module xil_defaultlib.ipg_proc
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=58,REVERSE=1,DAT...
+Compiling module xil_defaultlib.lfsr(REVERSE=1,DATA_WIDTH=66)
+Compiling module xil_defaultlib.eth_phy_10g_rx_frame_sync_defaul...
+Compiling module xil_defaultlib.eth_phy_10g_rx_ber_mon(COUNT_125...
+Compiling module xil_defaultlib.eth_phy_10g_rx_watchdog(COUNT_12...
+Compiling module xil_defaultlib.eth_phy_10g_rx_if(COUNT_125US=19...
+Compiling module xil_defaultlib.ipg_rx
+Compiling module xil_defaultlib.xgmii_baser_dec_64(CTRL_WIDTH=8)
+Compiling module xil_defaultlib.eth_phy_10g_rx(CTRL_WIDTH=8,SCRA...
+Compiling module xil_defaultlib.xgmii_baser_enc_64(CTRL_WIDTH=8)
+Compiling module xil_defaultlib.req_gen
+Compiling module xil_defaultlib.req_fifo_buf
+Compiling module xil_defaultlib.mem_fifo_buf
+Compiling module xil_defaultlib.net_fifo_buf
+Compiling module xil_defaultlib.buf_mon
+Compiling module xil_defaultlib.ipg_tx
+Compiling module xil_defaultlib.eth_phy_10g_tx_if(SCRAMBLER_DISA...
+Compiling module xil_defaultlib.eth_phy_10g_tx(CTRL_WIDTH=8,SCRA...
+Compiling module xil_defaultlib.eth_phy_10g(CTRL_WIDTH=8,COUNT_1...
+Compiling module xil_defaultlib.test_eth_phy
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_eth_phy_behav
+execute_script: Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 7956.273 ; gain = 0.000 ; free physical = 171541 ; free virtual = 231737
+INFO: [USF-XSim-69] 'elaborate' step finished in '5' seconds
+launch_simulation: Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 7956.273 ; gain = 0.000 ; free physical = 171541 ; free virtual = 231737
+Time resolution is 1 ps
+$finish called at time : 58 ns : File "/home/weigao/PHY-Project/IPG_TB/test_eth_phy.v" Line 112
+relaunch_sim: Time (s): cpu = 00:00:13 ; elapsed = 00:00:10 . Memory (MB): peak = 7957.289 ; gain = 1.016 ; free physical = 171536 ; free virtual = 231733
+current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
+vivadotest_ipg_mac_phy_10g_2P_behav.wcfg
+add_wave {{/test_eth_phy/UUT/eth_phy_10g_tx_inst/encoded_tx_data}} 
+current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
+vivadotest_ipg_mac_phy_10g_2P_behav.wcfg
+add_wave {{/test_eth_phy/UUT/eth_phy_10g_tx_inst/encoded_tx_hdr}} 
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_eth_phy'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_eth_phy_vlog.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_eth_phy'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_eth_phy_behav xil_defaultlib.test_eth_phy xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_eth_phy_behav xil_defaultlib.test_eth_phy xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 11 for port 'space' [/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v:244]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 2 for port 'proced_encoded_tx_hdr' [/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v:134]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 2 for port 'encoded_tx_hdr' [/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v:149]
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v:171]
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Time resolution is 1 ps
+$finish called at time : 58 ns : File "/home/weigao/PHY-Project/IPG_TB/test_eth_phy.v" Line 112
+relaunch_sim: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 7963.289 ; gain = 0.000 ; free physical = 171552 ; free virtual = 231749
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_eth_phy'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_eth_phy_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module buf_mon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_ber_mon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_ber_mon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_frame_sync.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_frame_sync
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx_if.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_if
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_watchdog.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_watchdog
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx_if.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_tx_if
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_rx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_rx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/job_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module job_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/lfsr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lfsr
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mem_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module net_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module req_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/req_gen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module req_gen
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/xgmii_baser_dec_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xgmii_baser_dec_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/xgmii_baser_enc_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xgmii_baser_enc_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_eth_phy.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_eth_phy
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_eth_phy'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_eth_phy_behav xil_defaultlib.test_eth_phy xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_eth_phy_behav xil_defaultlib.test_eth_phy xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 11 for port 'space' [/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v:244]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 2 for port 'proced_encoded_tx_hdr' [/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v:134]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 2 for port 'encoded_tx_hdr' [/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v:149]
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v:171]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_gen.v" Line 1. Module req_gen doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" Line 1. Module req_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" Line 1. Module mem_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" Line 1. Module net_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" Line 1. Module buf_mon doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_gen.v" Line 1. Module req_gen doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" Line 1. Module req_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" Line 1. Module mem_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" Line 1. Module net_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" Line 1. Module buf_mon doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.job_fifo_buf
+Compiling module xil_defaultlib.ipg_proc
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=58,REVERSE=1,DAT...
+Compiling module xil_defaultlib.lfsr(REVERSE=1,DATA_WIDTH=66)
+Compiling module xil_defaultlib.eth_phy_10g_rx_frame_sync_defaul...
+Compiling module xil_defaultlib.eth_phy_10g_rx_ber_mon(COUNT_125...
+Compiling module xil_defaultlib.eth_phy_10g_rx_watchdog(COUNT_12...
+Compiling module xil_defaultlib.eth_phy_10g_rx_if(COUNT_125US=19...
+Compiling module xil_defaultlib.ipg_rx
+Compiling module xil_defaultlib.xgmii_baser_dec_64(CTRL_WIDTH=8)
+Compiling module xil_defaultlib.eth_phy_10g_rx(CTRL_WIDTH=8,SCRA...
+Compiling module xil_defaultlib.xgmii_baser_enc_64(CTRL_WIDTH=8)
+Compiling module xil_defaultlib.req_gen
+Compiling module xil_defaultlib.req_fifo_buf
+Compiling module xil_defaultlib.mem_fifo_buf
+Compiling module xil_defaultlib.net_fifo_buf
+Compiling module xil_defaultlib.buf_mon
+Compiling module xil_defaultlib.ipg_tx
+Compiling module xil_defaultlib.eth_phy_10g_tx_if(SCRAMBLER_DISA...
+Compiling module xil_defaultlib.eth_phy_10g_tx(CTRL_WIDTH=8)
+Compiling module xil_defaultlib.eth_phy_10g(CTRL_WIDTH=8,COUNT_1...
+Compiling module xil_defaultlib.test_eth_phy
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_eth_phy_behav
+execute_script: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 7976.312 ; gain = 0.000 ; free physical = 171562 ; free virtual = 231759
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+launch_simulation: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 7976.312 ; gain = 0.000 ; free physical = 171562 ; free virtual = 231759
+Time resolution is 1 ps
+$finish called at time : 58 ns : File "/home/weigao/PHY-Project/IPG_TB/test_eth_phy.v" Line 112
+relaunch_sim: Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 7979.312 ; gain = 3.000 ; free physical = 171565 ; free virtual = 231762
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_eth_phy'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_eth_phy_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module buf_mon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_ber_mon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_ber_mon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_frame_sync.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_frame_sync
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx_if.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_if
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_watchdog.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_watchdog
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx_if.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_tx_if
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_rx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_rx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/job_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module job_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/lfsr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lfsr
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mem_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module net_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module req_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/req_gen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module req_gen
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/xgmii_baser_dec_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xgmii_baser_dec_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/xgmii_baser_enc_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xgmii_baser_enc_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_eth_phy.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_eth_phy
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_eth_phy'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_eth_phy_behav xil_defaultlib.test_eth_phy xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_eth_phy_behav xil_defaultlib.test_eth_phy xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 11 for port 'space' [/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v:244]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 2 for port 'proced_encoded_tx_hdr' [/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v:134]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 2 for port 'encoded_tx_hdr' [/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v:149]
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v:171]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_gen.v" Line 1. Module req_gen doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" Line 1. Module req_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" Line 1. Module mem_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" Line 1. Module net_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" Line 1. Module buf_mon doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_gen.v" Line 1. Module req_gen doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" Line 1. Module req_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" Line 1. Module mem_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" Line 1. Module net_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" Line 1. Module buf_mon doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.job_fifo_buf
+Compiling module xil_defaultlib.ipg_proc
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=58,REVERSE=1,DAT...
+Compiling module xil_defaultlib.lfsr(REVERSE=1,DATA_WIDTH=66)
+Compiling module xil_defaultlib.eth_phy_10g_rx_frame_sync_defaul...
+Compiling module xil_defaultlib.eth_phy_10g_rx_ber_mon(COUNT_125...
+Compiling module xil_defaultlib.eth_phy_10g_rx_watchdog(COUNT_12...
+Compiling module xil_defaultlib.eth_phy_10g_rx_if(COUNT_125US=19...
+Compiling module xil_defaultlib.ipg_rx
+Compiling module xil_defaultlib.xgmii_baser_dec_64(CTRL_WIDTH=8)
+Compiling module xil_defaultlib.eth_phy_10g_rx(CTRL_WIDTH=8,COUN...
+Compiling module xil_defaultlib.xgmii_baser_enc_64(CTRL_WIDTH=8)
+Compiling module xil_defaultlib.req_gen
+Compiling module xil_defaultlib.req_fifo_buf
+Compiling module xil_defaultlib.mem_fifo_buf
+Compiling module xil_defaultlib.net_fifo_buf
+Compiling module xil_defaultlib.buf_mon
+Compiling module xil_defaultlib.ipg_tx
+Compiling module xil_defaultlib.eth_phy_10g_tx_if(SCRAMBLER_DISA...
+Compiling module xil_defaultlib.eth_phy_10g_tx(CTRL_WIDTH=8)
+Compiling module xil_defaultlib.eth_phy_10g(CTRL_WIDTH=8,COUNT_1...
+Compiling module xil_defaultlib.test_eth_phy
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_eth_phy_behav
+execute_script: Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 8011.328 ; gain = 0.000 ; free physical = 171564 ; free virtual = 231760
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+launch_simulation: Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 8011.328 ; gain = 0.000 ; free physical = 171564 ; free virtual = 231760
+Time resolution is 1 ps
+$finish called at time : 58 ns : File "/home/weigao/PHY-Project/IPG_TB/test_eth_phy.v" Line 112
+relaunch_sim: Time (s): cpu = 00:00:13 ; elapsed = 00:00:10 . Memory (MB): peak = 8011.328 ; gain = 0.000 ; free physical = 171566 ; free virtual = 231763
+current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
+vivadotest_ipg_mac_phy_10g_2P_behav.wcfg
+add_wave {{/test_eth_phy/UUT/eth_phy_10g_tx_inst/inst_ipg_tx/netq/darray_reg}} 
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_eth_phy'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_eth_phy_vlog.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_eth_phy'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_eth_phy_behav xil_defaultlib.test_eth_phy xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_eth_phy_behav xil_defaultlib.test_eth_phy xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 11 for port 'space' [/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v:244]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 2 for port 'proced_encoded_tx_hdr' [/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v:134]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 2 for port 'encoded_tx_hdr' [/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v:149]
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v:171]
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Time resolution is 1 ps
+$finish called at time : 58 ns : File "/home/weigao/PHY-Project/IPG_TB/test_eth_phy.v" Line 112
+relaunch_sim: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 8011.328 ; gain = 0.000 ; free physical = 171561 ; free virtual = 231758
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_eth_phy'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_eth_phy_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module buf_mon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_ber_mon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_ber_mon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_frame_sync.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_frame_sync
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx_if.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_if
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_watchdog.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_watchdog
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx_if.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_tx_if
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_rx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_rx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/job_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module job_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/lfsr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lfsr
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mem_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module net_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module req_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/req_gen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module req_gen
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/xgmii_baser_dec_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xgmii_baser_dec_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/xgmii_baser_enc_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xgmii_baser_enc_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_eth_phy.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_eth_phy
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_eth_phy'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_eth_phy_behav xil_defaultlib.test_eth_phy xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_eth_phy_behav xil_defaultlib.test_eth_phy xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 11 for port 'space' [/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v:244]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 2 for port 'proced_encoded_tx_hdr' [/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v:134]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 2 for port 'encoded_tx_hdr' [/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v:149]
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v:171]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_gen.v" Line 1. Module req_gen doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" Line 1. Module req_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" Line 1. Module mem_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" Line 1. Module net_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" Line 1. Module buf_mon doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_gen.v" Line 1. Module req_gen doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" Line 1. Module req_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" Line 1. Module mem_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" Line 1. Module net_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" Line 1. Module buf_mon doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.job_fifo_buf
+Compiling module xil_defaultlib.ipg_proc
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=58,REVERSE=1,DAT...
+Compiling module xil_defaultlib.lfsr(REVERSE=1,DATA_WIDTH=66)
+Compiling module xil_defaultlib.eth_phy_10g_rx_frame_sync_defaul...
+Compiling module xil_defaultlib.eth_phy_10g_rx_ber_mon(COUNT_125...
+Compiling module xil_defaultlib.eth_phy_10g_rx_watchdog(COUNT_12...
+Compiling module xil_defaultlib.eth_phy_10g_rx_if(COUNT_125US=19...
+Compiling module xil_defaultlib.ipg_rx
+Compiling module xil_defaultlib.xgmii_baser_dec_64(CTRL_WIDTH=8)
+Compiling module xil_defaultlib.eth_phy_10g_rx(CTRL_WIDTH=8,COUN...
+Compiling module xil_defaultlib.xgmii_baser_enc_64(CTRL_WIDTH=8)
+Compiling module xil_defaultlib.req_gen
+Compiling module xil_defaultlib.req_fifo_buf
+Compiling module xil_defaultlib.mem_fifo_buf
+Compiling module xil_defaultlib.net_fifo_buf
+Compiling module xil_defaultlib.buf_mon
+Compiling module xil_defaultlib.ipg_tx
+Compiling module xil_defaultlib.eth_phy_10g_tx_if(SCRAMBLER_DISA...
+Compiling module xil_defaultlib.eth_phy_10g_tx(CTRL_WIDTH=8)
+Compiling module xil_defaultlib.eth_phy_10g(CTRL_WIDTH=8,COUNT_1...
+Compiling module xil_defaultlib.test_eth_phy
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_eth_phy_behav
+execute_script: Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 8011.328 ; gain = 0.000 ; free physical = 171568 ; free virtual = 231765
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+launch_simulation: Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 8011.328 ; gain = 0.000 ; free physical = 171568 ; free virtual = 231765
+Time resolution is 1 ps
+$finish called at time : 58 ns : File "/home/weigao/PHY-Project/IPG_TB/test_eth_phy.v" Line 112
+relaunch_sim: Time (s): cpu = 00:00:13 ; elapsed = 00:00:12 . Memory (MB): peak = 8011.328 ; gain = 0.000 ; free physical = 171550 ; free virtual = 231747
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_eth_phy'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_eth_phy_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module buf_mon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_ber_mon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_ber_mon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_frame_sync.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_frame_sync
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx_if.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_if
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_watchdog.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_watchdog
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx_if.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_tx_if
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_rx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_rx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/job_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module job_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/lfsr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lfsr
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mem_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module net_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module req_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/req_gen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module req_gen
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/xgmii_baser_dec_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xgmii_baser_dec_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/xgmii_baser_enc_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xgmii_baser_enc_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_eth_phy.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_eth_phy
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_eth_phy'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_eth_phy_behav xil_defaultlib.test_eth_phy xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_eth_phy_behav xil_defaultlib.test_eth_phy xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 11 for port 'space' [/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v:244]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 2 for port 'proced_encoded_tx_hdr' [/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v:134]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 2 for port 'encoded_tx_hdr' [/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v:149]
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v:171]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_gen.v" Line 1. Module req_gen doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" Line 1. Module req_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" Line 1. Module mem_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" Line 1. Module net_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" Line 1. Module buf_mon doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_gen.v" Line 1. Module req_gen doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" Line 1. Module req_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" Line 1. Module mem_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" Line 1. Module net_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" Line 1. Module buf_mon doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.job_fifo_buf
+Compiling module xil_defaultlib.ipg_proc
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=58,REVERSE=1,DAT...
+Compiling module xil_defaultlib.lfsr(REVERSE=1,DATA_WIDTH=66)
+Compiling module xil_defaultlib.eth_phy_10g_rx_frame_sync_defaul...
+Compiling module xil_defaultlib.eth_phy_10g_rx_ber_mon(COUNT_125...
+Compiling module xil_defaultlib.eth_phy_10g_rx_watchdog(COUNT_12...
+Compiling module xil_defaultlib.eth_phy_10g_rx_if(COUNT_125US=19...
+Compiling module xil_defaultlib.ipg_rx
+Compiling module xil_defaultlib.xgmii_baser_dec_64(CTRL_WIDTH=8)
+Compiling module xil_defaultlib.eth_phy_10g_rx(CTRL_WIDTH=8,COUN...
+Compiling module xil_defaultlib.xgmii_baser_enc_64(CTRL_WIDTH=8)
+Compiling module xil_defaultlib.req_gen
+Compiling module xil_defaultlib.req_fifo_buf
+Compiling module xil_defaultlib.mem_fifo_buf
+Compiling module xil_defaultlib.net_fifo_buf
+Compiling module xil_defaultlib.buf_mon
+Compiling module xil_defaultlib.ipg_tx
+Compiling module xil_defaultlib.eth_phy_10g_tx_if(SCRAMBLER_DISA...
+Compiling module xil_defaultlib.eth_phy_10g_tx(CTRL_WIDTH=8)
+Compiling module xil_defaultlib.eth_phy_10g(CTRL_WIDTH=8,COUNT_1...
+Compiling module xil_defaultlib.test_eth_phy
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_eth_phy_behav
+execute_script: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 8095.367 ; gain = 0.000 ; free physical = 171527 ; free virtual = 231733
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+launch_simulation: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 8095.367 ; gain = 0.000 ; free physical = 171527 ; free virtual = 231733
+Time resolution is 1 ps
+$finish called at time : 58 ns : File "/home/weigao/PHY-Project/IPG_TB/test_eth_phy.v" Line 112
+relaunch_sim: Time (s): cpu = 00:00:13 ; elapsed = 00:00:10 . Memory (MB): peak = 8095.367 ; gain = 0.000 ; free physical = 171515 ; free virtual = 231721
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_eth_phy'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_eth_phy_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module buf_mon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_ber_mon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_ber_mon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_frame_sync.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_frame_sync
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx_if.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_if
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_watchdog.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_watchdog
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx_if.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_tx_if
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_rx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_rx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/job_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module job_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/lfsr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lfsr
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mem_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module net_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module req_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/req_gen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module req_gen
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/xgmii_baser_dec_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xgmii_baser_dec_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/xgmii_baser_enc_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xgmii_baser_enc_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_eth_phy.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_eth_phy
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_eth_phy'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_eth_phy_behav xil_defaultlib.test_eth_phy xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_eth_phy_behav xil_defaultlib.test_eth_phy xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 11 for port 'space' [/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v:244]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 2 for port 'proced_encoded_tx_hdr' [/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v:135]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 2 for port 'encoded_tx_hdr' [/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v:150]
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v:171]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_gen.v" Line 1. Module req_gen doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" Line 1. Module req_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" Line 1. Module mem_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" Line 1. Module net_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" Line 1. Module buf_mon doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_gen.v" Line 1. Module req_gen doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" Line 1. Module req_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" Line 1. Module mem_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" Line 1. Module net_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" Line 1. Module buf_mon doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.job_fifo_buf
+Compiling module xil_defaultlib.ipg_proc
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=58,REVERSE=1,DAT...
+Compiling module xil_defaultlib.lfsr(REVERSE=1,DATA_WIDTH=66)
+Compiling module xil_defaultlib.eth_phy_10g_rx_frame_sync_defaul...
+Compiling module xil_defaultlib.eth_phy_10g_rx_ber_mon(COUNT_125...
+Compiling module xil_defaultlib.eth_phy_10g_rx_watchdog(COUNT_12...
+Compiling module xil_defaultlib.eth_phy_10g_rx_if(COUNT_125US=19...
+Compiling module xil_defaultlib.ipg_rx
+Compiling module xil_defaultlib.xgmii_baser_dec_64(CTRL_WIDTH=8)
+Compiling module xil_defaultlib.eth_phy_10g_rx(CTRL_WIDTH=8,COUN...
+Compiling module xil_defaultlib.xgmii_baser_enc_64(CTRL_WIDTH=8)
+Compiling module xil_defaultlib.req_gen
+Compiling module xil_defaultlib.req_fifo_buf
+Compiling module xil_defaultlib.mem_fifo_buf
+Compiling module xil_defaultlib.net_fifo_buf
+Compiling module xil_defaultlib.buf_mon
+Compiling module xil_defaultlib.ipg_tx
+Compiling module xil_defaultlib.eth_phy_10g_tx_if(SCRAMBLER_DISA...
+Compiling module xil_defaultlib.eth_phy_10g_tx(CTRL_WIDTH=8)
+Compiling module xil_defaultlib.eth_phy_10g(CTRL_WIDTH=8,COUNT_1...
+Compiling module xil_defaultlib.test_eth_phy
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_eth_phy_behav
+execute_script: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 8137.395 ; gain = 0.000 ; free physical = 171533 ; free virtual = 231739
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+launch_simulation: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 8137.395 ; gain = 0.000 ; free physical = 171533 ; free virtual = 231739
+Time resolution is 1 ps
+error 3c78f1e3c78f1e1e
+error 3c78f1e3c78f1e1e
+error 3c78f1e3c78f1e1e
+error 3c78f1e3c78f1e1e
+error 3c78f1e3c78f1e1e
+error 3c78f1e3c78f1e1e
+error 3c78f1e3c78f1e1e
+error 3c78f1e3c78f1e1e
+error 3c78f1e3c78f1e1e
+error 3c78f1e3c78f1e1e
+error 3c78f1e3c78f1e1e
+error 3c78f1e3c78f1e1e
+error 3c78f1e3c78f1e1e
+error 3c78f1e3c78f1e1e
+error 3c78f1e3c78f1e1e
+error 3c78f1e3c78f1e1e
+error 3c78f1e3c78f1e1e
+error 3c78f1e3c78f1e1e
+$finish called at time : 58 ns : File "/home/weigao/PHY-Project/IPG_TB/test_eth_phy.v" Line 112
+relaunch_sim: Time (s): cpu = 00:00:17 ; elapsed = 00:00:10 . Memory (MB): peak = 8142.391 ; gain = 4.996 ; free physical = 171526 ; free virtual = 231733
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
+vivadotest_ipg_mac_phy_10g_2P_behav.wcfg
+add_wave {{/test_eth_phy/UUT/eth_phy_10g_tx_inst/tx_bad_block}} 
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_eth_phy'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_eth_phy_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module buf_mon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_ber_mon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_ber_mon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_frame_sync.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_frame_sync
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx_if.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_if
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_watchdog.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_watchdog
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx_if.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_tx_if
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_rx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_rx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/job_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module job_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/lfsr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lfsr
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mem_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module net_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module req_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/req_gen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module req_gen
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/xgmii_baser_dec_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xgmii_baser_dec_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/xgmii_baser_enc_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xgmii_baser_enc_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_eth_phy.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_eth_phy
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_eth_phy'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_eth_phy_behav xil_defaultlib.test_eth_phy xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_eth_phy_behav xil_defaultlib.test_eth_phy xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+ERROR: [VRFC 10-3180] cannot find port 'netq_write' on this module [/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g.v:125]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_eth_phy'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_eth_phy_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module buf_mon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_ber_mon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_ber_mon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_frame_sync.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_frame_sync
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx_if.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_if
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_watchdog.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_watchdog
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx_if.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_tx_if
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_rx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_rx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/job_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module job_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/lfsr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lfsr
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mem_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module net_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module req_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/req_gen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module req_gen
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/xgmii_baser_dec_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xgmii_baser_dec_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/xgmii_baser_enc_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xgmii_baser_enc_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_eth_phy.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_eth_phy
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_eth_phy'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_eth_phy_behav xil_defaultlib.test_eth_phy xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_eth_phy_behav xil_defaultlib.test_eth_phy xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+ERROR: [VRFC 10-3180] cannot find port 'netq_write' on this module [/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v:84]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_eth_phy'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_eth_phy_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module buf_mon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_ber_mon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_ber_mon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_frame_sync.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_frame_sync
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx_if.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_if
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_watchdog.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_watchdog
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx_if.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_tx_if
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_rx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_rx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/job_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module job_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/lfsr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lfsr
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mem_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module net_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module req_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/req_gen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module req_gen
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/xgmii_baser_dec_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xgmii_baser_dec_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/xgmii_baser_enc_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xgmii_baser_enc_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_eth_phy.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_eth_phy
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_eth_phy'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JUNE/project_JUNE.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_eth_phy_behav xil_defaultlib.test_eth_phy xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_eth_phy_behav xil_defaultlib.test_eth_phy xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 11 for port 'space' [/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v:244]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 2 for port 'proced_encoded_tx_hdr' [/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v:105]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 2 for port 'encoded_tx_hdr' [/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v:120]
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v:171]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_gen.v" Line 1. Module req_gen doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" Line 1. Module req_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" Line 1. Module mem_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" Line 1. Module net_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" Line 1. Module buf_mon doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_gen.v" Line 1. Module req_gen doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" Line 1. Module req_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" Line 1. Module mem_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" Line 1. Module net_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" Line 1. Module buf_mon doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.job_fifo_buf
+Compiling module xil_defaultlib.ipg_proc
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=58,REVERSE=1,DAT...
+Compiling module xil_defaultlib.lfsr(REVERSE=1,DATA_WIDTH=66)
+Compiling module xil_defaultlib.eth_phy_10g_rx_frame_sync_defaul...
+Compiling module xil_defaultlib.eth_phy_10g_rx_ber_mon(COUNT_125...
+Compiling module xil_defaultlib.eth_phy_10g_rx_watchdog(COUNT_12...
+Compiling module xil_defaultlib.eth_phy_10g_rx_if(COUNT_125US=19...
+Compiling module xil_defaultlib.ipg_rx
+Compiling module xil_defaultlib.xgmii_baser_dec_64(CTRL_WIDTH=8)
+Compiling module xil_defaultlib.eth_phy_10g_rx(CTRL_WIDTH=8,COUN...
+Compiling module xil_defaultlib.xgmii_baser_enc_64(CTRL_WIDTH=8)
+Compiling module xil_defaultlib.req_gen
+Compiling module xil_defaultlib.req_fifo_buf
+Compiling module xil_defaultlib.mem_fifo_buf
+Compiling module xil_defaultlib.net_fifo_buf
+Compiling module xil_defaultlib.buf_mon
+Compiling module xil_defaultlib.ipg_tx
+Compiling module xil_defaultlib.eth_phy_10g_tx_if(SCRAMBLER_DISA...
+Compiling module xil_defaultlib.eth_phy_10g_tx(CTRL_WIDTH=8)
+Compiling module xil_defaultlib.eth_phy_10g(CTRL_WIDTH=8,COUNT_1...
+Compiling module xil_defaultlib.test_eth_phy
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_eth_phy_behav
+execute_script: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 9009.000 ; gain = 0.000 ; free physical = 171525 ; free virtual = 231736
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+launch_simulation: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 9009.000 ; gain = 0.000 ; free physical = 171525 ; free virtual = 231736
+Time resolution is 1 ps
+$finish called at time : 58 ns : File "/home/weigao/PHY-Project/IPG_TB/test_eth_phy.v" Line 112
+relaunch_sim: Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 9045.828 ; gain = 36.828 ; free physical = 171516 ; free virtual = 231728

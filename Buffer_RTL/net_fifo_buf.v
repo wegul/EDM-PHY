@@ -20,7 +20,6 @@ module net_fifo_buf
     reg [DEPTH - 1:0] w_ptr_reg, w_ptr_next, w_ptr_succ;
     reg [DEPTH - 1:0] r_ptr_reg, r_ptr_next, r_ptr_succ;
     reg full_reg, empty_reg, full_next, empty_next;
-
     wire wr_en;
 
     always @(posedge clk) begin
@@ -34,16 +33,16 @@ module net_fifo_buf
     assign r_data_c = carray_reg[r_ptr_reg];
     assign wr_en = wr & (~full_reg);
 
-
     initial
     begin
-        w_ptr_reg = 0;
-        r_ptr_reg = 0;
-        full_reg = 1'b0;
-        empty_reg = 1'b1;
-        space = 2**DEPTH;
-        netfin=0;
+        w_ptr_reg <= 0;
+        r_ptr_reg <= 0;
+        full_reg <= 1'b0;
+        empty_reg <= 1'b1;
+        space <= 2**DEPTH;
+        netfin<=1;
     end
+
 
     always @(posedge clk , posedge reset) begin
         if(reset)
@@ -57,6 +56,7 @@ module net_fifo_buf
         end
         else
         begin
+
             w_ptr_reg <= w_ptr_next;
             r_ptr_reg <= r_ptr_next;
             full_reg <= full_next;
@@ -68,12 +68,12 @@ module net_fifo_buf
             else begin
                 space <= r_ptr_reg - w_ptr_reg;
             end
-
-
         end
+
     end
 
-    always@(*) begin
+    always @*
+    begin
         if(empty) begin
             netfin=1;
         end
@@ -83,36 +83,11 @@ module net_fifo_buf
             end
             else netfin=0;
         end
-        // netfin<=netfin_next;
-        // // $display("===\n space %d, read %b, empty %b, rdatac %h, rdataD %h",space,rd,empty,r_data_c,r_data_d[7:0]);
-        // case(netfin)
-        //     1'b1://wait
-        //     begin
-        //         if (rd&~empty) begin
-        //             netfin_next<=1'b0;
-        //         end
-        //     end
-
-        //     1'b0://sending
-        //     begin
-        //         if(!rd) begin
-        //             netfin_next<=1'b1;
-        //         end
-        //         else begin
-        //             if(empty) netfin_next<=1'b1;
-        //             else if(r_data_c==SYNC_CTRL && r_data_d[7:0]>8'h86) begin
-        //                 netfin_next<=1;
-        //             end
-        //             else netfin_next<=0;
-        //         end
-        //     end
-
-        // endcase
     end
 
     always @*
     begin
-        w_ptr_succ = w_ptr_reg + 1;
+        w_ptr_succ = w_ptr_reg+1;
         r_ptr_succ = r_ptr_reg + 1;
         w_ptr_next = w_ptr_reg;
         r_ptr_next = r_ptr_reg;
@@ -147,6 +122,7 @@ module net_fifo_buf
             2'b00:;
         endcase
     end
+
 
     assign full = full_reg;
     assign empty = empty_reg;
