@@ -44,7 +44,8 @@ module eth_phy_10g_tx #
 
         //ipg data to be sent
         input wire [DATA_WIDTH-1:0] ipg_reply_chunk,
-        input wire memq_write
+        input wire memq_write,
+        output wire [1:0] tuser
     );
 
     // bus width assertions
@@ -86,9 +87,7 @@ module eth_phy_10g_tx #
 
     wire [DATA_WIDTH-1:0] proced_encoded_tx_data;
     wire [CTRL_WIDTH-1:0] proced_encoded_tx_hdr;
-    wire [1:0] tuser;
     wire netq_write;
-
 
 
     ipg_tx inst_ipg_tx(

@@ -82,6 +82,8 @@ module eth_phy_10g_rx #
     wire [HDR_WIDTH-1:0]  encoded_rx_hdr;
 
     wire [DATA_WIDTH-1:0] recoved_encoded_rx_data;
+    wire [HDR_WIDTH-1:0]  recoved_encoded_rx_hdr;
+
 
     eth_phy_10g_rx_if #(
                           .DATA_WIDTH(DATA_WIDTH),
@@ -119,7 +121,8 @@ module eth_phy_10g_rx #
 
                .rx_ipg_data(rx_ipg_data),
                .rx_len(rx_len),
-               .recoved_encoded_rx_data(recoved_encoded_rx_data)
+               .recoved_encoded_rx_data(recoved_encoded_rx_data),
+               .recoved_encoded_rx_hdr(recoved_encoded_rx_hdr)
            );
 
 
@@ -132,7 +135,7 @@ module eth_phy_10g_rx #
                            .clk(clk),
                            .rst(rst),
                            .encoded_rx_data(recoved_encoded_rx_data),
-                           .encoded_rx_hdr(encoded_rx_hdr),
+                           .encoded_rx_hdr(recoved_encoded_rx_hdr),
                            .xgmii_rxd(xgmii_rxd),
                            .xgmii_rxc(xgmii_rxc),
                            .rx_bad_block(rx_bad_block),

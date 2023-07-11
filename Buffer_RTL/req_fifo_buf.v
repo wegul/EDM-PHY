@@ -45,7 +45,6 @@ module req_fifo_buf
             empty_reg <= 1'b1;
             space <= 2**DEPTH;
             reqfin<=1;
-            // array_reg[0] <=64'hdddddddddaaaaaa;
         end
         else
         begin

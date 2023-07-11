@@ -19,6 +19,9 @@ module test_eth_phy;
     parameter BITSLIP_HIGH_CYCLES = 1;
     parameter BITSLIP_LOW_CYCLES = 8;
     parameter COUNT_125US = 125000/6.4;
+    localparam [1:0]
+               SYNC_DATA = 2'b10,
+               SYNC_CTRL = 2'b01;
 
     // Inputs
     reg clk = 0;
@@ -89,26 +92,84 @@ module test_eth_phy;
          xgmii_txd = 64'hecccffccccccc;
         xgmii_txc = 8'h00;
         #2
+         xgmii_txd = 64'hfd2233ee44eeefff;
+        xgmii_txc = 8'h80;
+        #2
          xgmii_txd = 64'h0;
         xgmii_txc = 8'hff;
-        // serdes_rx_data = 64'h8A8A8A8A8A8A8A8A;
-        // serdes_rx_hdr = 2'b10;
+
+        serdes_rx_data = 64'h8A8A8A8A8A8A8A78;
+        serdes_rx_hdr = SYNC_CTRL;
+        #2
+         serdes_rx_data = 64'h8B8B8B8B8B8B8A8A;
+        serdes_rx_hdr = SYNC_DATA;
+        #2
+         serdes_rx_data = 64'h8CCCCC8B8CB8B8A8A;
+        serdes_rx_hdr = SYNC_DATA;
+        #2
+         serdes_rx_data = 64'h0100ADDADDADDF1e;
+        serdes_rx_data[63:62]=2'b01;
+        serdes_rx_hdr = 2'b01;
+        #2
+         serdes_rx_data = 64'hADDADD8B8B8B8B1e;
+        serdes_rx_hdr = 2'b01;
+        //write payload below
+        for (i=0;i<9;i=i+1) begin
+            #2
+             serdes_rx_data = 64'hbb3344556699ff1e;
+            serdes_rx_hdr = 2'b01;
+        end
+        #2
+         serdes_rx_data = 64'hbb3344556699ff1e;
+        serdes_rx_hdr = 2'b01;
 
         #2
+         serdes_rx_data = 64'haaaaaaaaaaaaaa78;
+        serdes_rx_hdr = 2'b01;
+        #2
+         serdes_rx_data = 64'h8B8B8B8B8B8B8A8A;
+        serdes_rx_hdr = SYNC_DATA;
+        #2
+         serdes_rx_data = 64'h8CCCCC8B8CB8B8A8A;
+        serdes_rx_hdr = SYNC_DATA;
+        #2
+         serdes_rx_data = 64'h0000addaddaddad87;
+        serdes_rx_hdr = SYNC_CTRL;
 
-         //         xgmii_txd = 64'h01;
-         //         for (i=0;i<packet_size;i=i+1) begin
-         //             #2
-         //             xgmii_txd = xgmii_txd +1;
-         //         end
+        #2
+         serdes_rx_data = 64'hFFFFADDADDADDF1e;
+        serdes_rx_hdr = 2'b01;
+        #2
+         serdes_rx_data = 64'hcccccccccccccc1e;
+        serdes_rx_hdr = 2'b01;
 
-         //         xgmii_txd = {{32'h070707fd},{fake_fcs}};
-         //         xgmii_txc = 8'hf0; //Term_4
-         //         #2
-         // //        //Enter IDLE
-         //         xgmii_txd={8{8'h07}};
-         //         xgmii_txc={8'hff};
-         #36
+        //warmup
+        xgmii_txd = 64'hd5555555555555fb;//fake preamble
+        xgmii_txc = 8'h01;
+        #2
+         xgmii_txd = 64'hdddddaaaddddd0000;
+        xgmii_txc = 8'h00;
+        #2
+         xgmii_txd = 64'hecccffccccccc000;
+        xgmii_txc = 8'h00;
+        #2
+         xgmii_txd = 64'hfd2233ee44eeefff;
+        xgmii_txc = 8'h80;
+        #2
+         xgmii_txd = 64'h0;
+        xgmii_txc = 8'hff;
+        serdes_rx_data = 64'haaaaaaaaaaaaaa78;
+        serdes_rx_hdr = 2'b01;
+        #2
+         serdes_rx_data = 64'h8B8B8B8B8B8B8A8A;
+        serdes_rx_hdr = SYNC_DATA;
+        #2
+         serdes_rx_data = 64'h8CCCCC8B8CB8B8A8A;
+        serdes_rx_hdr = SYNC_DATA;
+        #2
+         serdes_rx_data = 64'h00000000000000087;
+        serdes_rx_hdr = SYNC_CTRL;
+        #48
          $finish;
     end
 
@@ -136,8 +197,8 @@ module test_eth_phy;
                     .xgmii_rxc(xgmii_rxc),
                     .serdes_tx_data(serdes_tx_data),
                     .serdes_tx_hdr(serdes_tx_hdr),
-                    .serdes_rx_data(serdes_tx_data),
-                    .serdes_rx_hdr(serdes_tx_hdr),
+                    .serdes_rx_data(serdes_rx_data),
+                    .serdes_rx_hdr(serdes_rx_hdr),
                     .serdes_rx_bitslip(serdes_rx_bitslip),
                     .rx_error_count(rx_error_count),
                     .rx_bad_block(rx_bad_block),

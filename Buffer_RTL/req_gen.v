@@ -5,7 +5,7 @@ module req_gen(
     );
     localparam DELIM=8'hee;
 
-    assign ipg_req_chunk = {{56'h0},{DELIM}};
-    assign reqq_write = 1;
+    assign ipg_req_chunk = {{48'h0},{8'hbb},{DELIM}};
+    assign reqq_write = 0;
 
 endmodule

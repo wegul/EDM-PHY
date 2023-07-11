@@ -122,31 +122,36 @@ module ipg_proc(
                 end
             end
             STATE_ADDR: begin
-                // parse the address in RAM
-                if (len < addr_count_reg) begin
-                    // addr[addr_count_reg-1:addr_count_reg-rx_len]=rx_ipg_data[63:64-rx_len];
-                    for (i=1;i<=len;i=i+1) begin
-                        addr[addr_count_reg-i] = ipg_data[64-i];
+                if(len > 0) begin
+                    // parse the address in RAM
+                    if (len < addr_count_reg) begin
+                        // addr[addr_count_reg-1:addr_count_reg-rx_len]=rx_ipg_data[63:64-rx_len];
+                        for (i=1;i<=len;i=i+1) begin
+                            addr[addr_count_reg-i] = ipg_data[64-i];
+                        end
+                        addr_count_reg = addr_count_reg - len;
                     end
-                    addr_count_reg = addr_count_reg - len;
-                end
-                else begin
-                    // addr[addr_count_reg-1:0]=rx_ipg_data[63:64-addr_count_reg];
-                    for(i=1;i<=addr_count_reg;i=i+1) begin
-                        addr[addr_count_reg-i] = ipg_data [64-i];
+                    else begin
+                        // addr[addr_count_reg-1:0]=rx_ipg_data[63:64-addr_count_reg];
+                        for(i=1;i<=addr_count_reg;i=i+1) begin
+                            addr[addr_count_reg-i] = ipg_data [64-i];
+                        end
+                        addr_count_reg = 0;
                     end
-                    addr_count_reg = 0;
-                end
-                // $display("===\n aaaaa%d\n===",addr_count_reg);
-                if (addr_count_reg == 0) begin
-                    // finish addr
-                    if (hdr[HDR_WIDTH-1 -: 2] == READ_REQ) begin
-                        state_next = STATE_REPLY;
-                        tx_payload_count = 10'd512+HDR_WIDTH; //could be variable, obtained from hdr.
+                    // $display("===\n aaaaa%d\n===",addr_count_reg);
+                    if (addr_count_reg == 0) begin
+                        // finish addr
+                        if (hdr[HDR_WIDTH-1 -: 2] == READ_REQ) begin
+                            state_next = STATE_REPLY;
+                            tx_payload_count = 10'd512+HDR_WIDTH; //could be variable, obtained from hdr.
+                        end
+                        else if (hdr[HDR_WIDTH-1 -: 2] == WRITE_REQ) begin
+                            state_next = STATE_WRITE;
+                            wr_payload_count=10'd512;//could be variable, obtained from hdr.
+                        end
                     end
-                    else if (hdr[HDR_WIDTH-1 -: 2] == WRITE_REQ) begin
-                        state_next = STATE_WRITE;
-                        wr_payload_count=10'd512;//could be variable, obtained from hdr.
+                    else begin
+                        state_next = STATE_ADDR;
                     end
                 end
                 else begin
@@ -166,6 +171,7 @@ module ipg_proc(
 
             STATE_MEMQ: begin
                 memq_write=1;// writing to memq, which is to transmit mem replies...
+                ipg_reply_chunk=64'hffffffffffffffff;
                 ipg_reply_chunk[7:0] = BLOCK_TYPE_CTRL;
                 if (tx_payload_count > 56) begin
                     ipg_reply_chunk[64:8] = ipg_reply[tx_payload_count-1 -: 56];
@@ -184,25 +190,30 @@ module ipg_proc(
             end
 
             STATE_WRITE: begin
-                if (len < wr_payload_count) begin
-                    for (i=1;i<=len;i=i+1) begin
-                        wr_payload[wr_payload_count-i] = ipg_data[64-i];
+                if(len > 0) begin
+                    if (len < wr_payload_count) begin
+                        for (i=1;i<=len;i=i+1) begin
+                            wr_payload[wr_payload_count-i] = ipg_data[64-i];
+                        end
+                        wr_payload_count = wr_payload_count - len;
                     end
-                    wr_payload_count = wr_payload_count - len;
-                end
-                else begin
-                    for(i=1;i<=wr_payload_count;i=i+1) begin
-                        wr_payload[wr_payload_count-i] = ipg_data [64-i];
+                    else begin
+                        for(i=1;i<=wr_payload_count;i=i+1) begin
+                            wr_payload[wr_payload_count-i] = ipg_data [64-i];
+                        end
+                        wr_payload_count = 0;
                     end
-                    wr_payload_count = 0;
-                end
-                if (wr_payload_count == 0) begin
-                    // finish receiving payload
-                    //TODO: write payload in memory
-                    // $display("done writing... ");
-                    addr = 0;
-                    addr_count_reg=7'd64;
-                    state_next=STATE_WAIT;
+                    if (wr_payload_count == 0) begin
+                        // finish receiving payload
+                        //TODO: write payload in memory
+                        $display("done writing... %h",wr_payload);
+                        addr = 0;
+                        addr_count_reg=7'd64;
+                        state_next=STATE_WAIT;
+                    end
+                    else begin
+                        state_next = STATE_WRITE;
+                    end
                 end
                 else begin
                     state_next = STATE_WRITE;
