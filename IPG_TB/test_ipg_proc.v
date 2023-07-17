@@ -43,11 +43,17 @@ module test_ipg_proc;
          reset=0;
         #2
          rx_ipg_data = 64'h00aabb12332155dd;
-        rx_len = 24;
+        rx_ipg_data[63:62]=2'b01;
+        rx_len = 32;
         jobq_write=1;
         #2
          // rx_ipg_data[0] =0;//0 for read req
-         rx_ipg_data = 64'h1122334455660000;
+         rx_ipg_data = 64'h112233445566cc00;
+        rx_len = 6'd56;
+        jobq_write=1;
+        #2
+         // rx_ipg_data[0] =0;//0 for read req
+         rx_ipg_data = 64'hdd22334455660000;
         rx_len = 6'd56;
         jobq_write=1;
 
@@ -109,13 +115,13 @@ module test_ipg_proc;
 
 
 
-    debug_ipg_proc UUT(
-                       .clk(clk),
-                       .reset(reset),
-                       .jobq_write(jobq_write),
-                       .rx_ipg_data(rx_ipg_data),
-                       .ipg_reply_chunk(ipg_reply_chunk),
-                       .rx_len(rx_len)
-                   );
+    ipg_proc UUT(
+                 .clk(clk),
+                 .reset(reset),
+                 .jobq_write(jobq_write),
+                 .rx_ipg_data(rx_ipg_data),
+                 .ipg_reply_chunk(ipg_reply_chunk),
+                 .rx_len(rx_len)
+             );
 
 endmodule

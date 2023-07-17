@@ -1,7 +1,6 @@
 `resetall
 `timescale 1ns / 1ps
 `default_nettype none
-
 module ipg_mac_phy_10g #(
         //++++++++++++++++ For MAC+PHY begin ++++++++++++++++
         parameter DATA_WIDTH = 64,
@@ -56,7 +55,7 @@ module ipg_mac_phy_10g #(
         input  wire                         tx_axis_tvalid,
         output wire                         tx_axis_tready,
         input  wire                         tx_axis_tlast,
-        input  wire [TX_USER_WIDTH-1:0]     tx_axis_tuser,
+        // input  wire [TX_USER_WIDTH-1:0]     tx_axis_tuser,
         /*
          * AXI output
          */
@@ -114,9 +113,10 @@ module ipg_mac_phy_10g #(
     wire [CTRL_WIDTH-1:0]     xgmii_txc;
     wire [DATA_WIDTH-1:0]     xgmii_rxd;
     wire [CTRL_WIDTH-1:0]     xgmii_rxc;
-    wire [1:0] pause_tuser;
+    wire [TX_USER_WIDTH-1:0]     tx_axis_tuser;
+    wire tx_pause;
 
-    assign tx_axis_tuser=pause_tuser;
+
 
 
     eth_mac_10g #(
@@ -167,7 +167,8 @@ module ipg_mac_phy_10g #(
                     .rx_start_packet(rx_start_packet),
                     .rx_error_bad_frame(rx_error_bad_frame),
                     .rx_error_bad_fcs(rx_error_bad_fcs),
-                    .ifg_delay(ifg_delay)
+                    .ifg_delay(ifg_delay),
+                    .tx_pause(tx_pause)
                 );
 
     eth_phy_10g #(
@@ -203,6 +204,6 @@ module ipg_mac_phy_10g #(
                     .rx_high_ber(rx_high_ber),
                     .tx_prbs31_enable(tx_prbs31_enable),
                     .rx_prbs31_enable(rx_prbs31_enable),
-                    .tuser(pause_tuser)
+                    .tx_pause(tx_pause)
                 );
 endmodule

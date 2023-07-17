@@ -35,7 +35,7 @@ module test_new_ipg_tx;
     //outputs
     wire [63:0] proced_encoded_tx_data;
     wire [1:0] proced_encoded_tx_hdr;
-    wire [1:0] tuser;
+    wire [1:0] tx_pause;
 
     reg reqq_write=0,memq_write=0,netq_write=0;
 
@@ -133,7 +133,7 @@ module test_new_ipg_tx;
                .encoded_tx_hdr(encoded_tx_hdr_next),
                .encoded_tx_data(encoded_tx_data_next),
                .ipg_reply_chunk(ipg_reply_chunk),
-               .tuser(tuser),
+               .tx_pause(tx_pause),
                .proced_encoded_tx_data(proced_encoded_tx_data),
                .proced_encoded_tx_hdr(proced_encoded_tx_hdr)
            );

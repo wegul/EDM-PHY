@@ -1,11 +1,6 @@
-// Language: Verilog 2001
-
 `timescale 1ns / 100ps
 
-/*
- * Testbench for eth_mac_10g
- */
-module vivadotest_ipg_mac_phy_10g;
+module test_ipg_mac_phy;
 
 
     //**************** For MAC+PHY begin ****************
@@ -46,10 +41,10 @@ module vivadotest_ipg_mac_phy_10g;
     reg [KEEP_WIDTH-1:0] tx_axis_tkeep = 0;
     reg tx_axis_tvalid = 0;
     reg tx_axis_tlast = 0;
-    reg [TX_USER_WIDTH-1:0] tx_axis_tuser = 0;
+    // reg [TX_USER_WIDTH-1:0] tx_axis_tuser = 0;
     reg [TX_PTP_TS_WIDTH-1:0] tx_ptp_ts = 0;
     reg [RX_PTP_TS_WIDTH-1:0] rx_ptp_ts = 0;
-    reg [7:0] ifg_delay = 0;
+    reg [7:0] ifg_delay = 8'd12;
 
     // Outputs
     wire tx_axis_tready;
@@ -58,8 +53,6 @@ module vivadotest_ipg_mac_phy_10g;
     wire rx_axis_tvalid;
     wire rx_axis_tlast;
     wire [RX_USER_WIDTH-1:0] rx_axis_tuser;
-    wire [DATA_WIDTH-1:0] xgmii_txd;
-    wire [CTRL_WIDTH-1:0] xgmii_txc;
     wire [TX_PTP_TS_WIDTH-1:0] tx_axis_ptp_ts;
     wire [TX_PTP_TAG_WIDTH-1:0] tx_axis_ptp_ts_tag;
     wire tx_axis_ptp_ts_valid;
@@ -83,14 +76,14 @@ module vivadotest_ipg_mac_phy_10g;
     parameter BITSLIP_HIGH_CYCLES = 1;
     parameter BITSLIP_LOW_CYCLES = 8;
     parameter COUNT_125US = 125000/6.4;
-
-
+    localparam [1:0]
+               SYNC_DATA = 2'b10,
+               SYNC_CTRL = 2'b01;
     //******* PHY TX *******
-    wire [DATA_WIDTH-1:0] serdes_rx_data;
-    wire [HDR_WIDTH-1:0] serdes_rx_hdr;
+    reg [DATA_WIDTH-1:0] serdes_rx_data;
+    reg [HDR_WIDTH-1:0] serdes_rx_hdr;
     reg tx_prbs31_enable = 0;
     reg rx_prbs31_enable = 0;
-
 
     wire [DATA_WIDTH-1:0] serdes_tx_data;
     wire [HDR_WIDTH-1:0] serdes_tx_hdr;
@@ -99,8 +92,6 @@ module vivadotest_ipg_mac_phy_10g;
     wire rx_bad_block;
     wire rx_block_lock;
     wire rx_high_ber;
-
-
     //**************** For PHY-Only end ****************
 
 
@@ -123,7 +114,7 @@ module vivadotest_ipg_mac_phy_10g;
         rst = 1'b1;
         rx_rst = 1'b1;
         tx_rst = 1'b1;
-        #10
+        #16
          rst = 1'b0;
         rx_rst = 1'b0;
         tx_rst = 1'b0;
@@ -147,22 +138,29 @@ module vivadotest_ipg_mac_phy_10g;
     // indicating a total of 9 cycles for a minimum {8B[Preamble]+64B[4B FCS + 60B data]} packet.
 
     initial begin
-        ifg_delay=8'd12;
         packet_size=8;
-        //For timing/functional simulation 104ns. For behavioral, 20ns
-        #20
-        
+        #16
          //1. an one-unit (8 byte) packet (0xdd)
          tx_axis_tkeep = 8'hff;
         tx_axis_tvalid = 1'b1;
         tx_axis_tlast = 1'b1;
-        tx_axis_tuser = 2'b00;
         tx_axis_tdata = 64'hdddddddd00000000;
         #2
          tx_axis_tkeep = 8'h00;
         // wait for zero padding(16 for 2ns_clock)
         tx_axis_tdata = 64'haabbddffffff0000;
-        #16
+        #2
+         //A read request
+         serdes_rx_data=64'h0000addaddaddf1e;
+        serdes_rx_data[63:62]=2'b01;
+        serdes_rx_hdr=SYNC_CTRL;
+        #2
+         serdes_rx_data=64'haddaddaddaddad1e;
+        serdes_rx_hdr=SYNC_CTRL;
+        #2
+         serdes_rx_data=0;
+        serdes_rx_hdr=SYNC_CTRL;
+        #10
 
          // +++++ Close AXI Transmission +++++
          tx_axis_tlast = 1'b1;
@@ -172,15 +170,27 @@ module vivadotest_ipg_mac_phy_10g;
         #2
          // ----- Close AXI Transmission -----
 
-
-         // 2. IDLE for 20ns.
-         #20
-
-         //3. an one-unit (8 byte) packet (0xd1)
+         // ===============================================
+         //2. an eight-unit (64 byte) packet (1~8)
          tx_axis_tkeep = 8'hff;
         tx_axis_tvalid = 1'b1;
         tx_axis_tlast = 1'b0;
-        tx_axis_tuser = 2'b00;
+        tx_axis_tdata = 64'h01;
+        for (i=1;i<packet_size;i=i+1) begin
+            #2
+             tx_axis_tdata = tx_axis_tdata +1;
+        end
+        tx_axis_tlast=1'b1;
+        #2
+         // ===============================================
+
+         // 3. IDLE for 20ns.
+         #20
+
+         //4. an one-unit (8 byte) packet (0xd1)
+         tx_axis_tkeep = 8'hff;
+        tx_axis_tvalid = 1'b1;
+        tx_axis_tlast = 1'b0;
         tx_axis_tdata = 64'hd111111110000000;
         #2
          tx_axis_tlast = 1'b1;
@@ -198,7 +208,7 @@ module vivadotest_ipg_mac_phy_10g;
          // ----- Close AXI Transmission -----
 
 
-         //4. an eight-unit (64 byte) packet (1~8)
+         //5. an eight-unit (64 byte) packet (1~8)
          tx_axis_tkeep = 8'hff;
         tx_axis_tvalid = 1'b1;
         tx_axis_tlast = 1'b0;
@@ -258,7 +268,7 @@ module vivadotest_ipg_mac_phy_10g;
                         .tx_axis_tvalid(tx_axis_tvalid),
                         .tx_axis_tready(tx_axis_tready),
                         .tx_axis_tlast(tx_axis_tlast),
-                        .tx_axis_tuser(tx_axis_tuser),
+                        // .tx_axis_tuser(tx_axis_tuser),
                         .rx_axis_tdata(rx_axis_tdata),
                         .rx_axis_tkeep(rx_axis_tkeep),
                         .rx_axis_tvalid(rx_axis_tvalid),

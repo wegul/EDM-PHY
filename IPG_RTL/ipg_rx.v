@@ -16,10 +16,11 @@ module ipg_rx(
 
         //recover
         output reg [63:0] recoved_encoded_rx_data,
-        output reg [1:0]  recoved_encoded_rx_hdr
-    );
+        output reg [1:0]  recoved_encoded_rx_hdr,
 
-    reg [63:0] recoved_encoded_rx_data_reg=64'h0;
+        //shim layer control
+        output reg shimq_write
+    );
 
 
 
@@ -46,7 +47,7 @@ module ipg_rx(
 
 
 
-    always@(posedge clk) begin
+    always@(*) begin
         recoved_encoded_rx_data=encoded_rx_data;
         recoved_encoded_rx_hdr=encoded_rx_hdr;
         rx_ipg_data = 64'h0;
@@ -69,9 +70,9 @@ module ipg_rx(
                     rx_len = 6'd24;
                 end
                 BLOCK_TYPE_START_4: begin // D7 D6 D5    C3 C2 C1 C0 BT
-                    rx_ipg_data[31:8]=encoded_rx_data[31:8];
-                    recoved_encoded_rx_data[31:8]=0;
-                    rx_len = 6'd24;
+                    rx_ipg_data[39:8]=encoded_rx_data[39:8];
+                    recoved_encoded_rx_data[39:8]=0;
+                    rx_len = 6'd32;
                 end
                 // BLOCK_TYPE_OS_START: begin // D7 D6 D5    O0 D3 D2 D1 BT
                 // nop;
@@ -84,39 +85,38 @@ module ipg_rx(
                 // end
                 BLOCK_TYPE_OS_0: begin // C7 C6 C5 C4 O0 D3 D2 D1 BT
                     rx_ipg_data[63:40]=encoded_rx_data[63:40];
-                    recoved_encoded_rx_data[63:40]=0;
+                    recoved_encoded_rx_data[63:36]=0;
                     rx_len = 6'd24;
                 end
                 BLOCK_TYPE_TERM_0: begin // C7 C6 C5 C4 C3 C2 C1    BT
-                    // TODO: this could be 8!
+                    rx_ipg_data[63:8]=encoded_rx_data[63:8];
+                    recoved_encoded_rx_data[63:8]=0;
+                    rx_len = 6'd56;
+                end
+                BLOCK_TYPE_TERM_1: begin // C7 C6 C5 C4 C3 C2    D0 BT
                     rx_ipg_data[63:16]=encoded_rx_data[63:16];
                     recoved_encoded_rx_data[63:16]=0;
                     rx_len = 6'd48;
                 end
-                BLOCK_TYPE_TERM_1: begin // C7 C6 C5 C4 C3 C2    D0 BT
+                BLOCK_TYPE_TERM_2: begin // C7 C6 C5 C4 C3    D1 D0 BT
                     rx_ipg_data[63:24]=encoded_rx_data[63:24];
                     recoved_encoded_rx_data[63:24]=0;
                     rx_len = 6'd40;
                 end
-                BLOCK_TYPE_TERM_2: begin // C7 C6 C5 C4 C3    D1 D0 BT
+                BLOCK_TYPE_TERM_3: begin // C7 C6 C5 C4    D2 D1 D0 BT
                     rx_ipg_data[63:32]=encoded_rx_data[63:32];
                     recoved_encoded_rx_data[63:32]=0;
                     rx_len = 6'd32;
                 end
-                BLOCK_TYPE_TERM_3: begin // C7 C6 C5 C4    D2 D1 D0 BT
+                BLOCK_TYPE_TERM_4: begin // C7 C6 C5    D3 D2 D1 D0 BT
                     rx_ipg_data[63:40]=encoded_rx_data[63:40];
                     recoved_encoded_rx_data[63:40]=0;
                     rx_len = 6'd24;
                 end
-                BLOCK_TYPE_TERM_4: begin // C7 C6 C5    D3 D2 D1 D0 BT
+                BLOCK_TYPE_TERM_5: begin // C7 C6    D4 D3 D2 D1 D0 BT
                     rx_ipg_data[63:48]=encoded_rx_data[63:48];
                     recoved_encoded_rx_data[63:48]=0;
                     rx_len = 6'd16;
-                end
-                BLOCK_TYPE_TERM_5: begin // C7 C6    D4 D3 D2 D1 D0 BT
-                    rx_ipg_data[63:56]=encoded_rx_data[63:56];
-                    recoved_encoded_rx_data[63:56]=0;
-                    rx_len = 6'd8;
                 end
                 // BLOCK_TYPE_TERM_6: begin // C7    D5 D4 D3 D2 D1 D0 BT
                 // nop;
@@ -125,13 +125,19 @@ module ipg_rx(
                 // nop;
                 // end
                 default: begin
-                    rx_ipg_data[63:56]=8'hee;
+                    rx_ipg_data[63:48]=16'heeee;
                     rx_len = 6'd0;
                 end
-
             endcase
         end
-        // $display("encoded rx data %b, %h",encoded_rx_hdr,encoded_rx_data);
+
+
+        if(encoded_rx_data[7:0]==BLOCK_TYPE_CTRL && encoded_rx_hdr == SYNC_CTRL) shimq_write=0;//has no data
+        else shimq_write=1;
+
+        if(encoded_rx_data[7:0]==0 && encoded_rx_hdr == SYNC_CTRL) shimq_write=0;// usless, initialization
+
+
     end
 
 

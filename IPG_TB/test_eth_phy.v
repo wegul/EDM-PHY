@@ -69,7 +69,7 @@ module test_eth_phy;
         rst = 1'b1;
         rx_rst = 1'b1;
         tx_rst = 1'b1;
-        #14
+        #10
          rst = 1'b0;
         rx_rst = 1'b0;
         tx_rst = 1'b0;
@@ -79,13 +79,13 @@ module test_eth_phy;
     integer packet_size;
 
     initial begin
-        packet_size = 8;
-        #14
-         xgmii_txd = 64'hd5555555555555fb;//fake preamble
+        #10
+         xgmii_txd = 64'h0707070707070707;
+        xgmii_txc = 8'hff;
+        #4
+         xgmii_txd = 64'hd5555555555555fb;
         xgmii_txc = 8'h01;
         #2
-         //warmup
-         //Data input (8 Bytes)
          xgmii_txd = 64'hdddddaaaddddd;
         xgmii_txc = 8'h00;
         #2
@@ -95,83 +95,106 @@ module test_eth_phy;
          xgmii_txd = 64'hfd2233ee44eeefff;
         xgmii_txc = 8'h80;
         #2
-         xgmii_txd = 64'h0;
+         xgmii_txd = 64'h0707070707070707;
         xgmii_txc = 8'hff;
-
-        serdes_rx_data = 64'h8A8A8A8A8A8A8A78;
-        serdes_rx_hdr = SYNC_CTRL;
-        #2
-         serdes_rx_data = 64'h8B8B8B8B8B8B8A8A;
-        serdes_rx_hdr = SYNC_DATA;
-        #2
-         serdes_rx_data = 64'h8CCCCC8B8CB8B8A8A;
-        serdes_rx_hdr = SYNC_DATA;
-        #2
-         serdes_rx_data = 64'h0100ADDADDADDF1e;
-        serdes_rx_data[63:62]=2'b01;
-        serdes_rx_hdr = 2'b01;
-        #2
-         serdes_rx_data = 64'hADDADD8B8B8B8B1e;
-        serdes_rx_hdr = 2'b01;
-        //write payload below
-        for (i=0;i<9;i=i+1) begin
-            #2
-             serdes_rx_data = 64'hbb3344556699ff1e;
-            serdes_rx_hdr = 2'b01;
-        end
-        #2
-         serdes_rx_data = 64'hbb3344556699ff1e;
-        serdes_rx_hdr = 2'b01;
-
-        #2
-         serdes_rx_data = 64'haaaaaaaaaaaaaa78;
-        serdes_rx_hdr = 2'b01;
-        #2
-         serdes_rx_data = 64'h8B8B8B8B8B8B8A8A;
-        serdes_rx_hdr = SYNC_DATA;
-        #2
-         serdes_rx_data = 64'h8CCCCC8B8CB8B8A8A;
-        serdes_rx_hdr = SYNC_DATA;
-        #2
-         serdes_rx_data = 64'h0000addaddaddad87;
-        serdes_rx_hdr = SYNC_CTRL;
-
-        #2
-         serdes_rx_data = 64'hFFFFADDADDADDF1e;
-        serdes_rx_hdr = 2'b01;
-        #2
-         serdes_rx_data = 64'hcccccccccccccc1e;
-        serdes_rx_hdr = 2'b01;
-
-        //warmup
-        xgmii_txd = 64'hd5555555555555fb;//fake preamble
-        xgmii_txc = 8'h01;
-        #2
-         xgmii_txd = 64'hdddddaaaddddd0000;
-        xgmii_txc = 8'h00;
-        #2
-         xgmii_txd = 64'hecccffccccccc000;
-        xgmii_txc = 8'h00;
-        #2
-         xgmii_txd = 64'hfd2233ee44eeefff;
-        xgmii_txc = 8'h80;
-        #2
-         xgmii_txd = 64'h0;
-        xgmii_txc = 8'hff;
-        serdes_rx_data = 64'haaaaaaaaaaaaaa78;
-        serdes_rx_hdr = 2'b01;
-        #2
-         serdes_rx_data = 64'h8B8B8B8B8B8B8A8A;
-        serdes_rx_hdr = SYNC_DATA;
-        #2
-         serdes_rx_data = 64'h8CCCCC8B8CB8B8A8A;
-        serdes_rx_hdr = SYNC_DATA;
-        #2
-         serdes_rx_data = 64'h00000000000000087;
-        serdes_rx_hdr = SYNC_CTRL;
-        #48
+        #8
          $finish;
     end
+
+    // initial begin
+    //     packet_size = 8;
+    //     #14
+    //      xgmii_txd = 64'hd5555555555555fb;//fake preamble
+    //     xgmii_txc = 8'h01;
+    //     #2
+    //      //warmup
+    //      //Data input (8 Bytes)
+    //      xgmii_txd = 64'hdddddaaaddddd;
+    //     xgmii_txc = 8'h00;
+    //     #2
+    //      xgmii_txd = 64'hecccffccccccc;
+    //     xgmii_txc = 8'h00;
+    //     #2
+    //      xgmii_txd = 64'hfd2233ee44eeefff;
+    //     xgmii_txc = 8'h80;
+    //     #2
+    //      xgmii_txd = 64'h0;
+    //     xgmii_txc = 8'hff;
+
+    //     serdes_rx_data = 64'h8A8A8A8A8A8A8A78;
+    //     serdes_rx_hdr = SYNC_CTRL;
+    //     #2
+    //      serdes_rx_data = 64'h8B8B8B8B8B8B8A8A;
+    //     serdes_rx_hdr = SYNC_DATA;
+    //     #2
+    //      serdes_rx_data = 64'h8CCCCC8B8CB8B8A8A;
+    //     serdes_rx_hdr = SYNC_DATA;
+    //     #2
+    //      serdes_rx_data = 64'h0100ADDADDADDF1e;
+    //     serdes_rx_data[63:62]=2'b01;
+    //     serdes_rx_hdr = 2'b01;
+    //     #2
+    //      serdes_rx_data = 64'hADDADD8B8B8B8B1e;
+    //     serdes_rx_hdr = 2'b01;
+    //     //write payload below
+    //     for (i=0;i<9;i=i+1) begin
+    //         #2
+    //          serdes_rx_data = 64'hbb3344556699ff1e;
+    //         serdes_rx_hdr = 2'b01;
+    //     end
+    //     #2
+    //      serdes_rx_data = 64'hbb3344556699ff1e;
+    //     serdes_rx_hdr = 2'b01;
+
+    //     #2
+    //      serdes_rx_data = 64'haaaaaaaaaaaaaa78;
+    //     serdes_rx_hdr = 2'b01;
+    //     #2
+    //      serdes_rx_data = 64'h8B8B8B8B8B8B8A8A;
+    //     serdes_rx_hdr = SYNC_DATA;
+    //     #2
+    //      serdes_rx_data = 64'h8CCCCC8B8CB8B8A8A;
+    //     serdes_rx_hdr = SYNC_DATA;
+    //     #2
+    //      serdes_rx_data = 64'h0000addaddaddad87;
+    //     serdes_rx_hdr = SYNC_CTRL;
+
+    //     #2
+    //      serdes_rx_data = 64'hFFFFADDADDADDF1e;
+    //     serdes_rx_hdr = 2'b01;
+    //     #2
+    //      serdes_rx_data = 64'hcccccccccccccc1e;
+    //     serdes_rx_hdr = 2'b01;
+
+    //     //warmup
+    //     xgmii_txd = 64'hd5555555555555fb;//fake preamble
+    //     xgmii_txc = 8'h01;
+    //     #2
+    //      xgmii_txd = 64'hdddddaaaddddd0000;
+    //     xgmii_txc = 8'h00;
+    //     #2
+    //      xgmii_txd = 64'hecccffccccccc000;
+    //     xgmii_txc = 8'h00;
+    //     #2
+    //      xgmii_txd = 64'hfd2233ee44eeefff;
+    //     xgmii_txc = 8'h80;
+    //     #2
+    //      xgmii_txd = 64'h0;
+    //     xgmii_txc = 8'hff;
+    //     serdes_rx_data = 64'haaaaaaaaaaaaaa78;
+    //     serdes_rx_hdr = 2'b01;
+    //     #2
+    //      serdes_rx_data = 64'h8B8B8B8B8B8B8A8A;
+    //     serdes_rx_hdr = SYNC_DATA;
+    //     #2
+    //      serdes_rx_data = 64'h8CCCCC8B8CB8B8A8A;
+    //     serdes_rx_hdr = SYNC_DATA;
+    //     #2
+    //      serdes_rx_data = 64'h00000000000000087;
+    //     serdes_rx_hdr = SYNC_CTRL;
+    //     #48
+    //      $finish;
+    // end
 
     eth_phy_10g #(
                     .DATA_WIDTH(DATA_WIDTH),

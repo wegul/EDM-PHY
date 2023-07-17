@@ -19,10 +19,11 @@ module buf_mon (
 
 
         output reg [1:0] sel,
-        output reg [1:0] tuser // set tuser[0] to enter IDLE line406 at axis_xgmii_tx
+        output reg tx_pause
+        // assert to de-assert tx_axis_tready in axis_xgmii_tx L588
     );
 
-    localparam thres = 3'd3;
+    localparam thres = 3'd5;
 
     localparam [1:0]
                SYNC_DATA = 2'b10,
@@ -95,9 +96,9 @@ module buf_mon (
         end
 
         if (netq_space < thres) begin
-            tuser[1:0]= 2'b11;
+            tx_pause = 1'b1;
         end
-        else tuser[1:0]= 0;
+        else tx_pause = 0;
     end
 
 

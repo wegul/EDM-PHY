@@ -84,7 +84,9 @@ module axis_xgmii_tx_64 #
          * Status
          */
         output wire [1:0]                start_packet,
-        output wire                      error_underflow
+        output wire                      error_underflow,
+
+        input wire tx_pause
     );
 
     parameter EMPTY_WIDTH = $clog2(KEEP_WIDTH);
@@ -586,9 +588,10 @@ module axis_xgmii_tx_64 #
 
         if (tx_pause) begin
             s_axis_tready_next=0;
-            //send idle
-            xgmii_txc_next={CTRL_WIDTH{XGMII_IDLE}};
-            xgmii_txd_next={CTRL_WIDTH{1'b1}};
+            swap_lanes_next=0;
+            // //send idle
+            // xgmii_txc_next={CTRL_WIDTH{XGMII_IDLE}};
+            // xgmii_txd_next={CTRL_WIDTH{1'b1}};
         end
     end
 

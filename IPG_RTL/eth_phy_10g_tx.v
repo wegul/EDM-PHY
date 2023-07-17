@@ -45,7 +45,7 @@ module eth_phy_10g_tx #
         //ipg data to be sent
         input wire [DATA_WIDTH-1:0] ipg_reply_chunk,
         input wire memq_write,
-        output wire [1:0] tuser
+        output wire tx_pause
     );
 
     // bus width assertions
@@ -82,7 +82,8 @@ module eth_phy_10g_tx #
                            .encoded_tx_data(encoded_tx_data),
                            .encoded_tx_hdr(encoded_tx_hdr),
                            .tx_bad_block(tx_bad_block),
-                           .netq_write(netq_write)
+                           .netq_write(netq_write),
+                           .tx_pause(tx_pause)
                        );
 
     wire [DATA_WIDTH-1:0] proced_encoded_tx_data;
@@ -97,7 +98,7 @@ module eth_phy_10g_tx #
                .memq_write(memq_write),
 
                .ipg_reply_chunk(ipg_reply_chunk),
-               .tuser(tuser),
+               .tx_pause(tx_pause),
                .encoded_tx_data(encoded_tx_data),
                .encoded_tx_hdr(encoded_tx_hdr),
                .proced_encoded_tx_data(proced_encoded_tx_data), // this might contain ipg msg

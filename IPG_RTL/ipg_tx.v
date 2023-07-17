@@ -25,7 +25,7 @@ module ipg_tx
         output reg [63:0] proced_encoded_tx_data,
         output reg [1:0] proced_encoded_tx_hdr,
 
-        output wire [1:0] tuser
+        output wire tx_pause
 
     );
 
@@ -155,7 +155,7 @@ module ipg_tx
 
                 .netfin(netfin),
                 .reqfin(reqfin),
-                .tuser(tuser),
+                .tx_pause(tx_pause),
                 .sel(mon_sel)// if 1, tx ipg. else tx net frame
             );
 
@@ -182,8 +182,8 @@ module ipg_tx
                 proced_encoded_tx_data = netq_outd;
             end
             default: begin
-                proced_encoded_tx_hdr = netq_outc;
-                proced_encoded_tx_data = netq_outd;
+                proced_encoded_tx_hdr = SYNC_CTRL;
+                proced_encoded_tx_data = 64'h0000000000000001e;
             end
         endcase
     end

@@ -1,0 +1,1601 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Fri Jul 14 12:50:22 2023
+# Process ID: 2414748
+# Current directory: /home/weigao/PHY-Project
+# Command line: vivado
+# Log file: /home/weigao/PHY-Project/vivado.log
+# Journal file: /home/weigao/PHY-Project/vivado.jou
+# Running On: atlas3, OS: Linux, CPU Frequency: 1200.012 MHz, CPU Physical cores: 23, Host memory: 201351 MB
+#-----------------------------------------------------------
+start_gui
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.0 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/1.0/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.0 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es:part0:1.2 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/es/1.2/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es_revb:part0:1.0 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120_revb/es/1.0/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180_es:part0:1.0 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/es/1.0/board.xml as part xcvp1802-lsvc4072-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+open_project /home/weigao/project_JUNE/project_JUNE.xpr
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory '/home/weigao/project_JUNE/project_JUNE.gen/sources_1'.
+CRITICAL WARNING: [Project 1-19] Could not find the file '/home/weigao/PHY-Project/rtl/axis_xgmii_rx_64.v'.
+CRITICAL WARNING: [Project 1-19] Could not find the file '/home/weigao/PHY-Project/rtl/axis_xgmii_tx_64.v'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/Xilinx/Vivado/2022.2/data/ip'.
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files /home/weigao/PHY-Project/rtl/axis_xgmii_rx_64.v] -no_script -reset -force -quiet
+remove_files  /home/weigao/PHY-Project/rtl/axis_xgmii_rx_64.v
+export_ip_user_files -of_objects  [get_files /home/weigao/PHY-Project/rtl/axis_xgmii_tx_64.v] -no_script -reset -force -quiet
+remove_files  /home/weigao/PHY-Project/rtl/axis_xgmii_tx_64.v
+import_files
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sim_1'
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
+export_ip_user_files -of_objects  [get_files /home/weigao/project_JUNE/project_JUNE.srcs/sources_1/imports/PHY-Project/IPG_RTL/debug/debug_ipg_tx.v] -no_script -reset -force -quiet
+remove_files  /home/weigao/project_JUNE/project_JUNE.srcs/sources_1/imports/PHY-Project/IPG_RTL/debug/debug_ipg_tx.v
+export_ip_user_files -of_objects  [get_files /home/weigao/project_JUNE/project_JUNE.srcs/sources_1/imports/PHY-Project/IPG_RTL/debug/debug_eth_phy_10g.v] -no_script -reset -force -quiet
+remove_files  /home/weigao/project_JUNE/project_JUNE.srcs/sources_1/imports/PHY-Project/IPG_RTL/debug/debug_eth_phy_10g.v
+export_ip_user_files -of_objects  [get_files /home/weigao/project_JUNE/project_JUNE.srcs/sources_1/imports/PHY-Project/IPG_RTL/debug/new_ipg_tx.v] -no_script -reset -force -quiet
+remove_files  /home/weigao/project_JUNE/project_JUNE.srcs/sources_1/imports/PHY-Project/IPG_RTL/debug/new_ipg_tx.v
+set_property top ipg_mac_phy_10g [current_fileset]
+export_ip_user_files -of_objects  [get_files /home/weigao/project_JUNE/project_JUNE.srcs/sources_1/imports/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v] -no_script -reset -force -quiet
+remove_files  /home/weigao/project_JUNE/project_JUNE.srcs/sources_1/imports/PHY-Project/IPG_RTL/debug/debug_ipg_proc.v
+update_compile_order -fileset sources_1
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.0 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/1.0/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.0 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es:part0:1.2 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/es/1.2/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es_revb:part0:1.0 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120_revb/es/1.0/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180_es:part0:1.0 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/es/1.0/board.xml as part xcvp1802-lsvc4072-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.0 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/1.0/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.0 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es:part0:1.2 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/es/1.2/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es_revb:part0:1.0 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120_revb/es/1.0/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180_es:part0:1.0 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/es/1.0/board.xml as part xcvp1802-lsvc4072-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.0 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/1.0/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.0 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es:part0:1.2 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/es/1.2/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es_revb:part0:1.0 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120_revb/es/1.0/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180_es:part0:1.0 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/es/1.0/board.xml as part xcvp1802-lsvc4072-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+close_project
+create_project project_JULY /home/weigao/project_JULY -part xcu250-figd2104-2L-e
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/Xilinx/Vivado/2022.2/data/ip'.
+set_property board_part xilinx.com:au250:part0:1.3 [current_project]
+add_files -norecurse -scan_for_includes {/home/weigao/PHY-Project/rtl/axis_eth_fcs_insert_64.v /home/weigao/PHY-Project/IPG_RTL/ipg_mac_phy_10g.v /home/weigao/PHY-Project/IPG_RTL/eth_mac_10g.v /home/weigao/PHY-Project/IPG_RTL/ipg_proc.v /home/weigao/PHY-Project/IPG_RTL/ipg_tx.v /home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx_if.v /home/weigao/PHY-Project/IPG_RTL/ipg_rx.v /home/weigao/PHY-Project/IPG_RTL/xgmii_baser_dec_64.v /home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx_if.v /home/weigao/PHY-Project/Buffer_RTL/job_fifo_buf.v /home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v /home/weigao/PHY-Project/Buffer_RTL/req_gen.v /home/weigao/PHY-Project/IPG_RTL/axis_xgmii_rx_64.v /home/weigao/PHY-Project/rtl/axis_eth_fcs_check_64.v /home/weigao/PHY-Project/Buffer_RTL/buf_mon.v /home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v /home/weigao/PHY-Project/IPG_RTL/eth_phy_10g.v /home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx.v /home/weigao/PHY-Project/IPG_RTL/xgmii_baser_enc_64.v /home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v /home/weigao/PHY-Project/IPG_RTL/axis_xgmii_tx_64.v /home/weigao/PHY-Project/Buffer_RTL/frame_filter.v /home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+set_property top ipg_mac_phy_10g [current_fileset]
+set_property dataflow_viewer_settings "min_width=16"   [current_fileset]
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'axis_eth_fcs_insert_64'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/home/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'axis_eth_fcs_insert_64' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj axis_eth_fcs_insert_64_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/axis_eth_fcs_insert_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_eth_fcs_insert_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot axis_eth_fcs_insert_64_behav xil_defaultlib.axis_eth_fcs_insert_64 xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot axis_eth_fcs_insert_64_behav xil_defaultlib.axis_eth_fcs_insert_64 xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+ERROR: [VRFC 10-2063] Module <lfsr> not found while processing module instance <eth_crc_8> [/home/weigao/PHY-Project/rtl/axis_eth_fcs_insert_64.v:124]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+update_compile_order -fileset sources_1
+add_files -norecurse -scan_for_includes /home/weigao/PHY-Project/rtl/lfsr.v
+update_compile_order -fileset sources_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'axis_eth_fcs_insert_64'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/home/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'axis_eth_fcs_insert_64' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj axis_eth_fcs_insert_64_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/lfsr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lfsr
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot axis_eth_fcs_insert_64_behav xil_defaultlib.axis_eth_fcs_insert_64 xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot axis_eth_fcs_insert_64_behav xil_defaultlib.axis_eth_fcs_insert_64 xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.axis_eth_fcs_insert_64
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot axis_eth_fcs_insert_64_behav
+execute_script: Time (s): cpu = 00:00:12 ; elapsed = 00:00:06 . Memory (MB): peak = 7717.910 ; gain = 0.000 ; free physical = 171092 ; free virtual = 231638
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "axis_eth_fcs_insert_64_behav -key {Behavioral:sim_1:Functional:axis_eth_fcs_insert_64} -tclbatch {axis_eth_fcs_insert_64.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source axis_eth_fcs_insert_64.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'axis_eth_fcs_insert_64_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:22 ; elapsed = 00:00:11 . Memory (MB): peak = 7717.910 ; gain = 0.000 ; free physical = 171002 ; free virtual = 231548
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse -scan_for_includes {/home/weigao/PHY-Project/IPG_TB/test_ipg_proc.v /home/weigao/PHY-Project/IPG_TB/vivadotest_ipg_mac_phy_10g.v /home/weigao/PHY-Project/IPG_TB/test_buf.v /home/weigao/PHY-Project/IPG_TB/test_ipg_mac_phy.v /home/weigao/PHY-Project/IPG_TB/test_eth_phy_rx.v {/home/weigao/PHY-Project/IPG_TB/vivadotest_ipg_mac_phy_10g _2P.v} /home/weigao/PHY-Project/IPG_TB/test_eth_phy.v /home/weigao/PHY-Project/IPG_TB/test_new_ipg_tx.v}
+update_compile_order -fileset sim_1
+set_property top test_ipg_mac_phy [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_mac_phy'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/home/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'test_ipg_mac_phy' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_ipg_mac_phy_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_rx_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_xgmii_rx_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_tx_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_xgmii_tx_64
+ERROR: [VRFC 10-2989] 'tx_pause' is not declared [/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_tx_64.v:587]
+ERROR: [VRFC 10-8530] module 'axis_xgmii_tx_64' is ignored due to previous errors [/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_tx_64.v:34]
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-99] Step results log file:'/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim/xvlog.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_mac_phy'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/home/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'test_ipg_mac_phy' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_ipg_mac_phy_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_rx_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_xgmii_rx_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_tx_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_xgmii_tx_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module buf_mon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_mac_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_mac_10g
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx_if.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_if
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx_if.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_tx_if
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_mac_phy_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_mac_phy_10g
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_rx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_rx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/job_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module job_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mem_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module net_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module req_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/req_gen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module req_gen
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/xgmii_baser_dec_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xgmii_baser_dec_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/xgmii_baser_enc_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xgmii_baser_enc_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_ipg_mac_phy.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_ipg_mac_phy
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_mac_phy'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_mac_phy_behav xil_defaultlib.test_ipg_mac_phy xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_mac_phy_behav xil_defaultlib.test_ipg_mac_phy xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+ERROR: [VRFC 10-2063] Module <eth_phy_10g_rx_frame_sync> not found while processing module instance <eth_phy_10g_rx_frame_sync_inst> [/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx_if.v:203]
+ERROR: [VRFC 10-2063] Module <eth_phy_10g_rx_ber_mon> not found while processing module instance <eth_phy_10g_rx_ber_mon_inst> [/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx_if.v:216]
+ERROR: [VRFC 10-2063] Module <eth_phy_10g_rx_watchdog> not found while processing module instance <eth_phy_10g_rx_watchdog_inst> [/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx_if.v:227]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+
+add_files -norecurse -scan_for_includes {/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_ber_mon.v /home/weigao/PHY-Project/rtl/eth_phy_10g_rx_frame_sync.v /home/weigao/PHY-Project/rtl/eth_phy_10g_rx_watchdog.v}
+update_compile_order -fileset sources_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_mac_phy'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/home/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'test_ipg_mac_phy' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_ipg_mac_phy_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_ber_mon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_ber_mon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_frame_sync.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_frame_sync
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_watchdog.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_watchdog
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_mac_phy_behav xil_defaultlib.test_ipg_mac_phy xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_mac_phy_behav xil_defaultlib.test_ipg_mac_phy xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+ERROR: [VRFC 10-3180] cannot find port 'tx_pause' on this module [/home/weigao/PHY-Project/IPG_RTL/eth_mac_10g.v:188]
+ERROR: [VRFC 10-8530] module 'eth_phy_10g(CTRL_WIDTH=8,TX_SERDES_PIPELINE=2,RX_SERDES_PIPELINE=2,COUNT_125US=19531.25)' is ignored due to previous errors [/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g.v:9]
+ERROR: [VRFC 10-8530] module 'eth_phy_10g_rx(CTRL_WIDTH=8,SERDES_PIPELINE=2,COUNT_125US=19531.25)' is ignored due to previous errors [/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx.v:10]
+ERROR: [VRFC 10-8530] module 'eth_phy_10g_tx(CTRL_WIDTH=8,SERDES_PIPELINE=2)' is ignored due to previous errors [/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v:9]
+ERROR: [VRFC 10-8530] module 'eth_phy_10g_rx_if(SERDES_PIPELINE=2,COUNT_125US=19531.25)' is ignored due to previous errors [/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx_if.v:9]
+ERROR: [VRFC 10-8530] module 'xgmii_baser_dec_64(CTRL_WIDTH=8)' is ignored due to previous errors [/home/weigao/PHY-Project/IPG_RTL/xgmii_baser_dec_64.v:34]
+ERROR: [VRFC 10-8530] module 'xgmii_baser_enc_64(CTRL_WIDTH=8)' is ignored due to previous errors [/home/weigao/PHY-Project/IPG_RTL/xgmii_baser_enc_64.v:34]
+ERROR: [VRFC 10-8530] module 'eth_phy_10g_tx_if(SCRAMBLER_DISABLE=1,SERDES_PIPELINE=2)' is ignored due to previous errors [/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx_if.v:9]
+ERROR: [VRFC 10-8530] module 'lfsr(LFSR_WIDTH=58,REVERSE=1,DATA_WIDTH=64)' is ignored due to previous errors [/home/weigao/PHY-Project/rtl/lfsr.v:34]
+ERROR: [VRFC 10-8530] module 'eth_phy_10g_rx_frame_sync_default' is ignored due to previous errors [/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_frame_sync.v:34]
+ERROR: [VRFC 10-8530] module 'eth_phy_10g_rx_ber_mon(COUNT_125US=19531.25)' is ignored due to previous errors [/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_ber_mon.v:34]
+ERROR: [VRFC 10-8530] module 'eth_phy_10g_rx_watchdog(COUNT_125US=19531.25)' is ignored due to previous errors [/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_watchdog.v:34]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'test_ipg_mac_phy'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/home/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'test_ipg_mac_phy' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_ipg_mac_phy_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_rx_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_xgmii_rx_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_tx_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_xgmii_tx_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module buf_mon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_mac_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_mac_10g
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_ber_mon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_ber_mon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_frame_sync.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_frame_sync
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx_if.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_if
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_watchdog.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_watchdog
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx_if.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_tx_if
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_mac_phy_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_mac_phy_10g
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_rx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_rx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/job_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module job_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/lfsr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lfsr
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mem_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module net_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module req_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/req_gen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module req_gen
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/xgmii_baser_dec_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xgmii_baser_dec_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/xgmii_baser_enc_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xgmii_baser_enc_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_ipg_mac_phy.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_ipg_mac_phy
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_mac_phy_behav xil_defaultlib.test_ipg_mac_phy xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_ipg_mac_phy_behav xil_defaultlib.test_ipg_mac_phy xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 11 for port 'space' [/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v:275]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 2 for port 'proced_encoded_tx_hdr' [/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v:104]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 2 for port 'encoded_tx_hdr' [/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v:119]
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v:196]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_gen.v" Line 1. Module req_gen doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" Line 1. Module req_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" Line 1. Module mem_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" Line 1. Module net_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" Line 1. Module buf_mon doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_gen.v" Line 1. Module req_gen doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" Line 1. Module req_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" Line 1. Module mem_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" Line 1. Module net_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" Line 1. Module buf_mon doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.axis_xgmii_rx_64(KEEP_WIDTH=8,CT...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.axis_xgmii_tx_64(KEEP_WIDTH=8,CT...
+Compiling module xil_defaultlib.eth_mac_10g(KEEP_WIDTH=8,CTRL_WI...
+Compiling module xil_defaultlib.job_fifo_buf
+Compiling module xil_defaultlib.ipg_proc
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=58,REVERSE=1,DAT...
+Compiling module xil_defaultlib.lfsr(REVERSE=1,DATA_WIDTH=66)
+Compiling module xil_defaultlib.eth_phy_10g_rx_frame_sync_defaul...
+Compiling module xil_defaultlib.eth_phy_10g_rx_ber_mon(COUNT_125...
+Compiling module xil_defaultlib.eth_phy_10g_rx_watchdog(COUNT_12...
+Compiling module xil_defaultlib.eth_phy_10g_rx_if(SERDES_PIPELIN...
+Compiling module xil_defaultlib.ipg_rx
+Compiling module xil_defaultlib.xgmii_baser_dec_64(CTRL_WIDTH=8)
+Compiling module xil_defaultlib.eth_phy_10g_rx(CTRL_WIDTH=8,SERD...
+Compiling module xil_defaultlib.xgmii_baser_enc_64(CTRL_WIDTH=8)
+Compiling module xil_defaultlib.req_gen
+Compiling module xil_defaultlib.req_fifo_buf
+Compiling module xil_defaultlib.mem_fifo_buf
+Compiling module xil_defaultlib.net_fifo_buf
+Compiling module xil_defaultlib.buf_mon
+Compiling module xil_defaultlib.ipg_tx
+Compiling module xil_defaultlib.eth_phy_10g_tx_if(SCRAMBLER_DISA...
+Compiling module xil_defaultlib.eth_phy_10g_tx(CTRL_WIDTH=8,SERD...
+Compiling module xil_defaultlib.eth_phy_10g(CTRL_WIDTH=8,TX_SERD...
+Compiling module xil_defaultlib.ipg_mac_phy_10g(KEEP_WIDTH=8,TX_...
+Compiling module xil_defaultlib.test_ipg_mac_phy
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_ipg_mac_phy_behav
+execute_script: Time (s): cpu = 00:00:15 ; elapsed = 00:00:06 . Memory (MB): peak = 7816.637 ; gain = 0.000 ; free physical = 171097 ; free virtual = 231650
+INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "test_ipg_mac_phy_behav -key {Behavioral:sim_1:Functional:test_ipg_mac_phy} -tclbatch {test_ipg_mac_phy.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source test_ipg_mac_phy.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+$finish called at time : 168 ns : File "/home/weigao/PHY-Project/IPG_TB/test_ipg_mac_phy.v" Line 231
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'test_ipg_mac_phy_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:26 ; elapsed = 00:00:11 . Memory (MB): peak = 7874.441 ; gain = 57.805 ; free physical = 171059 ; free virtual = 231614
+current_sim simulation_1
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse -scan_for_includes /home/weigao/PHY-Project/IPG_TB/test_mac_10g.v
+update_compile_order -fileset sim_1
+set_property top test_mac_10g [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_10g'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/home/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'test_mac_10g' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_mac_10g_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_rx_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_xgmii_rx_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_tx_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_xgmii_tx_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_mac_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_mac_10g
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/lfsr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lfsr
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_mac_10g
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_10g_behav xil_defaultlib.test_mac_10g xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_10g_behav xil_defaultlib.test_mac_10g xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-5021] port 'tx_ptp_ts' is not connected on this instance [/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v:145]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.axis_xgmii_rx_64(KEEP_WIDTH=8,CT...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.axis_xgmii_tx_64(KEEP_WIDTH=8,CT...
+Compiling module xil_defaultlib.eth_mac_10g(KEEP_WIDTH=8,CTRL_WI...
+Compiling module xil_defaultlib.test_mac_10g
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_mac_10g_behav
+execute_script: Time (s): cpu = 00:00:11 ; elapsed = 00:00:06 . Memory (MB): peak = 7876.457 ; gain = 0.000 ; free physical = 170991 ; free virtual = 231550
+INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "test_mac_10g_behav -key {Behavioral:sim_1:Functional:test_mac_10g} -tclbatch {test_mac_10g.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source test_mac_10g.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'test_mac_10g_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:16 ; elapsed = 00:00:11 . Memory (MB): peak = 7911.473 ; gain = 35.016 ; free physical = 170977 ; free virtual = 231536
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_10g'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_mac_10g_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_mac_10g
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_10g'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_10g_behav xil_defaultlib.test_mac_10g xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_10g_behav xil_defaultlib.test_mac_10g xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-5021] port 'tx_ptp_ts' is not connected on this instance [/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v:147]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.axis_xgmii_rx_64(KEEP_WIDTH=8,CT...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.axis_xgmii_tx_64(KEEP_WIDTH=8,CT...
+Compiling module xil_defaultlib.eth_mac_10g(KEEP_WIDTH=8,CTRL_WI...
+Compiling module xil_defaultlib.test_mac_10g
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_mac_10g_behav
+execute_script: Time (s): cpu = 00:00:13 ; elapsed = 00:00:06 . Memory (MB): peak = 7936.516 ; gain = 0.000 ; free physical = 170982 ; free virtual = 231542
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+launch_simulation: Time (s): cpu = 00:00:13 ; elapsed = 00:00:06 . Memory (MB): peak = 7936.516 ; gain = 0.000 ; free physical = 170982 ; free virtual = 231542
+Time resolution is 1 ps
+$finish called at time : 98 ns : File "/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v" Line 139
+relaunch_sim: Time (s): cpu = 00:00:16 ; elapsed = 00:00:10 . Memory (MB): peak = 7938.504 ; gain = 1.988 ; free physical = 170980 ; free virtual = 231540
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_10g'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_mac_10g_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_rx_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_xgmii_rx_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_tx_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_xgmii_tx_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_mac_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_mac_10g
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/lfsr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lfsr
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_mac_10g
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_10g'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_10g_behav xil_defaultlib.test_mac_10g xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_10g_behav xil_defaultlib.test_mac_10g xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-5021] port 'tx_ptp_ts' is not connected on this instance [/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v:146]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.axis_xgmii_rx_64(KEEP_WIDTH=8,CT...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.axis_xgmii_tx_64(KEEP_WIDTH=8,CT...
+Compiling module xil_defaultlib.eth_mac_10g(KEEP_WIDTH=8,CTRL_WI...
+Compiling module xil_defaultlib.test_mac_10g
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_mac_10g_behav
+execute_script: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 7959.543 ; gain = 0.000 ; free physical = 170986 ; free virtual = 231546
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+launch_simulation: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 7959.543 ; gain = 0.000 ; free physical = 170986 ; free virtual = 231546
+Time resolution is 1 ps
+$finish called at time : 50 ns : File "/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v" Line 138
+relaunch_sim: Time (s): cpu = 00:00:13 ; elapsed = 00:00:10 . Memory (MB): peak = 7964.531 ; gain = 4.988 ; free physical = 170991 ; free virtual = 231551
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_10g'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_mac_10g_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_rx_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_xgmii_rx_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_tx_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_xgmii_tx_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_mac_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_mac_10g
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/lfsr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lfsr
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_mac_10g
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_10g'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_10g_behav xil_defaultlib.test_mac_10g xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_10g_behav xil_defaultlib.test_mac_10g xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-5021] port 'tx_ptp_ts' is not connected on this instance [/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v:146]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.axis_xgmii_rx_64(KEEP_WIDTH=8,CT...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.axis_xgmii_tx_64(KEEP_WIDTH=8,CT...
+Compiling module xil_defaultlib.eth_mac_10g(KEEP_WIDTH=8,CTRL_WI...
+Compiling module xil_defaultlib.test_mac_10g
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_mac_10g_behav
+execute_script: Time (s): cpu = 00:00:11 ; elapsed = 00:00:06 . Memory (MB): peak = 7972.539 ; gain = 0.000 ; free physical = 170989 ; free virtual = 231549
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+launch_simulation: Time (s): cpu = 00:00:11 ; elapsed = 00:00:06 . Memory (MB): peak = 7972.539 ; gain = 0.000 ; free physical = 170989 ; free virtual = 231549
+Time resolution is 1 ps
+$finish called at time : 50 ns : File "/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v" Line 138
+relaunch_sim: Time (s): cpu = 00:00:14 ; elapsed = 00:00:10 . Memory (MB): peak = 7981.539 ; gain = 9.000 ; free physical = 170997 ; free virtual = 231557
+current_wave_config {Untitled 3}
+Untitled 3
+add_wave {{/test_mac_10g/rx_clk}} {{/test_mac_10g/tx_clk}} 
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_10g'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_mac_10g_vlog.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_10g'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_10g_behav xil_defaultlib.test_mac_10g xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_10g_behav xil_defaultlib.test_mac_10g xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-5021] port 'tx_ptp_ts' is not connected on this instance [/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v:146]
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Time resolution is 1 ps
+$finish called at time : 50 ns : File "/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v" Line 138
+relaunch_sim: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 7983.539 ; gain = 0.000 ; free physical = 170970 ; free virtual = 231531
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_10g'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_mac_10g_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_rx_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_xgmii_rx_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_tx_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_xgmii_tx_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_mac_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_mac_10g
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/lfsr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lfsr
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_mac_10g
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_10g'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_10g_behav xil_defaultlib.test_mac_10g xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_10g_behav xil_defaultlib.test_mac_10g xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-5021] port 'tx_ptp_ts' is not connected on this instance [/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v:148]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.axis_xgmii_rx_64(KEEP_WIDTH=8,CT...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.axis_xgmii_tx_64(KEEP_WIDTH=8,CT...
+Compiling module xil_defaultlib.eth_mac_10g(KEEP_WIDTH=8,CTRL_WI...
+Compiling module xil_defaultlib.test_mac_10g
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_mac_10g_behav
+execute_script: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 7999.551 ; gain = 0.000 ; free physical = 170967 ; free virtual = 231528
+INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
+launch_simulation: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 7999.551 ; gain = 0.000 ; free physical = 170967 ; free virtual = 231528
+Time resolution is 1 ps
+$finish called at time : 50 ns : File "/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v" Line 140
+relaunch_sim: Time (s): cpu = 00:00:14 ; elapsed = 00:00:11 . Memory (MB): peak = 8007.551 ; gain = 8.000 ; free physical = 170972 ; free virtual = 231532
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_10g'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_mac_10g_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_rx_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_xgmii_rx_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_tx_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_xgmii_tx_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_mac_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_mac_10g
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/lfsr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lfsr
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_mac_10g
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_10g'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_10g_behav xil_defaultlib.test_mac_10g xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_10g_behav xil_defaultlib.test_mac_10g xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-5021] port 'tx_ptp_ts' is not connected on this instance [/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v:148]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.axis_xgmii_rx_64(KEEP_WIDTH=8,CT...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.axis_xgmii_tx_64(KEEP_WIDTH=8,CT...
+Compiling module xil_defaultlib.eth_mac_10g(KEEP_WIDTH=8,CTRL_WI...
+Compiling module xil_defaultlib.test_mac_10g
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_mac_10g_behav
+execute_script: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 8007.582 ; gain = 0.000 ; free physical = 170976 ; free virtual = 231537
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+launch_simulation: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 8007.582 ; gain = 0.000 ; free physical = 170976 ; free virtual = 231537
+Time resolution is 1 ps
+$finish called at time : 30 ns : File "/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v" Line 140
+relaunch_sim: Time (s): cpu = 00:00:14 ; elapsed = 00:00:11 . Memory (MB): peak = 8014.555 ; gain = 6.973 ; free physical = 170968 ; free virtual = 231529
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_10g'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_mac_10g_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_rx_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_xgmii_rx_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_tx_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_xgmii_tx_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_mac_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_mac_10g
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/lfsr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lfsr
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_mac_10g
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_10g'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_10g_behav xil_defaultlib.test_mac_10g xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_10g_behav xil_defaultlib.test_mac_10g xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-5021] port 'tx_ptp_ts' is not connected on this instance [/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v:150]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.axis_xgmii_rx_64(KEEP_WIDTH=8,CT...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.axis_xgmii_tx_64(KEEP_WIDTH=8,CT...
+Compiling module xil_defaultlib.eth_mac_10g(KEEP_WIDTH=8,CTRL_WI...
+Compiling module xil_defaultlib.test_mac_10g
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_mac_10g_behav
+execute_script: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 8075.586 ; gain = 0.000 ; free physical = 170971 ; free virtual = 231532
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+launch_simulation: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 8075.586 ; gain = 0.000 ; free physical = 170971 ; free virtual = 231532
+Time resolution is 1 ps
+$finish called at time : 32 ns : File "/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v" Line 142
+relaunch_sim: Time (s): cpu = 00:00:14 ; elapsed = 00:00:11 . Memory (MB): peak = 8079.586 ; gain = 4.000 ; free physical = 170952 ; free virtual = 231513
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_10g'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_mac_10g_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_rx_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_xgmii_rx_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_tx_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_xgmii_tx_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_mac_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_mac_10g
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/lfsr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lfsr
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_mac_10g
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_10g'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_10g_behav xil_defaultlib.test_mac_10g xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_10g_behav xil_defaultlib.test_mac_10g xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-5021] port 'tx_ptp_ts' is not connected on this instance [/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v:150]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.axis_xgmii_rx_64(KEEP_WIDTH=8,CT...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.axis_xgmii_tx_64(KEEP_WIDTH=8,CT...
+Compiling module xil_defaultlib.eth_mac_10g(KEEP_WIDTH=8,CTRL_WI...
+Compiling module xil_defaultlib.test_mac_10g
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_mac_10g_behav
+execute_script: Time (s): cpu = 00:00:11 ; elapsed = 00:00:06 . Memory (MB): peak = 8079.617 ; gain = 0.000 ; free physical = 170970 ; free virtual = 231531
+INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
+launch_simulation: Time (s): cpu = 00:00:11 ; elapsed = 00:00:06 . Memory (MB): peak = 8079.617 ; gain = 0.000 ; free physical = 170970 ; free virtual = 231531
+Time resolution is 1 ps
+$finish called at time : 32 ns : File "/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v" Line 142
+relaunch_sim: Time (s): cpu = 00:00:15 ; elapsed = 00:00:10 . Memory (MB): peak = 8086.590 ; gain = 7.000 ; free physical = 170968 ; free virtual = 231530
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_10g'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_mac_10g_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_rx_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_xgmii_rx_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_tx_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_xgmii_tx_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_mac_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_mac_10g
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/lfsr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lfsr
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_mac_10g
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_10g'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_10g_behav xil_defaultlib.test_mac_10g xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_10g_behav xil_defaultlib.test_mac_10g xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-5021] port 'tx_ptp_ts' is not connected on this instance [/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v:150]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.axis_xgmii_rx_64(KEEP_WIDTH=8,CT...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.axis_xgmii_tx_64(KEEP_WIDTH=8,CT...
+Compiling module xil_defaultlib.eth_mac_10g(KEEP_WIDTH=8,CTRL_WI...
+Compiling module xil_defaultlib.test_mac_10g
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_mac_10g_behav
+execute_script: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 8099.625 ; gain = 0.000 ; free physical = 170987 ; free virtual = 231548
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+launch_simulation: Time (s): cpu = 00:00:11 ; elapsed = 00:00:07 . Memory (MB): peak = 8099.625 ; gain = 0.000 ; free physical = 170987 ; free virtual = 231548
+Time resolution is 1 ps
+$finish called at time : 34 ns : File "/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v" Line 142
+relaunch_sim: Time (s): cpu = 00:00:13 ; elapsed = 00:00:10 . Memory (MB): peak = 8107.598 ; gain = 7.973 ; free physical = 170981 ; free virtual = 231543
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_10g'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_mac_10g_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_rx_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_xgmii_rx_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_tx_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_xgmii_tx_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_mac_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_mac_10g
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/lfsr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lfsr
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_mac_10g
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_10g'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_10g_behav xil_defaultlib.test_mac_10g xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_10g_behav xil_defaultlib.test_mac_10g xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-5021] port 'tx_ptp_ts' is not connected on this instance [/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v:150]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.axis_xgmii_rx_64(KEEP_WIDTH=8,CT...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.axis_xgmii_tx_64(KEEP_WIDTH=8,CT...
+Compiling module xil_defaultlib.eth_mac_10g(KEEP_WIDTH=8,CTRL_WI...
+Compiling module xil_defaultlib.test_mac_10g
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_mac_10g_behav
+execute_script: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 8107.629 ; gain = 0.000 ; free physical = 170982 ; free virtual = 231543
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+launch_simulation: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 8107.629 ; gain = 0.000 ; free physical = 170982 ; free virtual = 231543
+Time resolution is 1 ps
+$finish called at time : 34 ns : File "/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v" Line 142
+relaunch_sim: Time (s): cpu = 00:00:13 ; elapsed = 00:00:10 . Memory (MB): peak = 8112.602 ; gain = 4.973 ; free physical = 170973 ; free virtual = 231535
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_10g'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_mac_10g_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_rx_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_xgmii_rx_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_tx_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_xgmii_tx_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_mac_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_mac_10g
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/lfsr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lfsr
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_mac_10g
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_10g'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_10g_behav xil_defaultlib.test_mac_10g xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_10g_behav xil_defaultlib.test_mac_10g xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-5021] port 'tx_ptp_ts' is not connected on this instance [/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v:150]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.axis_xgmii_rx_64(KEEP_WIDTH=8,CT...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.axis_xgmii_tx_64(KEEP_WIDTH=8,CT...
+Compiling module xil_defaultlib.eth_mac_10g(KEEP_WIDTH=8,CTRL_WI...
+Compiling module xil_defaultlib.test_mac_10g
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_mac_10g_behav
+execute_script: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 8120.637 ; gain = 0.000 ; free physical = 170992 ; free virtual = 231553
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+launch_simulation: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 8120.637 ; gain = 0.000 ; free physical = 170992 ; free virtual = 231553
+Time resolution is 1 ps
+$finish called at time : 32 ns : File "/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v" Line 142
+relaunch_sim: Time (s): cpu = 00:00:13 ; elapsed = 00:00:10 . Memory (MB): peak = 8127.609 ; gain = 6.973 ; free physical = 170989 ; free virtual = 231550
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_10g'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_mac_10g_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_rx_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_xgmii_rx_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_tx_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_xgmii_tx_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_mac_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_mac_10g
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/lfsr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lfsr
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_mac_10g
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_10g'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_10g_behav xil_defaultlib.test_mac_10g xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_10g_behav xil_defaultlib.test_mac_10g xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-5021] port 'tx_ptp_ts' is not connected on this instance [/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v:151]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.axis_xgmii_rx_64(KEEP_WIDTH=8,CT...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.axis_xgmii_tx_64(KEEP_WIDTH=8,CT...
+Compiling module xil_defaultlib.eth_mac_10g(KEEP_WIDTH=8,CTRL_WI...
+Compiling module xil_defaultlib.test_mac_10g
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_mac_10g_behav
+execute_script: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 8183.668 ; gain = 0.000 ; free physical = 170963 ; free virtual = 231524
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+launch_simulation: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 8183.668 ; gain = 0.000 ; free physical = 170963 ; free virtual = 231524
+Time resolution is 1 ps
+$finish called at time : 34 ns : File "/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v" Line 143
+relaunch_sim: Time (s): cpu = 00:00:13 ; elapsed = 00:00:10 . Memory (MB): peak = 8191.641 ; gain = 7.973 ; free physical = 170962 ; free virtual = 231523
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_10g'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_mac_10g_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_rx_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_xgmii_rx_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_tx_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_xgmii_tx_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_mac_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_mac_10g
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/lfsr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lfsr
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_mac_10g
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_10g'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_10g_behav xil_defaultlib.test_mac_10g xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_10g_behav xil_defaultlib.test_mac_10g xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-5021] port 'tx_ptp_ts' is not connected on this instance [/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v:151]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.axis_xgmii_rx_64(KEEP_WIDTH=8,CT...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.axis_xgmii_tx_64(KEEP_WIDTH=8,CT...
+Compiling module xil_defaultlib.eth_mac_10g(KEEP_WIDTH=8,CTRL_WI...
+Compiling module xil_defaultlib.test_mac_10g
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_mac_10g_behav
+execute_script: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 8191.672 ; gain = 0.000 ; free physical = 170977 ; free virtual = 231538
+INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
+launch_simulation: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 8191.672 ; gain = 0.000 ; free physical = 170977 ; free virtual = 231538
+Time resolution is 1 ps
+$finish called at time : 40 ns : File "/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v" Line 143
+relaunch_sim: Time (s): cpu = 00:00:13 ; elapsed = 00:00:10 . Memory (MB): peak = 8199.645 ; gain = 7.973 ; free physical = 170981 ; free virtual = 231543
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_10g'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_mac_10g_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_rx_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_xgmii_rx_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_tx_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_xgmii_tx_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_mac_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_mac_10g
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/lfsr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lfsr
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_mac_10g
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_10g'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_10g_behav xil_defaultlib.test_mac_10g xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_10g_behav xil_defaultlib.test_mac_10g xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-5021] port 'tx_ptp_ts' is not connected on this instance [/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v:152]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.axis_xgmii_rx_64(KEEP_WIDTH=8,CT...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.axis_xgmii_tx_64(KEEP_WIDTH=8,CT...
+Compiling module xil_defaultlib.eth_mac_10g(KEEP_WIDTH=8,CTRL_WI...
+Compiling module xil_defaultlib.test_mac_10g
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_mac_10g_behav
+execute_script: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 8199.676 ; gain = 0.000 ; free physical = 170961 ; free virtual = 231531
+INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
+launch_simulation: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 8199.676 ; gain = 0.000 ; free physical = 170961 ; free virtual = 231531
+Time resolution is 1 ps
+$finish called at time : 40 ns : File "/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v" Line 144
+relaunch_sim: Time (s): cpu = 00:00:13 ; elapsed = 00:00:10 . Memory (MB): peak = 8206.648 ; gain = 6.973 ; free physical = 170958 ; free virtual = 231528
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_10g'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_mac_10g_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_rx_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_xgmii_rx_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_tx_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_xgmii_tx_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_mac_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_mac_10g
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/lfsr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lfsr
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_mac_10g
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_10g'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_10g_behav xil_defaultlib.test_mac_10g xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_10g_behav xil_defaultlib.test_mac_10g xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-5021] port 'tx_ptp_ts' is not connected on this instance [/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v:152]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.axis_xgmii_rx_64(KEEP_WIDTH=8,CT...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.axis_xgmii_tx_64(KEEP_WIDTH=8,CT...
+Compiling module xil_defaultlib.eth_mac_10g(KEEP_WIDTH=8,CTRL_WI...
+Compiling module xil_defaultlib.test_mac_10g
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_mac_10g_behav
+execute_script: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 8206.680 ; gain = 0.000 ; free physical = 170973 ; free virtual = 231544
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+launch_simulation: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 8206.680 ; gain = 0.000 ; free physical = 170973 ; free virtual = 231544
+Time resolution is 1 ps
+$finish called at time : 40 ns : File "/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v" Line 144
+relaunch_sim: Time (s): cpu = 00:00:12 ; elapsed = 00:00:10 . Memory (MB): peak = 8214.652 ; gain = 7.973 ; free physical = 170978 ; free virtual = 231548
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_10g'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_mac_10g_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_rx_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_xgmii_rx_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_tx_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_xgmii_tx_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_mac_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_mac_10g
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/lfsr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lfsr
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_mac_10g
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_10g'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_10g_behav xil_defaultlib.test_mac_10g xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_10g_behav xil_defaultlib.test_mac_10g xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-5021] port 'tx_ptp_ts' is not connected on this instance [/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v:152]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.axis_xgmii_rx_64(KEEP_WIDTH=8,CT...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.axis_xgmii_tx_64(KEEP_WIDTH=8,CT...
+Compiling module xil_defaultlib.eth_mac_10g(KEEP_WIDTH=8,CTRL_WI...
+Compiling module xil_defaultlib.test_mac_10g
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_mac_10g_behav
+execute_script: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 8239.668 ; gain = 0.000 ; free physical = 171058 ; free virtual = 231629
+INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
+launch_simulation: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 8239.668 ; gain = 0.000 ; free physical = 171058 ; free virtual = 231629
+Time resolution is 1 ps
+$finish called at time : 40 ns : File "/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v" Line 144
+relaunch_sim: Time (s): cpu = 00:00:15 ; elapsed = 00:00:10 . Memory (MB): peak = 8246.668 ; gain = 7.000 ; free physical = 171053 ; free virtual = 231624
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_10g'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_mac_10g_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_rx_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_xgmii_rx_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_tx_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_xgmii_tx_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_mac_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_mac_10g
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/lfsr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lfsr
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_mac_10g
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_10g'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_10g_behav xil_defaultlib.test_mac_10g xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_10g_behav xil_defaultlib.test_mac_10g xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-5021] port 'tx_ptp_ts' is not connected on this instance [/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v:152]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.axis_xgmii_rx_64(KEEP_WIDTH=8,CT...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.axis_xgmii_tx_64(KEEP_WIDTH=8,CT...
+Compiling module xil_defaultlib.eth_mac_10g(KEEP_WIDTH=8,CTRL_WI...
+Compiling module xil_defaultlib.test_mac_10g
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_mac_10g_behav
+execute_script: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 8315.730 ; gain = 0.000 ; free physical = 171052 ; free virtual = 231623
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+launch_simulation: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 8315.730 ; gain = 0.000 ; free physical = 171052 ; free virtual = 231623
+Time resolution is 1 ps
+$finish called at time : 40 ns : File "/home/weigao/PHY-Project/IPG_TB/test_mac_10g.v" Line 144
+relaunch_sim: Time (s): cpu = 00:00:13 ; elapsed = 00:00:10 . Memory (MB): peak = 8318.703 ; gain = 2.973 ; free physical = 171057 ; free virtual = 231627
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1

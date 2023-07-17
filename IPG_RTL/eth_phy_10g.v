@@ -62,22 +62,20 @@ module eth_phy_10g #
         input  wire                  rx_prbs31_enable,
 
         //back pressure
-        output wire [1:0] tuser
+        output wire tx_pause
     );
     localparam RX_COUNT=6;
     // ipg customize
-    // wire [DATA_WIDTH-1:0] rx_ipg_data;
     wire [DATA_WIDTH-1:0] ipg_reply_chunk;
-    wire [RX_COUNT-1:0] rx_len;
-
 
     wire [DATA_WIDTH-1:0] netq_ind;
     wire [CTRL_WIDTH-1:0] netq_inc;
     wire [DATA_WIDTH-1:0] rx_ipg_data;
+    wire [RX_COUNT-1:0] rx_len;
     wire memq_write,jobq_write;
 
-
-    assign jobq_write = (rx_len>0) ? 1 : 0;
+    //exclude those short ipg
+    assign jobq_write = (rx_len>0 && (rx_ipg_data[7:0]==8'h1e)) ? 1 : 0;
 
 
     //generate reply or write stuff to RAM
@@ -147,7 +145,7 @@ module eth_phy_10g #
                        // input ipg data to be sent
                        .ipg_reply_chunk(ipg_reply_chunk),
                        .memq_write(memq_write),
-                       .tuser(tuser)
+                       .tx_pause(tx_pause)
                    );
 
 endmodule

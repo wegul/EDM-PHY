@@ -203,6 +203,7 @@ module xgmii_baser_dec_64 #
             xgmii_rxd_next = encoded_rx_data;
             xgmii_rxc_next = 8'h00;
             rx_bad_block_next = 1'b0;
+
         end else if (encoded_rx_hdr == SYNC_CTRL) begin
             case (encoded_rx_data[7:0])
                 BLOCK_TYPE_CTRL: begin
@@ -368,6 +369,8 @@ module xgmii_baser_dec_64 #
             xgmii_rxd_next = {8{XGMII_ERROR}};
             xgmii_rxc_next = 8'hff;
             rx_bad_block_next = 1'b1;
+            // $display("in data, bad block=%b,\n err=%b\n %h",rx_bad_block_next,decode_err,encoded_rx_data);
+
             // $display("else: %b , %h, %h",rx_bad_block_next,encoded_rx_data,encoded_rx_hdr);
         end
     end

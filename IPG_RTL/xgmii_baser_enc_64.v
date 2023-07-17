@@ -1,26 +1,3 @@
-/*
-
-Copyright (c) 2018 Alex Forencich
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
-
-*/
 
 // Language: Verilog 2001
 
@@ -59,7 +36,8 @@ module xgmii_baser_enc_64 #
         output wire                  tx_bad_block,
 
         //net filter
-        output reg netq_write
+        output reg netq_write,
+        input wire tx_pause
     );
 
     // bus width assertions
@@ -274,16 +252,15 @@ module xgmii_baser_enc_64 #
             encoded_tx_hdr_next = SYNC_CTRL;
         end
     end
-    reg twin=0;
+    reg twin=0,netq_write_next=1;
     always @(posedge clk) begin
         encoded_tx_data_reg <= encoded_tx_data_next;
         encoded_tx_hdr_reg <= encoded_tx_hdr_next;
-
         tx_bad_block_reg <= tx_bad_block_next;
 
         if(encoded_tx_hdr_next == SYNC_CTRL) begin
-            if(tx_bad_block_next) begin
-                //err
+            if(tx_pause) begin
+                $display("tx pause discarded %h",encoded_tx_data_next);
                 netq_write<=0;
             end
             else if (encoded_tx_data_next[7:0] == BLOCK_TYPE_CTRL) begin
@@ -292,12 +269,12 @@ module xgmii_baser_enc_64 #
                 end
                 else begin
                     netq_write<=1;
-                    twin<=0;
+                    twin<=1;
                 end
             end
             else begin
                 netq_write<=1;
-                twin<=1;
+                twin<=0;
             end
         end
     end

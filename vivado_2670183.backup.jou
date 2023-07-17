@@ -1,0 +1,42 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Sun Jul 16 00:59:47 2023
+# Process ID: 2670183
+# Current directory: /home/weigao/PHY-Project
+# Command line: vivado
+# Log file: /home/weigao/PHY-Project/vivado.log
+# Journal file: /home/weigao/PHY-Project/vivado.jou
+# Running On: atlas3, OS: Linux, CPU Frequency: 1200.017 MHz, CPU Physical cores: 24, Host memory: 201351 MB
+#-----------------------------------------------------------
+start_gui
+open_project /home/weigao/project_JULY/project_JULY.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+source test_eth_phy_rx.tcl
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+close_sim

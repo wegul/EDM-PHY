@@ -2,184 +2,69 @@
 # Vivado v2022.2 (64-bit)
 # SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
 # IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
-# Start of session at: Mon Jul 10 18:46:58 2023
-# Process ID: 2086054
+# Start of session at: Sun Jul 16 20:59:45 2023
+# Process ID: 2685972
 # Current directory: /home/weigao/PHY-Project
 # Command line: vivado
 # Log file: /home/weigao/PHY-Project/vivado.log
 # Journal file: /home/weigao/PHY-Project/vivado.jou
-# Running On: atlas3, OS: Linux, CPU Frequency: 1199.748 MHz, CPU Physical cores: 22, Host memory: 201351 MB
+# Running On: atlas3, OS: Linux, CPU Frequency: 1199.883 MHz, CPU Physical cores: 23, Host memory: 201351 MB
 #-----------------------------------------------------------
 start_gui
-open_project /home/weigao/project_JUNE/project_JUNE.xpr
+open_project /home/weigao/project_JULY/project_JULY.xpr
 update_compile_order -fileset sources_1
-launch_simulation
-open_wave_config /home/weigao/project_JUNE/vivadotest_ipg_mac_phy_10g_2P_behav.wcfg
-source test_eth_phy.tcl
-current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
-add_wave {{/test_eth_phy/clk}} 
-current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
-add_wave {{/test_eth_phy/xgmii_rxd}} {{/test_eth_phy/xgmii_rxc}} 
-current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
-add_wave {{/test_eth_phy/serdes_rx_data}} {{/test_eth_phy/serdes_rx_hdr}} 
-current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
-add_wave {{/test_eth_phy/xgmii_txd}} {{/test_eth_phy/xgmii_txc}} {{/test_eth_phy/serdes_tx_data}} {{/test_eth_phy/serdes_tx_hdr}} 
-current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
-add_wave {{/test_eth_phy/rx_bad_block}} 
-relaunch_sim
-current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
-add_wave {{/test_eth_phy/UUT/inst_ipg_proc/rx_ipg_data}} 
-current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
-add_wave {{/test_eth_phy/UUT/inst_ipg_proc/rx_len}} 
-current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
-add_wave {{/test_eth_phy/UUT/inst_ipg_proc/ipg_reply_chunk}} 
-current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
-add_wave {{/test_eth_phy/UUT/inst_ipg_proc/ipg_data}} 
-current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
-add_wave {{/test_eth_phy/UUT/eth_phy_10g_rx_inst/eth_phy_10g_rx_if_inst/encoded_rx_data}} 
-current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
-add_wave {{/test_eth_phy/UUT/eth_phy_10g_rx_inst/inst_ipg_rx/recoved_encoded_rx_data}} 
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
-add_wave {{/test_eth_phy/UUT/eth_phy_10g_rx_inst/encoded_rx_hdr}} 
-current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
-add_wave {{/test_eth_phy/UUT/eth_phy_10g_rx_inst/recoved_encoded_rx_hdr}} 
-current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
-add_wave {{/test_eth_phy/UUT/eth_phy_10g_rx_inst/serdes_rx_hdr}} 
-relaunch_sim
-current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
-add_wave {{/test_eth_phy/serdes_tx_data}} 
-current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
-add_wave {{/test_eth_phy/serdes_rx_data}} 
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
-add_wave {{/test_eth_phy/UUT/eth_phy_10g_rx_inst/xgmii_baser_dec_inst/encoded_rx_hdr}} 
-current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
-add_wave {{/test_eth_phy/UUT/eth_phy_10g_tx_inst/inst_ipg_tx/netq/darray_reg}} 
-relaunch_sim
-relaunch_sim
-relaunch_sim
-current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
-add_wave {{/test_eth_phy/UUT/eth_phy_10g_tx_inst/inst_ipg_tx/netq/darray_reg}} 
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
-add_wave {{/test_eth_phy/UUT/eth_phy_10g_tx_inst/inst_ipg_tx/mon_sel}} 
-current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
-add_wave {{/test_eth_phy/UUT/eth_phy_10g_tx_inst/inst_ipg_tx/netfin}} 
-relaunch_sim
-current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
-add_wave {{/test_eth_phy/UUT/eth_phy_10g_tx_inst/inst_ipg_tx/proced_encoded_tx_data}} 
-current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
-add_wave {{/test_eth_phy/UUT/eth_phy_10g_tx_inst/inst_ipg_tx/encoded_tx_data}} 
-relaunch_sim
-current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
-add_wave {{/test_eth_phy/UUT/inst_ipg_proc/rx_len}} 
-relaunch_sim
-current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
-add_wave {{/test_eth_phy/UUT/eth_phy_10g_tx_inst/inst_ipg_tx/memq_write}} 
-current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
-add_wave {{/test_eth_phy/UUT/eth_phy_10g_tx_inst/inst_ipg_tx/memq/array_reg}} 
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
-add_wave {{/test_eth_phy/UUT/inst_ipg_proc/addr}} 
-relaunch_sim
-current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
-add_wave {{/test_eth_phy/UUT/inst_ipg_proc/wr_payload}} 
-current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
-add_wave {{/test_eth_phy/UUT/inst_ipg_proc/wr_payload_count}} 
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
-add_wave {{/test_eth_phy/UUT/inst_ipg_proc/jobq_write}} 
-relaunch_sim
-relaunch_sim
-relaunch_sim
-current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
-add_wave {{/test_eth_phy/UUT/inst_ipg_proc/addr_count_reg}} 
-relaunch_sim
-current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
-add_wave {{/test_eth_phy/UUT/inst_ipg_proc/len}} 
-relaunch_sim
-relaunch_sim
-current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
-add_wave {{/test_eth_phy/UUT/inst_ipg_proc/ipg_reply}} 
-relaunch_sim
-relaunch_sim
-relaunch_sim
-current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
-add_wave {{/test_eth_phy/UUT/inst_ipg_proc/tx_payload_count}} 
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
-add_wave {{/test_eth_phy/UUT/eth_phy_10g_tx_inst/inst_ipg_tx/mon_sel}} 
-current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
-add_wave {{/test_eth_phy/UUT/eth_phy_10g_tx_inst/inst_ipg_tx/netq_outd}} 
-current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
-add_wave {{/test_eth_phy/UUT/eth_phy_10g_tx_inst/inst_ipg_tx/netfin}} 
-relaunch_sim
-current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
-add_wave {{/test_eth_phy/UUT/eth_phy_10g_tx_inst/inst_ipg_tx/netq/empty}} 
-current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
-add_wave {{/test_eth_phy/UUT/eth_phy_10g_tx_inst/inst_ipg_tx/netq/darray_reg}} 
-relaunch_sim
-relaunch_sim
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-save_wave_config {/home/weigao/project_JUNE/vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
-set_property top vivadotest_ipg_mac_phy_10g [get_filesets sim_1]
+set_property top test_new_ipg_tx [get_filesets sim_1]
 set_property top_lib xil_defaultlib [get_filesets sim_1]
 update_compile_order -fileset sim_1
 launch_simulation
 launch_simulation
+source test_new_ipg_tx.tcl
 relaunch_sim
 relaunch_sim
+relaunch_sim
+save_wave_config {/home/weigao/project_JULY/july.wcfg}
+add_files -fileset sim_1 -norecurse /home/weigao/project_JULY/july.wcfg
+set_property xsim.view /home/weigao/project_JULY/july.wcfg [get_filesets sim_1]
 close_sim
 launch_simulation
-launch_simulation
-launch_simulation
-open_wave_config /home/weigao/project_JUNE/vivadotest_ipg_mac_phy_10g_2P_behav.wcfg
-source vivadotest_ipg_mac_phy_10g.tcl
-current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
-add_wave {{/vivadotest_ipg_mac_phy_10g/clk}} {{/vivadotest_ipg_mac_phy_10g/tx_axis_tdata}} {{/vivadotest_ipg_mac_phy_10g/rx_axis_tdata}} 
+open_wave_config /home/weigao/project_JULY/july.wcfg
+source test_new_ipg_tx.tcl
+set_property top test_eth_phy [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
 update_compile_order -fileset sim_1
+launch_simulation
+relaunch_sim
+launch_simulation
+open_wave_config /home/weigao/project_JULY/july.wcfg
+source test_eth_phy.tcl
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+save_wave_config {/home/weigao/project_JULY/july.wcfg}
+set_property top test_eth_phy_rx [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+launch_simulation
+open_wave_config /home/weigao/project_JULY/july.wcfg
+source test_eth_phy_rx.tcl
 update_compile_order -fileset sim_1
 relaunch_sim
 relaunch_sim
-current_wave_config {vivadotest_ipg_mac_phy_10g_2P_behav.wcfg}
-add_wave {{/vivadotest_ipg_mac_phy_10g/rx_bad_block}} 
+relaunch_sim
 relaunch_sim
