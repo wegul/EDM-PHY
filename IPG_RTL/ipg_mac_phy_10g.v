@@ -55,7 +55,7 @@ module ipg_mac_phy_10g #(
         input  wire                         tx_axis_tvalid,
         output wire                         tx_axis_tready,
         input  wire                         tx_axis_tlast,
-        // input  wire [TX_USER_WIDTH-1:0]     tx_axis_tuser,
+        input  wire [TX_USER_WIDTH-1:0]     tx_axis_tuser,
         /*
          * AXI output
          */
@@ -113,7 +113,6 @@ module ipg_mac_phy_10g #(
     wire [CTRL_WIDTH-1:0]     xgmii_txc;
     wire [DATA_WIDTH-1:0]     xgmii_rxd;
     wire [CTRL_WIDTH-1:0]     xgmii_rxc;
-    wire [TX_USER_WIDTH-1:0]     tx_axis_tuser;
     wire tx_pause;
 
 

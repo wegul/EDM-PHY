@@ -19,7 +19,8 @@ module ipg_rx(
         output reg [1:0]  recoved_encoded_rx_hdr,
 
         //shim layer control
-        output reg shimq_write
+        output reg shimq_write=0,
+        output wire jobq_write
     );
 
 
@@ -45,12 +46,14 @@ module ipg_rx(
                BLOCK_TYPE_TERM_6   = 8'he1, // C7    D5 D4 D3 D2 D1 D0 BT
                BLOCK_TYPE_TERM_7   = 8'hff; //    D6 D5 D4 D3 D2 D1 D0 BT
 
-
+    //exclude those short ipg
+    assign jobq_write = (rx_len>0 && (encoded_rx_data[7:0]==8'h1e)) ? 1 : 0;
 
     always@(*) begin
         recoved_encoded_rx_data=encoded_rx_data;
         recoved_encoded_rx_hdr=encoded_rx_hdr;
         rx_ipg_data = 64'h0;
+        rx_ipg_data[63:48]=16'heeee;
         rx_len=0;
 
         // ====================================================================================
@@ -131,12 +134,17 @@ module ipg_rx(
             endcase
         end
 
-
-        if(encoded_rx_data[7:0]==BLOCK_TYPE_CTRL && encoded_rx_hdr == SYNC_CTRL) shimq_write=0;//has no data
-        else shimq_write=1;
-
-        if(encoded_rx_data[7:0]==0 && encoded_rx_hdr == SYNC_CTRL) shimq_write=0;// usless, initialization
-
+        if(encoded_rx_data>=0) begin
+            if(encoded_rx_data[7:0]==BLOCK_TYPE_CTRL && encoded_rx_hdr == SYNC_CTRL)begin
+                shimq_write=0;//has no data
+            end
+            else begin
+                $display("writing to shimq %h",recoved_encoded_rx_data);
+                shimq_write=1;
+            end
+            if(encoded_rx_data[7:0]==0 && encoded_rx_hdr == SYNC_CTRL) shimq_write=0;// usless, initialization
+        end
+        else shimq_write=0;
 
     end
 

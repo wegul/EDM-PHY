@@ -51,7 +51,7 @@ module mem_fifo_buf
             r_ptr_reg <= r_ptr_next;
             full_reg <= full_next;
             empty_reg <= empty_next;
-            if(w_ptr_reg >= r_ptr_reg) begin
+            if(w_ptr_reg > r_ptr_reg) begin
                 space <= 2**DEPTH - (w_ptr_reg - r_ptr_reg);
             end
             else begin

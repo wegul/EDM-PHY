@@ -70,7 +70,7 @@ module ipg_proc(
     wire [RX_COUNT-1:0] len;
     wire [DATA_WIDTH-1:0] ipg_data;
     reg [ADR_WIDTH-1:0] addr=0;
-    reg [ADR_WIDTH/2:0] src=0, dst;
+    reg [ADR_WIDTH/2-1:0] src=0, dst=0;
     reg [ADR_COUNT-1:0] addr_count_reg=ADR_WIDTH;
     reg [PAYLOAD_COUNT-1:0] wr_payload_count;
     reg[PAYLOAD_LEN-1:0] wr_payload=0; //bytes in this array is written to RAM together. Temporarily 64bytes, but could change
@@ -141,7 +141,6 @@ module ipg_proc(
                         end
                         addr_count_reg = 0;
                     end
-                    // $display("===\n aaaaa%d\n===",addr_count_reg);
                     if (addr_count_reg == 0) begin
                         //check validity
                         src=addr[ADR_WIDTH-1:ADR_WIDTH/2];

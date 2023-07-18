@@ -49,7 +49,7 @@ module vivadotest_ipg_mac_phy_10g;
     reg [TX_USER_WIDTH-1:0] tx_axis_tuser = 0;
     reg [TX_PTP_TS_WIDTH-1:0] tx_ptp_ts = 0;
     reg [RX_PTP_TS_WIDTH-1:0] rx_ptp_ts = 0;
-    reg [7:0] ifg_delay = 0;
+    reg [7:0] ifg_delay = 8'd12;
 
     // Outputs
     wire tx_axis_tready;
@@ -58,8 +58,7 @@ module vivadotest_ipg_mac_phy_10g;
     wire rx_axis_tvalid;
     wire rx_axis_tlast;
     wire [RX_USER_WIDTH-1:0] rx_axis_tuser;
-    wire [DATA_WIDTH-1:0] xgmii_txd;
-    wire [CTRL_WIDTH-1:0] xgmii_txc;
+
     wire [TX_PTP_TS_WIDTH-1:0] tx_axis_ptp_ts;
     wire [TX_PTP_TAG_WIDTH-1:0] tx_axis_ptp_ts_tag;
     wire tx_axis_ptp_ts_valid;
@@ -86,8 +85,8 @@ module vivadotest_ipg_mac_phy_10g;
 
 
     //******* PHY TX *******
-    wire [DATA_WIDTH-1:0] serdes_rx_data;
-    wire [HDR_WIDTH-1:0] serdes_rx_hdr;
+    reg [DATA_WIDTH-1:0] serdes_rx_data;
+    reg [HDR_WIDTH-1:0] serdes_rx_hdr;
     reg tx_prbs31_enable = 0;
     reg rx_prbs31_enable = 0;
 
@@ -104,8 +103,9 @@ module vivadotest_ipg_mac_phy_10g;
     //**************** For PHY-Only end ****************
 
 
-    // assign serdes_rx_data = serdes_tx_data;
-    // assign serdes_rx_hdr = serdes_tx_hdr;
+    localparam [1:0]
+               SYNC_DATA = 2'b10,
+               SYNC_CTRL = 2'b01;
 
     initial begin
         clk = 1'b1;
@@ -119,19 +119,94 @@ module vivadotest_ipg_mac_phy_10g;
         end
     end
 
+    reg [63:0] tc [20:0];
+    integer i;
+    integer packet_size;
     initial begin
+        for (i=0;i<=20;i=i+1) begin
+            tc[i]=i+10000;
+        end
+
         rst = 1'b1;
         rx_rst = 1'b1;
         tx_rst = 1'b1;
-        #10
+        #6
          rst = 1'b0;
         rx_rst = 1'b0;
         tx_rst = 1'b0;
     end
 
-    integer i;
-    integer packet_size;
+    initial begin // shim layer test
+        #6
 
+         serdes_rx_data<=64'hd55555555555555578;
+        serdes_rx_hdr<=SYNC_CTRL;
+        #2
+         serdes_rx_data<=64'h12414abcdde3152352;
+        serdes_rx_hdr<=SYNC_DATA;
+        #2
+         serdes_rx_data<=64'h12414abcdde315231e;
+        serdes_rx_hdr<=SYNC_CTRL;
+        #2
+         serdes_rx_data<=64'h52452452235235231e;
+        serdes_rx_hdr<=SYNC_CTRL;
+        #2
+         serdes_rx_data<=64'h189730081980730656;
+        serdes_rx_hdr<=SYNC_DATA;
+        for (i = 0; i<8 ; i=i+1 ) begin
+            #2
+             serdes_rx_data<=i*1024+1218;
+            serdes_rx_hdr<=SYNC_DATA;
+        end
+        #2
+         serdes_rx_data<=64'h009073033800125dff;
+        serdes_rx_hdr<=SYNC_CTRL;
+        #2
+         serdes_rx_data<=64'h0;
+        serdes_rx_hdr<=SYNC_CTRL;
+        #50
+         $finish;
+    end
+
+
+    // initial begin //Back-pressure test
+
+    //     #6
+
+    //      serdes_rx_data[61:0]<=62'h0000addaddadda1e;
+    //     serdes_rx_data[63:62]<=2'b01;
+    //     serdes_rx_hdr<=SYNC_CTRL;
+    //     #2
+    //      serdes_rx_data<=64'haddaaddaddadda1e;
+    //     serdes_rx_hdr<=SYNC_CTRL;
+    //     #2
+    //      serdes_rx_data<=64'hffffffffffffff1e;
+    //     serdes_rx_hdr<=SYNC_CTRL;
+    //     #2
+    //      serdes_rx_data<=64'hdddddddffffaaccc;
+    //     serdes_rx_hdr<=SYNC_DATA;
+    //     i=0;
+    //     while (i<=20) begin
+    //         #2
+    //          serdes_rx_data<=64'heeeeeedddddd + 20*i;
+    //         serdes_rx_hdr<=SYNC_DATA;
+
+    //         tx_axis_tvalid<=1;
+    //         if(tx_axis_tready) begin
+    //             tx_axis_tkeep<=8'hff;
+    //             tx_axis_tdata<=tc[i];
+    //             i=i+1;
+    //             if(i%11==0 & i!=0) begin
+    //                 tx_axis_tlast<=1;
+    //             end
+    //             else begin
+    //                 tx_axis_tlast<=0;
+    //             end
+    //         end
+    //     end
+    //     #60
+    //      $finish;
+    // end
 
     //Objective: create a series of continuous packets - replace /I/ in eth_phy_10g_tx_if.v
 
@@ -146,81 +221,85 @@ module vivadotest_ipg_mac_phy_10g;
     // Each unit (8 Bytes) needs one cycle to transmit,
     // indicating a total of 9 cycles for a minimum {8B[Preamble]+64B[4B FCS + 60B data]} packet.
 
-    initial begin
-        ifg_delay=8'd12;
-        packet_size=8;
-        //For timing/functional simulation 104ns. For behavioral, 20ns
-        #20
-        
-         //1. an one-unit (8 byte) packet (0xdd)
-         tx_axis_tkeep = 8'hff;
-        tx_axis_tvalid = 1'b1;
-        tx_axis_tlast = 1'b1;
-        tx_axis_tuser = 2'b00;
-        tx_axis_tdata = 64'hdddddddd00000000;
-        #2
-         tx_axis_tkeep = 8'h00;
-        // wait for zero padding(16 for 2ns_clock)
-        tx_axis_tdata = 64'haabbddffffff0000;
-        #16
-
-         // +++++ Close AXI Transmission +++++
-         tx_axis_tlast = 1'b1;
-        tx_axis_tkeep = 8'h00;
-        tx_axis_tvalid = 1'b0;
-        tx_axis_tdata = 64'haabbddffffff0000;
-        #2
-         // ----- Close AXI Transmission -----
-
-
-         // 2. IDLE for 20ns.
-         #20
-
-         //3. an one-unit (8 byte) packet (0xd1)
-         tx_axis_tkeep = 8'hff;
-        tx_axis_tvalid = 1'b1;
-        tx_axis_tlast = 1'b0;
-        tx_axis_tuser = 2'b00;
-        tx_axis_tdata = 64'hd111111110000000;
-        #2
-         tx_axis_tlast = 1'b1;
-        tx_axis_tdata = 64'hd222222220000000;
-        #2
-         // wait for zero padding
-         tx_axis_tdata = 64'hffffffffffffffff;
-        #14
-
-         // +++++ Close AXI Transmission +++++
-         tx_axis_tkeep = 8'h00;
-        tx_axis_tvalid = 1'b0;
-        tx_axis_tdata = 64'haabbddffffff0000;
-        #2
-         // ----- Close AXI Transmission -----
-
-
-         //4. an eight-unit (64 byte) packet (1~8)
-         tx_axis_tkeep = 8'hff;
-        tx_axis_tvalid = 1'b1;
-        tx_axis_tlast = 1'b0;
-        tx_axis_tdata = 64'h01;
-        for (i=1;i<packet_size;i=i+1) begin
-            #2
-             tx_axis_tdata = tx_axis_tdata +1;
-        end
-        tx_axis_tlast=1'b1;
-        #2
-         // +++++ Close AXI Transmission +++++
-         tx_axis_tkeep = 8'h00;
-        tx_axis_tvalid = 1'b0;
-        tx_axis_tdata = 64'haabbddffffff0000;
-        // ----- Close AXI Transmission -----
 
 
 
-        #60
-         $finish;
 
-    end
+    // initial begin
+    //     ifg_delay=8'd12;
+    //     packet_size=8;
+    //     //For timing/functional simulation 104ns. For behavioral, 20ns
+    //     #20
+
+    //      //1. an one-unit (8 byte) packet (0xdd)
+    //      tx_axis_tkeep = 8'hff;
+    //     tx_axis_tvalid = 1'b1;
+    //     tx_axis_tlast = 1'b1;
+    //     tx_axis_tuser = 2'b00;
+    //     tx_axis_tdata = 64'hdddddddd00000000;
+    //     #2
+    //      tx_axis_tkeep = 8'h00;
+    //     // wait for zero padding(16 for 2ns_clock)
+    //     tx_axis_tdata = 64'haabbddffffff0000;
+    //     #16
+
+    //      // +++++ Close AXI Transmission +++++
+    //      tx_axis_tlast = 1'b1;
+    //     tx_axis_tkeep = 8'h00;
+    //     tx_axis_tvalid = 1'b0;
+    //     tx_axis_tdata = 64'haabbddffffff0000;
+    //     #2
+    //      // ----- Close AXI Transmission -----
+
+
+    //      // 2. IDLE for 20ns.
+    //      #20
+
+    //      //3. an one-unit (8 byte) packet (0xd1)
+    //      tx_axis_tkeep = 8'hff;
+    //     tx_axis_tvalid = 1'b1;
+    //     tx_axis_tlast = 1'b0;
+    //     tx_axis_tuser = 2'b00;
+    //     tx_axis_tdata = 64'hd111111110000000;
+    //     #2
+    //      tx_axis_tlast = 1'b1;
+    //     tx_axis_tdata = 64'hd222222220000000;
+    //     #2
+    //      // wait for zero padding
+    //      tx_axis_tdata = 64'hffffffffffffffff;
+    //     #14
+
+    //      // +++++ Close AXI Transmission +++++
+    //      tx_axis_tkeep = 8'h00;
+    //     tx_axis_tvalid = 1'b0;
+    //     tx_axis_tdata = 64'haabbddffffff0000;
+    //     #2
+    //      // ----- Close AXI Transmission -----
+
+
+    //      //4. an eight-unit (64 byte) packet (1~8)
+    //      tx_axis_tkeep = 8'hff;
+    //     tx_axis_tvalid = 1'b1;
+    //     tx_axis_tlast = 1'b0;
+    //     tx_axis_tdata = 64'h01;
+    //     for (i=1;i<packet_size;i=i+1) begin
+    //         #2
+    //          tx_axis_tdata = tx_axis_tdata +1;
+    //     end
+    //     tx_axis_tlast=1'b1;
+    //     #2
+    //      // +++++ Close AXI Transmission +++++
+    //      tx_axis_tkeep = 8'h00;
+    //     tx_axis_tvalid = 1'b0;
+    //     tx_axis_tdata = 64'haabbddffffff0000;
+    //     // ----- Close AXI Transmission -----
+
+
+
+    //     #60
+    //      $finish;
+
+    // end
 
     ipg_mac_phy_10g #(
                         .DATA_WIDTH(DATA_WIDTH),
@@ -267,15 +346,12 @@ module vivadotest_ipg_mac_phy_10g;
                         .serdes_tx_data(serdes_tx_data),
                         .serdes_tx_hdr(serdes_tx_hdr),
 
-                        //echo here
                         .serdes_rx_data(serdes_rx_data),
                         .serdes_rx_hdr(serdes_rx_hdr),
 
                         .serdes_rx_bitslip(serdes_rx_bitslip),
                         .tx_ptp_ts(tx_ptp_ts),
                         .rx_ptp_ts(rx_ptp_ts),
-
-
 
                         .tx_start_packet(tx_start_packet),
                         .tx_error_underflow(tx_error_underflow),

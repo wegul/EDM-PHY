@@ -307,6 +307,7 @@ module axis_xgmii_tx_64 #
         s_axis_tready_next = 1'b0;
 
         s_tdata_next = s_tdata_reg;
+
         s_empty_next = s_empty_reg;
 
         m_axis_ptp_ts_next = m_axis_ptp_ts_reg;
@@ -587,6 +588,7 @@ module axis_xgmii_tx_64 #
         endcase
 
         if (tx_pause) begin
+            $display("axis xgmii tx, tx pause!");
             s_axis_tready_next=0;
             swap_lanes_next=0;
             // //send idle
@@ -606,6 +608,7 @@ module axis_xgmii_tx_64 #
         deficit_idle_count_reg <= deficit_idle_count_next;
 
         s_tdata_reg <= s_tdata_next;
+        // $display("axi4 stdata %h , masked %h",s_tdata_next,s_axis_tdata_masked);
         s_empty_reg <= s_empty_next;
 
         s_axis_tready_reg <= s_axis_tready_next;

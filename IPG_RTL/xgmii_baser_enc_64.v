@@ -277,6 +277,10 @@ module xgmii_baser_enc_64 #
                 twin<=0;
             end
         end
+        else begin
+            netq_write<=1;
+            twin<=0;
+        end
     end
 
 endmodule

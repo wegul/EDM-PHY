@@ -87,7 +87,7 @@ module eth_phy_10g_tx #
                        );
 
     wire [DATA_WIDTH-1:0] proced_encoded_tx_data;
-    wire [CTRL_WIDTH-1:0] proced_encoded_tx_hdr;
+    wire [HDR_WIDTH-1:0] proced_encoded_tx_hdr;
     wire netq_write;
 
 

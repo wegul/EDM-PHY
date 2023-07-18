@@ -74,10 +74,6 @@ module eth_phy_10g #
     wire [RX_COUNT-1:0] rx_len;
     wire memq_write,jobq_write;
 
-    //exclude those short ipg
-    assign jobq_write = (rx_len>0 && (rx_ipg_data[7:0]==8'h1e)) ? 1 : 0;
-
-
     //generate reply or write stuff to RAM
     ipg_proc inst_ipg_proc(
                  .clk(tx_clk),
@@ -120,7 +116,8 @@ module eth_phy_10g #
 
                        //output received ipg data
                        .rx_len(rx_len),
-                       .rx_ipg_data(rx_ipg_data)
+                       .rx_ipg_data(rx_ipg_data),
+                       .jobq_write(jobq_write)
                    );
 
     eth_phy_10g_tx #(

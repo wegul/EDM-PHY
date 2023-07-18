@@ -5,7 +5,6 @@ module net_fifo_buf
          input wire [DWIDTH-1:0] w_data_d,
          input wire [CWIDTH-1:0] w_data_c,
          output wire empty , full,
-         output reg netfin,
          output wire [DWIDTH-1:0] r_data_d,
          output wire [CWIDTH-1:0] r_data_c,
          output reg [DEPTH:0] space
@@ -40,7 +39,6 @@ module net_fifo_buf
         full_reg <= 1'b0;
         empty_reg <= 1'b1;
         space <= 2**DEPTH;
-        netfin<=1;
     end
 
 
@@ -52,7 +50,6 @@ module net_fifo_buf
             full_reg <= 1'b0;
             empty_reg <= 1'b1;
             space <= 2**DEPTH;
-            netfin<=1;
         end
         else
         begin
@@ -62,7 +59,7 @@ module net_fifo_buf
             full_reg <= full_next;
             empty_reg <= empty_next;
 
-            if(w_ptr_reg >= r_ptr_reg) begin
+            if(w_ptr_reg > r_ptr_reg) begin
                 space <= 2**DEPTH - (w_ptr_reg - r_ptr_reg);
             end
             else begin
@@ -72,18 +69,6 @@ module net_fifo_buf
 
     end
 
-    always @*
-    begin
-        if(empty) begin
-            netfin=1;
-        end
-        if(rd & ~empty) begin
-            if(r_data_c==SYNC_CTRL && r_data_d[7:0]>8'h86) begin
-                netfin=1;
-            end
-            else netfin=0;
-        end
-    end
 
     always @*
     begin

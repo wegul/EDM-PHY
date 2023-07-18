@@ -4,7 +4,7 @@ module buf_mon (
         input wire [3:0] memq_space,
         input wire [3:0] netq_space,
         input wire [3:0] reqq_space,
-        input wire netfin, reqfin,
+        input wire reqfin,
         memq_empty,
         netq_empty,
         reqq_empty,
@@ -19,7 +19,7 @@ module buf_mon (
 
 
         output reg [1:0] sel,
-        output reg tx_pause
+        output reg tx_pause=0
         // assert to de-assert tx_axis_tready in axis_xgmii_tx L588
     );
 
@@ -51,16 +51,7 @@ module buf_mon (
     end
 
     always @(*) begin
-        if(!netfin) begin
-            //send net
-            // if(s!netq_empty) begin
-            sel=SEND_NET;
-            netq_read=1;
-            memq_read=0;
-            reqq_read=0;
-            // end
-        end
-        else if (!reqfin) begin
+        if (!reqfin) begin
             sel=SEND_REQ;
             netq_read=0;
             memq_read=0;
@@ -86,7 +77,7 @@ module buf_mon (
                 reqq_read=0;
             end
             else begin
-                //all empty
+                //all empty, send 000001e. See ipg_tx
                 sel=2'b00;
                 netq_read=0;
                 memq_read=0;

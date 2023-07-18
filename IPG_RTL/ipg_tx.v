@@ -79,7 +79,7 @@ module ipg_tx
     wire [63:0] tx_ipg_mem;// msg to be transmitted. this is from memq
     wire [63:0] tx_ipg_req;// msg to be transmitted. this is from reqq
 
-    wire netfin,reqfin;
+    wire reqfin;
     wire [1:0] mon_sel;
     wire reqq_write;
 
@@ -129,7 +129,6 @@ module ipg_tx
                      //important
                      .r_data_d (netq_outd),
                      .r_data_c (netq_outc),
-                     .netfin(netfin),
 
                      .empty (netq_empty),
                      .full (netq_full),
@@ -153,7 +152,6 @@ module ipg_tx
                 .reqq_space(reqq_space),
                 .reqq_empty(reqq_empty),
 
-                .netfin(netfin),
                 .reqfin(reqfin),
                 .tx_pause(tx_pause),
                 .sel(mon_sel)// if 1, tx ipg. else tx net frame
