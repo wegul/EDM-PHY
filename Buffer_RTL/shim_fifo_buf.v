@@ -1,10 +1,9 @@
 module shim_fifo_buf
-    #(parameter DWIDTH = 64, CWIDTH = 2, DEPTH = 4)(
+    #(parameter DWIDTH = 64, CWIDTH = 2, DEPTH = 8)(
          input wire clk, reset,
          input wire rd, wr,
          input wire [DWIDTH-1:0] w_data_d,
          input wire [CWIDTH-1:0] w_data_c,
-         input wire shim_release,
          output wire empty , full,
          output wire [DWIDTH-1:0] r_data_d,
          output wire [CWIDTH-1:0] r_data_c,

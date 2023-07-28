@@ -13,6 +13,7 @@ module ipg_tx
         input wire reset,
         input wire memq_write,
         input wire netq_write,
+        input wire reqq_write,
 
 
         //Give information about the next block
@@ -21,6 +22,7 @@ module ipg_tx
         input wire [1:0] encoded_tx_hdr,
         input wire [63:0] encoded_tx_data,
         input wire [63:0] ipg_reply_chunk,//From ipg_proc.v
+        input wire [63:0] ipg_req_chunk,// from user logic
 
         output reg [63:0] proced_encoded_tx_data,
         output reg [1:0] proced_encoded_tx_hdr,
@@ -40,6 +42,9 @@ module ipg_tx
                SYNC_CTRL = 2'b01;
 
     localparam [7:0]
+               BLOCK_TYPE_REQ = 8'h1a, // I6 I5 I4 I3 I2 I1 I0 BT
+               BLOCK_TYPE_RESP = 8'h1f, // I6 I5 I4 I3 I2 I1 I0 BT
+
                BLOCK_TYPE_CTRL     = 8'h1e, // C7 C6 C5 C4 C3 C2 C1 C0 BT
                BLOCK_TYPE_OS_4     = 8'h2d, // D7 D6 D5 O4 C3 C2 C1 C0 BT
                BLOCK_TYPE_START_4  = 8'h33, // D7 D6 D5    C3 C2 C1 C0 BT
@@ -73,21 +78,14 @@ module ipg_tx
 
     wire [1:0] netq_outc;
     wire [63:0] netq_outd;
-    wire [63:0] ipg_req_chunk;//user generated requests.
-    wire [3:0] netq_space,memq_space,reqq_space;
+    wire [3:0] memq_space,reqq_space;
+    wire [5:0] netq_space;
 
     wire [63:0] tx_ipg_mem;// msg to be transmitted. this is from memq
     wire [63:0] tx_ipg_req;// msg to be transmitted. this is from reqq
 
-    wire reqfin;
     wire [1:0] mon_sel;
-    wire reqq_write;
 
-    req_gen generator(
-                .clk(clk),
-                .reqq_write(reqq_write),
-                .ipg_req_chunk(ipg_req_chunk)
-            );
 
     // Queue management
 
@@ -99,7 +97,6 @@ module ipg_tx
                      .wr(reqq_write),
                      .clk (clk),
                      .r_data (tx_ipg_req),
-                     .reqfin(reqfin),
                      .empty (reqq_empty),
                      .full (reqq_full),
                      .space(reqq_space)
@@ -152,7 +149,6 @@ module ipg_tx
                 .reqq_space(reqq_space),
                 .reqq_empty(reqq_empty),
 
-                .reqfin(reqfin),
                 .tx_pause(tx_pause),
                 .sel(mon_sel)// if 1, tx ipg. else tx net frame
             );

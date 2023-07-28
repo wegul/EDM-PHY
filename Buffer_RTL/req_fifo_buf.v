@@ -4,8 +4,6 @@ module req_fifo_buf
          input wire rd, wr,
          input wire [WIDTH-1:0] w_data,
          output wire empty , full,
-         output reg reqfin, // when user puts in a request, it should be ended with a DELIM after the last frame.
-         // the user makes sure this queue is never empty until a DELIM
          output wire [WIDTH-1:0] r_data,
          output reg [DEPTH:0] space
      );
@@ -33,7 +31,6 @@ module req_fifo_buf
         full_reg <= 1'b0;
         empty_reg <= 1'b1;
         space <= 2**DEPTH;
-        reqfin<=1;
     end
 
     always @(posedge clk , posedge reset) begin
@@ -44,7 +41,6 @@ module req_fifo_buf
             full_reg <= 1'b0;
             empty_reg <= 1'b1;
             space <= 2**DEPTH;
-            reqfin<=1;
         end
         else
         begin
@@ -58,19 +54,6 @@ module req_fifo_buf
             else begin
                 space <= r_ptr_reg - w_ptr_reg;
             end
-        end
-    end
-
-    always @*
-    begin
-        // if(empty) begin
-        //     reqfin=1;
-        // end
-        if(rd & ~empty) begin
-            if(r_data[7:0] == DELIM) begin
-                reqfin=1;
-            end
-            else reqfin=0;
         end
     end
 

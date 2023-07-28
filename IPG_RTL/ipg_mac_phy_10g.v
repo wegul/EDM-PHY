@@ -101,10 +101,13 @@ module ipg_mac_phy_10g #(
          * PTP
          */
         input  wire [TX_PTP_TS_WIDTH-1:0]   tx_ptp_ts,
-        input  wire [RX_PTP_TS_WIDTH-1:0]   rx_ptp_ts
+        input  wire [RX_PTP_TS_WIDTH-1:0]   rx_ptp_ts,
         // output wire [TX_PTP_TS_WIDTH-1:0]   tx_axis_ptp_ts,
         // output wire [TX_PTP_TAG_WIDTH-1:0]  tx_axis_ptp_ts_tag,
         // output wire                         tx_axis_ptp_ts_valid,
+
+        input wire [DATA_WIDTH-1:0] ipg_req_chunk,
+        input wire reqq_write
 
     );
 
@@ -114,8 +117,6 @@ module ipg_mac_phy_10g #(
     wire [DATA_WIDTH-1:0]     xgmii_rxd;
     wire [CTRL_WIDTH-1:0]     xgmii_rxc;
     wire tx_pause;
-
-
 
 
     eth_mac_10g #(
@@ -203,6 +204,8 @@ module ipg_mac_phy_10g #(
                     .rx_high_ber(rx_high_ber),
                     .tx_prbs31_enable(tx_prbs31_enable),
                     .rx_prbs31_enable(rx_prbs31_enable),
-                    .tx_pause(tx_pause)
+                    .tx_pause(tx_pause),
+                    .reqq_write(reqq_write),
+                    .ipg_req_chunk(ipg_req_chunk)
                 );
 endmodule

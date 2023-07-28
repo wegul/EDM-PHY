@@ -240,6 +240,10 @@ module xgmii_baser_enc_64 #
                 // terminate in lane 7
                 encoded_tx_data_next = {xgmii_txd[55:0], BLOCK_TYPE_TERM_7};
                 tx_bad_block_next = 1'b0;
+            end else if (xgmii_txc == 8'hff && xgmii_txd =={DATA_WIDTH{1'b1}}) begin
+                // send pause frame, which will be discarded in netq
+                encoded_tx_data_next = {xgmii_txd[55:0], 8'h77};
+                tx_bad_block_next = 1'b0;
             end else if (xgmii_txc == 8'hff) begin
                 // all control
                 encoded_tx_data_next = {encoded_ctrl, BLOCK_TYPE_CTRL};
@@ -258,28 +262,31 @@ module xgmii_baser_enc_64 #
         encoded_tx_hdr_reg <= encoded_tx_hdr_next;
         tx_bad_block_reg <= tx_bad_block_next;
 
-        if(encoded_tx_hdr_next == SYNC_CTRL) begin
-            if(tx_pause) begin
-                $display("tx pause discarded %h",encoded_tx_data_next);
-                netq_write<=0;
-            end
-            else if (encoded_tx_data_next[7:0] == BLOCK_TYPE_CTRL) begin
-                if(twin) begin
-                    netq_write<=0;
+        if(encoded_tx_data_next[7:0]==8'h77 && encoded_tx_hdr_next == SYNC_CTRL) begin
+            $display("tx pause discarded %h",encoded_tx_data_next);
+            netq_write<=0;
+        end
+        else begin
+            if(encoded_tx_hdr_next == SYNC_CTRL) begin
+                // Eth-generated IDLEs, should be discarded
+                if (encoded_tx_data_next[7:0] == BLOCK_TYPE_CTRL) begin
+                    if(twin) begin
+                        netq_write<=0;
+                    end
+                    else begin
+                        netq_write<=1;
+                        twin<=1;
+                    end
                 end
                 else begin
                     netq_write<=1;
-                    twin<=1;
+                    twin<=0;
                 end
             end
             else begin
                 netq_write<=1;
                 twin<=0;
             end
-        end
-        else begin
-            netq_write<=1;
-            twin<=0;
         end
     end
 

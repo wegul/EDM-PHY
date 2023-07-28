@@ -83,7 +83,7 @@ module eth_phy_10g_rx #
     wire [DATA_WIDTH-1:0] recoved_encoded_rx_data;
     wire [HDR_WIDTH-1:0]  recoved_encoded_rx_hdr;
 
-    wire [DATA_WIDTH-1:0] shim_outd;
+    wire [DATA_WIDTH-1:0] shim_outd,ipg_resp;
     wire [HDR_WIDTH-1:0] shim_outc;
     wire shimq_write,shimq_read;
 
@@ -140,8 +140,6 @@ module eth_phy_10g_rx #
                       .space()
                   );
 
-
-
     ipg_rx inst_ipg_rx(
                .clk(clk),
                .encoded_rx_data(encoded_rx_data),
@@ -153,9 +151,10 @@ module eth_phy_10g_rx #
                .recoved_encoded_rx_hdr(recoved_encoded_rx_hdr),
 
                .shimq_write(shimq_write),
-               .jobq_write(jobq_write)
-           );
+               .jobq_write(jobq_write),
 
+               .ipg_resp(ipg_resp)
+           );
 
     xgmii_baser_dec_64 #(
                            .DATA_WIDTH(DATA_WIDTH),

@@ -331,7 +331,6 @@ module axis_xgmii_tx_64 #
             m_axis_ptp_ts_adj_next[47:46] = 0;
             m_axis_ptp_ts_adj_next[95:48] = m_axis_ptp_ts_reg[95:48] + 1;
         end
-
         case (state_reg)
             STATE_IDLE: begin
                 // idle state - wait for data
@@ -587,31 +586,25 @@ module axis_xgmii_tx_64 #
             end
         endcase
 
-        if (tx_pause) begin
-            $display("axis xgmii tx, tx pause!");
-            s_axis_tready_next=0;
-            swap_lanes_next=0;
-            // //send idle
-            // xgmii_txc_next={CTRL_WIDTH{XGMII_IDLE}};
-            // xgmii_txd_next={CTRL_WIDTH{1'b1}};
-        end
+
+
     end
 
     always @(posedge clk) begin
+
         state_reg <= state_next;
 
         swap_lanes_reg <= swap_lanes_next;
-
         frame_min_count_reg <= frame_min_count_next;
 
         ifg_count_reg <= ifg_count_next;
         deficit_idle_count_reg <= deficit_idle_count_next;
 
         s_tdata_reg <= s_tdata_next;
-        // $display("axi4 stdata %h , masked %h",s_tdata_next,s_axis_tdata_masked);
         s_empty_reg <= s_empty_next;
 
         s_axis_tready_reg <= s_axis_tready_next;
+
 
         m_axis_ptp_ts_reg <= m_axis_ptp_ts_next;
         m_axis_ptp_ts_adj_reg <= m_axis_ptp_ts_adj_next;
@@ -659,8 +652,21 @@ module axis_xgmii_tx_64 #
             start_packet_reg <= 2'b00;
             error_underflow_reg <= 1'b0;
         end
+        if(tx_pause) begin
+            s_axis_tready_reg<=0;
+            // swap_lanes_reg<=0;
+        end
+        if(!s_axis_tready) begin
+            if(tx_pause)
+                flip<=1;
+        end
+        else flip<=0;
+        if(flip) begin
+            xgmii_txc_reg<={CTRL_WIDTH{1'b1}};
+            xgmii_txd_reg<={DATA_WIDTH{1'b1}};
+        end
     end
-
+    reg flip=0;// if flip is 1, it means the next cycle will be discarded.
 endmodule
 
 `resetall

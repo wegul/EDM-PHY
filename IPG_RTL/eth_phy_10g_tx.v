@@ -44,7 +44,9 @@ module eth_phy_10g_tx #
 
         //ipg data to be sent
         input wire [DATA_WIDTH-1:0] ipg_reply_chunk,
+        input wire [DATA_WIDTH-1:0] ipg_req_chunk,
         input wire memq_write,
+        input wire reqq_write,
         output wire tx_pause
     );
 
@@ -96,8 +98,10 @@ module eth_phy_10g_tx #
                .reset(rst),
                .netq_write(netq_write),
                .memq_write(memq_write),
+               .reqq_write(reqq_write),
 
                .ipg_reply_chunk(ipg_reply_chunk),
+               .ipg_req_chunk(ipg_req_chunk),
                .tx_pause(tx_pause),
                .encoded_tx_data(encoded_tx_data),
                .encoded_tx_hdr(encoded_tx_hdr),

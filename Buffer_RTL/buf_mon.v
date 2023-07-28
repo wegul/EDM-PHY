@@ -2,14 +2,11 @@ module buf_mon (
         input wire clk,
         input wire reset,
         input wire [3:0] memq_space,
-        input wire [3:0] netq_space,
+        input wire [5:0] netq_space,
         input wire [3:0] reqq_space,
-        input wire reqfin,
-        memq_empty,
+        input wire memq_empty,
         netq_empty,
         reqq_empty,
-
-
         output reg memq_read,
         netq_read,
         reqq_read,
@@ -17,13 +14,12 @@ module buf_mon (
         netq_reset,
         reqq_reset,
 
-
         output reg [1:0] sel,
         output reg tx_pause=0
         // assert to de-assert tx_axis_tready in axis_xgmii_tx L588
     );
 
-    localparam thres = 3'd5;
+    localparam thres = 3'd4;
 
     localparam [1:0]
                SYNC_DATA = 2'b10,
@@ -42,22 +38,22 @@ module buf_mon (
             reqq_read<=0;
             memq_read<=0;
             netq_read<=0;
+            tx_pause<=0;
         end
         else begin
             memq_reset<=0;
             netq_reset<=0;
             reqq_reset<=0;
         end
+        if (netq_space < 16) begin
+            // $display("num space=%d",netq_space);
+            tx_pause <= 1'b1;
+        end
+        else tx_pause <= 0;
     end
 
     always @(*) begin
-        if (!reqfin) begin
-            sel=SEND_REQ;
-            netq_read=0;
-            memq_read=0;
-            reqq_read=1;
-        end
-        else if(!memq_empty) begin
+        if(!memq_empty) begin
             sel=SEND_MEM;
             netq_read=0;
             memq_read=1;
@@ -83,22 +79,6 @@ module buf_mon (
                 memq_read=0;
                 reqq_read=0;
             end
-
         end
-
-        if (netq_space < thres) begin
-            tx_pause = 1'b1;
-        end
-        else tx_pause = 0;
     end
-
-
-
-
-
-
-
-
-
-
 endmodule

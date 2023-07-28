@@ -1,5 +1,5 @@
 module net_fifo_buf
-    #(parameter DWIDTH = 64, CWIDTH = 2, DEPTH = 3)(
+    #(parameter DWIDTH = 64, CWIDTH = 2, DEPTH = 5)(
          input wire clk, reset,
          input wire rd, wr,
          input wire [DWIDTH-1:0] w_data_d,
@@ -58,13 +58,6 @@ module net_fifo_buf
             r_ptr_reg <= r_ptr_next;
             full_reg <= full_next;
             empty_reg <= empty_next;
-
-            if(w_ptr_reg > r_ptr_reg) begin
-                space <= 2**DEPTH - (w_ptr_reg - r_ptr_reg);
-            end
-            else begin
-                space <= r_ptr_reg - w_ptr_reg;
-            end
         end
 
     end
@@ -72,7 +65,7 @@ module net_fifo_buf
 
     always @*
     begin
-        w_ptr_succ = w_ptr_reg+1;
+        w_ptr_succ = w_ptr_reg + 1;
         r_ptr_succ = r_ptr_reg + 1;
         w_ptr_next = w_ptr_reg;
         r_ptr_next = r_ptr_reg;
@@ -89,6 +82,16 @@ module net_fifo_buf
                         empty_next = 1'b1;
                     end
                 end
+                if(w_ptr_next>r_ptr_next) begin
+                    space = 2**DEPTH - (w_ptr_next - r_ptr_next);
+                end
+                else if (w_ptr_next==r_ptr_next) begin
+                    space=2**DEPTH;
+                end
+                else begin
+                    space = r_ptr_next-w_ptr_next;
+                end
+
             end
             2'b10: begin
                 if(~full_reg)
@@ -98,14 +101,40 @@ module net_fifo_buf
                     if (w_ptr_succ == r_ptr_reg)
                         full_next = 1'b1;
                 end
+                if(w_ptr_next>r_ptr_next) begin
+                    space = 2**DEPTH - (w_ptr_next - r_ptr_next);
+                end
+                else if (w_ptr_next==r_ptr_next) begin
+                    space=0;
+                end
+                else begin
+                    space = r_ptr_next-w_ptr_next;
+                end
+
             end
             2'b11:
             begin
                 w_ptr_next = w_ptr_succ;
                 r_ptr_next = r_ptr_succ;
+                if(w_ptr_next>r_ptr_next) begin
+                    space = 2**DEPTH - (w_ptr_next - r_ptr_next);
+                end
+                else if (w_ptr_next==r_ptr_next) begin
+                    space=2**DEPTH;
+                end
+                else begin
+                    space = r_ptr_next-w_ptr_next;
+                end
             end
             2'b00:;
         endcase
+        // if(w_ptr_next > r_ptr_next) begin
+        //     space = 2**DEPTH - (w_ptr_next - r_ptr_next);
+        // end
+        // else begin
+        //     if(wr==1)
+        //     space = r_ptr_next - w_ptr_next;
+        // end
     end
 
 

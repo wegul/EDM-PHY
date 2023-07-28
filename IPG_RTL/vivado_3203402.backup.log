@@ -1,0 +1,2898 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Thu Jul 27 18:57:01 2023
+# Process ID: 3203402
+# Current directory: /home/weigao/PHY-Project/IPG_RTL
+# Command line: vivado
+# Log file: /home/weigao/PHY-Project/IPG_RTL/vivado.log
+# Journal file: /home/weigao/PHY-Project/IPG_RTL/vivado.jou
+# Running On: atlas3, OS: Linux, CPU Frequency: 1200.464 MHz, CPU Physical cores: 22, Host memory: 201351 MB
+#-----------------------------------------------------------
+start_gui
+open_project /home/weigao/project_JULY/project_JULY.xpr
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.0 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/1.0/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.0 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es:part0:1.2 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/es/1.2/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es_revb:part0:1.0 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120_revb/es/1.0/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180_es:part0:1.0 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/es/1.0/board.xml as part xcvp1802-lsvc4072-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /home/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory '/home/weigao/project_JULY/project_JULY.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/Xilinx/Vivado/2022.2/data/ip'.
+open_project: Time (s): cpu = 00:00:19 ; elapsed = 00:00:07 . Memory (MB): peak = 7410.305 ; gain = 211.156 ; free physical = 169338 ; free virtual = 229356
+update_compile_order -fileset sources_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_phy_loopback'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/home/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'test_mac_phy_loopback' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_mac_phy_loopback_vlog.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_phy_loopback_behav xil_defaultlib.test_mac_phy_loopback xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_phy_loopback_behav xil_defaultlib.test_mac_phy_loopback xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 7 for port 'space' [/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v:270]
+WARNING: [VRFC 10-5021] port 'shim_release' is not connected on this instance [/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx.v:127]
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v:191]
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "test_mac_phy_loopback_behav -key {Behavioral:sim_1:Functional:test_mac_phy_loopback} -tclbatch {test_mac_phy_loopback.tcl} -view {/home/weigao/project_JULY/july.wcfg} -view {/home/weigao/project_JULY/delay_measure.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config /home/weigao/project_JULY/july.wcfg
+open_wave_config /home/weigao/project_JULY/delay_measure.wcfg
+source test_mac_phy_loopback.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+writing to shimq 0000000000000000
+writing to shimq 0000000000000000
+writing to shimq d555555555555578
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 000000c8ee05d9cc
+writing to shimq d555555555555578
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq 000000544d7beacc
+writing to shimq d555555555555578
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 0000006ce0fe53cc
+writing to shimq d555555555555578
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq 000000d25f4462cc
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'test_mac_phy_loopback_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:17 ; elapsed = 00:00:08 . Memory (MB): peak = 7575.242 ; gain = 83.203 ; free physical = 169227 ; free virtual = 229244
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_phy_loopback'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/home/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'test_mac_phy_loopback' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_mac_phy_loopback_vlog.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_phy_loopback'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_phy_loopback_behav xil_defaultlib.test_mac_phy_loopback xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_phy_loopback_behav xil_defaultlib.test_mac_phy_loopback xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 7 for port 'space' [/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v:270]
+WARNING: [VRFC 10-5021] port 'shim_release' is not connected on this instance [/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx.v:127]
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v:191]
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+writing to shimq 0000000000000000
+writing to shimq 0000000000000000
+writing to shimq d555555555555578
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 000000c8ee05d9cc
+writing to shimq d555555555555578
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq 000000544d7beacc
+writing to shimq d555555555555578
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 0000006ce0fe53cc
+writing to shimq d555555555555578
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq 000000d25f4462cc
+relaunch_sim: Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 7579.242 ; gain = 0.000 ; free physical = 169231 ; free virtual = 229249
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_phy_loopback'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_mac_phy_loopback_vlog.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_phy_loopback'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_phy_loopback_behav xil_defaultlib.test_mac_phy_loopback xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_phy_loopback_behav xil_defaultlib.test_mac_phy_loopback xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 7 for port 'space' [/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v:270]
+WARNING: [VRFC 10-5021] port 'shim_release' is not connected on this instance [/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx.v:127]
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v:191]
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+writing to shimq 0000000000000000
+writing to shimq 0000000000000000
+writing to shimq d555555555555578
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 000000c8ee05d9cc
+writing to shimq d555555555555578
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq 000000544d7beacc
+writing to shimq d555555555555578
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 0000006ce0fe53cc
+writing to shimq d555555555555578
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq 000000d25f4462cc
+relaunch_sim: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 7579.242 ; gain = 0.000 ; free physical = 169262 ; free virtual = 229280
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_phy_loopback'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_mac_phy_loopback_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_rx_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_xgmii_rx_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_tx_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_xgmii_tx_64
+WARNING: [VRFC 10-3380] identifier 'flip' is used before its declaration [/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_tx_64.v:661]
+WARNING: [VRFC 10-3380] identifier 'flip' is used before its declaration [/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_tx_64.v:663]
+WARNING: [VRFC 10-3380] identifier 'flip' is used before its declaration [/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_tx_64.v:664]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module buf_mon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_mac_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_mac_10g
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_ber_mon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_ber_mon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_frame_sync.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_frame_sync
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx_if.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_if
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_watchdog.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_watchdog
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx_if.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_tx_if
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_mac_phy_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_mac_phy_10g
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_rx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_rx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/job_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module job_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/lfsr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lfsr
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mem_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module net_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module req_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/shim_control.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module shim_control
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/shim_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module shim_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/xgmii_baser_dec_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xgmii_baser_dec_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/xgmii_baser_enc_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xgmii_baser_enc_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_mac_phy_loopback.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_mac_phy_loopback
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_phy_loopback'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_phy_loopback_behav xil_defaultlib.test_mac_phy_loopback xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_phy_loopback_behav xil_defaultlib.test_mac_phy_loopback xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 7 for port 'space' [/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v:270]
+WARNING: [VRFC 10-5021] port 'shim_release' is not connected on this instance [/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx.v:127]
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v:191]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/IPG_RTL/shim_control.v" Line 1. Module shim_control doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/shim_fifo_buf.v" Line 1. Module shim_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" Line 1. Module req_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" Line 1. Module mem_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" Line 1. Module net_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" Line 1. Module buf_mon doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/IPG_RTL/shim_control.v" Line 1. Module shim_control doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/shim_fifo_buf.v" Line 1. Module shim_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" Line 1. Module req_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" Line 1. Module mem_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" Line 1. Module net_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" Line 1. Module buf_mon doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.axis_xgmii_rx_64(KEEP_WIDTH=8,CT...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.axis_xgmii_tx_64(KEEP_WIDTH=8,CT...
+Compiling module xil_defaultlib.eth_mac_10g(KEEP_WIDTH=8,CTRL_WI...
+Compiling module xil_defaultlib.job_fifo_buf
+Compiling module xil_defaultlib.ipg_proc
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=58,REVERSE=1,DAT...
+Compiling module xil_defaultlib.lfsr(REVERSE=1,DATA_WIDTH=66)
+Compiling module xil_defaultlib.eth_phy_10g_rx_frame_sync_defaul...
+Compiling module xil_defaultlib.eth_phy_10g_rx_ber_mon(COUNT_125...
+Compiling module xil_defaultlib.eth_phy_10g_rx_watchdog(COUNT_12...
+Compiling module xil_defaultlib.eth_phy_10g_rx_if(SERDES_PIPELIN...
+Compiling module xil_defaultlib.shim_control
+Compiling module xil_defaultlib.shim_fifo_buf
+Compiling module xil_defaultlib.ipg_rx
+Compiling module xil_defaultlib.xgmii_baser_dec_64(CTRL_WIDTH=8)
+Compiling module xil_defaultlib.eth_phy_10g_rx(CTRL_WIDTH=8,SERD...
+Compiling module xil_defaultlib.xgmii_baser_enc_64(CTRL_WIDTH=8)
+Compiling module xil_defaultlib.req_fifo_buf
+Compiling module xil_defaultlib.mem_fifo_buf
+Compiling module xil_defaultlib.net_fifo_buf
+Compiling module xil_defaultlib.buf_mon
+Compiling module xil_defaultlib.ipg_tx
+Compiling module xil_defaultlib.eth_phy_10g_tx_if(SCRAMBLER_DISA...
+Compiling module xil_defaultlib.eth_phy_10g_tx(CTRL_WIDTH=8,SERD...
+Compiling module xil_defaultlib.eth_phy_10g(CTRL_WIDTH=8,TX_SERD...
+Compiling module xil_defaultlib.ipg_mac_phy_10g(KEEP_WIDTH=8,TX_...
+Compiling module xil_defaultlib.test_mac_phy_loopback
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_mac_phy_loopback_behav
+execute_script: Time (s): cpu = 00:00:16 ; elapsed = 00:00:06 . Memory (MB): peak = 7738.328 ; gain = 0.000 ; free physical = 169622 ; free virtual = 229654
+INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
+launch_simulation: Time (s): cpu = 00:00:16 ; elapsed = 00:00:07 . Memory (MB): peak = 7738.328 ; gain = 0.000 ; free physical = 169622 ; free virtual = 229654
+Time resolution is 1 ps
+writing to shimq 0000000000000000
+writing to shimq 0000000000000000
+writing to shimq d555555555555578
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 000000c8ee05d9cc
+writing to shimq d555555555555578
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq 000000544d7beacc
+writing to shimq d555555555555578
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 0000006ce0fe53cc
+writing to shimq d555555555555578
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq 000000d25f4462cc
+relaunch_sim: Time (s): cpu = 00:00:20 ; elapsed = 00:00:11 . Memory (MB): peak = 7738.328 ; gain = 0.000 ; free physical = 169603 ; free virtual = 229636
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_phy_loopback'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_mac_phy_loopback_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_rx_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_xgmii_rx_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_tx_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_xgmii_tx_64
+WARNING: [VRFC 10-3380] identifier 'flip' is used before its declaration [/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_tx_64.v:661]
+WARNING: [VRFC 10-3380] identifier 'flip' is used before its declaration [/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_tx_64.v:663]
+WARNING: [VRFC 10-3380] identifier 'flip' is used before its declaration [/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_tx_64.v:664]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module buf_mon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_mac_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_mac_10g
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_ber_mon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_ber_mon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_frame_sync.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_frame_sync
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx_if.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_if
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_watchdog.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_watchdog
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx_if.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_tx_if
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_mac_phy_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_mac_phy_10g
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_rx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_rx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/job_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module job_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/lfsr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lfsr
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mem_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module net_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module req_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/shim_control.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module shim_control
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/shim_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module shim_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/xgmii_baser_dec_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xgmii_baser_dec_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/xgmii_baser_enc_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xgmii_baser_enc_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_mac_phy_loopback.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_mac_phy_loopback
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_phy_loopback'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_phy_loopback_behav xil_defaultlib.test_mac_phy_loopback xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_phy_loopback_behav xil_defaultlib.test_mac_phy_loopback xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 7 for port 'space' [/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v:270]
+WARNING: [VRFC 10-5021] port 'shim_release' is not connected on this instance [/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx.v:127]
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v:191]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/IPG_RTL/shim_control.v" Line 1. Module shim_control doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/shim_fifo_buf.v" Line 1. Module shim_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" Line 1. Module req_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" Line 1. Module mem_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" Line 1. Module net_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" Line 1. Module buf_mon doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/IPG_RTL/shim_control.v" Line 1. Module shim_control doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/shim_fifo_buf.v" Line 1. Module shim_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" Line 1. Module req_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" Line 1. Module mem_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" Line 1. Module net_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" Line 1. Module buf_mon doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.axis_xgmii_rx_64(KEEP_WIDTH=8,CT...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.axis_xgmii_tx_64(KEEP_WIDTH=8,CT...
+Compiling module xil_defaultlib.eth_mac_10g(KEEP_WIDTH=8,CTRL_WI...
+Compiling module xil_defaultlib.job_fifo_buf
+Compiling module xil_defaultlib.ipg_proc
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=58,REVERSE=1,DAT...
+Compiling module xil_defaultlib.lfsr(REVERSE=1,DATA_WIDTH=66)
+Compiling module xil_defaultlib.eth_phy_10g_rx_frame_sync_defaul...
+Compiling module xil_defaultlib.eth_phy_10g_rx_ber_mon(COUNT_125...
+Compiling module xil_defaultlib.eth_phy_10g_rx_watchdog(COUNT_12...
+Compiling module xil_defaultlib.eth_phy_10g_rx_if(SERDES_PIPELIN...
+Compiling module xil_defaultlib.shim_control
+Compiling module xil_defaultlib.shim_fifo_buf
+Compiling module xil_defaultlib.ipg_rx
+Compiling module xil_defaultlib.xgmii_baser_dec_64(CTRL_WIDTH=8)
+Compiling module xil_defaultlib.eth_phy_10g_rx(CTRL_WIDTH=8,SERD...
+Compiling module xil_defaultlib.xgmii_baser_enc_64(CTRL_WIDTH=8)
+Compiling module xil_defaultlib.req_fifo_buf
+Compiling module xil_defaultlib.mem_fifo_buf
+Compiling module xil_defaultlib.net_fifo_buf
+Compiling module xil_defaultlib.buf_mon
+Compiling module xil_defaultlib.ipg_tx
+Compiling module xil_defaultlib.eth_phy_10g_tx_if(SCRAMBLER_DISA...
+Compiling module xil_defaultlib.eth_phy_10g_tx(CTRL_WIDTH=8,SERD...
+Compiling module xil_defaultlib.eth_phy_10g(CTRL_WIDTH=8,TX_SERD...
+Compiling module xil_defaultlib.ipg_mac_phy_10g(KEEP_WIDTH=8,TX_...
+Compiling module xil_defaultlib.test_mac_phy_loopback
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_mac_phy_loopback_behav
+execute_script: Time (s): cpu = 00:00:16 ; elapsed = 00:00:06 . Memory (MB): peak = 7757.352 ; gain = 0.000 ; free physical = 169608 ; free virtual = 229641
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+launch_simulation: Time (s): cpu = 00:00:16 ; elapsed = 00:00:07 . Memory (MB): peak = 7757.352 ; gain = 0.000 ; free physical = 169608 ; free virtual = 229641
+Time resolution is 1 ps
+writing to shimq 0000000000000000
+writing to shimq 0000000000000000
+writing to shimq d555555555555578
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 000000c8ee05d9cc
+writing to shimq d555555555555578
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq 000000544d7beacc
+writing to shimq d555555555555578
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 0000006ce0fe53cc
+writing to shimq d555555555555578
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq 000000d25f4462cc
+relaunch_sim: Time (s): cpu = 00:00:21 ; elapsed = 00:00:11 . Memory (MB): peak = 7764.348 ; gain = 6.996 ; free physical = 169579 ; free virtual = 229611
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_phy_loopback'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_mac_phy_loopback_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_rx_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_xgmii_rx_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_tx_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_xgmii_tx_64
+WARNING: [VRFC 10-3380] identifier 'flip' is used before its declaration [/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_tx_64.v:661]
+WARNING: [VRFC 10-3380] identifier 'flip' is used before its declaration [/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_tx_64.v:663]
+WARNING: [VRFC 10-3380] identifier 'flip' is used before its declaration [/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_tx_64.v:664]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module buf_mon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_mac_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_mac_10g
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_ber_mon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_ber_mon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_frame_sync.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_frame_sync
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx_if.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_if
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_watchdog.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_watchdog
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx_if.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_tx_if
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_mac_phy_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_mac_phy_10g
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_rx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_rx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/job_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module job_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/lfsr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lfsr
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mem_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module net_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module req_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/shim_control.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module shim_control
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/shim_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module shim_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/xgmii_baser_dec_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xgmii_baser_dec_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/xgmii_baser_enc_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xgmii_baser_enc_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_mac_phy_loopback.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_mac_phy_loopback
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_phy_loopback'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_phy_loopback_behav xil_defaultlib.test_mac_phy_loopback xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_phy_loopback_behav xil_defaultlib.test_mac_phy_loopback xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 7 for port 'space' [/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v:270]
+WARNING: [VRFC 10-5021] port 'shim_release' is not connected on this instance [/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx.v:127]
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v:191]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/IPG_RTL/shim_control.v" Line 1. Module shim_control doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/shim_fifo_buf.v" Line 1. Module shim_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" Line 1. Module req_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" Line 1. Module mem_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" Line 1. Module net_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" Line 1. Module buf_mon doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/IPG_RTL/shim_control.v" Line 1. Module shim_control doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/shim_fifo_buf.v" Line 1. Module shim_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" Line 1. Module req_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" Line 1. Module mem_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" Line 1. Module net_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" Line 1. Module buf_mon doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.axis_xgmii_rx_64(KEEP_WIDTH=8,CT...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.axis_xgmii_tx_64(KEEP_WIDTH=8,CT...
+Compiling module xil_defaultlib.eth_mac_10g(KEEP_WIDTH=8,CTRL_WI...
+Compiling module xil_defaultlib.job_fifo_buf
+Compiling module xil_defaultlib.ipg_proc
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=58,REVERSE=1,DAT...
+Compiling module xil_defaultlib.lfsr(REVERSE=1,DATA_WIDTH=66)
+Compiling module xil_defaultlib.eth_phy_10g_rx_frame_sync_defaul...
+Compiling module xil_defaultlib.eth_phy_10g_rx_ber_mon(COUNT_125...
+Compiling module xil_defaultlib.eth_phy_10g_rx_watchdog(COUNT_12...
+Compiling module xil_defaultlib.eth_phy_10g_rx_if(SERDES_PIPELIN...
+Compiling module xil_defaultlib.shim_control
+Compiling module xil_defaultlib.shim_fifo_buf
+Compiling module xil_defaultlib.ipg_rx
+Compiling module xil_defaultlib.xgmii_baser_dec_64(CTRL_WIDTH=8)
+Compiling module xil_defaultlib.eth_phy_10g_rx(CTRL_WIDTH=8,SERD...
+Compiling module xil_defaultlib.xgmii_baser_enc_64(CTRL_WIDTH=8)
+Compiling module xil_defaultlib.req_fifo_buf
+Compiling module xil_defaultlib.mem_fifo_buf
+Compiling module xil_defaultlib.net_fifo_buf
+Compiling module xil_defaultlib.buf_mon
+Compiling module xil_defaultlib.ipg_tx
+Compiling module xil_defaultlib.eth_phy_10g_tx_if(SCRAMBLER_DISA...
+Compiling module xil_defaultlib.eth_phy_10g_tx(CTRL_WIDTH=8,SERD...
+Compiling module xil_defaultlib.eth_phy_10g(CTRL_WIDTH=8,TX_SERD...
+Compiling module xil_defaultlib.ipg_mac_phy_10g(KEEP_WIDTH=8,TX_...
+Compiling module xil_defaultlib.test_mac_phy_loopback
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_mac_phy_loopback_behav
+execute_script: Time (s): cpu = 00:00:16 ; elapsed = 00:00:06 . Memory (MB): peak = 7806.367 ; gain = 0.000 ; free physical = 169612 ; free virtual = 229644
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+launch_simulation: Time (s): cpu = 00:00:16 ; elapsed = 00:00:07 . Memory (MB): peak = 7806.367 ; gain = 0.000 ; free physical = 169612 ; free virtual = 229644
+Time resolution is 1 ps
+writing to shimq 0000000000000000
+writing to shimq 0000000000000000
+writing to shimq d555555555555578
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 000000c8ee05d9cc
+writing to shimq d555555555555578
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq 000000544d7beacc
+writing to shimq d555555555555578
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 0000006ce0fe53cc
+writing to shimq d555555555555578
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq 000000d25f4462cc
+relaunch_sim: Time (s): cpu = 00:00:22 ; elapsed = 00:00:12 . Memory (MB): peak = 7806.367 ; gain = 0.000 ; free physical = 169577 ; free virtual = 229610
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_phy_loopback'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_mac_phy_loopback_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_rx_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_xgmii_rx_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_tx_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_xgmii_tx_64
+WARNING: [VRFC 10-3380] identifier 'flip' is used before its declaration [/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_tx_64.v:661]
+WARNING: [VRFC 10-3380] identifier 'flip' is used before its declaration [/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_tx_64.v:663]
+WARNING: [VRFC 10-3380] identifier 'flip' is used before its declaration [/home/weigao/PHY-Project/IPG_RTL/axis_xgmii_tx_64.v:664]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module buf_mon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_mac_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_mac_10g
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_ber_mon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_ber_mon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_frame_sync.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_frame_sync
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx_if.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_if
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/eth_phy_10g_rx_watchdog.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_rx_watchdog
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_tx_if.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eth_phy_10g_tx_if
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_mac_phy_10g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_mac_phy_10g
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_rx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_rx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/ipg_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ipg_tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/job_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module job_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/rtl/lfsr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lfsr
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mem_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module net_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module req_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/shim_control.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module shim_control
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/Buffer_RTL/shim_fifo_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module shim_fifo_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/xgmii_baser_dec_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xgmii_baser_dec_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_RTL/xgmii_baser_enc_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xgmii_baser_enc_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/weigao/PHY-Project/IPG_TB/test_mac_phy_loopback.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_mac_phy_loopback
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_phy_loopback'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_phy_loopback_behav xil_defaultlib.test_mac_phy_loopback xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_phy_loopback_behav xil_defaultlib.test_mac_phy_loopback xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 7 for port 'space' [/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v:270]
+WARNING: [VRFC 10-5021] port 'shim_release' is not connected on this instance [/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx.v:127]
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v:191]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/IPG_RTL/shim_control.v" Line 1. Module shim_control doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/shim_fifo_buf.v" Line 1. Module shim_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" Line 1. Module req_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" Line 1. Module mem_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" Line 1. Module net_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" Line 1. Module buf_mon doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/IPG_RTL/shim_control.v" Line 1. Module shim_control doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/shim_fifo_buf.v" Line 1. Module shim_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/req_fifo_buf.v" Line 1. Module req_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/mem_fifo_buf.v" Line 1. Module mem_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/net_fifo_buf.v" Line 1. Module net_fifo_buf doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/weigao/PHY-Project/Buffer_RTL/buf_mon.v" Line 1. Module buf_mon doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.axis_xgmii_rx_64(KEEP_WIDTH=8,CT...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=32,LFSR_CONFIG="...
+Compiling module xil_defaultlib.axis_xgmii_tx_64(KEEP_WIDTH=8,CT...
+Compiling module xil_defaultlib.eth_mac_10g(KEEP_WIDTH=8,CTRL_WI...
+Compiling module xil_defaultlib.job_fifo_buf
+Compiling module xil_defaultlib.ipg_proc
+Compiling module xil_defaultlib.lfsr(LFSR_WIDTH=58,REVERSE=1,DAT...
+Compiling module xil_defaultlib.lfsr(REVERSE=1,DATA_WIDTH=66)
+Compiling module xil_defaultlib.eth_phy_10g_rx_frame_sync_defaul...
+Compiling module xil_defaultlib.eth_phy_10g_rx_ber_mon(COUNT_125...
+Compiling module xil_defaultlib.eth_phy_10g_rx_watchdog(COUNT_12...
+Compiling module xil_defaultlib.eth_phy_10g_rx_if(SERDES_PIPELIN...
+Compiling module xil_defaultlib.shim_control
+Compiling module xil_defaultlib.shim_fifo_buf
+Compiling module xil_defaultlib.ipg_rx
+Compiling module xil_defaultlib.xgmii_baser_dec_64(CTRL_WIDTH=8)
+Compiling module xil_defaultlib.eth_phy_10g_rx(CTRL_WIDTH=8,SERD...
+Compiling module xil_defaultlib.xgmii_baser_enc_64(CTRL_WIDTH=8)
+Compiling module xil_defaultlib.req_fifo_buf
+Compiling module xil_defaultlib.mem_fifo_buf
+Compiling module xil_defaultlib.net_fifo_buf
+Compiling module xil_defaultlib.buf_mon
+Compiling module xil_defaultlib.ipg_tx
+Compiling module xil_defaultlib.eth_phy_10g_tx_if(SCRAMBLER_DISA...
+Compiling module xil_defaultlib.eth_phy_10g_tx(CTRL_WIDTH=8,SERD...
+Compiling module xil_defaultlib.eth_phy_10g(CTRL_WIDTH=8,TX_SERD...
+Compiling module xil_defaultlib.ipg_mac_phy_10g(KEEP_WIDTH=8,TX_...
+Compiling module xil_defaultlib.test_mac_phy_loopback
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_mac_phy_loopback_behav
+execute_script: Time (s): cpu = 00:00:15 ; elapsed = 00:00:06 . Memory (MB): peak = 7874.422 ; gain = 0.000 ; free physical = 169590 ; free virtual = 229623
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+launch_simulation: Time (s): cpu = 00:00:15 ; elapsed = 00:00:07 . Memory (MB): peak = 7874.422 ; gain = 0.000 ; free physical = 169590 ; free virtual = 229623
+Time resolution is 1 ps
+writing to shimq 0000000000000000
+writing to shimq 0000000000000000
+writing to shimq d555555555555578
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 000000c8ee05d9cc
+writing to shimq d555555555555578
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq 000000544d7beacc
+writing to shimq d555555555555578
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 0000006ce0fe53cc
+writing to shimq d555555555555578
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq 000000d25f4462cc
+relaunch_sim: Time (s): cpu = 00:00:22 ; elapsed = 00:00:12 . Memory (MB): peak = 7879.418 ; gain = 4.996 ; free physical = 169566 ; free virtual = 229598
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_phy_loopback'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_mac_phy_loopback_vlog.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_phy_loopback'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_phy_loopback_behav xil_defaultlib.test_mac_phy_loopback xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_phy_loopback_behav xil_defaultlib.test_mac_phy_loopback xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 7 for port 'space' [/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v:270]
+WARNING: [VRFC 10-5021] port 'shim_release' is not connected on this instance [/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx.v:127]
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v:191]
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+writing to shimq 0000000000000000
+writing to shimq 0000000000000000
+writing to shimq d555555555555578
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 000000c8ee05d9cc
+writing to shimq d555555555555578
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq 000000544d7beacc
+writing to shimq d555555555555578
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 0000006ce0fe53cc
+writing to shimq d555555555555578
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq 000000d25f4462cc
+relaunch_sim: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 7880.418 ; gain = 0.000 ; free physical = 169581 ; free virtual = 229614
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_phy_loopback'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj test_mac_phy_loopback_vlog.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_mac_phy_loopback'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/weigao/project_JULY/project_JULY.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_phy_loopback_behav xil_defaultlib.test_mac_phy_loopback xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mac_phy_loopback_behav xil_defaultlib.test_mac_phy_loopback xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 7 for port 'space' [/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v:270]
+WARNING: [VRFC 10-5021] port 'shim_release' is not connected on this instance [/home/weigao/PHY-Project/IPG_RTL/eth_phy_10g_rx.v:127]
+WARNING: [VRFC 10-3705] select index 64 into 'ipg_reply_chunk' is out of bounds [/home/weigao/PHY-Project/IPG_RTL/ipg_proc.v:191]
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+writing to shimq 0000000000000000
+writing to shimq 0000000000000000
+writing to shimq d555555555555578
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 000000c8ee05d9cc
+writing to shimq d555555555555578
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq 000000544d7beacc
+writing to shimq d555555555555578
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 0000006ce0fe53cc
+writing to shimq d555555555555578
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq cccccccccccccccc
+writing to shimq dddddddddddddddd
+writing to shimq eeeeeeeeeeeeeeee
+writing to shimq ffffffffffffffff
+writing to shimq 0000000000000000
+writing to shimq 1111111111111111
+writing to shimq 2222222222222222
+writing to shimq 3333333333333333
+writing to shimq 4444444444444444
+writing to shimq 5555555555555555
+writing to shimq 6666666666666666
+writing to shimq 7777777777777777
+writing to shimq 8888888888888888
+writing to shimq 9999999999999999
+writing to shimq aaaaaaaaaaaaaaaa
+writing to shimq bbbbbbbbbbbbbbbb
+writing to shimq 000000d25f4462cc
+relaunch_sim: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 8813.508 ; gain = 0.000 ; free physical = 169546 ; free virtual = 229580
+current_wave_config {delay_measure.wcfg}
+delay_measure.wcfg
+add_wave {{/test_mac_phy_loopback/UUT/phy_inst/eth_phy_10g_rx_inst/shimq/r_data_d}} 
+current_wave_config {delay_measure.wcfg}
+delay_measure.wcfg
+add_wave {{/test_mac_phy_loopback/UUT/phy_inst/eth_phy_10g_rx_inst/shimq/r_ptr_reg}} 
+relaunch_sim

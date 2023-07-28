@@ -5,7 +5,7 @@
 /*
  * Testbench for eth_mac_10g
  */
-module vivadotest_ipg_mac_phy_10g;
+module test_mac_phy_loopback;
 
 
     //**************** For MAC+PHY begin ****************
@@ -85,10 +85,12 @@ module vivadotest_ipg_mac_phy_10g;
 
 
     //******* PHY TX *******
-    reg [DATA_WIDTH-1:0] serdes_rx_data;
-    reg [HDR_WIDTH-1:0] serdes_rx_hdr;
+    wire [DATA_WIDTH-1:0] serdes_rx_data;
+    wire [HDR_WIDTH-1:0] serdes_rx_hdr;
     reg tx_prbs31_enable = 0;
     reg rx_prbs31_enable = 0;
+    reg reqq_write;
+    reg [DATA_WIDTH-1:0] ipg_req_chunk;
 
 
     wire [DATA_WIDTH-1:0] serdes_tx_data;
@@ -102,7 +104,7 @@ module vivadotest_ipg_mac_phy_10g;
 
     //**************** For PHY-Only end ****************
 
-
+    localparam DELIM=8'hee;
     localparam [1:0]
                SYNC_DATA = 2'b10,
                SYNC_CTRL = 2'b01;
@@ -119,7 +121,7 @@ module vivadotest_ipg_mac_phy_10g;
         end
     end
 
-    reg [63:0] tc [20:0];
+    reg [63:0] tc [20:0];//test cases
     integer i;
     integer packet_size;
     initial begin
@@ -136,77 +138,170 @@ module vivadotest_ipg_mac_phy_10g;
         tx_rst = 1'b0;
     end
 
-    initial begin // shim layer test
+    /* Delay measurement
+        1. TX: from the first byte in AXI4 to last byte of TERM (FRC or /T/) in Serdes, 64B, 96B, 128B,1496B (187*8)
+        2. RX: from the first byte of START (preamble) in Serdes to last byte in AXI4, 64B, 96B, 128B,1496B
+        3. Xput: contiguous packets, random size.
+    */
+    reg [3:0] num=0;
+    // 1+2. TX-RX
+    assign serdes_rx_data = serdes_tx_data;
+    assign serdes_rx_hdr = serdes_tx_hdr;
+    initial begin
         #6
-
-         serdes_rx_data<=64'hd55555555555555578;
-        serdes_rx_hdr<=SYNC_CTRL;
+         for(i=1;i<=8;i=i+1) begin
+             num<=i;
+             #2
+              tx_axis_tdata<={16{num}};
+             tx_axis_tvalid<=1'b1;
+             tx_axis_tkeep<=8'hff;
+             tx_axis_tlast<=1'b0;
+             tx_axis_tuser<=0;
+         end
+         tx_axis_tlast <= 1'b1;
         #2
-         serdes_rx_data<=64'h12414abcdde3152352;
-        serdes_rx_hdr<=SYNC_DATA;
+         tx_axis_tkeep <= 8'h00;
+        tx_axis_tvalid <= 1'b0;
+        tx_axis_tdata <= 64'haabbccddeeffffff;
+        #16
+         for(i=1;i<=12;i=i+1) begin
+             num<=i;
+             #2
+              tx_axis_tdata<={16{num}};
+             tx_axis_tvalid<=1'b1;
+             tx_axis_tkeep<=8'hff;
+             tx_axis_tlast<=1'b0;
+             tx_axis_tuser<=0;
+         end
+         tx_axis_tlast <= 1'b1;
         #2
-         serdes_rx_data<=64'h12414abcdde315231e;
-        serdes_rx_hdr<=SYNC_CTRL;
+         tx_axis_tkeep <= 8'h00;
+        tx_axis_tvalid <= 1'b0;
+        tx_axis_tdata <= 64'haabbccddeeffffff;
+        #32
+         for(i=1;i<=16;i=i+1) begin
+             num<=i;
+             #2
+              tx_axis_tdata<={16{num}};
+             tx_axis_tvalid<=1'b1;
+             tx_axis_tkeep<=8'hff;
+             tx_axis_tlast<=1'b0;
+             tx_axis_tuser<=0;
+         end
+         tx_axis_tlast <= 1'b1;
         #2
-         serdes_rx_data<=64'h52452452235235231e;
-        serdes_rx_hdr<=SYNC_CTRL;
+         tx_axis_tkeep <= 8'h00;
+        tx_axis_tvalid <= 1'b0;
+        tx_axis_tdata <= 64'haabbccddeeffffff;
+        #64
+         for(i=1;i<=187;i=i+1) begin
+             num<=i;
+             #2
+              tx_axis_tdata<={16{num}};
+             tx_axis_tvalid<=1'b1;
+             tx_axis_tkeep<=8'hff;
+             tx_axis_tlast<=1'b0;
+             tx_axis_tuser<=0;
+         end
+         tx_axis_tlast <= 1'b1;
         #2
-         serdes_rx_data<=64'h189730081980730656;
-        serdes_rx_hdr<=SYNC_DATA;
-        for (i = 0; i<8 ; i=i+1 ) begin
-            #2
-             serdes_rx_data<=i*1024+1218;
-            serdes_rx_hdr<=SYNC_DATA;
-        end
-        #2
-         serdes_rx_data<=64'h009073033800125dff;
-        serdes_rx_hdr<=SYNC_CTRL;
-        #2
-         serdes_rx_data<=64'h0;
-        serdes_rx_hdr<=SYNC_CTRL;
-        #50
+         tx_axis_tkeep <= 8'h00;
+        tx_axis_tvalid <= 1'b0;
+        tx_axis_tdata <= 64'haabbccddeeffffff;
+        #640
          $finish;
     end
 
 
-    // initial begin //Back-pressure test
-
+    // shim layer test
+    // initial begin
     //     #6
+    //      tx_axis_tdata<=64'hdddddddd00000000;
+    //     tx_axis_tvalid<=1'b1;
+    //     tx_axis_tkeep<=8'hff;
+    //     tx_axis_tlast<=1'b1;
+    //     tx_axis_tuser<=0;
+    //     //  ipg_req_chunk<=64'h4000addaddadda1e;
+    //     // reqq_write<=1;
 
-    //      serdes_rx_data[61:0]<=62'h0000addaddadda1e;
-    //     serdes_rx_data[63:62]<=2'b01;
+    //     serdes_rx_data<=64'hd55555555555555578;
     //     serdes_rx_hdr<=SYNC_CTRL;
     //     #2
-    //      serdes_rx_data<=64'haddaaddaddadda1e;
-    //     serdes_rx_hdr<=SYNC_CTRL;
-    //     #2
-    //      serdes_rx_data<=64'hffffffffffffff1e;
-    //     serdes_rx_hdr<=SYNC_CTRL;
-    //     #2
-    //      serdes_rx_data<=64'hdddddddffffaaccc;
+    //      tx_axis_tkeep<=0;
+    //     //  ipg_req_chunk<=64'haddaaddaddadda1e;
+    //     // reqq_write<=1;
+
+    //     serdes_rx_data<=64'h12414abcdde3152352;
     //     serdes_rx_hdr<=SYNC_DATA;
+    //     #2
+    //      //  ipg_req_chunk<=64'hffffffffffffff1e;
+    //      // reqq_write<=1;
+
+    //      //  serdes_rx_data<=64'h12414abcdde315231e;
+    //      // serdes_rx_hdr<=SYNC_CTRL;
+    //      // #2
+    //      //  ipg_req_chunk<=64'h0;
+    //      // reqq_write<=0;
+
+    //      //  serdes_rx_data<=64'h52452452235235231e;
+    //      // serdes_rx_hdr<=SYNC_CTRL;
+    //      // #2
+    //      serdes_rx_data<=64'h189730081980730656;
+    //     serdes_rx_hdr<=SYNC_DATA;
+    //     for (i = 0; i<4 ; i=i+1 ) begin
+    //         #2
+    //          serdes_rx_data<=i*1024+1218;
+    //         serdes_rx_hdr<=SYNC_DATA;
+    //     end
+    //     #2
+    //      serdes_rx_data<=64'h009073033800125dff;
+    //     serdes_rx_hdr<=SYNC_CTRL;
+    //     #2
+    //      serdes_rx_data<=64'h0;
+    //     serdes_rx_hdr<=SYNC_CTRL;
+    //     #50
+    //      $finish;
+    // end
+
+
+    // initial begin //Back-pressure test
+    //     #6
+    //      serdes_rx_data<=64'h4000addaddadda1a;
+    //     serdes_rx_hdr<=SYNC_CTRL;
+    //     #2
+    //      serdes_rx_data<=64'haccbaddaddadda1a;
+    //     serdes_rx_hdr<=SYNC_CTRL;
+    //     #2
+    //      serdes_rx_data<=64'hffffffffffffff1a;
+    //     serdes_rx_hdr<=SYNC_CTRL;
     //     i=0;
     //     while (i<=20) begin
     //         #2
-    //          serdes_rx_data<=64'heeeeeedddddd + 20*i;
-    //         serdes_rx_hdr<=SYNC_DATA;
-
+    //          serdes_rx_data<=64'hffffffffffffff00;
+    //         serdes_rx_hdr<=SYNC_CTRL;
     //         tx_axis_tvalid<=1;
     //         if(tx_axis_tready) begin
     //             tx_axis_tkeep<=8'hff;
     //             tx_axis_tdata<=tc[i];
     //             i=i+1;
-    //             if(i%11==0 & i!=0) begin
-    //                 tx_axis_tlast<=1;
-    //             end
-    //             else begin
-    //                 tx_axis_tlast<=0;
-    //             end
+    //             $display("i=%d",i);
+    //             // if(i%11==0 & i!=0) begin
+    //             //     tx_axis_tlast<=1;
+    //             // end
+    //             // else begin
+    //             //     tx_axis_tlast<=0;
+    //             // end
     //         end
     //     end
+
+    //     tx_axis_tlast<=1;
+    //     #2
+    //      tx_axis_tvalid<=0;
+    //     tx_axis_tkeep<=0;
     //     #60
     //      $finish;
     // end
+
 
     //Objective: create a series of continuous packets - replace /I/ in eth_phy_10g_tx_if.v
 
@@ -221,33 +316,42 @@ module vivadotest_ipg_mac_phy_10g;
     // Each unit (8 Bytes) needs one cycle to transmit,
     // indicating a total of 9 cycles for a minimum {8B[Preamble]+64B[4B FCS + 60B data]} packet.
 
-
-
-
-
     // initial begin
-    //     ifg_delay=8'd12;
     //     packet_size=8;
     //     //For timing/functional simulation 104ns. For behavioral, 20ns
-    //     #20
+    //     #6
+    //      //  ipg_req_chunk<=64'h4000addaddadda1e;
+    //      // reqq_write<=1;
 
     //      //1. an one-unit (8 byte) packet (0xdd)
-    //      tx_axis_tkeep = 8'hff;
-    //     tx_axis_tvalid = 1'b1;
-    //     tx_axis_tlast = 1'b1;
-    //     tx_axis_tuser = 2'b00;
-    //     tx_axis_tdata = 64'hdddddddd00000000;
+    //      tx_axis_tkeep <= 8'hff;
+    //     tx_axis_tvalid <= 1'b1;
+    //     tx_axis_tlast <= 1'b1;
+    //     tx_axis_tuser <= 2'b00;
+    //     tx_axis_tdata <= 64'hdddddddd00000000;
     //     #2
-    //      tx_axis_tkeep = 8'h00;
+    //      //  ipg_req_chunk<=64'haddaaddaddadda1e;
+    //      // reqq_write<=1;
+
+    //      tx_axis_tkeep <= 8'h00;
     //     // wait for zero padding(16 for 2ns_clock)
-    //     tx_axis_tdata = 64'haabbddffffff0000;
+    //     tx_axis_tdata <= 64'haabbddffffff0000;
+    //     // #2
+    //     // //  ipg_req_chunk<=64'hffffffffffffff1e;
+    //     // // reqq_write<=1;
+    //     // #2
+    //     // //  ipg_req_chunk<={{48'h0},{8'hbb},{DELIM}};
+    //     // // reqq_write<=1;
+    //     // #2
+    //     //  ipg_req_chunk<=64'h0;
+    //     // reqq_write<=0;
     //     #16
 
     //      // +++++ Close AXI Transmission +++++
-    //      tx_axis_tlast = 1'b1;
-    //     tx_axis_tkeep = 8'h00;
-    //     tx_axis_tvalid = 1'b0;
-    //     tx_axis_tdata = 64'haabbddffffff0000;
+    //      tx_axis_tlast <= 1'b1;
+    //     tx_axis_tkeep <= 8'h00;
+    //     tx_axis_tvalid <= 1'b0;
+    //     tx_axis_tdata <= 64'haabbddffffff0000;
     //     #2
     //      // ----- Close AXI Transmission -----
 
@@ -256,49 +360,45 @@ module vivadotest_ipg_mac_phy_10g;
     //      #20
 
     //      //3. an one-unit (8 byte) packet (0xd1)
-    //      tx_axis_tkeep = 8'hff;
-    //     tx_axis_tvalid = 1'b1;
-    //     tx_axis_tlast = 1'b0;
-    //     tx_axis_tuser = 2'b00;
-    //     tx_axis_tdata = 64'hd111111110000000;
+    //      tx_axis_tkeep <= 8'hff;
+    //     tx_axis_tvalid <= 1'b1;
+    //     tx_axis_tlast <= 1'b0;
+    //     tx_axis_tuser <= 2'b00;
+    //     tx_axis_tdata <= 64'hd111111110000000;
     //     #2
-    //      tx_axis_tlast = 1'b1;
-    //     tx_axis_tdata = 64'hd222222220000000;
+    //      tx_axis_tlast <= 1'b1;
+    //     tx_axis_tdata <= 64'hd222222220000000;
     //     #2
     //      // wait for zero padding
-    //      tx_axis_tdata = 64'hffffffffffffffff;
+    //      tx_axis_tdata <= 64'hffffffffffffffff;
     //     #14
 
     //      // +++++ Close AXI Transmission +++++
-    //      tx_axis_tkeep = 8'h00;
-    //     tx_axis_tvalid = 1'b0;
-    //     tx_axis_tdata = 64'haabbddffffff0000;
+    //      tx_axis_tkeep <= 8'h00;
+    //     tx_axis_tvalid <= 1'b0;
+    //     tx_axis_tdata <= 64'haabbddffffff0000;
     //     #2
     //      // ----- Close AXI Transmission -----
 
 
     //      //4. an eight-unit (64 byte) packet (1~8)
-    //      tx_axis_tkeep = 8'hff;
-    //     tx_axis_tvalid = 1'b1;
-    //     tx_axis_tlast = 1'b0;
-    //     tx_axis_tdata = 64'h01;
+    //      tx_axis_tkeep <= 8'hff;
+    //     tx_axis_tvalid <= 1'b1;
+    //     tx_axis_tlast <= 1'b0;
+    //     tx_axis_tdata <= 64'h01;
     //     for (i=1;i<packet_size;i=i+1) begin
     //         #2
-    //          tx_axis_tdata = tx_axis_tdata +1;
+    //          tx_axis_tdata <= tx_axis_tdata +1;
     //     end
-    //     tx_axis_tlast=1'b1;
+    //     tx_axis_tlast<=1'b1;
     //     #2
     //      // +++++ Close AXI Transmission +++++
-    //      tx_axis_tkeep = 8'h00;
-    //     tx_axis_tvalid = 1'b0;
-    //     tx_axis_tdata = 64'haabbddffffff0000;
+    //      tx_axis_tkeep <= 8'h00;
+    //     tx_axis_tvalid <= 1'b0;
+    //     tx_axis_tdata <= 64'haabbddffffff0000;
     //     // ----- Close AXI Transmission -----
-
-
-
     //     #60
     //      $finish;
-
     // end
 
     ipg_mac_phy_10g #(
@@ -345,14 +445,11 @@ module vivadotest_ipg_mac_phy_10g;
                         .rx_axis_tuser(rx_axis_tuser),
                         .serdes_tx_data(serdes_tx_data),
                         .serdes_tx_hdr(serdes_tx_hdr),
-
                         .serdes_rx_data(serdes_rx_data),
                         .serdes_rx_hdr(serdes_rx_hdr),
-
                         .serdes_rx_bitslip(serdes_rx_bitslip),
                         .tx_ptp_ts(tx_ptp_ts),
                         .rx_ptp_ts(rx_ptp_ts),
-
                         .tx_start_packet(tx_start_packet),
                         .tx_error_underflow(tx_error_underflow),
                         .rx_start_packet(rx_start_packet),
@@ -364,8 +461,10 @@ module vivadotest_ipg_mac_phy_10g;
                         .rx_high_ber(rx_high_ber),
                         .tx_prbs31_enable(tx_prbs31_enable),
                         .rx_prbs31_enable(rx_prbs31_enable),
+                        .ifg_delay(ifg_delay),
 
-                        .ifg_delay(ifg_delay)
+                        .ipg_req_chunk(ipg_req_chunk),
+                        .reqq_write(reqq_write)
                     );
 
 
