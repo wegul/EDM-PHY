@@ -85,8 +85,8 @@ module test_mac_phy_loopback;
 
 
     //******* PHY TX *******
-    wire [DATA_WIDTH-1:0] serdes_rx_data;
-    wire [HDR_WIDTH-1:0] serdes_rx_hdr;
+    reg [DATA_WIDTH-1:0] serdes_rx_data;
+    reg [HDR_WIDTH-1:0] serdes_rx_hdr;
     reg tx_prbs31_enable = 0;
     reg rx_prbs31_enable = 0;
     reg reqq_write;
@@ -145,72 +145,72 @@ module test_mac_phy_loopback;
     */
     reg [3:0] num=0;
     // 1+2. TX-RX
-    assign serdes_rx_data = serdes_tx_data;
-    assign serdes_rx_hdr = serdes_tx_hdr;
-    initial begin
-        #6
-         for(i=1;i<=8;i=i+1) begin
-             num<=i;
-             #2
-              tx_axis_tdata<={16{num}};
-             tx_axis_tvalid<=1'b1;
-             tx_axis_tkeep<=8'hff;
-             tx_axis_tlast<=1'b0;
-             tx_axis_tuser<=0;
-         end
-         tx_axis_tlast <= 1'b1;
-        #2
-         tx_axis_tkeep <= 8'h00;
-        tx_axis_tvalid <= 1'b0;
-        tx_axis_tdata <= 64'haabbccddeeffffff;
-        #16
-         for(i=1;i<=12;i=i+1) begin
-             num<=i;
-             #2
-              tx_axis_tdata<={16{num}};
-             tx_axis_tvalid<=1'b1;
-             tx_axis_tkeep<=8'hff;
-             tx_axis_tlast<=1'b0;
-             tx_axis_tuser<=0;
-         end
-         tx_axis_tlast <= 1'b1;
-        #2
-         tx_axis_tkeep <= 8'h00;
-        tx_axis_tvalid <= 1'b0;
-        tx_axis_tdata <= 64'haabbccddeeffffff;
-        #32
-         for(i=1;i<=16;i=i+1) begin
-             num<=i;
-             #2
-              tx_axis_tdata<={16{num}};
-             tx_axis_tvalid<=1'b1;
-             tx_axis_tkeep<=8'hff;
-             tx_axis_tlast<=1'b0;
-             tx_axis_tuser<=0;
-         end
-         tx_axis_tlast <= 1'b1;
-        #2
-         tx_axis_tkeep <= 8'h00;
-        tx_axis_tvalid <= 1'b0;
-        tx_axis_tdata <= 64'haabbccddeeffffff;
-        #64
-         for(i=1;i<=187;i=i+1) begin
-             num<=i;
-             #2
-              tx_axis_tdata<={16{num}};
-             tx_axis_tvalid<=1'b1;
-             tx_axis_tkeep<=8'hff;
-             tx_axis_tlast<=1'b0;
-             tx_axis_tuser<=0;
-         end
-         tx_axis_tlast <= 1'b1;
-        #2
-         tx_axis_tkeep <= 8'h00;
-        tx_axis_tvalid <= 1'b0;
-        tx_axis_tdata <= 64'haabbccddeeffffff;
-        #640
-         $finish;
-    end
+    // assign serdes_rx_data = serdes_tx_data;
+    // assign serdes_rx_hdr = serdes_tx_hdr;
+    // initial begin
+    //     #6
+    //      for(i=1;i<=8;i=i+1) begin
+    //          num<=i;
+    //          #2
+    //           tx_axis_tdata<={16{num}};
+    //          tx_axis_tvalid<=1'b1;
+    //          tx_axis_tkeep<=8'hff;
+    //          tx_axis_tlast<=1'b0;
+    //          tx_axis_tuser<=0;
+    //      end
+    //      tx_axis_tlast <= 1'b1;
+    //     #2
+    //      tx_axis_tkeep <= 8'h00;
+    //     tx_axis_tvalid <= 1'b0;
+    //     tx_axis_tdata <= 64'haabbccddeeffffff;
+    //     #16
+    //      for(i=1;i<=12;i=i+1) begin
+    //          num<=i;
+    //          #2
+    //           tx_axis_tdata<={16{num}};
+    //          tx_axis_tvalid<=1'b1;
+    //          tx_axis_tkeep<=8'hff;
+    //          tx_axis_tlast<=1'b0;
+    //          tx_axis_tuser<=0;
+    //      end
+    //      tx_axis_tlast <= 1'b1;
+    //     #2
+    //      tx_axis_tkeep <= 8'h00;
+    //     tx_axis_tvalid <= 1'b0;
+    //     tx_axis_tdata <= 64'haabbccddeeffffff;
+    //     #32
+    //      for(i=1;i<=16;i=i+1) begin
+    //          num<=i;
+    //          #2
+    //           tx_axis_tdata<={16{num}};
+    //          tx_axis_tvalid<=1'b1;
+    //          tx_axis_tkeep<=8'hff;
+    //          tx_axis_tlast<=1'b0;
+    //          tx_axis_tuser<=0;
+    //      end
+    //      tx_axis_tlast <= 1'b1;
+    //     #2
+    //      tx_axis_tkeep <= 8'h00;
+    //     tx_axis_tvalid <= 1'b0;
+    //     tx_axis_tdata <= 64'haabbccddeeffffff;
+    //     #64
+    //      for(i=1;i<=187;i=i+1) begin
+    //          num<=i;
+    //          #2
+    //           tx_axis_tdata<={16{num}};
+    //          tx_axis_tvalid<=1'b1;
+    //          tx_axis_tkeep<=8'hff;
+    //          tx_axis_tlast<=1'b0;
+    //          tx_axis_tuser<=0;
+    //      end
+    //      tx_axis_tlast <= 1'b1;
+    //     #2
+    //      tx_axis_tkeep <= 8'h00;
+    //     tx_axis_tvalid <= 1'b0;
+    //     tx_axis_tdata <= 64'haabbccddeeffffff;
+    //     #640
+    //      $finish;
+    // end
 
 
     // shim layer test
@@ -264,43 +264,43 @@ module test_mac_phy_loopback;
     // end
 
 
-    // initial begin //Back-pressure test
-    //     #6
-    //      serdes_rx_data<=64'h4000addaddadda1a;
-    //     serdes_rx_hdr<=SYNC_CTRL;
-    //     #2
-    //      serdes_rx_data<=64'haccbaddaddadda1a;
-    //     serdes_rx_hdr<=SYNC_CTRL;
-    //     #2
-    //      serdes_rx_data<=64'hffffffffffffff1a;
-    //     serdes_rx_hdr<=SYNC_CTRL;
-    //     i=0;
-    //     while (i<=20) begin
-    //         #2
-    //          serdes_rx_data<=64'hffffffffffffff00;
-    //         serdes_rx_hdr<=SYNC_CTRL;
-    //         tx_axis_tvalid<=1;
-    //         if(tx_axis_tready) begin
-    //             tx_axis_tkeep<=8'hff;
-    //             tx_axis_tdata<=tc[i];
-    //             i=i+1;
-    //             $display("i=%d",i);
-    //             // if(i%11==0 & i!=0) begin
-    //             //     tx_axis_tlast<=1;
-    //             // end
-    //             // else begin
-    //             //     tx_axis_tlast<=0;
-    //             // end
-    //         end
-    //     end
+    initial begin //Back-pressure test
+        #6
+         serdes_rx_data<=64'h4000addaddadda1a;
+        serdes_rx_hdr<=SYNC_CTRL;
+        #2
+         serdes_rx_data<=64'haccbaddaddadda1a;
+        serdes_rx_hdr<=SYNC_CTRL;
+        #2
+         serdes_rx_data<=64'hffffffffffffff1a;
+        serdes_rx_hdr<=SYNC_CTRL;
+        i=0;
+        while (i<=20) begin
+            #2
+             serdes_rx_data<=64'hffffffffffffff00;
+            serdes_rx_hdr<=SYNC_CTRL;
+            tx_axis_tvalid<=1;
+            if(tx_axis_tready) begin
+                tx_axis_tkeep<=8'hff;
+                tx_axis_tdata<=tc[i];
+                i=i+1;
+                $display("i=%d",i);
+                // if(i%11==0 & i!=0) begin
+                //     tx_axis_tlast<=1;
+                // end
+                // else begin
+                //     tx_axis_tlast<=0;
+                // end
+            end
+        end
 
-    //     tx_axis_tlast<=1;
-    //     #2
-    //      tx_axis_tvalid<=0;
-    //     tx_axis_tkeep<=0;
-    //     #60
-    //      $finish;
-    // end
+        tx_axis_tlast<=1;
+        #2
+         tx_axis_tvalid<=0;
+        tx_axis_tkeep<=0;
+        #60
+         $finish;
+    end
 
 
     //Objective: create a series of continuous packets - replace /I/ in eth_phy_10g_tx_if.v

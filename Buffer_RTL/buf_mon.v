@@ -45,7 +45,7 @@ module buf_mon (
             netq_reset<=0;
             reqq_reset<=0;
         end
-        if (netq_space < 16) begin
+        if (netq_space < 26) begin
             // $display("num space=%d",netq_space);
             tx_pause <= 1'b1;
         end

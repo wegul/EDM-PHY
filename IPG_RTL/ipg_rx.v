@@ -166,7 +166,7 @@ module ipg_rx(
                     shimq_write=0;//has no data
                 end
                 else begin
-                    $display("writing to shimq %h",recoved_encoded_rx_data);
+                    // $display("writing to shimq %h",recoved_encoded_rx_data);
                     shimq_write=1;
                 end
             end

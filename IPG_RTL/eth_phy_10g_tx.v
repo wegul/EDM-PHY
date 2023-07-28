@@ -84,8 +84,7 @@ module eth_phy_10g_tx #
                            .encoded_tx_data(encoded_tx_data),
                            .encoded_tx_hdr(encoded_tx_hdr),
                            .tx_bad_block(tx_bad_block),
-                           .netq_write(netq_write),
-                           .tx_pause(tx_pause)
+                           .netq_write(netq_write)
                        );
 
     wire [DATA_WIDTH-1:0] proced_encoded_tx_data;

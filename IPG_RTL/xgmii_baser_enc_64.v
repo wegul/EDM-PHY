@@ -36,8 +36,7 @@ module xgmii_baser_enc_64 #
         output wire                  tx_bad_block,
 
         //net filter
-        output reg netq_write,
-        input wire tx_pause
+        output reg netq_write
     );
 
     // bus width assertions
