@@ -83,10 +83,12 @@ module eth_phy_10g_rx #
     wire [DATA_WIDTH-1:0] recoved_encoded_rx_data;
     wire [HDR_WIDTH-1:0]  recoved_encoded_rx_hdr;
 
-    wire [DATA_WIDTH-1:0] shim_outd,ipg_resp;
+    wire [DATA_WIDTH-1:0] shim_outd,ipg_resp64,ipg_resp64_out;
+    wire[55:0] ipg_resp;
     wire [HDR_WIDTH-1:0] shim_outc;
-    wire shimq_write,shimq_read;
+    wire shimq_write,shimq_read,en_adapter,respq_write,respq_read,respq_full;
 
+    assign respq_read = respq_full? 1:0;
 
     eth_phy_10g_rx_if #(
                           .DATA_WIDTH(DATA_WIDTH),
@@ -139,7 +141,6 @@ module eth_phy_10g_rx #
                       .full (),
                       .space()
                   );
-
     ipg_rx inst_ipg_rx(
                .clk(clk),
                .encoded_rx_data(encoded_rx_data),
@@ -153,8 +154,29 @@ module eth_phy_10g_rx #
                .shimq_write(shimq_write),
                .jobq_write(jobq_write),
 
-               .ipg_resp(ipg_resp)
+               .ipg_resp(ipg_resp),
+               .en_adapter(en_adapter)
            );
+
+    resp_adapter ra (
+                     .clk(clk),
+                     .rst(rst),
+                     .ivalid(en_adapter),
+                     .in(ipg_resp),
+                     .out(ipg_resp64),
+                     .ovalid(respq_write)
+                 );
+    resp_fifo_buf respq(
+                      .reset(rst),
+                      .clk(clk),
+                      .rd(respq_read),
+                      .wr(respq_write),
+                      .full(respq_full),
+                      .w_data(ipg_resp64),
+                      .r_data(ipg_resp64_out),
+                      .empty(),
+                      .space()
+                  );
 
     xgmii_baser_dec_64 #(
                            .DATA_WIDTH(DATA_WIDTH),

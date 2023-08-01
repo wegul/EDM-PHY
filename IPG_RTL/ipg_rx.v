@@ -21,7 +21,8 @@ module ipg_rx(
         //shim layer control
         output reg shimq_write=0,
         output wire jobq_write,
-        output reg [63:0] ipg_resp
+        output reg [55:0] ipg_resp,
+        output reg en_adapter
     );
 
 
@@ -60,13 +61,16 @@ module ipg_rx(
         if (encoded_rx_hdr == SYNC_CTRL) begin
             case(encoded_rx_data[7:0])
                 BLOCK_TYPE_REQ: begin
+                    en_adapter=0;
                     rx_ipg_data=encoded_rx_data;
                     rx_len = 6'd56;
                     recoved_encoded_rx_data[7:0]=BLOCK_TYPE_CTRL;
                     recoved_encoded_rx_data[63:8]=0;
                 end
+                // received response from other host
                 BLOCK_TYPE_RESP: begin
-                    ipg_resp = encoded_rx_data;
+                    ipg_resp = encoded_rx_data[63:8];
+                    en_adapter=1;
                     rx_ipg_data = 64'h0;
                     rx_ipg_data[63:48]=16'habab;
                     rx_len=0;
@@ -77,6 +81,7 @@ module ipg_rx(
                     rx_ipg_data = 64'h0;
                     rx_ipg_data[63:48]=16'heeee;
                     rx_len=0;
+                    en_adapter=0;
                 end
             endcase
         end
