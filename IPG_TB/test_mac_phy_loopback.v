@@ -85,8 +85,8 @@ module test_mac_phy_loopback;
 
 
     //******* PHY TX *******
-    reg [DATA_WIDTH-1:0] serdes_rx_data;
-    reg [HDR_WIDTH-1:0] serdes_rx_hdr;
+    wire [DATA_WIDTH-1:0] serdes_rx_data;
+    wire [HDR_WIDTH-1:0] serdes_rx_hdr;
     reg tx_prbs31_enable = 0;
     reg rx_prbs31_enable = 0;
     reg reqq_write;
@@ -145,8 +145,8 @@ module test_mac_phy_loopback;
     */
     reg [3:0] num=0;
     // 1+2. TX-RX
-    // assign serdes_rx_data = serdes_tx_data;
-    // assign serdes_rx_hdr = serdes_tx_hdr;
+    assign serdes_rx_data = serdes_tx_data;
+    assign serdes_rx_hdr = serdes_tx_hdr;
     // initial begin
     //     #6
     //      for(i=1;i<=8;i=i+1) begin
@@ -217,64 +217,78 @@ module test_mac_phy_loopback;
     // reg [3:0] loop[99:0] = {7.180,100,20,15,50,70,43};
     integer j=1;
     initial begin
-        #6
-         forever begin
-             //  if(tx_axis_tready) begin
-             for(i=1;i<=8;i=i+1) begin
-                 num<=i;
-                 #2
-                  tx_axis_tdata<={2{j}};
-                 tx_axis_tvalid<=1'b1;
-                 tx_axis_tkeep<=8'hff;
-                 tx_axis_tlast<=1'b0;
-                 tx_axis_tuser<=0;
-             end
-             tx_axis_tlast <= 1'b1;
-             j=j+1;
-             //  end
-             #6;
-             for(i=1;i<=16;i=i+1) begin
-                 num<=i;
-                 #2
-                  tx_axis_tdata<={2{j}};
-                 tx_axis_tvalid<=1'b1;
-                 tx_axis_tkeep<=8'hff;
-                 tx_axis_tlast<=1'b0;
-                 tx_axis_tuser<=0;
-             end
-             tx_axis_tlast <= 1'b1;
-             j=j+1;
-             //  end
-             #6;
-             for(i=1;i<=32;i=i+1) begin
-                 num<=i;
-                 #2
-                  tx_axis_tdata<={2{j}};
-                 tx_axis_tvalid<=1'b1;
-                 tx_axis_tkeep<=8'hff;
-                 tx_axis_tlast<=1'b0;
-                 tx_axis_tuser<=0;
-             end
-             tx_axis_tlast <= 1'b1;
-             j=j+1;
-             //  end
-             #6;
-             for(i=1;i<=64;i=i+1) begin
-                 num<=i;
-                 #2
-                  tx_axis_tdata<={2{j}};
-                 tx_axis_tvalid<=1'b1;
-                 tx_axis_tkeep<=8'hff;
-                 tx_axis_tlast<=1'b0;
-                 tx_axis_tuser<=0;
-             end
-             tx_axis_tlast <= 1'b1;
-             j=j+1;
-             //  end
-             #6;
-         end
-         $finish;
+        #6;
+        forever begin
+            for(i=1;i<=16;i=i+1) begin
+                #2
+                 tx_axis_tdata<={2{j}};
+                tx_axis_tvalid<=1'b1;
+                tx_axis_tkeep<=8'hff;
+                tx_axis_tlast<=1'b0;
+                tx_axis_tuser<=0;
+            end
+            tx_axis_tlast <= 1'b1;
+            j=j+1;
+            #6;
+        end
     end
+
+    // initial begin
+    //     #6;
+    //     forever begin
+    //         //  if(tx_axis_tready) begin
+    //         for(i=1;i<=8;i=i+1) begin
+    //             num<=i;
+    //             #2
+    //              tx_axis_tdata<={2{j}};
+    //             tx_axis_tvalid<=1'b1;
+    //             tx_axis_tkeep<=8'hff;
+    //             tx_axis_tlast<=1'b0;
+    //             tx_axis_tuser<=0;
+    //         end
+    //         tx_axis_tlast <= 1'b1;
+    //         j=j+1;
+    //         //  end
+    //         #6;
+    //         for(i=1;i<=16;i=i+1) begin
+    //             num<=i;
+    //             #2
+    //              tx_axis_tdata<={2{j}};
+    //             tx_axis_tvalid<=1'b1;
+    //             tx_axis_tkeep<=8'hff;
+    //             tx_axis_tlast<=1'b0;
+    //             tx_axis_tuser<=0;
+    //         end
+    //         tx_axis_tlast <= 1'b1;
+    //         j=j+1;
+    //         //  end
+    //         #6;
+    //         for(i=1;i<=32;i=i+1) begin
+    //             num<=i;
+    //             #2
+    //              tx_axis_tdata<={2{j}};
+    //             tx_axis_tvalid<=1'b1;
+    //             tx_axis_tkeep<=8'hff;
+    //             tx_axis_tlast<=1'b0;
+    //             tx_axis_tuser<=0;
+    //         end
+    //         tx_axis_tlast <= 1'b1;
+    //         j=j+1;
+    //         //  end
+    //         #6;
+    //         for(i=1;i<=64;i=i+1) begin
+    //             num<=i;
+    //             #2
+    //              tx_axis_tdata<={2{j}};
+    //             tx_axis_tvalid<=1'b1;
+    //             tx_axis_tkeep<=8'hff;
+    //             tx_axis_tlast<=1'b0;
+    //             tx_axis_tuser<=0;
+    //         end
+    //         tx_axis_tlast <= 1'b1;
+    //         j=j+1;
+    //     end
+    // end
 
     // shim layer test
     // initial begin
