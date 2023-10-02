@@ -54,9 +54,11 @@ module eth_phy_10g_rx #
         input  wire                  rx_prbs31_enable,
 
         //received ipg data
+        output wire wreq_valid,
+        output wire rreq_valid,
+        output wire rresp_valid,
         output wire [5:0] rx_len,
-        output wire [DATA_WIDTH-1:0] rx_ipg_data,
-        output wire jobq_write
+        output wire [DATA_WIDTH-1:0] rx_ipg_data
     );
 
     // bus width assertions
@@ -152,9 +154,10 @@ module eth_phy_10g_rx #
                .recoved_encoded_rx_hdr(recoved_encoded_rx_hdr),
 
                .shimq_write(shimq_write),
-               .jobq_write(jobq_write),
+               .wreq_valid(wreq_valid),
+               .rreq_valid(rreq_valid),
+               .rresp_valid(rresp_valid),
 
-               .ipg_resp(ipg_resp),
                .en_adapter(en_adapter)
            );
 

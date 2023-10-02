@@ -17,7 +17,7 @@ module ipg_tx
 
 
         //Give information about the next block
-        // if this is a control frame to be sent and could fit in, then use it
+        // if this is a control frame (small) to be sent and could fit in, then use it
         // else, msg needs to be pulled from queue monitor.
         input wire [1:0] encoded_tx_hdr,
         input wire [63:0] encoded_tx_data,
@@ -40,27 +40,6 @@ module ipg_tx
     localparam [1:0]
                SYNC_DATA = 2'b10,
                SYNC_CTRL = 2'b01;
-
-    localparam [7:0]
-               BLOCK_TYPE_REQ = 8'h1a, // I6 I5 I4 I3 I2 I1 I0 BT
-               BLOCK_TYPE_RESP = 8'h1f, // I6 I5 I4 I3 I2 I1 I0 BT
-
-               BLOCK_TYPE_CTRL     = 8'h1e, // C7 C6 C5 C4 C3 C2 C1 C0 BT
-               BLOCK_TYPE_OS_4     = 8'h2d, // D7 D6 D5 O4 C3 C2 C1 C0 BT
-               BLOCK_TYPE_START_4  = 8'h33, // D7 D6 D5    C3 C2 C1 C0 BT
-               BLOCK_TYPE_OS_START = 8'h66, // D7 D6 D5    O0 D3 D2 D1 BT
-               BLOCK_TYPE_OS_04    = 8'h55, // D7 D6 D5 O4 O0 D3 D2 D1 BT
-               BLOCK_TYPE_START_0  = 8'h78, // D7 D6 D5 D4 D3 D2 D1    BT
-               BLOCK_TYPE_OS_0     = 8'h4b, // C7 C6 C5 C4 O0 D3 D2 D1 BT
-               BLOCK_TYPE_TERM_0   = 8'h87, // C7 C6 C5 C4 C3 C2 C1    BT
-               BLOCK_TYPE_TERM_1   = 8'h99, // C7 C6 C5 C4 C3 C2    D0 BT
-               BLOCK_TYPE_TERM_2   = 8'haa, // C7 C6 C5 C4 C3    D1 D0 BT
-               BLOCK_TYPE_TERM_3   = 8'hb4, // C7 C6 C5 C4    D2 D1 D0 BT
-               BLOCK_TYPE_TERM_4   = 8'hcc, // C7 C6 C5    D3 D2 D1 D0 BT
-               BLOCK_TYPE_TERM_5   = 8'hd2, // C7 C6    D4 D3 D2 D1 D0 BT
-               BLOCK_TYPE_TERM_6   = 8'he1, // C7    D5 D4 D3 D2 D1 D0 BT
-               BLOCK_TYPE_TERM_7   = 8'hff; //    D6 D5 D4 D3 D2 D1 D0 BT
-
 
     wire memq_empty,
          memq_full,
@@ -89,7 +68,7 @@ module ipg_tx
 
     // Queue management
 
-    // ipg req to be sent
+    // ipg read_req to be sent
     req_fifo_buf reqq(
                      .w_data (ipg_req_chunk),
                      .reset(reqq_reset),
@@ -102,7 +81,7 @@ module ipg_tx
                      .space(reqq_space)
                  );
 
-    // ipg msg to be sent
+    // ipg msg(write req) to be sent
     mem_fifo_buf memq(
                      .w_data (ipg_reply_chunk),
                      .reset(memq_reset),

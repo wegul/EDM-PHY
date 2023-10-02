@@ -56,7 +56,7 @@ module resp_adapter#(
                 iptr_next = iptr_next-OW;
                 bits = bits >> OW;
                 ovalid_next=1;
-                $display("1bits=%h, time=%t",bits,$time);
+                // $display("1bits=%h, time=%t",bits,$time);
             end
             else begin
                 ovalid_next=0;
@@ -64,7 +64,7 @@ module resp_adapter#(
             if(ivalid) begin
                 bits[iptr_next +: IW] = in;
                 iptr_next = iptr_next +IW;
-                $display("2bits=%h, time=%t",bits,$time);
+                // $display("2bits=%h, time=%t",bits,$time);
             end
         end
     end

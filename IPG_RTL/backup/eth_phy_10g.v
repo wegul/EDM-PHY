@@ -85,7 +85,6 @@ module eth_phy_10g #
                       .ipg_reply_chunk(ipg_reply_chunk),
                       .memq_write(memq_write)
                   );
-
     ipg_wreq_proc inst_ipg_write_proc(
                       .clk(tx_clk),
                       .reset(tx_rst),
@@ -139,7 +138,6 @@ module eth_phy_10g #
                        .rreq_valid(rreq_valid),
                        .rresp_valid(rresp_valid)
                    );
-
 
     eth_phy_10g_tx #(
                        .DATA_WIDTH(DATA_WIDTH),
