@@ -39,7 +39,12 @@ module ipg_rx(
                BLOCK_TYPE_READ = 8'h1a, // I6 I5 I4 I3 I2 I1 I0 BT
                BLOCK_TYPE_WRITE = 8'h1b, // I6 I5 I4 I3 I2 I1 I0 BT
                BLOCK_TYPE_RRESP = 8'h1c, // I6 I5 I4 I3 I2 I1 I0 BT
-               BLOCK_TYPE_LAST = 8'h1d, // I6 I5 I4 I3 I2 I1 I0 BT
+               BLOCK_TYPE_READLAST = 8'h0a, // I6 I5 I4 I3 I2 I1 I0 BT
+               BLOCK_TYPE_RESPLAST = 8'h0b, // I6 I5 I4 I3 I2 I1 I0 BT
+               BLOCK_TYPE_WRITLAST = 8'h0c, // I6 I5 I4 I3 I2 I1 I0 BT
+               BLOCK_TYPE_READFIRST = 8'h2a, // I6 I5 I4 I3 I2 I1 I0 BT
+               BLOCK_TYPE_RESPFIRST = 8'h2b, // I6 I5 I4 I3 I2 I1 I0 BT
+               BLOCK_TYPE_WRITFIRST = 8'h2c, // I6 I5 I4 I3 I2 I1 I0 BT
 
 
                BLOCK_TYPE_CTRL     = 8'h1e, // C7 C6 C5 C4 C3 C2 C1 C0 BT
@@ -65,7 +70,7 @@ module ipg_rx(
         recoved_encoded_rx_hdr=encoded_rx_hdr;
         if (encoded_rx_hdr == SYNC_CTRL) begin
             case(encoded_rx_data[7:0])
-                BLOCK_TYPE_READ: begin
+                BLOCK_TYPE_READ,BLOCK_TYPE_READLAST,BLOCK_TYPE_READFIRST: begin
                     en_adapter=0;
                     rreq_valid=1;
                     wreq_valid=0;
@@ -75,22 +80,22 @@ module ipg_rx(
                     recoved_encoded_rx_data[7:0]=BLOCK_TYPE_CTRL;
                     recoved_encoded_rx_data[63:8]=0;
                 end
-                // received response (write req) from other host
-                BLOCK_TYPE_WRITE: begin
-                    en_adapter=1;
+                BLOCK_TYPE_RRESP,BLOCK_TYPE_RESPLAST,BLOCK_TYPE_RESPFIRST: begin
+                    en_adapter=0;
                     rreq_valid=0;
-                    wreq_valid=1;
-                    rresp_valid=0;
+                    wreq_valid=0;
+                    rresp_valid=1;
                     rx_ipg_data=encoded_rx_data;
                     rx_len=6'd56;
                     recoved_encoded_rx_data[7:0]=BLOCK_TYPE_CTRL;
                     recoved_encoded_rx_data[63:8]=0;
                 end
-                BLOCK_TYPE_RRESP: begin
-                    en_adapter=0;
+                // received response (write req) from other host
+                BLOCK_TYPE_WRITE,BLOCK_TYPE_WRITLAST,BLOCK_TYPE_WRITFIRST: begin
+                    en_adapter=1;
                     rreq_valid=0;
-                    wreq_valid=0;
-                    rresp_valid=1;
+                    wreq_valid=1;
+                    rresp_valid=0;
                     rx_ipg_data=encoded_rx_data;
                     rx_len=6'd56;
                     recoved_encoded_rx_data[7:0]=BLOCK_TYPE_CTRL;
