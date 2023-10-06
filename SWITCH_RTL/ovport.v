@@ -29,22 +29,27 @@ module ovport #(
         parameter HDR_WIDTH = 2,
         parameter IPG_HDR_WIDTH = 16,
         parameter QUE_DEPTH = 6,
-        parameter LOG_PORT_NUM = 4
+        parameter LOG_PORT_NUM = 2
     ) (
         input  wire                  clk,
         input  wire                  rst,
-        input wire [ADR_WIDTH/2-1:0] src,
-        input wire [ADR_WIDTH/2-1:0] dst,
-        input wire wreq_valid,
-        input wire rreq_valid,
-        input wire rresp_valid,
-        input wire [DATA_WIDTH-1:0] fwd_ipg_data,
+        input wire [LOG_PORT_NUM**2-1:0] iv_ipg_en,// = rx_ipg_en
+        input wire [(ADR_WIDTH/2)*LOG_PORT_NUM**2-1:0] src_flat,
+        input wire [(ADR_WIDTH/2)*LOG_PORT_NUM**2-1:0] dst_flat,
+        input wire [LOG_PORT_NUM**2-1:0] wreq_valid,
+        input wire [LOG_PORT_NUM**2-1:0] rreq_valid,
+        input wire [LOG_PORT_NUM**2-1:0] rresp_valid,
+        input wire [(DATA_WIDTH*LOG_PORT_NUM**2)-1:0] fwd_ipg_data_flat,
         output wire tx_ipg_en,
         output wire [DATA_WIDTH-1:0] tx_ipg_data
     );
     localparam PORT_NUM = LOG_PORT_NUM**2;
 
+    wire [ADR_WIDTH/2-1:0] src [LOG_PORT_NUM**2-1:0];
+    wire [ADR_WIDTH/2-1:0] dst [LOG_PORT_NUM**2-1:0];
+
     reg [LOG_PORT_NUM-1:0] port [2:0], port_next [2:0];
+    wire [DATA_WIDTH-1:0] fwd_ipg_data [LOG_PORT_NUM**2-1:0];
     wire [DATA_WIDTH-1:0] fire_ipg_data [PORT_NUM-1:0];
     wire [PORT_NUM-1:0] rreq_empty, rresp_empty, wreq_empty;//for ports emptiness check
     reg [PORT_NUM-1:0] fire_en=0,fwd_en;
@@ -56,8 +61,10 @@ module ovport #(
 
     always @(*) begin
         fwd_en = 0;
-        if (src>=0 & dst == OVPORT_ADR) begin
-            fwd_en[src]=1;
+        for ( j = 0; j<LOG_PORT_NUM**2 ; j=j+1 ) begin
+            if (iv_ipg_en[j] & dst[j] == OVPORT_ADR) begin// means if it is an ipg msg and dst is ovp_adr
+                fwd_en[src[j]]=1;
+            end
         end
     end
 
@@ -88,7 +95,7 @@ module ovport #(
             end
             if (!wreq_empty[(port[2]+i)%PORT_NUM] & !type_en[2]) begin
                 port_next[2] = (port[2]+i)%PORT_NUM;
-                type_en_next[2]=1;
+                    [2]=1;
             end
         end
         // select type for next transmission, where prioritization takes place: rreq>rresp>wreq
@@ -131,13 +138,17 @@ module ovport #(
     genvar k;
     generate
         for ( k=0; k<PORT_NUM; k=k+1) begin
+            assign src[k] = src_flat[k*(ADR_WIDTH/2) +: (ADR_WIDTH/2)];
+            assign dst[k] = dst_flat[k*(ADR_WIDTH/2) +: (ADR_WIDTH/2)];
+            assign fwd_ipg_data[k] = fwd_ipg_data_flat[k*DATA_WIDTH +: DATA_WIDTH];
+
             ivport iv (
                        .clk(clk),
                        .rst(rst),
-                       .wreq_valid(wreq_valid),
-                       .rreq_valid(rreq_valid),
-                       .rresp_valid(rresp_valid),
-                       .fwd_ipg_data(fwd_ipg_data),
+                       .wreq_valid(wreq_valid[k]),
+                       .rreq_valid(rreq_valid[k]),
+                       .rresp_valid(rresp_valid[k]),
+                       .fwd_ipg_data(fwd_ipg_data[k]),
                        //input from ovport
                        .fwd_en(fwd_en[k]),
                        .fire_type_sel(fire_type_sel),

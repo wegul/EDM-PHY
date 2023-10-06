@@ -16,7 +16,7 @@ module switch_top #
         parameter CTRL_WIDTH = (DATA_WIDTH/8),
         parameter HDR_WIDTH = 2,
         parameter ADR_WIDTH =40,
-        parameter LOG_PORT_NUM = 4
+        parameter LOG_PORT_NUM = 2
     )
     (
         input  wire                  clk,
@@ -36,45 +36,31 @@ module switch_top #
     wire [DATA_WIDTH-1:0] xgmii_txd [LOG_PORT_NUM**2-1:0];
     wire [CTRL_WIDTH-1:0] xgmii_txc [LOG_PORT_NUM**2-1:0];
 
-    reg [LOG_PORT_NUM**2-1:0] fwd_wreq_valid, fwd_rreq_valid, fwd_rresp_valid;
     wire [LOG_PORT_NUM**2-1:0] rx_wreq_valid, rx_rreq_valid, rx_rresp_valid;
 
     wire [ADR_WIDTH/2-1:0] rx_src [LOG_PORT_NUM**2-1:0], rx_dst [LOG_PORT_NUM**2-1:0];//the src and dst field of msg from p_x
-    reg [ADR_WIDTH/2-1:0] fwd_src [LOG_PORT_NUM**2-1:0], fwd_dst [LOG_PORT_NUM**2-1:0];
+    wire [(ADR_WIDTH/2)*LOG_PORT_NUM**2-1:0] fwd_src_flat, fwd_dst_flat;
 
-    wire [DATA_WIDTH-1:0] rx_ipg_data [LOG_PORT_NUM**2-1:0];//carry the ingressed ipg_data
     wire  [LOG_PORT_NUM**2-1:0] rx_ipg_en;
-    reg [DATA_WIDTH-1:0] fwd_ipg_data [LOG_PORT_NUM**2-1:0];//carry to-be-forwarded ipg_data
+    wire [DATA_WIDTH-1:0] rx_ipg_data [LOG_PORT_NUM**2-1:0];//carry the ingressed ipg_data
+    wire [(DATA_WIDTH*LOG_PORT_NUM**2)-1:0] fwd_ipg_data_flat;//carry to-be-forwarded ipg_data
+
 
     wire [DATA_WIDTH-1:0] tx_ipg_data [LOG_PORT_NUM**2-1:0];//carry the outbound egress ipg_data
     wire [LOG_PORT_NUM**2-1:0] tx_ipg_en;
 
 
-    // Based on dst, forward it to ov-ivp
-    integer i;
-    always @(*) begin
-        for ( i=0; i<LOG_PORT_NUM**2; i=i+1)begin
-            if (rx_ipg_en[i]) begin
-                fwd_src[rx_dst[i]]=rx_src[i];
-                fwd_dst[rx_dst[i]]=rx_dst[i];
-                fwd_rreq_valid[rx_dst[i]]=rx_rreq_valid[i];
-                fwd_rresp_valid[rx_dst[i]]=rx_rresp_valid[i];
-                fwd_wreq_valid[rx_dst[i]]=rx_wreq_valid[i];
-
-                fwd_ipg_data[rx_dst[i]]=rx_ipg_data[i];
-            end
-        end
-    end
-
     genvar k;
     generate
-        for (k = 0; k < LOG_PORT_NUM**2; k = k + 1) begin
+        for ( k=0; k<LOG_PORT_NUM**2; k=k+1) begin
             assign serdes_rx_data[k] = serdes_rx_data_flat[k*DATA_WIDTH +: DATA_WIDTH];
             assign serdes_rx_hdr[k] = serdes_rx_hdr_flat[k*HDR_WIDTH +: HDR_WIDTH];
             assign serdes_tx_data_flat[k*DATA_WIDTH +: DATA_WIDTH] = serdes_tx_data[k];
             assign serdes_tx_hdr_flat[k*HDR_WIDTH +: HDR_WIDTH] = serdes_tx_hdr[k];
-        end
-        for ( k=0; k<LOG_PORT_NUM**2; k=k+1) begin
+
+            assign fwd_ipg_data_flat[k*DATA_WIDTH +: DATA_WIDTH] = rx_ipg_data[k];
+            assign fwd_src_flat[k*(ADR_WIDTH/2) +: (ADR_WIDTH/2)] = rx_src[k];
+            assign fwd_dst_flat[k*(ADR_WIDTH/2) +: (ADR_WIDTH/2)] = rx_dst[k];
             ingress ig (
                         .clk(clk),
                         .rst(rst),
@@ -93,19 +79,22 @@ module switch_top #
                         .src(rx_src[k]),
                         .dst(rx_dst[k])
                     );
-            ovport ovp
-                   (
-                       .clk(clk),
-                       .rst(rst),
-                       .src(fwd_src[k]),
-                       .dst(fwd_dst[k]),
-                       .wreq_valid(fwd_wreq_valid[k]),
-                       .rreq_valid(fwd_rreq_valid[k]),
-                       .rresp_valid(fwd_rresp_valid[k]),
-                       .fwd_ipg_data(fwd_ipg_data[k]),
-                       .tx_ipg_en(tx_ipg_en[k]),
-                       .tx_ipg_data(tx_ipg_data[k])
-                   );
+            ovport#( .OVPORT_ADR(k))
+                  ovp
+                  (
+                      .clk(clk),
+                      .rst(rst),
+                      .iv_ipg_en(rx_ipg_en),
+                      .src_flat(fwd_src_flat),
+                      .dst_flat(fwd_dst_flat),
+                      .wreq_valid(rx_wreq_valid),
+                      .rreq_valid(rx_rreq_valid),
+                      .rresp_valid(rx_rresp_valid),
+                      .fwd_ipg_data_flat(fwd_ipg_data_flat),
+
+                      .tx_ipg_en(tx_ipg_en[k]),
+                      .tx_ipg_data(tx_ipg_data[k])
+                  );
             egress eg(
                        .clk(clk),
                        .rst(rst),
@@ -189,32 +178,6 @@ module tb_switch_top;
     end
     integer i;
     //incast
-    // initial begin
-    //     #6
-    //      //1. p0 send 1a to p2
-    //      serdes_rx_data[0] [63 -: 16] <= 16'd118;//ipg_hdr: length
-    //     serdes_rx_data[0] [47 -: 20] <= 20'h0; //src port
-    //     serdes_rx_data[0] [27 -: 20] <= 20'h2; // dst port
-    //     serdes_rx_data[0] [7:0]<=8'h2a; // blocktype read_first
-
-    //     //2. p3 send 1b to p2
-    //     serdes_rx_data[3] [63 -: 16] <= 16'd118;//ipg_hdr: length
-    //     serdes_rx_data[3] [47 -: 20] <= 20'h3; //src port
-    //     serdes_rx_data[3] [27 -: 20] <= 20'h2; //dst port
-    //     serdes_rx_data[3] [7:0]<=8'h2b; // blocktype read_first
-    //     #2
-    //      serdes_rx_data[0]<=64'h0f2f1af01fffff1a;
-    //     serdes_rx_data[3]<=64'h3f2f1bf01fffff1b;
-    //     #2
-    //      serdes_rx_data[0]<=64'h0f2f0af02fffff0a;
-    //     serdes_rx_data[3]<=64'h3f2f0bf02fffff0b;
-    //     #2
-    //      for (i = 0; i < LOG_PORT_NUM**2; i = i + 1) begin
-    //          serdes_rx_data[i] <= 0;
-    //          serdes_rx_hdr[i] <= SYNC_CTRL;
-    //      end
-    //      #10 $stop;
-    // end
     initial begin
         #6
          //1. p0 send 1a to p2
@@ -222,28 +185,55 @@ module tb_switch_top;
         serdes_rx_data[0] [47 -: 20] <= 20'h0; //src port
         serdes_rx_data[0] [27 -: 20] <= 20'h2; // dst port
         serdes_rx_data[0] [7:0]<=8'h2a; // blocktype read_first
-        #2
-         serdes_rx_data[0]<=64'h0f2f1af01fffff1a;
-        #2
-         serdes_rx_data[0]<=64'h0f2f0af02fffff0a;
-        #2
-         //2. p3 send 1b to p2
-         serdes_rx_data[3] [63 -: 16] <= 16'd118;//ipg_hdr: length
+
+        //2. p3 send 1b to p2
+        serdes_rx_data[3] [63 -: 16] <= 16'd118;//ipg_hdr: length
         serdes_rx_data[3] [47 -: 20] <= 20'h3; //src port
         serdes_rx_data[3] [27 -: 20] <= 20'h2; //dst port
         serdes_rx_data[3] [7:0]<=8'h2b; // blocktype read_first
         #2
-         serdes_rx_data[3]<=64'h3f2f1bf01fffff1b;
+         serdes_rx_data[0]<=64'h0f2f1af01fffff1a;
+        serdes_rx_data[3]<=64'h3f2f1bf01fffff1b;
         #2
-         serdes_rx_data[3]<=64'h3f2f0bf02fffff0b;
-
+         serdes_rx_data[0]<=64'h0f2f0af02fffff0a;
+        serdes_rx_data[3]<=64'h3f2f0bf02fffff0b;
         #2
          for (i = 0; i < LOG_PORT_NUM**2; i = i + 1) begin
              serdes_rx_data[i] <= 0;
              serdes_rx_hdr[i] <= SYNC_CTRL;
          end
-         #10 $stop;
+         #20 $stop;
     end
+
+    // initial begin
+    //     #6
+    //      //1. p0 send 1a to p2
+    //      serdes_rx_data[0] [63 -: 16] <= 16'd118;//ipg_hdr: length
+    //     serdes_rx_data[0] [47 -: 20] <= 20'h0; //src port
+    //     serdes_rx_data[0] [27 -: 20] <= 20'h2; // dst port
+    //     serdes_rx_data[0] [7:0]<=8'h2a; // blocktype read_first
+    //     #2
+    //      serdes_rx_data[0]<=64'h0f2f1af01fffff1a;
+    //     #2
+    //      serdes_rx_data[0]<=64'h0f2f0af02fffff0a;
+    //     #2
+    //      //2. p3 send 1b to p2
+    //      serdes_rx_data[3] [63 -: 16] <= 16'd118;//ipg_hdr: length
+    //     serdes_rx_data[3] [47 -: 20] <= 20'h3; //src port
+    //     serdes_rx_data[3] [27 -: 20] <= 20'h2; //dst port
+    //     serdes_rx_data[3] [7:0]<=8'h2b; // blocktype read_first
+    //     #2
+    //      serdes_rx_data[3]<=64'h3f2f1bf01fffff1b;
+    //     #2
+    //      serdes_rx_data[3]<=64'h3f2f0bf02fffff0b;
+
+    //     #2
+    //      for (i = 0; i < LOG_PORT_NUM**2; i = i + 1) begin
+    //          serdes_rx_data[i] <= 0;
+    //          serdes_rx_hdr[i] <= SYNC_CTRL;
+    //      end
+    //      #10 $stop;
+    // end
 
 endmodule
 

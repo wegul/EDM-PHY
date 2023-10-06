@@ -75,6 +75,7 @@ module ingress #
     assign isHdr = rx_ipg_en & rx_ipg_data[7:4]==4'h2 ;
     always @(*) begin
         if(isHdr) begin
+            src=0;dst=0;
             src = rx_ipg_data[DATA_WIDTH-IPG_HDR_WIDTH-1 -: ADR_WIDTH/2];
             dst = rx_ipg_data[DATA_WIDTH-IPG_HDR_WIDTH-ADR_WIDTH/2 - 1 -: ADR_WIDTH/2];
         end
