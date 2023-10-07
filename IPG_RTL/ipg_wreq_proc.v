@@ -21,7 +21,7 @@ module ipg_wreq_proc(
 
     localparam HDR_WIDTH=16;//packets must be bigger than 16bits. this field is currently for payload length.
     localparam DATA_WIDTH=64;
-    localparam ADR_WIDTH=40;
+    localparam ADR_WIDTH=12;
     localparam RX_COUNT = 6;
     localparam PAYLOAD_COUNT = 10;
     localparam PAYLOAD_LEN = 512;

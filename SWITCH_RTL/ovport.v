@@ -95,7 +95,7 @@ module ovport #(
             end
             if (!wreq_empty[(port[2]+i)%PORT_NUM] & !type_en[2]) begin
                 port_next[2] = (port[2]+i)%PORT_NUM;
-                    [2]=1;
+                type_en_next[2]=1;
             end
         end
         // select type for next transmission, where prioritization takes place: rreq>rresp>wreq

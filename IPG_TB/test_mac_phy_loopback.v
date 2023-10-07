@@ -437,7 +437,7 @@ module test_mac_phy_loopback;
         #6
          for (i=0;i<20;i=i+1) begin
              #2
-              serdes_rx_data<=64'h003856781234561b;
+              serdes_rx_data<=64'h003856781234561a;
              serdes_rx_hdr<=SYNC_CTRL;
          end
      end

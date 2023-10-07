@@ -92,10 +92,9 @@ module mem_fifo_buf
             end
             2'b11:
             begin
-                if(~empty_reg) begin
-                    w_ptr_next = w_ptr_succ;
-                    r_ptr_next = r_ptr_succ;
-                end
+                w_ptr_next = w_ptr_succ;
+                r_ptr_next = r_ptr_succ;
+
             end
             2'b00:;
         endcase

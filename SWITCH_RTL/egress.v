@@ -62,28 +62,28 @@ module egress #
         // input wire [4:0] srcPort
     );
 
-    eth_phy_10g_tx_switch #(
-                              .DATA_WIDTH(DATA_WIDTH),
-                              .CTRL_WIDTH(CTRL_WIDTH),
-                              .HDR_WIDTH(HDR_WIDTH),
-                              .BIT_REVERSE(BIT_REVERSE),
-                              .SCRAMBLER_DISABLE(SCRAMBLER_DISABLE),
-                              .PRBS31_ENABLE(PRBS31_ENABLE)
-                          )
-                          eth_phy_10g_tx_inst (
-                              .clk(clk),
-                              .rst(rst),
-                              .xgmii_txd(xgmii_txd),
-                              .xgmii_txc(xgmii_txc),
-                              .serdes_tx_data(serdes_tx_data),
-                              .serdes_tx_hdr(serdes_tx_hdr),
-                              .tx_bad_block(tx_bad_block),
-                              .tx_prbs31_enable(tx_prbs31_enable),
+    eth_phy_10g_tx #(
+                       .DATA_WIDTH(DATA_WIDTH),
+                       .CTRL_WIDTH(CTRL_WIDTH),
+                       .HDR_WIDTH(HDR_WIDTH),
+                       .BIT_REVERSE(BIT_REVERSE),
+                       .SCRAMBLER_DISABLE(SCRAMBLER_DISABLE),
+                       .PRBS31_ENABLE(PRBS31_ENABLE)
+                   )
+                   eth_phy_10g_tx_inst (
+                       .clk(clk),
+                       .rst(rst),
+                       .xgmii_txd(xgmii_txd),
+                       .xgmii_txc(xgmii_txc),
+                       .serdes_tx_data(serdes_tx_data),
+                       .serdes_tx_hdr(serdes_tx_hdr),
+                       .tx_bad_block(tx_bad_block),
+                       .tx_prbs31_enable(tx_prbs31_enable),
 
-                              // input ipg data to be sent
-                              .ipg_from_ovp(tx_ipg_data),
-                              .ipg_from_ovp_en(tx_ipg_en)
-                          );
+                       // input ipg data to be sent
+                       .ipg_req_chunk(tx_ipg_data),
+                       .reqq_write(tx_ipg_en)
+                   );
 endmodule
 
 
