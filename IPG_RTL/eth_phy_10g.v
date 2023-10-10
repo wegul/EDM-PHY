@@ -69,7 +69,9 @@ module eth_phy_10g #
     );
     localparam RX_COUNT=6;
     // ipg customize
-    wire [DATA_WIDTH-1:0] ipg_reply_chunk,ipg_write_chunk,ipg_write_resp_chunk;
+    wire [DATA_WIDTH-1:0] ipg_reply_chunk,ipg_write_chunk,ipg_rresp_chunk;
+    wire [55:0] wreq_hdr,rresp_hdr;
+    wire [111:0] wreq_mem_addr,rresp_mem_addr;
 
     wire [DATA_WIDTH-1:0] rx_ipg_data;
     wire [RX_COUNT-1:0] rx_len;
@@ -92,6 +94,9 @@ module eth_phy_10g #
                       .wreq_valid(wreq_valid),
                       .rx_len(rx_len),
                       .rx_ipg_data(rx_ipg_data),
+
+                      .hdr_in(wreq_hdr),
+                      .mem_addr_in(wreq_mem_addr),
                       .ipg_write_chunk(ipg_write_chunk)
                   );
     ipg_rresp_proc inst_ipg_rresp_proc(
@@ -100,7 +105,9 @@ module eth_phy_10g #
                        .rresp_valid(rresp_valid),
                        .rx_len(rx_len),
                        .rx_ipg_data(rx_ipg_data),
-                       .ipg_write_resp_chunk(ipg_write_resp_chunk)
+                       .hdr_in(rresp_hdr),
+                       .mem_addr_in(rresp_mem_addr),
+                       .ipg_rresp_chunk(ipg_rresp_chunk)
                    );
 
     eth_phy_10g_rx #(

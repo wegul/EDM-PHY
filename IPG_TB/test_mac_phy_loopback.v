@@ -435,80 +435,99 @@ module test_mac_phy_loopback;
     */
     initial begin
         #6
-         for (i=0;i<20;i=i+1) begin
-             #2
-              serdes_rx_data<=64'h003856781234561a;
-             serdes_rx_hdr<=SYNC_CTRL;
-         end
-     end
+         serdes_rx_data[63 -: 16] <= 16'h0100;//64'h0100 56789 0ABCD 2a;
+        serdes_rx_data[47 -: 6] <= 6'd0;
+        serdes_rx_data[41 -: 6] <= 6'd2;
+        serdes_rx_data[35 -: 28] <= 0;
+        serdes_rx_data[7 : 0] <= 8'h2a;
+        serdes_rx_hdr<=SYNC_CTRL;
+        #2
+         serdes_rx_data<=64'h003856781234561a;
+        serdes_rx_hdr<=SYNC_CTRL;
+        #2
+         serdes_rx_data<=64'h003856781234560a;
+        serdes_rx_hdr<=SYNC_CTRL;
+        #2
+         serdes_rx_data <= 64'h0100102890ABCD2c;
+        #2
+         serdes_rx_data <= 64'h1234567890ABCD1c;
+        #2
+         serdes_rx_data <= 64'h1234567890ABCD1c;
+        #2
+         serdes_rx_data <= 64'h1234567890ABCD1c;
+        #2
+         serdes_rx_data <= 64'h1234567890ABCD0c;
+        #30
+         $finish;
+    end
 
 
 
-     ipg_mac_phy_10g #(
-                         .DATA_WIDTH(DATA_WIDTH),
-                         .KEEP_WIDTH(KEEP_WIDTH),
-                         .HDR_WIDTH(HDR_WIDTH),
-                         .ENABLE_PADDING(ENABLE_PADDING),
-                         .ENABLE_DIC(ENABLE_DIC),
-                         .MIN_FRAME_LENGTH(MIN_FRAME_LENGTH),
-                         .PTP_PERIOD_NS(PTP_PERIOD_NS),
-                         .PTP_PERIOD_FNS(PTP_PERIOD_FNS),
-                         .TX_PTP_TS_ENABLE(TX_PTP_TS_ENABLE),
-                         .TX_PTP_TS_WIDTH(TX_PTP_TS_WIDTH),
-                         .TX_PTP_TAG_ENABLE(TX_PTP_TAG_ENABLE),
-                         .TX_PTP_TAG_WIDTH(TX_PTP_TAG_WIDTH),
-                         .RX_PTP_TS_ENABLE(RX_PTP_TS_ENABLE),
-                         .RX_PTP_TS_WIDTH(RX_PTP_TS_WIDTH),
-                         .TX_USER_WIDTH(TX_USER_WIDTH),
-                         .RX_USER_WIDTH(RX_USER_WIDTH),
-                         .BIT_REVERSE(BIT_REVERSE),
-                         .SCRAMBLER_DISABLE(SCRAMBLER_DISABLE),
-                         .PRBS31_ENABLE(PRBS31_ENABLE),
-                         .TX_SERDES_PIPELINE(TX_SERDES_PIPELINE),
-                         .RX_SERDES_PIPELINE(RX_SERDES_PIPELINE),
-                         .BITSLIP_HIGH_CYCLES(BITSLIP_HIGH_CYCLES),
-                         .BITSLIP_LOW_CYCLES(BITSLIP_LOW_CYCLES),
-                         .COUNT_125US(COUNT_125US)
-                     )
-                     UUT (
-                         .rx_clk(rx_clk),
-                         .rx_rst(rx_rst),
-                         .tx_clk(tx_clk),
-                         .tx_rst(tx_rst),
-                         .tx_axis_tdata(tx_axis_tdata),//data
-                         .tx_axis_tkeep(tx_axis_tkeep),
-                         .tx_axis_tvalid(tx_axis_tvalid),
-                         .tx_axis_tready(tx_axis_tready),
-                         .tx_axis_tlast(tx_axis_tlast),
-                         .tx_axis_tuser(tx_axis_tuser),
-                         .rx_axis_tdata(rx_axis_tdata),
-                         .rx_axis_tkeep(rx_axis_tkeep),
-                         .rx_axis_tvalid(rx_axis_tvalid),
-                         .rx_axis_tlast(rx_axis_tlast),
-                         .rx_axis_tuser(rx_axis_tuser),
-                         .serdes_tx_data(serdes_tx_data),
-                         .serdes_tx_hdr(serdes_tx_hdr),
-                         .serdes_rx_data(serdes_rx_data),
-                         .serdes_rx_hdr(serdes_rx_hdr),
-                         .serdes_rx_bitslip(serdes_rx_bitslip),
-                         .tx_ptp_ts(tx_ptp_ts),
-                         .rx_ptp_ts(rx_ptp_ts),
-                         .tx_start_packet(tx_start_packet),
-                         .tx_error_underflow(tx_error_underflow),
-                         .rx_start_packet(rx_start_packet),
-                         .rx_error_count(rx_error_count),
-                         .rx_error_bad_frame(rx_error_bad_frame),
-                         .rx_error_bad_fcs(rx_error_bad_fcs),
-                         .rx_bad_block(rx_bad_block),
-                         .rx_block_lock(rx_block_lock),
-                         .rx_high_ber(rx_high_ber),
-                         .tx_prbs31_enable(tx_prbs31_enable),
-                         .rx_prbs31_enable(rx_prbs31_enable),
-                         .ifg_delay(ifg_delay),
+    ipg_mac_phy_10g #(
+                        .DATA_WIDTH(DATA_WIDTH),
+                        .KEEP_WIDTH(KEEP_WIDTH),
+                        .HDR_WIDTH(HDR_WIDTH),
+                        .ENABLE_PADDING(ENABLE_PADDING),
+                        .ENABLE_DIC(ENABLE_DIC),
+                        .MIN_FRAME_LENGTH(MIN_FRAME_LENGTH),
+                        .PTP_PERIOD_NS(PTP_PERIOD_NS),
+                        .PTP_PERIOD_FNS(PTP_PERIOD_FNS),
+                        .TX_PTP_TS_ENABLE(TX_PTP_TS_ENABLE),
+                        .TX_PTP_TS_WIDTH(TX_PTP_TS_WIDTH),
+                        .TX_PTP_TAG_ENABLE(TX_PTP_TAG_ENABLE),
+                        .TX_PTP_TAG_WIDTH(TX_PTP_TAG_WIDTH),
+                        .RX_PTP_TS_ENABLE(RX_PTP_TS_ENABLE),
+                        .RX_PTP_TS_WIDTH(RX_PTP_TS_WIDTH),
+                        .TX_USER_WIDTH(TX_USER_WIDTH),
+                        .RX_USER_WIDTH(RX_USER_WIDTH),
+                        .BIT_REVERSE(BIT_REVERSE),
+                        .SCRAMBLER_DISABLE(SCRAMBLER_DISABLE),
+                        .PRBS31_ENABLE(PRBS31_ENABLE),
+                        .TX_SERDES_PIPELINE(TX_SERDES_PIPELINE),
+                        .RX_SERDES_PIPELINE(RX_SERDES_PIPELINE),
+                        .BITSLIP_HIGH_CYCLES(BITSLIP_HIGH_CYCLES),
+                        .BITSLIP_LOW_CYCLES(BITSLIP_LOW_CYCLES),
+                        .COUNT_125US(COUNT_125US)
+                    )
+                    UUT (
+                        .rx_clk(rx_clk),
+                        .rx_rst(rx_rst),
+                        .tx_clk(tx_clk),
+                        .tx_rst(tx_rst),
+                        .tx_axis_tdata(tx_axis_tdata),//data
+                        .tx_axis_tkeep(tx_axis_tkeep),
+                        .tx_axis_tvalid(tx_axis_tvalid),
+                        .tx_axis_tready(tx_axis_tready),
+                        .tx_axis_tlast(tx_axis_tlast),
+                        .tx_axis_tuser(tx_axis_tuser),
+                        .rx_axis_tdata(rx_axis_tdata),
+                        .rx_axis_tkeep(rx_axis_tkeep),
+                        .rx_axis_tvalid(rx_axis_tvalid),
+                        .rx_axis_tlast(rx_axis_tlast),
+                        .rx_axis_tuser(rx_axis_tuser),
+                        .serdes_tx_data(serdes_tx_data),
+                        .serdes_tx_hdr(serdes_tx_hdr),
+                        .serdes_rx_data(serdes_rx_data),
+                        .serdes_rx_hdr(serdes_rx_hdr),
+                        .serdes_rx_bitslip(serdes_rx_bitslip),
+                        .tx_ptp_ts(tx_ptp_ts),
+                        .rx_ptp_ts(rx_ptp_ts),
+                        .tx_start_packet(tx_start_packet),
+                        .tx_error_underflow(tx_error_underflow),
+                        .rx_start_packet(rx_start_packet),
+                        .rx_error_count(rx_error_count),
+                        .rx_error_bad_frame(rx_error_bad_frame),
+                        .rx_error_bad_fcs(rx_error_bad_fcs),
+                        .rx_bad_block(rx_bad_block),
+                        .rx_block_lock(rx_block_lock),
+                        .rx_high_ber(rx_high_ber),
+                        .tx_prbs31_enable(tx_prbs31_enable),
+                        .rx_prbs31_enable(rx_prbs31_enable),
+                        .ifg_delay(ifg_delay),
 
-                         .ipg_req_chunk(ipg_req_chunk),
-                         .reqq_write(reqq_write)
-                     );
+                        .ipg_req_chunk(ipg_req_chunk),
+                        .reqq_write(reqq_write)
+                    );
 
 
 endmodule
