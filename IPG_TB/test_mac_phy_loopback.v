@@ -100,6 +100,7 @@ module test_mac_phy_loopback;
     wire rx_bad_block;
     wire rx_block_lock;
     wire rx_high_ber;
+    wire [DATA_WIDTH-1:0] ipg_reply_chunk,ipg_write_chunk,ipg_rresp_chunk;
 
 
     //**************** For PHY-Only end ****************
@@ -526,7 +527,11 @@ module test_mac_phy_loopback;
                         .ifg_delay(ifg_delay),
 
                         .ipg_req_chunk(ipg_req_chunk),
-                        .reqq_write(reqq_write)
+                        .reqq_write(reqq_write),
+
+                        .ipg_reply_chunk(ipg_reply_chunk),
+                        .ipg_write_chunk(ipg_write_chunk),
+                        .ipg_rresp_chunk(ipg_rresp_chunk)
                     );
 
 

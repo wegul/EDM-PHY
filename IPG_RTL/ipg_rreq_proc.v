@@ -5,7 +5,11 @@
 //1. read the received IPG message
 //2. generate message
 // 3. transmit the generated message to output [63:0] ipg_msg
-module ipg_rreq_proc(
+module ipg_rreq_proc#(
+        parameter HDR_WIDTH=16,//packets must be bigger than 16bits. this field is currently for payload length.
+        parameter DATA_WIDTH=64,
+        parameter ADR_WIDTH=12
+    )(
         input wire clk,
         input wire reset,
 
@@ -30,18 +34,23 @@ module ipg_rreq_proc(
      3. If write. ipg_proc should use the state machine to wait for 512bit memory data.
     */
 
-    localparam HDR_WIDTH=16;//packets must be bigger than 16bits. this field is currently for payload length.
-    localparam DATA_WIDTH=64;
-    localparam ADR_WIDTH=12;
 
     reg [2:0] state_reg=3'd7, state_next;
     reg fake_dram_en=0;
     reg [55:0] hdr,hdr_in,src_mem_addr,dst_mem_addr;
     reg [111:0] mem_addr_in;
     localparam [7:0]
+               BLOCK_TYPE_READFIRST = 8'h0a, // I6 I5 I4 I3 I2 I1 I0 BT
+               BLOCK_TYPE_RESPFIRST = 8'h0b, // I6 I5 I4 I3 I2 I1 I0 BT
+               BLOCK_TYPE_WRITFIRST = 8'h0c, // I6 I5 I4 I3 I2 I1 I0 BT
+
                BLOCK_TYPE_READ = 8'h1a, // I6 I5 I4 I3 I2 I1 I0 BT
-               BLOCK_TYPE_READLAST = 8'h0a, // I6 I5 I4 I3 I2 I1 I0 BT
-               BLOCK_TYPE_READFIRST = 8'h2a; // I6 I5 I4 I3 I2 I1 I0 BT
+               BLOCK_TYPE_RRESP = 8'h1b, // I6 I5 I4 I3 I2 I1 I0 BT
+               BLOCK_TYPE_WRITE = 8'h1c, // I6 I5 I4 I3 I2 I1 I0 BT
+
+               BLOCK_TYPE_READLAST = 8'h2a, // I6 I5 I4 I3 I2 I1 I0 BT
+               BLOCK_TYPE_RESPLAST = 8'h2b, // I6 I5 I4 I3 I2 I1 I0 BT
+               BLOCK_TYPE_WRITLAST = 8'h2c; // I6 I5 I4 I3 I2 I1 I0 BT
     localparam [2:0]
                STATE_WAIT = 3'd0,// rreq is exactly: header + blk1 + blk2;
                STATE_BLK1 = 3'd1, //this is for src_mem_addr
@@ -110,7 +119,8 @@ TODO: receiver should give periodic feedback about buffer occupancy of this Fake
 module FakeDRAM #(
         parameter DATA_WIDTH = 64,
         parameter ADR_WIDTH = 12,
-        parameter IPG_HDR_WIDTH = 16
+        parameter IPG_HDR_WIDTH = 16,
+        parameter LENGTH_FIELD = 8
     ) (
         input wire clk,rst,
         input wire fake_dram_en,
@@ -121,7 +131,7 @@ module FakeDRAM #(
     );
     wire adrq_empty,adrq_full;
     reg adrq_read, first_resp;
-    reg [IPG_HDR_WIDTH-1 : 0] reply_len,reply_len_next;
+    reg [LENGTH_FIELD-1 : 0] reply_len,reply_len_next;
     reg [ADR_WIDTH/2 -1 : 0] src_port, dst_port;//original, need to swap
     reg [55 : 0] src_mem_addr, dst_mem_addr;//original, need to swap
     wire [55:0] hdr_out;
@@ -133,6 +143,7 @@ module FakeDRAM #(
         STATE_GEN = 1'd1;
     always @(*) begin
         state_next=state;adrq_read=0;memq_write = 0;ipg_reply_chunk = 0;reply_len_next = reply_len;
+        src_port=src_port;dst_port=dst_port;src_mem_addr=src_mem_addr;dst_mem_addr=dst_mem_addr;
         case (state)
             STATE_WAIT: begin
                 if (!adrq_empty) begin // start making up reply chunks
@@ -171,11 +182,7 @@ module FakeDRAM #(
                         reply_len_next = reply_len - 56;
                     end
                     else begin
-                        ipg_reply_chunk=0;
-                        for ( i=1 ; i<=reply_len; i=i+1) begin
-                            ipg_reply_chunk[i] = 1'b1;
-                        end
-                        ipg_reply_chunk[7:0]=8'h0b;
+                        ipg_reply_chunk=64'hffffffffffffff0b;
                         reply_len_next=0;
                     end
                 end
@@ -248,16 +255,16 @@ module tb_ipg_rreq_proc;
         rx_len <= 6'd56;;  // 2 in decimal
         rreq_valid <= 1;
         #2
-         rx_ipg_data <= 64'h1234567890ABCD1a;
-        #2
          rx_ipg_data <= 64'h1234567890ABCD0a;
+        #2
+         rx_ipg_data <= 64'h1234567890ABCD2a;
         #2;
 
-        rx_ipg_data <= 64'h01003453350ABC2a;
+        rx_ipg_data <= 64'h01003453350ABC0a;
         #2
          rx_ipg_data <= 64'h53453453350ABC1a;
         #2
-         rx_ipg_data <= 64'h53453453350ABC0a;
+         rx_ipg_data <= 64'h53453453350ABC2a;
         #2;
         rreq_valid<=0;
 

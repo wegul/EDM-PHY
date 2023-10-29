@@ -36,17 +36,19 @@ module ipg_rx(
                SYNC_CTRL = 2'b01;
 
     localparam [7:0]
+
+               BLOCK_TYPE_READFIRST = 8'h0a, // I6 I5 I4 I3 I2 I1 I0 BT
+               BLOCK_TYPE_RESPFIRST = 8'h0b, // I6 I5 I4 I3 I2 I1 I0 BT
+               BLOCK_TYPE_WRITFIRST = 8'h0c, // I6 I5 I4 I3 I2 I1 I0 BT
+
                BLOCK_TYPE_READ = 8'h1a, // I6 I5 I4 I3 I2 I1 I0 BT
                BLOCK_TYPE_RRESP = 8'h1b, // I6 I5 I4 I3 I2 I1 I0 BT
                BLOCK_TYPE_WRITE = 8'h1c, // I6 I5 I4 I3 I2 I1 I0 BT
 
-               BLOCK_TYPE_READLAST = 8'h0a, // I6 I5 I4 I3 I2 I1 I0 BT
-               BLOCK_TYPE_RESPLAST = 8'h0b, // I6 I5 I4 I3 I2 I1 I0 BT
-               BLOCK_TYPE_WRITLAST = 8'h0c, // I6 I5 I4 I3 I2 I1 I0 BT
+               BLOCK_TYPE_READLAST = 8'h2a, // I6 I5 I4 I3 I2 I1 I0 BT
+               BLOCK_TYPE_RESPLAST = 8'h2b, // I6 I5 I4 I3 I2 I1 I0 BT
+               BLOCK_TYPE_WRITLAST = 8'h2c, // I6 I5 I4 I3 I2 I1 I0 BT
 
-               BLOCK_TYPE_READFIRST = 8'h2a, // I6 I5 I4 I3 I2 I1 I0 BT
-               BLOCK_TYPE_RESPFIRST = 8'h2b, // I6 I5 I4 I3 I2 I1 I0 BT
-               BLOCK_TYPE_WRITFIRST = 8'h2c, // I6 I5 I4 I3 I2 I1 I0 BT
 
 
                BLOCK_TYPE_CTRL     = 8'h1e, // C7 C6 C5 C4 C3 C2 C1 C0 BT

@@ -65,11 +65,12 @@ module eth_phy_10g #
         output wire tx_pause,
 
         input wire [DATA_WIDTH-1:0] ipg_req_chunk,
-        input wire reqq_write
+        input wire reqq_write,
+
+        output wire [DATA_WIDTH-1:0] ipg_reply_chunk,ipg_write_chunk,ipg_rresp_chunk
     );
     localparam RX_COUNT=6;
     // ipg customize
-    wire [DATA_WIDTH-1:0] ipg_reply_chunk,ipg_write_chunk,ipg_rresp_chunk;
     wire [55:0] wreq_hdr,rresp_hdr;
     wire [111:0] wreq_mem_addr,rresp_mem_addr;
 

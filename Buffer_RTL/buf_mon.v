@@ -30,7 +30,7 @@ module buf_mon (
                SEND_MEM = 2'b10,
                SEND_NET = 2'b11;
 
-    always@(posedge clk, posedge reset) begin
+    always@(posedge clk) begin
         if(reset) begin
             memq_reset<=1;
             netq_reset<=1;

@@ -37,8 +37,6 @@ module ivport #(
                 FIRE_WREQ=2'd2;
 
     wire [DATA_WIDTH-1:0] rreq,wreq,rresp;
-    wire rreq_empty,wreq_empty,rresp_empty,
-         rreq_full,wreq_full,rresp_full;
     wire [QUE_DEPTH:0] rreq_space,wreq_space,rresp_space;
 
 

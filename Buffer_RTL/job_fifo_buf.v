@@ -5,7 +5,6 @@ module job_fifo_buf
          input wire [DWIDTH-1:0] w_data_d,
          input wire [CWIDTH-1:0] w_data_c,
          output wire empty , full,
-         output reg netfin,
          output wire [DWIDTH-1:0] r_data_d,
          output wire [CWIDTH-1:0] r_data_c,
          output reg [DEPTH:0] space
