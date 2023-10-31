@@ -436,20 +436,20 @@ module test_mac_phy_loopback;
     */
     initial begin
         #6
-         serdes_rx_data[63 -: 16] <= 16'h0100;//64'h0100 56789 0ABCD 2a;
+         serdes_rx_data[63 -: 16] <= 16'h0100;//64'h0100 56789 0ABCD 0a;
         serdes_rx_data[47 -: 6] <= 6'd0;
         serdes_rx_data[41 -: 6] <= 6'd2;
         serdes_rx_data[35 -: 28] <= 0;
-        serdes_rx_data[7 : 0] <= 8'h2a;
+        serdes_rx_data[7 : 0] <= 8'h0a;
         serdes_rx_hdr<=SYNC_CTRL;
         #2
          serdes_rx_data<=64'h003856781234561a;
         serdes_rx_hdr<=SYNC_CTRL;
         #2
-         serdes_rx_data<=64'h003856781234560a;
+         serdes_rx_data<=64'h003856781234562a;
         serdes_rx_hdr<=SYNC_CTRL;
         #2
-         serdes_rx_data <= 64'h0100102890ABCD2c;
+         serdes_rx_data <= 64'h0100102890ABCD0c;
         #2
          serdes_rx_data <= 64'h1234567890ABCD1c;
         #2
@@ -457,7 +457,7 @@ module test_mac_phy_loopback;
         #2
          serdes_rx_data <= 64'h1234567890ABCD1c;
         #2
-         serdes_rx_data <= 64'h1234567890ABCD0c;
+         serdes_rx_data <= 64'h1234567890ABCD2c;
         #30
          $finish;
     end
