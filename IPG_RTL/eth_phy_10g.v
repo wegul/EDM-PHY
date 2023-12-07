@@ -67,7 +67,7 @@ module eth_phy_10g #
         input wire [DATA_WIDTH-1:0] ipg_req_chunk,
         input wire reqq_write,
 
-        output wire [DATA_WIDTH-1:0] ipg_reply_chunk,ipg_write_chunk,ipg_rresp_chunk
+        output wire [DATA_WIDTH-1:0] ipg_reply_chunk/*resp for rreq*/,ipg_write_chunk,ipg_rresp_chunk/*received resp*/
     );
     localparam RX_COUNT=6;
     // ipg customize
@@ -80,18 +80,18 @@ module eth_phy_10g #
 
     //generate reply or write stuff to RAM
     ipg_rreq_proc inst_ipg_read_proc(
-                      .clk(tx_clk),
-                      .reset(tx_rst),
+                      .clk(rx_clk),
+                      .reset(rx_rst),
                       .rreq_valid(rreq_valid),
                       .rx_len(rx_len),
                       .rx_ipg_data(rx_ipg_data),
-                      .ipg_reply_chunk(ipg_reply_chunk),
+                      .ipg_reply_chunk(ipg_reply_chunk), // goes to 
                       .memq_write(memq_write)
                   );
 
     ipg_wreq_proc inst_ipg_write_proc(
-                      .clk(tx_clk),
-                      .reset(tx_rst),
+                      .clk(rx_clk),
+                      .reset(rx_rst),
                       .wreq_valid(wreq_valid),
                       .rx_len(rx_len),
                       .rx_ipg_data(rx_ipg_data),
@@ -101,8 +101,8 @@ module eth_phy_10g #
                       .ipg_write_chunk(ipg_write_chunk)
                   );
     ipg_rresp_proc inst_ipg_rresp_proc(
-                       .clk(tx_clk),
-                       .reset(tx_rst),
+                       .clk(rx_clk),
+                       .reset(rx_rst),
                        .rresp_valid(rresp_valid),
                        .rx_len(rx_len),
                        .rx_ipg_data(rx_ipg_data),

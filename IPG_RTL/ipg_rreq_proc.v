@@ -14,11 +14,11 @@ module ipg_rreq_proc#(
         input wire reset,
 
         // The received frame.
-        input wire [63:0] rx_ipg_data,
+        input wire [DATA_WIDTH-1:0] rx_ipg_data,
         input wire [5:0] rx_len,
         input wire rreq_valid,
 
-        output wire [63:0] ipg_reply_chunk,
+        output wire [DATA_WIDTH-1:0] ipg_reply_chunk,
         output wire memq_write
     );
     /* 1. parse ipg_reply. The format is: 2bit hdr: 00 c_read, 01 c_write, 10 d_read, 11 d_write.
@@ -35,7 +35,7 @@ module ipg_rreq_proc#(
     */
 
 
-    reg [2:0] state_reg=3'd7, state_next;
+    reg [1:0] state_reg=2'd3, state_next;
     reg fake_dram_en=0;
     reg [55:0] hdr,hdr_in,src_mem_addr,dst_mem_addr;
     reg [111:0] mem_addr_in;
@@ -51,10 +51,10 @@ module ipg_rreq_proc#(
                BLOCK_TYPE_READLAST = 8'h2a, // I6 I5 I4 I3 I2 I1 I0 BT
                BLOCK_TYPE_RESPLAST = 8'h2b, // I6 I5 I4 I3 I2 I1 I0 BT
                BLOCK_TYPE_WRITLAST = 8'h2c; // I6 I5 I4 I3 I2 I1 I0 BT
-    localparam [2:0]
-               STATE_WAIT = 3'd0,// rreq is exactly: header + blk1 + blk2;
-               STATE_BLK1 = 3'd1, //this is for src_mem_addr
-               STATE_BLK2 =3'd2;
+    localparam [1:0]
+               STATE_WAIT = 2'd0,// rreq is exactly: header + blk1 + blk2;
+               STATE_BLK1 = 2'd1, //this is for src_mem_addr
+               STATE_BLK2 =2'd2;
 
     integer i =0;
 
@@ -62,7 +62,7 @@ module ipg_rreq_proc#(
         state_next = STATE_WAIT;fake_dram_en=0;
         case(state_reg)
             STATE_WAIT: begin
-                if (rreq_valid & rx_ipg_data[7:0] == BLOCK_TYPE_READFIRST) begin
+                if (rreq_valid & (rx_ipg_data[7:0] == BLOCK_TYPE_READFIRST)) begin
                     hdr = rx_ipg_data[DATA_WIDTH-1 -: 56];
                     state_next = STATE_BLK1;
                     // $display("===\n case wait %h %d %d %d\n===",addr,j, state_reg,state_next);
@@ -72,14 +72,14 @@ module ipg_rreq_proc#(
                 end
             end
             STATE_BLK1: begin
-                if (rreq_valid & rx_ipg_data[7:0] == BLOCK_TYPE_READ) begin
+                if (rreq_valid & (rx_ipg_data[7:0] == BLOCK_TYPE_READ)) begin
                     src_mem_addr = rx_ipg_data[DATA_WIDTH-1 -: 56];
                     state_next = STATE_BLK2;
                 end
                 else state_next = STATE_BLK1;
             end
             STATE_BLK2: begin
-                if (rreq_valid & rx_ipg_data[7:0] == BLOCK_TYPE_READLAST) begin
+                if (rreq_valid & (rx_ipg_data[7:0] == BLOCK_TYPE_READLAST)) begin
                     dst_mem_addr = rx_ipg_data[DATA_WIDTH-1 -: 56];
                     // send info to FakeDRAM, where reply is generated
                     hdr_in = hdr;
@@ -148,9 +148,9 @@ module FakeDRAM #(
             STATE_WAIT: begin
                 if (!adrq_empty) begin // start making up reply chunks
                     adrq_read=1;
-                    reply_len_next = hdr_out[55 -: IPG_HDR_WIDTH];
+                    reply_len_next = hdr_out[55 -: LENGTH_FIELD];
                     src_port = hdr_out[55-IPG_HDR_WIDTH -: ADR_WIDTH/2];
-                    dst_port = hdr_out[ADR_WIDTH/2 -1 : 0];
+                    dst_port = hdr_out[55-IPG_HDR_WIDTH-ADR_WIDTH/2 -: ADR_WIDTH/2];
                     src_mem_addr = mem_addr_out[111 -: 56];
                     dst_mem_addr = mem_addr_out[55 : 0];
                     state_next=STATE_GEN;
@@ -173,7 +173,7 @@ module FakeDRAM #(
                     // based on hdr.len, send out chunks
                     if(reply_len>=56) begin
                         if (first_resp) begin
-                            ipg_reply_chunk = {reply_len,src_port,dst_port,28'b0,8'h2b};
+                            ipg_reply_chunk = {reply_len,src_port,dst_port,28'b0,8'h0b};
                             first_resp=0;
                         end
                         else begin
@@ -182,7 +182,7 @@ module FakeDRAM #(
                         reply_len_next = reply_len - 56;
                     end
                     else begin
-                        ipg_reply_chunk=64'hffffffffffffff0b;
+                        ipg_reply_chunk=64'hffffffffffffff2b;
                         reply_len_next=0;
                     end
                 end
@@ -247,15 +247,15 @@ module tb_ipg_rreq_proc;
         #6 reset = 0;
 
         // Test vectors
-        rx_ipg_data[63 -: 16] <= 16'h0100;//64'h0100 56789 0ABCD 2a;
+        rx_ipg_data[63 -: 16] <= 16'ha000;//64'h0100 56789 0ABCD 0a;
         rx_ipg_data[47 -: 6] <= 6'd0;
         rx_ipg_data[41 -: 6] <= 6'd2;
         rx_ipg_data[35 -: 28] <= 0;
-        rx_ipg_data[7 : 0] <= 8'h2a;
+        rx_ipg_data[7 : 0] <= 8'h0a;
         rx_len <= 6'd56;;  // 2 in decimal
         rreq_valid <= 1;
         #2
-         rx_ipg_data <= 64'h1234567890ABCD0a;
+         rx_ipg_data <= 64'h1234567890ABCD1a;
         #2
          rx_ipg_data <= 64'h1234567890ABCD2a;
         #2;
