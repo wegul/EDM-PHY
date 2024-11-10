@@ -1,0 +1,987 @@
+
+*** Running vivado
+    with args -log fpga.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source fpga.tcl -notrace
+
+
+****** Vivado v2023.2 (64-bit)
+  **** SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source fpga.tcl -notrace
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1328.781 ; gain = 0.023 ; free physical = 166807 ; free virtual = 194445
+Command: link_design -top fpga -part xcu200-fsgd2104-2-e
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xcu200-fsgd2104-2-e
+INFO: [Project 1-454] Reading design checkpoint '/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga/fpga.gen/sources_1/ip/eth_xcvr_gt_full/eth_xcvr_gt_full.dcp' for cell 'qsfp0_phy_1_inst/xcvr.eth_xcvr_gt_full_inst'
+INFO: [Project 1-454] Reading design checkpoint '/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga/fpga.gen/sources_1/ip/eth_xcvr_gt_channel/eth_xcvr_gt_channel.dcp' for cell 'qsfp0_phy_2_inst/xcvr.eth_xcvr_gt_channel_inst'
+Netlist sorting complete. Time (s): cpu = 00:00:00.2 ; elapsed = 00:00:00.2 . Memory (MB): peak = 2428.312 ; gain = 0.000 ; free physical = 165736 ; free virtual = 193373
+INFO: [Netlist 29-17] Analyzing 2761 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2023.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga/fpga.gen/sources_1/ip/eth_xcvr_gt_full/synth/eth_xcvr_gt_full.xdc] for cell 'qsfp0_phy_1_inst/xcvr.eth_xcvr_gt_full_inst/inst'
+Finished Parsing XDC File [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga/fpga.gen/sources_1/ip/eth_xcvr_gt_full/synth/eth_xcvr_gt_full.xdc] for cell 'qsfp0_phy_1_inst/xcvr.eth_xcvr_gt_full_inst/inst'
+Parsing XDC File [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga/fpga.gen/sources_1/ip/eth_xcvr_gt_full/synth/eth_xcvr_gt_full.xdc] for cell 'qsfp1_phy_1_inst/xcvr.eth_xcvr_gt_full_inst/inst'
+Finished Parsing XDC File [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga/fpga.gen/sources_1/ip/eth_xcvr_gt_full/synth/eth_xcvr_gt_full.xdc] for cell 'qsfp1_phy_1_inst/xcvr.eth_xcvr_gt_full_inst/inst'
+Parsing XDC File [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga/fpga.gen/sources_1/ip/eth_xcvr_gt_channel/synth/eth_xcvr_gt_channel.xdc] for cell 'qsfp0_phy_2_inst/xcvr.eth_xcvr_gt_channel_inst/inst'
+Finished Parsing XDC File [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga/fpga.gen/sources_1/ip/eth_xcvr_gt_channel/synth/eth_xcvr_gt_channel.xdc] for cell 'qsfp0_phy_2_inst/xcvr.eth_xcvr_gt_channel_inst/inst'
+Parsing XDC File [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga/fpga.gen/sources_1/ip/eth_xcvr_gt_channel/synth/eth_xcvr_gt_channel.xdc] for cell 'qsfp0_phy_3_inst/xcvr.eth_xcvr_gt_channel_inst/inst'
+Finished Parsing XDC File [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga/fpga.gen/sources_1/ip/eth_xcvr_gt_channel/synth/eth_xcvr_gt_channel.xdc] for cell 'qsfp0_phy_3_inst/xcvr.eth_xcvr_gt_channel_inst/inst'
+Parsing XDC File [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga/fpga.gen/sources_1/ip/eth_xcvr_gt_channel/synth/eth_xcvr_gt_channel.xdc] for cell 'qsfp0_phy_4_inst/xcvr.eth_xcvr_gt_channel_inst/inst'
+Finished Parsing XDC File [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga/fpga.gen/sources_1/ip/eth_xcvr_gt_channel/synth/eth_xcvr_gt_channel.xdc] for cell 'qsfp0_phy_4_inst/xcvr.eth_xcvr_gt_channel_inst/inst'
+Parsing XDC File [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga/fpga.gen/sources_1/ip/eth_xcvr_gt_channel/synth/eth_xcvr_gt_channel.xdc] for cell 'qsfp1_phy_2_inst/xcvr.eth_xcvr_gt_channel_inst/inst'
+INFO: [Common 17-14] Message 'Vivado 12-180' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga/fpga.gen/sources_1/ip/eth_xcvr_gt_channel/synth/eth_xcvr_gt_channel.xdc:123]
+Finished Parsing XDC File [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga/fpga.gen/sources_1/ip/eth_xcvr_gt_channel/synth/eth_xcvr_gt_channel.xdc] for cell 'qsfp1_phy_2_inst/xcvr.eth_xcvr_gt_channel_inst/inst'
+Parsing XDC File [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga/fpga.gen/sources_1/ip/eth_xcvr_gt_channel/synth/eth_xcvr_gt_channel.xdc] for cell 'qsfp1_phy_3_inst/xcvr.eth_xcvr_gt_channel_inst/inst'
+Finished Parsing XDC File [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga/fpga.gen/sources_1/ip/eth_xcvr_gt_channel/synth/eth_xcvr_gt_channel.xdc] for cell 'qsfp1_phy_3_inst/xcvr.eth_xcvr_gt_channel_inst/inst'
+Parsing XDC File [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga/fpga.gen/sources_1/ip/eth_xcvr_gt_channel/synth/eth_xcvr_gt_channel.xdc] for cell 'qsfp1_phy_4_inst/xcvr.eth_xcvr_gt_channel_inst/inst'
+Finished Parsing XDC File [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga/fpga.gen/sources_1/ip/eth_xcvr_gt_channel/synth/eth_xcvr_gt_channel.xdc] for cell 'qsfp1_phy_4_inst/xcvr.eth_xcvr_gt_channel_inst/inst'
+Parsing XDC File [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc]
+INFO: [Constraints 18-632] set_output_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:50]
+INFO: [Constraints 18-632] set_input_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:56]
+INFO: [Constraints 18-632] set_input_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:65]
+WARNING: [Vivado 12-4702] SLEW is not a supported property on input port(s). Setting is ignored. [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:68]
+WARNING: [Vivado 12-4702] DRIVE is not a supported property on input port(s). Setting is ignored. [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:68]
+INFO: [Constraints 18-632] set_output_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:129]
+INFO: [Constraints 18-632] set_input_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:131]
+INFO: [Constraints 18-632] set_output_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:172]
+INFO: [Constraints 18-632] set_input_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:174]
+INFO: [Constraints 18-632] set_output_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:182]
+INFO: [Constraints 18-632] set_input_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:184]
+Finished Parsing XDC File [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc]
+Sourcing Tcl File [/home/weigao/PHY-Project/example/AU200/fpga_10g/lib/eth/syn/vivado/eth_mac_fifo.tcl]
+Inserting timing constraints for ethernet MAC with FIFO instance core_inst/eth_mac_10g_fifo_inst
+Finished Sourcing Tcl File [/home/weigao/PHY-Project/example/AU200/fpga_10g/lib/eth/syn/vivado/eth_mac_fifo.tcl]
+Sourcing Tcl File [/home/weigao/PHY-Project/example/AU200/fpga_10g/lib/eth/lib/axis/syn/vivado/axis_async_fifo.tcl]
+Inserting timing constraints for axis_async_fifo instance core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst
+INFO: [Timing 38-35] Done setting XDC timing constraints. [/home/weigao/PHY-Project/example/AU200/fpga_10g/lib/eth/lib/axis/syn/vivado/axis_async_fifo.tcl:23]
+INFO: [Timing 38-2] Deriving generated clocks [/home/weigao/PHY-Project/example/AU200/fpga_10g/lib/eth/lib/axis/syn/vivado/axis_async_fifo.tcl:23]
+Inserting timing constraints for axis_async_fifo instance core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst
+Finished Sourcing Tcl File [/home/weigao/PHY-Project/example/AU200/fpga_10g/lib/eth/lib/axis/syn/vivado/axis_async_fifo.tcl]
+Sourcing Tcl File [/home/weigao/PHY-Project/example/AU200/fpga_10g/lib/eth/lib/axis/syn/vivado/sync_reset.tcl]
+Inserting timing constraints for sync_reset instance sync_reset_125mhz_inst
+Inserting timing constraints for sync_reset instance qsfp0_phy_1_inst/rx_reset_sync_inst
+Inserting timing constraints for sync_reset instance qsfp0_phy_1_inst/tx_reset_sync_inst
+Inserting timing constraints for sync_reset instance qsfp0_phy_2_inst/rx_reset_sync_inst
+Inserting timing constraints for sync_reset instance qsfp0_phy_2_inst/tx_reset_sync_inst
+Inserting timing constraints for sync_reset instance qsfp0_phy_3_inst/rx_reset_sync_inst
+Inserting timing constraints for sync_reset instance qsfp0_phy_3_inst/tx_reset_sync_inst
+Inserting timing constraints for sync_reset instance qsfp0_phy_4_inst/rx_reset_sync_inst
+Inserting timing constraints for sync_reset instance qsfp0_phy_4_inst/tx_reset_sync_inst
+Inserting timing constraints for sync_reset instance qsfp1_phy_1_inst/rx_reset_sync_inst
+Inserting timing constraints for sync_reset instance qsfp1_phy_1_inst/tx_reset_sync_inst
+Inserting timing constraints for sync_reset instance qsfp1_phy_2_inst/rx_reset_sync_inst
+Inserting timing constraints for sync_reset instance qsfp1_phy_2_inst/tx_reset_sync_inst
+Inserting timing constraints for sync_reset instance qsfp1_phy_3_inst/rx_reset_sync_inst
+Inserting timing constraints for sync_reset instance qsfp1_phy_3_inst/tx_reset_sync_inst
+Inserting timing constraints for sync_reset instance qsfp1_phy_4_inst/rx_reset_sync_inst
+Inserting timing constraints for sync_reset instance qsfp1_phy_4_inst/tx_reset_sync_inst
+Finished Sourcing Tcl File [/home/weigao/PHY-Project/example/AU200/fpga_10g/lib/eth/lib/axis/syn/vivado/sync_reset.tcl]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-1687] 152 scoped IP constraints or related sub-commands were skipped due to synthesis logic optimizations usually triggered by constant connectivity or unconnected output pins. To review the skipped constraints and messages, run the command 'set_param netlist.IPMsgFiltering false' before opening the design.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3120.684 ; gain = 0.000 ; free physical = 165328 ; free virtual = 192966
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1464 instances were transformed.
+  IBUF => IBUF (IBUFCTRL, INBUF): 1 instance 
+  RAM256X1D => RAM256X1D (MUXF7(x4), MUXF8(x2), RAMD64E(x8)): 66 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 7 instances
+  RAM32M16 => RAM32M16 (RAMD32(x14), RAMS32(x2)): 13 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 9 instances
+  RAM64M8 => RAM64M8 (RAMD64E(x8)): 1240 instances
+  RAM64X1D => RAM64X1D (RAMD64E(x2)): 128 instances
+
+22 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:23 ; elapsed = 00:00:20 . Memory (MB): peak = 3120.719 ; gain = 1791.938 ; free physical = 165327 ; free virtual = 192965
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xcu200'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xcu200'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.64 . Memory (MB): peak = 3184.715 ; gain = 63.996 ; free physical = 165322 ; free virtual = 192960
+
+Starting Cache Timing Information Task
+INFO: [Constraints 18-632] set_output_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:50]
+INFO: [Constraints 18-632] set_input_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:56]
+INFO: [Constraints 18-632] set_input_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:65]
+INFO: [Constraints 18-632] set_output_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:129]
+INFO: [Constraints 18-632] set_input_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:131]
+INFO: [Constraints 18-632] set_output_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:172]
+INFO: [Constraints 18-632] set_input_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:174]
+INFO: [Constraints 18-632] set_output_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:182]
+INFO: [Constraints 18-632] set_input_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:184]
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Cache Timing Information Task | Checksum: fab19d00
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:01 . Memory (MB): peak = 3184.715 ; gain = 0.000 ; free physical = 165308 ; free virtual = 192946
+
+Starting Logic Optimization Task
+
+Phase 1 Initialization
+
+Phase 1.1 Core Generation And Design Setup
+Phase 1.1 Core Generation And Design Setup | Checksum: fab19d00
+
+Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3419.512 ; gain = 0.000 ; free physical = 165018 ; free virtual = 192657
+
+Phase 1.2 Setup Constraints And Sort Netlist
+Phase 1.2 Setup Constraints And Sort Netlist | Checksum: fab19d00
+
+Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.04 . Memory (MB): peak = 3419.512 ; gain = 0.000 ; free physical = 165018 ; free virtual = 192657
+Phase 1 Initialization | Checksum: fab19d00
+
+Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 3419.512 ; gain = 0.000 ; free physical = 165018 ; free virtual = 192657
+
+Phase 2 Timer Update And Timing Data Collection
+
+Phase 2.1 Timer Update
+Phase 2.1 Timer Update | Checksum: fab19d00
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.75 . Memory (MB): peak = 3419.512 ; gain = 0.000 ; free physical = 165017 ; free virtual = 192656
+
+Phase 2.2 Timing Data Collection
+Phase 2.2 Timing Data Collection | Checksum: fab19d00
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.8 . Memory (MB): peak = 3419.512 ; gain = 0.000 ; free physical = 165009 ; free virtual = 192647
+Phase 2 Timer Update And Timing Data Collection | Checksum: fab19d00
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.81 . Memory (MB): peak = 3419.512 ; gain = 0.000 ; free physical = 165009 ; free virtual = 192647
+
+Phase 3 Retarget
+INFO: [Opt 31-1566] Pulled 5 inverters resulting in an inversion of 28 pins
+INFO: [Opt 31-138] Pushed 58 inverter(s) to 302 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 3 Retarget | Checksum: 128c981bf
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:01 . Memory (MB): peak = 3419.512 ; gain = 0.000 ; free physical = 165009 ; free virtual = 192648
+Retarget | Checksum: 128c981bf
+INFO: [Opt 31-389] Phase Retarget created 32 cells and removed 95 cells
+INFO: [Opt 31-1021] In phase Retarget, 120 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 4 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 4 Constant propagation | Checksum: c49a7cab
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:01 . Memory (MB): peak = 3419.512 ; gain = 0.000 ; free physical = 165009 ; free virtual = 192648
+Constant propagation | Checksum: c49a7cab
+INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 24 cells
+
+Phase 5 Sweep
+Phase 5 Sweep | Checksum: 8fdc71fc
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 3419.512 ; gain = 0.000 ; free physical = 165008 ; free virtual = 192647
+Sweep | Checksum: 8fdc71fc
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 38 cells
+
+Phase 6 BUFG optimization
+INFO: [Opt 31-1077] Phase BUFG optimization inserted 0 global clock buffer(s) for CLOCK_LOW_FANOUT.
+Phase 6 BUFG optimization | Checksum: 8fdc71fc
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:02 . Memory (MB): peak = 3419.512 ; gain = 0.000 ; free physical = 165011 ; free virtual = 192650
+BUFG optimization | Checksum: 8fdc71fc
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 7 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 7 Shift Register Optimization | Checksum: 8fdc71fc
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:02 . Memory (MB): peak = 3419.512 ; gain = 0.000 ; free physical = 165011 ; free virtual = 192650
+Shift Register Optimization | Checksum: 8fdc71fc
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 8 Post Processing Netlist
+Phase 8 Post Processing Netlist | Checksum: 8fdc71fc
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:02 . Memory (MB): peak = 3419.512 ; gain = 0.000 ; free physical = 165011 ; free virtual = 192650
+Post Processing Netlist | Checksum: 8fdc71fc
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+
+Phase 9 Finalization
+
+Phase 9.1 Finalizing Design Cores and Updating Shapes
+Phase 9.1 Finalizing Design Cores and Updating Shapes | Checksum: 16b4f3029
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:03 . Memory (MB): peak = 3419.512 ; gain = 0.000 ; free physical = 165011 ; free virtual = 192650
+
+Phase 9.2 Verifying Netlist Connectivity
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 3419.512 ; gain = 0.000 ; free physical = 165011 ; free virtual = 192650
+Phase 9.2 Verifying Netlist Connectivity | Checksum: 16b4f3029
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:03 . Memory (MB): peak = 3419.512 ; gain = 0.000 ; free physical = 165011 ; free virtual = 192650
+Phase 9 Finalization | Checksum: 16b4f3029
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:03 . Memory (MB): peak = 3419.512 ; gain = 0.000 ; free physical = 165011 ; free virtual = 192650
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |              32  |              95  |                                            120  |
+|  Constant propagation         |               0  |              24  |                                              0  |
+|  Sweep                        |               0  |              38  |                                              0  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                              0  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+Ending Logic Optimization Task | Checksum: 16b4f3029
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:03 . Memory (MB): peak = 3419.512 ; gain = 0.000 ; free physical = 165011 ; free virtual = 192650
+INFO: [Constraints 18-11670] Building netlist checker database with flags, 0x8
+Done building netlist checker database: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3419.512 ; gain = 0.000 ; free physical = 165011 ; free virtual = 192650
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+INFO: [Power 33-23] Power model is not available for startupe3_inst
+INFO: [Pwropt 34-9] Applying IDT optimizations ...
+INFO: [Pwropt 34-10] Applying ODC optimizations ...
+INFO: [Constraints 18-632] set_output_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:50]
+INFO: [Constraints 18-632] set_input_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:56]
+INFO: [Constraints 18-632] set_input_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:65]
+INFO: [Constraints 18-632] set_output_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:129]
+INFO: [Constraints 18-632] set_input_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:131]
+INFO: [Constraints 18-632] set_output_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:172]
+INFO: [Constraints 18-632] set_input_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:174]
+INFO: [Constraints 18-632] set_output_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:182]
+INFO: [Constraints 18-632] set_input_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:184]
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+
+
+Starting PowerOpt Patch Enables Task
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 2 BRAM(s) out of a total of 11 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-201] Structural ODC has moved 0 WE to EN ports
+Number of BRAM Ports augmented: 4 newly gated: 2 Total Ports: 22
+Ending PowerOpt Patch Enables Task | Checksum: 8cc27ffa
+
+Time (s): cpu = 00:00:00.2 ; elapsed = 00:00:00.17 . Memory (MB): peak = 5061.188 ; gain = 0.000 ; free physical = 163467 ; free virtual = 191246
+Ending Power Optimization Task | Checksum: 8cc27ffa
+
+Time (s): cpu = 00:00:47 ; elapsed = 00:00:32 . Memory (MB): peak = 5061.188 ; gain = 1641.676 ; free physical = 163467 ; free virtual = 191246
+
+Starting Final Cleanup Task
+Ending Final Cleanup Task | Checksum: 8cc27ffa
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 5061.188 ; gain = 0.000 ; free physical = 163467 ; free virtual = 191246
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 5061.188 ; gain = 0.000 ; free physical = 163467 ; free virtual = 191246
+Ending Netlist Obfuscation Task | Checksum: 1826d526b
+
+Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 5061.188 ; gain = 0.000 ; free physical = 163467 ; free virtual = 191246
+INFO: [Common 17-83] Releasing license: Implementation
+67 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:01:01 ; elapsed = 00:00:38 . Memory (MB): peak = 5061.188 ; gain = 1940.469 ; free physical = 163467 ; free virtual = 191246
+INFO: [runtcl-4] Executing : report_drc -file fpga_drc_opted.rpt -pb fpga_drc_opted.pb -rpx fpga_drc_opted.rpx
+Command: report_drc -file fpga_drc_opted.rpt -pb fpga_drc_opted.pb -rpx fpga_drc_opted.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file /home/weigao/PHY-Project/example/AU200/fpga_10g/fpga/fpga.runs/impl_1/fpga_drc_opted.rpt.
+report_drc completed successfully
+INFO: [Constraints 18-632] set_output_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:50]
+INFO: [Constraints 18-632] set_input_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:56]
+INFO: [Constraints 18-632] set_input_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:65]
+INFO: [Constraints 18-632] set_output_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:129]
+INFO: [Constraints 18-632] set_input_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:131]
+INFO: [Constraints 18-632] set_output_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:172]
+INFO: [Constraints 18-632] set_input_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:174]
+INFO: [Constraints 18-632] set_output_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:182]
+INFO: [Constraints 18-632] set_input_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:184]
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Wrote PlaceDB: Time (s): cpu = 00:00:00.1 ; elapsed = 00:00:00.03 . Memory (MB): peak = 5085.199 ; gain = 0.000 ; free physical = 163459 ; free virtual = 191239
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 5085.199 ; gain = 0.000 ; free physical = 163459 ; free virtual = 191239
+Writing XDEF routing.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.27 ; elapsed = 00:00:00.06 . Memory (MB): peak = 5085.199 ; gain = 0.000 ; free physical = 163455 ; free virtual = 191240
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.27 ; elapsed = 00:00:00.06 . Memory (MB): peak = 5085.199 ; gain = 0.000 ; free physical = 163454 ; free virtual = 191240
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 5085.199 ; gain = 0.000 ; free physical = 163454 ; free virtual = 191240
+Wrote Device Cache: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.01 . Memory (MB): peak = 5085.199 ; gain = 0.000 ; free physical = 163452 ; free virtual = 191240
+Write Physdb Complete: Time (s): cpu = 00:00:00.42 ; elapsed = 00:00:00.1 . Memory (MB): peak = 5085.199 ; gain = 0.000 ; free physical = 163452 ; free virtual = 191240
+INFO: [Common 17-1381] The checkpoint '/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga/fpga.runs/impl_1/fpga_opt.dcp' has been generated.
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xcu200'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xcu200'
+INFO: [Common 17-83] Releasing license: Implementation
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 8 CPUs
+
+Starting Placer Task
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 5085.199 ; gain = 0.000 ; free physical = 163438 ; free virtual = 191226
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 8ca9c177
+
+Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.03 . Memory (MB): peak = 5085.199 ; gain = 0.000 ; free physical = 163437 ; free virtual = 191225
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 5085.199 ; gain = 0.000 ; free physical = 163445 ; free virtual = 191233
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 110861a44
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:11 . Memory (MB): peak = 5085.199 ; gain = 0.000 ; free physical = 163443 ; free virtual = 191236
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 15270037d
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:22 . Memory (MB): peak = 5085.199 ; gain = 0.000 ; free physical = 163369 ; free virtual = 191163
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 15270037d
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:22 . Memory (MB): peak = 5085.199 ; gain = 0.000 ; free physical = 163369 ; free virtual = 191163
+Phase 1 Placer Initialization | Checksum: 15270037d
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:22 . Memory (MB): peak = 5085.199 ; gain = 0.000 ; free physical = 163369 ; free virtual = 191163
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+
+Phase 2.1.1 Partition Driven Placement
+
+Phase 2.1.1.1 PBP: Partition Driven Placement
+Phase 2.1.1.1 PBP: Partition Driven Placement | Checksum: 170ac790d
+
+Time (s): cpu = 00:01:09 ; elapsed = 00:00:36 . Memory (MB): peak = 5085.199 ; gain = 0.000 ; free physical = 163345 ; free virtual = 191139
+
+Phase 2.1.1.2 PBP: Clock Region Placement
+Phase 2.1.1.2 PBP: Clock Region Placement | Checksum: 1a8c7f823
+
+Time (s): cpu = 00:01:16 ; elapsed = 00:00:43 . Memory (MB): peak = 5085.199 ; gain = 0.000 ; free physical = 163334 ; free virtual = 191128
+
+Phase 2.1.1.3 PBP: Compute Congestion
+Phase 2.1.1.3 PBP: Compute Congestion | Checksum: 1a8c7f823
+
+Time (s): cpu = 00:01:41 ; elapsed = 00:00:50 . Memory (MB): peak = 5426.156 ; gain = 340.957 ; free physical = 162421 ; free virtual = 190643
+
+Phase 2.1.1.4 PBP: UpdateTiming
+Phase 2.1.1.4 PBP: UpdateTiming | Checksum: 153a0721b
+
+Time (s): cpu = 00:01:45 ; elapsed = 00:00:52 . Memory (MB): peak = 5458.172 ; gain = 372.973 ; free physical = 162416 ; free virtual = 190638
+
+Phase 2.1.1.5 PBP: Add part constraints
+Phase 2.1.1.5 PBP: Add part constraints | Checksum: 153a0721b
+
+Time (s): cpu = 00:01:45 ; elapsed = 00:00:52 . Memory (MB): peak = 5458.172 ; gain = 372.973 ; free physical = 162416 ; free virtual = 190638
+Phase 2.1.1 Partition Driven Placement | Checksum: 153a0721b
+
+Time (s): cpu = 00:01:45 ; elapsed = 00:00:52 . Memory (MB): peak = 5458.172 ; gain = 372.973 ; free physical = 162415 ; free virtual = 190638
+Phase 2.1 Floorplanning | Checksum: 1e8c7107c
+
+Time (s): cpu = 00:01:45 ; elapsed = 00:00:52 . Memory (MB): peak = 5458.172 ; gain = 372.973 ; free physical = 162415 ; free virtual = 190638
+
+Phase 2.2 Physical Synthesis After Floorplan
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 5458.172 ; gain = 0.000 ; free physical = 162420 ; free virtual = 190642
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization                         |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-----------------------------------------------------------------------------------------------------------------------------------------------
+|  PSIP Post Floorplan SLR Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:01  |
+|  Total                                |            0  |              0  |                     0  |           0  |           1  |  00:00:01  |
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Phase 2.2 Physical Synthesis After Floorplan | Checksum: 1e8c7107c
+
+Time (s): cpu = 00:01:46 ; elapsed = 00:00:53 . Memory (MB): peak = 5458.172 ; gain = 372.973 ; free physical = 162420 ; free virtual = 190642
+
+Phase 2.3 Update Timing before SLR Path Opt
+Phase 2.3 Update Timing before SLR Path Opt | Checksum: 1e8c7107c
+
+Time (s): cpu = 00:01:46 ; elapsed = 00:00:53 . Memory (MB): peak = 5458.172 ; gain = 372.973 ; free physical = 162420 ; free virtual = 190642
+
+Phase 2.4 Post-Processing in Floorplanning
+Phase 2.4 Post-Processing in Floorplanning | Checksum: 1fc49e5b3
+
+Time (s): cpu = 00:01:46 ; elapsed = 00:00:53 . Memory (MB): peak = 5458.172 ; gain = 372.973 ; free physical = 162420 ; free virtual = 190642
+
+Phase 2.5 Global Placement Core
+
+Phase 2.5.1 UpdateTiming Before Physical Synthesis
+Phase 2.5.1 UpdateTiming Before Physical Synthesis | Checksum: 1c6fb4cc1
+
+Time (s): cpu = 00:03:40 ; elapsed = 00:01:38 . Memory (MB): peak = 6022.207 ; gain = 937.008 ; free physical = 161920 ; free virtual = 190143
+
+Phase 2.5.2 Physical Synthesis In Placer
+INFO: [Physopt 32-1035] Found 0 LUTNM shape to break, 938 LUT instances to create LUTNM shape
+INFO: [Physopt 32-1044] Break lutnm for timing: one critical 0, two critical 0, total 0, new lutff created 0
+INFO: [Physopt 32-1138] End 1 Pass. Optimized 392 nets or LUTs. Breaked 0 LUT, combined 392 existing LUTs and moved 0 existing LUT
+INFO: [Physopt 32-1030] Pass 1. Identified 112 candidate driver sets for equivalent driver rewiring.
+INFO: [Physopt 32-661] Optimized 106 nets.  Re-placed 547 instances.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 106 nets or cells. Created 0 new cell, deleted 0 existing cell and moved 547 existing cells
+Netlist sorting complete. Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.07 . Memory (MB): peak = 6022.207 ; gain = 0.000 ; free physical = 161914 ; free virtual = 190137
+INFO: [Physopt 32-1132] Very high fanout net 'qsfp0_phy_1_inst/phy_inst/eth_phy_10g_rx_inst/shimq/w_ptr_reg_reg[0]' is not considered as a candidate in VHFN optimzation. The fanout considered for this optimization is changed from 1056 to 137 due to a timing constraint that prevent optimization on all of the loads. To force replication, set the FORCE_MAX_FANOUT property on the net to a number less than 137.
+INFO: [Physopt 32-65] No nets found for high-fanout optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-670] No setup violation found.  DSP Register Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  Shift Register to Pipeline Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  Shift Register Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  BRAM Register Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  URAM Register Optimization was not performed.
+INFO: [Physopt 32-949] No candidate nets found for dynamic/static region interface net replication
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 6022.207 ; gain = 0.000 ; free physical = 161915 ; free virtual = 190137
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  LUT Combining                                    |            0  |            392  |                   392  |           0  |           1  |  00:00:01  |
+|  Retime                                           |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Equivalent Driver Rewiring                       |            0  |              0  |                   106  |           0  |           1  |  00:00:02  |
+|  Very High Fanout                                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  DSP Register                                     |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Shift Register to Pipeline                       |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Shift Register                                   |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  BRAM Register                                    |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  URAM Register                                    |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total                                            |            0  |            392  |                   498  |           0  |           5  |  00:00:03  |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Phase 2.5.2 Physical Synthesis In Placer | Checksum: 959001e5
+
+Time (s): cpu = 00:03:47 ; elapsed = 00:01:44 . Memory (MB): peak = 6022.207 ; gain = 937.008 ; free physical = 161912 ; free virtual = 190135
+Phase 2.5 Global Placement Core | Checksum: cba21a71
+
+Time (s): cpu = 00:04:45 ; elapsed = 00:02:03 . Memory (MB): peak = 6022.207 ; gain = 937.008 ; free physical = 161906 ; free virtual = 190129
+Phase 2 Global Placement | Checksum: cba21a71
+
+Time (s): cpu = 00:04:45 ; elapsed = 00:02:03 . Memory (MB): peak = 6022.207 ; gain = 937.008 ; free physical = 161905 ; free virtual = 190128
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: c611ab8f
+
+Time (s): cpu = 00:05:14 ; elapsed = 00:02:12 . Memory (MB): peak = 6022.207 ; gain = 937.008 ; free physical = 161917 ; free virtual = 190140
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: ebb8cf43
+
+Time (s): cpu = 00:05:26 ; elapsed = 00:02:17 . Memory (MB): peak = 6022.207 ; gain = 937.008 ; free physical = 161918 ; free virtual = 190141
+
+Phase 3.3 Small Shape DP
+
+Phase 3.3.1 Small Shape Clustering
+Phase 3.3.1 Small Shape Clustering | Checksum: 10138b856
+
+Time (s): cpu = 00:05:55 ; elapsed = 00:02:27 . Memory (MB): peak = 6022.207 ; gain = 937.008 ; free physical = 162039 ; free virtual = 190261
+
+Phase 3.3.2 Slice Area Swap
+
+Phase 3.3.2.1 Slice Area Swap Initial
+Phase 3.3.2.1 Slice Area Swap Initial | Checksum: c702c8cc
+
+Time (s): cpu = 00:05:58 ; elapsed = 00:02:30 . Memory (MB): peak = 6022.207 ; gain = 937.008 ; free physical = 161965 ; free virtual = 190188
+Phase 3.3.2 Slice Area Swap | Checksum: 9f2331ec
+
+Time (s): cpu = 00:06:01 ; elapsed = 00:02:32 . Memory (MB): peak = 6022.207 ; gain = 937.008 ; free physical = 161968 ; free virtual = 190191
+Phase 3.3 Small Shape DP | Checksum: 119fba485
+
+Time (s): cpu = 00:06:06 ; elapsed = 00:02:34 . Memory (MB): peak = 6022.207 ; gain = 937.008 ; free physical = 161972 ; free virtual = 190195
+
+Phase 3.4 Re-assign LUT pins
+Phase 3.4 Re-assign LUT pins | Checksum: 16f1ddfd5
+
+Time (s): cpu = 00:06:07 ; elapsed = 00:02:35 . Memory (MB): peak = 6022.207 ; gain = 937.008 ; free physical = 161976 ; free virtual = 190199
+
+Phase 3.5 Pipeline Register Optimization
+Phase 3.5 Pipeline Register Optimization | Checksum: 5ba0ca50
+
+Time (s): cpu = 00:06:08 ; elapsed = 00:02:36 . Memory (MB): peak = 6022.207 ; gain = 937.008 ; free physical = 161976 ; free virtual = 190198
+Phase 3 Detail Placement | Checksum: 5ba0ca50
+
+Time (s): cpu = 00:06:08 ; elapsed = 00:02:36 . Memory (MB): peak = 6022.207 ; gain = 937.008 ; free physical = 161975 ; free virtual = 190198
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Constraints 18-632] set_output_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:50]
+INFO: [Constraints 18-632] set_input_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:56]
+INFO: [Constraints 18-632] set_input_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:65]
+INFO: [Constraints 18-632] set_output_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:129]
+INFO: [Constraints 18-632] set_input_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:131]
+INFO: [Constraints 18-632] set_output_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:172]
+INFO: [Constraints 18-632] set_input_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:174]
+INFO: [Constraints 18-632] set_output_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:182]
+INFO: [Constraints 18-632] set_input_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:184]
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: 1cdc123e7
+
+Phase 4.1.1.1 BUFG Insertion
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 8 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=1.967 | TNS=0.000 |
+Phase 1 Physical Synthesis Initialization | Checksum: 15d3b8e58
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:01 . Memory (MB): peak = 6022.207 ; gain = 0.000 ; free physical = 161919 ; free virtual = 190142
+INFO: [Place 46-56] BUFG insertion identified 0 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to netlist editing failed: 0.
+Ending Physical Synthesis Task | Checksum: 15d3b8e58
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:02 . Memory (MB): peak = 6022.207 ; gain = 0.000 ; free physical = 161919 ; free virtual = 190142
+Phase 4.1.1.1 BUFG Insertion | Checksum: 1cdc123e7
+
+Time (s): cpu = 00:07:05 ; elapsed = 00:02:55 . Memory (MB): peak = 6022.207 ; gain = 937.008 ; free physical = 161920 ; free virtual = 190142
+
+Phase 4.1.1.2 BUFG Replication
+INFO: [Place 46-63] BUFG replication identified 0 candidate nets: Replicated nets: 0, Replicated BUFGs: 0, Replicated BUFG Driver: 0, moved BUFGs: 0, Skipped due to Placement / Routing Conflict: 0, Skipped due to Timing: 0, Skipped due to constraints: 0
+Phase 4.1.1.2 BUFG Replication | Checksum: 1cdc123e7
+
+Time (s): cpu = 00:07:05 ; elapsed = 00:02:55 . Memory (MB): peak = 6022.207 ; gain = 937.008 ; free physical = 161920 ; free virtual = 190143
+
+Phase 4.1.1.3 Post Placement Timing Optimization
+INFO: [Place 30-746] Post Placement Timing Summary WNS=1.967. For the most accurate timing information please run report_timing.
+Phase 4.1.1.3 Post Placement Timing Optimization | Checksum: 144f2d71b
+
+Time (s): cpu = 00:07:06 ; elapsed = 00:02:55 . Memory (MB): peak = 6022.207 ; gain = 937.008 ; free physical = 161918 ; free virtual = 190141
+
+Phase 4.1.1.4 Replication
+INFO: [Place 46-19] Post Replication Timing Summary WNS=1.967. For the most accurate timing information please run report_timing.
+Phase 4.1.1.4 Replication | Checksum: 144f2d71b
+
+Time (s): cpu = 00:07:06 ; elapsed = 00:02:56 . Memory (MB): peak = 6022.207 ; gain = 937.008 ; free physical = 161919 ; free virtual = 190141
+
+Time (s): cpu = 00:07:06 ; elapsed = 00:02:56 . Memory (MB): peak = 6022.207 ; gain = 937.008 ; free physical = 161919 ; free virtual = 190141
+Phase 4.1 Post Commit Optimization | Checksum: 144f2d71b
+
+Time (s): cpu = 00:07:06 ; elapsed = 00:02:56 . Memory (MB): peak = 6022.207 ; gain = 937.008 ; free physical = 161918 ; free virtual = 190141
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 6080.809 ; gain = 0.000 ; free physical = 161826 ; free virtual = 190049
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 236906e19
+
+Time (s): cpu = 00:07:55 ; elapsed = 00:03:27 . Memory (MB): peak = 6080.809 ; gain = 995.609 ; free physical = 161826 ; free virtual = 190049
+
+Phase 4.3 Placer Reporting
+
+Phase 4.3.1 Print Estimated Congestion
+INFO: [Place 30-612] Post-Placement Estimated Congestion 
+ ________________________________________________________________________
+|           | Global Congestion | Long Congestion   | Short Congestion  |
+| Direction | Region Size       | Region Size       | Region Size       |
+|___________|___________________|___________________|___________________|
+|      North|                1x1|                1x1|                4x4|
+|___________|___________________|___________________|___________________|
+|      South|                1x1|                1x1|                1x1|
+|___________|___________________|___________________|___________________|
+|       East|                1x1|                1x1|                2x2|
+|___________|___________________|___________________|___________________|
+|       West|                1x1|                1x1|                2x2|
+|___________|___________________|___________________|___________________|
+
+SLR0:
+ ________________________________________________________________________
+|           | Global Congestion | Long Congestion   | Short Congestion  |
+| Direction | Region Size       | Region Size       | Region Size       |
+|___________|___________________|___________________|___________________|
+|      North|                1x1|                1x1|                1x1|
+|___________|___________________|___________________|___________________|
+|      South|                1x1|                1x1|                1x1|
+|___________|___________________|___________________|___________________|
+|       East|                1x1|                1x1|                1x1|
+|___________|___________________|___________________|___________________|
+|       West|                1x1|                1x1|                1x1|
+|___________|___________________|___________________|___________________|
+
+SLR1:
+ ________________________________________________________________________
+|           | Global Congestion | Long Congestion   | Short Congestion  |
+| Direction | Region Size       | Region Size       | Region Size       |
+|___________|___________________|___________________|___________________|
+|      North|                1x1|                1x1|                1x1|
+|___________|___________________|___________________|___________________|
+|      South|                1x1|                1x1|                1x1|
+|___________|___________________|___________________|___________________|
+|       East|                1x1|                1x1|                1x1|
+|___________|___________________|___________________|___________________|
+|       West|                1x1|                1x1|                1x1|
+|___________|___________________|___________________|___________________|
+
+SLR2:
+ ________________________________________________________________________
+|           | Global Congestion | Long Congestion   | Short Congestion  |
+| Direction | Region Size       | Region Size       | Region Size       |
+|___________|___________________|___________________|___________________|
+|      North|                1x1|                1x1|                4x4|
+|___________|___________________|___________________|___________________|
+|      South|                1x1|                1x1|                1x1|
+|___________|___________________|___________________|___________________|
+|       East|                1x1|                1x1|                2x2|
+|___________|___________________|___________________|___________________|
+|       West|                1x1|                1x1|                2x2|
+|___________|___________________|___________________|___________________|
+
+Phase 4.3.1 Print Estimated Congestion | Checksum: 236906e19
+
+Time (s): cpu = 00:07:55 ; elapsed = 00:03:27 . Memory (MB): peak = 6080.809 ; gain = 995.609 ; free physical = 161825 ; free virtual = 190048
+Phase 4.3 Placer Reporting | Checksum: 236906e19
+
+Time (s): cpu = 00:07:55 ; elapsed = 00:03:28 . Memory (MB): peak = 6080.809 ; gain = 995.609 ; free physical = 161825 ; free virtual = 190048
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 6080.809 ; gain = 0.000 ; free physical = 161824 ; free virtual = 190047
+
+Time (s): cpu = 00:07:55 ; elapsed = 00:03:28 . Memory (MB): peak = 6080.809 ; gain = 995.609 ; free physical = 161824 ; free virtual = 190047
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 2139bfd3e
+
+Time (s): cpu = 00:07:55 ; elapsed = 00:03:28 . Memory (MB): peak = 6080.809 ; gain = 995.609 ; free physical = 161824 ; free virtual = 190047
+Ending Placer Task | Checksum: 1a4562dbf
+
+Time (s): cpu = 00:07:56 ; elapsed = 00:03:28 . Memory (MB): peak = 6080.809 ; gain = 995.609 ; free physical = 161824 ; free virtual = 190047
+127 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:07:59 ; elapsed = 00:03:29 . Memory (MB): peak = 6080.809 ; gain = 995.609 ; free physical = 161826 ; free virtual = 190050
+INFO: [runtcl-4] Executing : report_io -file fpga_io_placed.rpt
+report_io: Time (s): cpu = 00:00:00.38 ; elapsed = 00:00:00.55 . Memory (MB): peak = 6080.809 ; gain = 0.000 ; free physical = 161820 ; free virtual = 190044
+INFO: [runtcl-4] Executing : report_utilization -file fpga_utilization_placed.rpt -pb fpga_utilization_placed.pb
+INFO: [runtcl-4] Executing : report_control_sets -verbose -file fpga_control_sets_placed.rpt
+report_control_sets: Time (s): cpu = 00:00:00.17 ; elapsed = 00:00:00.31 . Memory (MB): peak = 6080.809 ; gain = 0.000 ; free physical = 161820 ; free virtual = 190044
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.35 ; elapsed = 00:00:00.08 . Memory (MB): peak = 6080.809 ; gain = 0.000 ; free physical = 161813 ; free virtual = 190044
+Wrote PlaceDB: Time (s): cpu = 00:00:04 ; elapsed = 00:00:01 . Memory (MB): peak = 6080.809 ; gain = 0.000 ; free physical = 161768 ; free virtual = 190035
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 6080.809 ; gain = 0.000 ; free physical = 161768 ; free virtual = 190035
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.06 . Memory (MB): peak = 6080.809 ; gain = 0.000 ; free physical = 161767 ; free virtual = 190034
+Wrote Netlist Cache: Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.03 . Memory (MB): peak = 6080.809 ; gain = 0.000 ; free physical = 161765 ; free virtual = 190034
+Wrote Device Cache: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 6080.809 ; gain = 0.000 ; free physical = 161763 ; free virtual = 190034
+Write Physdb Complete: Time (s): cpu = 00:00:04 ; elapsed = 00:00:01 . Memory (MB): peak = 6080.809 ; gain = 0.000 ; free physical = 161763 ; free virtual = 190034
+INFO: [Common 17-1381] The checkpoint '/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga/fpga.runs/impl_1/fpga_placed.dcp' has been generated.
+Command: phys_opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xcu200'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xcu200'
+
+Starting Initial Update Timing Task
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:04 . Memory (MB): peak = 6104.820 ; gain = 0.000 ; free physical = 161790 ; free virtual = 190027
+INFO: [Vivado_Tcl 4-383] Design worst setup slack (WNS) is greater than or equal to 0.000 ns. Skipping all physical synthesis optimizations.
+INFO: [Vivado_Tcl 4-232] No setup violation found. The netlist was not modified.
+INFO: [Common 17-83] Releasing license: Implementation
+136 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.34 ; elapsed = 00:00:00.08 . Memory (MB): peak = 6104.820 ; gain = 0.000 ; free physical = 161775 ; free virtual = 190018
+Wrote PlaceDB: Time (s): cpu = 00:00:04 ; elapsed = 00:00:01 . Memory (MB): peak = 6104.820 ; gain = 0.000 ; free physical = 161741 ; free virtual = 190020
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 6104.820 ; gain = 0.000 ; free physical = 161741 ; free virtual = 190020
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.15 ; elapsed = 00:00:00.12 . Memory (MB): peak = 6104.820 ; gain = 0.000 ; free physical = 161739 ; free virtual = 190018
+Wrote Netlist Cache: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 6104.820 ; gain = 0.000 ; free physical = 161735 ; free virtual = 190016
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 6104.820 ; gain = 0.000 ; free physical = 161733 ; free virtual = 190016
+Write Physdb Complete: Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 6104.820 ; gain = 0.000 ; free physical = 161736 ; free virtual = 190019
+INFO: [Common 17-1381] The checkpoint '/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga/fpga.runs/impl_1/fpga_physopt.dcp' has been generated.
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xcu200'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xcu200'
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 8 CPUs
+
+Phase 1 Build RT Design
+Checksum: PlaceDB: 3bd8d3a ConstDB: 0 ShapeSum: aefb0987 RouteDB: f19d96fe
+Nodegraph reading from file.  Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 6112.824 ; gain = 0.000 ; free physical = 161772 ; free virtual = 190028
+Post Restoration Checksum: NetGraph: b92e49f0 | NumContArr: af6a7f5 | Constraints: 215179 | Timing: c2a8fa9d
+Phase 1 Build RT Design | Checksum: 186ef3dfb
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:10 . Memory (MB): peak = 6112.824 ; gain = 0.000 ; free physical = 161774 ; free virtual = 190030
+
+Phase 2 Router Initialization
+
+Phase 2.1 Fix Topology Constraints
+Phase 2.1 Fix Topology Constraints | Checksum: 186ef3dfb
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:10 . Memory (MB): peak = 6112.824 ; gain = 0.000 ; free physical = 161774 ; free virtual = 190030
+
+Phase 2.2 Pre Route Cleanup
+Phase 2.2 Pre Route Cleanup | Checksum: 186ef3dfb
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:10 . Memory (MB): peak = 6112.824 ; gain = 0.000 ; free physical = 161775 ; free virtual = 190030
+
+Phase 2.3 Global Clock Net Routing
+ Number of Nodes with overlaps = 0
+Phase 2.3 Global Clock Net Routing | Checksum: 18551398d
+
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:15 . Memory (MB): peak = 6214.371 ; gain = 101.547 ; free physical = 161656 ; free virtual = 189913
+
+Phase 2.4 Update Timing
+Phase 2.4 Update Timing | Checksum: 285143076
+
+Time (s): cpu = 00:00:56 ; elapsed = 00:00:24 . Memory (MB): peak = 6214.371 ; gain = 101.547 ; free physical = 161653 ; free virtual = 189909
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=2.087  | TNS=0.000  | WHS=-0.303 | THS=-133.855|
+
+
+Phase 2.5 Update Timing for Bus Skew
+
+Phase 2.5.1 Update Timing
+Phase 2.5.1 Update Timing | Checksum: 23b5f4a80
+
+Time (s): cpu = 00:01:33 ; elapsed = 00:00:33 . Memory (MB): peak = 6214.371 ; gain = 101.547 ; free physical = 161642 ; free virtual = 189899
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=2.087  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 2.5 Update Timing for Bus Skew | Checksum: 2486086df
+
+Time (s): cpu = 00:01:33 ; elapsed = 00:00:33 . Memory (MB): peak = 6214.371 ; gain = 101.547 ; free physical = 161642 ; free virtual = 189899
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.00612207 %
+  Global Horizontal Routing Utilization  = 0.0066384 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 29832
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 16395
+  Number of Partially Routed Nets     = 13437
+  Number of Node Overlaps             = 438
+
+Phase 2 Router Initialization | Checksum: 231528a0d
+
+Time (s): cpu = 00:01:41 ; elapsed = 00:00:35 . Memory (MB): peak = 6314.543 ; gain = 201.719 ; free physical = 161544 ; free virtual = 189801
+
+Phase 3 Initial Routing
+
+Phase 3.1 Global Routing
+Phase 3.1 Global Routing | Checksum: 231528a0d
+
+Time (s): cpu = 00:01:41 ; elapsed = 00:00:35 . Memory (MB): peak = 6314.543 ; gain = 201.719 ; free physical = 161544 ; free virtual = 189801
+
+Phase 3.2 Initial Net Routing
+Phase 3.2 Initial Net Routing | Checksum: 19f745900
+
+Time (s): cpu = 00:01:58 ; elapsed = 00:00:42 . Memory (MB): peak = 6314.543 ; gain = 201.719 ; free physical = 161541 ; free virtual = 189798
+Phase 3 Initial Routing | Checksum: 1627949a8
+
+Time (s): cpu = 00:02:00 ; elapsed = 00:00:42 . Memory (MB): peak = 6314.543 ; gain = 201.719 ; free physical = 161540 ; free virtual = 189797
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 9919
+ Number of Nodes with overlaps = 605
+ Number of Nodes with overlaps = 57
+ Number of Nodes with overlaps = 12
+ Number of Nodes with overlaps = 5
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=1.815  | TNS=0.000  | WHS=0.002  | THS=0.000  |
+
+Phase 4.1 Global Iteration 0 | Checksum: 200c591c8
+
+Time (s): cpu = 00:04:18 ; elapsed = 00:01:41 . Memory (MB): peak = 6314.543 ; gain = 201.719 ; free physical = 161541 ; free virtual = 189798
+
+Phase 4.2 Additional Iteration for Hold
+Phase 4.2 Additional Iteration for Hold | Checksum: 24af15533
+
+Time (s): cpu = 00:04:18 ; elapsed = 00:01:42 . Memory (MB): peak = 6314.543 ; gain = 201.719 ; free physical = 161543 ; free virtual = 189800
+Phase 4 Rip-up And Reroute | Checksum: 24af15533
+
+Time (s): cpu = 00:04:19 ; elapsed = 00:01:42 . Memory (MB): peak = 6314.543 ; gain = 201.719 ; free physical = 161543 ; free virtual = 189800
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+Phase 5.1 Delay CleanUp | Checksum: 24af15533
+
+Time (s): cpu = 00:04:19 ; elapsed = 00:01:42 . Memory (MB): peak = 6314.543 ; gain = 201.719 ; free physical = 161543 ; free virtual = 189800
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: 24af15533
+
+Time (s): cpu = 00:04:20 ; elapsed = 00:01:42 . Memory (MB): peak = 6314.543 ; gain = 201.719 ; free physical = 161543 ; free virtual = 189800
+Phase 5 Delay and Skew Optimization | Checksum: 24af15533
+
+Time (s): cpu = 00:04:20 ; elapsed = 00:01:42 . Memory (MB): peak = 6314.543 ; gain = 201.719 ; free physical = 161543 ; free virtual = 189800
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 22b29fc4d
+
+Time (s): cpu = 00:04:32 ; elapsed = 00:01:45 . Memory (MB): peak = 6314.543 ; gain = 201.719 ; free physical = 161547 ; free virtual = 189804
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=1.815  | TNS=0.000  | WHS=0.002  | THS=0.000  |
+
+Phase 6.1 Hold Fix Iter | Checksum: 1d9f3ca35
+
+Time (s): cpu = 00:04:32 ; elapsed = 00:01:45 . Memory (MB): peak = 6314.543 ; gain = 201.719 ; free physical = 161547 ; free virtual = 189803
+Phase 6 Post Hold Fix | Checksum: 1d9f3ca35
+
+Time (s): cpu = 00:04:32 ; elapsed = 00:01:45 . Memory (MB): peak = 6314.543 ; gain = 201.719 ; free physical = 161544 ; free virtual = 189801
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.404828 %
+  Global Horizontal Routing Utilization  = 0.471809 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 7 Route finalize | Checksum: 1d9f3ca35
+
+Time (s): cpu = 00:04:36 ; elapsed = 00:01:46 . Memory (MB): peak = 6314.543 ; gain = 201.719 ; free physical = 161540 ; free virtual = 189797
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: 1d9f3ca35
+
+Time (s): cpu = 00:04:37 ; elapsed = 00:01:46 . Memory (MB): peak = 6314.543 ; gain = 201.719 ; free physical = 161539 ; free virtual = 189796
+
+Phase 9 Depositing Routes
+INFO: [Route 35-467] Router swapped GT pin qsfp0_phy_1_inst/xcvr.eth_xcvr_gt_full_inst/inst/gen_gtwizard_gtye4_top.eth_xcvr_gt_full_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_common.gen_common_container[29].gen_enabled_common.gtye4_common_wrapper_inst/common_inst/gtye4_common_gen.GTYE4_COMMON_PRIM_INST/GTREFCLK00 to physical pin GTYE4_COMMON_X1Y12/COM0_REFCLKOUT1
+INFO: [Route 35-467] Router swapped GT pin qsfp1_phy_1_inst/xcvr.eth_xcvr_gt_full_inst/inst/gen_gtwizard_gtye4_top.eth_xcvr_gt_full_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_common.gen_common_container[29].gen_enabled_common.gtye4_common_wrapper_inst/common_inst/gtye4_common_gen.GTYE4_COMMON_PRIM_INST/GTREFCLK00 to physical pin GTYE4_COMMON_X1Y11/COM0_REFCLKOUT1
+Phase 9 Depositing Routes | Checksum: 1d9f3ca35
+
+Time (s): cpu = 00:04:40 ; elapsed = 00:01:48 . Memory (MB): peak = 6314.543 ; gain = 201.719 ; free physical = 161539 ; free virtual = 189796
+
+Phase 10 Resolve XTalk
+Phase 10 Resolve XTalk | Checksum: 1d9f3ca35
+
+Time (s): cpu = 00:04:41 ; elapsed = 00:01:48 . Memory (MB): peak = 6314.543 ; gain = 201.719 ; free physical = 161539 ; free virtual = 189796
+
+Phase 11 Post Router Timing
+INFO: [Route 35-57] Estimated Timing Summary | WNS=1.815  | TNS=0.000  | WHS=0.002  | THS=0.000  |
+
+INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
+Phase 11 Post Router Timing | Checksum: 1d9f3ca35
+
+Time (s): cpu = 00:04:47 ; elapsed = 00:01:49 . Memory (MB): peak = 6314.543 ; gain = 201.719 ; free physical = 161540 ; free virtual = 189797
+INFO: [Route 35-16] Router Completed Successfully
+
+Phase 12 Post-Route Event Processing
+Phase 12 Post-Route Event Processing | Checksum: 1a80d676b
+
+Time (s): cpu = 00:04:48 ; elapsed = 00:01:50 . Memory (MB): peak = 6314.543 ; gain = 201.719 ; free physical = 161542 ; free virtual = 189799
+Ending Routing Task | Checksum: 1a80d676b
+
+Time (s): cpu = 00:04:49 ; elapsed = 00:01:51 . Memory (MB): peak = 6314.543 ; gain = 201.719 ; free physical = 161540 ; free virtual = 189797
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+153 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:04:55 ; elapsed = 00:01:53 . Memory (MB): peak = 6314.543 ; gain = 209.723 ; free physical = 161543 ; free virtual = 189800
+INFO: [runtcl-4] Executing : report_drc -file fpga_drc_routed.rpt -pb fpga_drc_routed.pb -rpx fpga_drc_routed.rpx
+Command: report_drc -file fpga_drc_routed.rpt -pb fpga_drc_routed.pb -rpx fpga_drc_routed.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file /home/weigao/PHY-Project/example/AU200/fpga_10g/fpga/fpga.runs/impl_1/fpga_drc_routed.rpt.
+report_drc completed successfully
+INFO: [runtcl-4] Executing : report_methodology -file fpga_methodology_drc_routed.rpt -pb fpga_methodology_drc_routed.pb -rpx fpga_methodology_drc_routed.rpx
+Command: report_methodology -file fpga_methodology_drc_routed.rpt -pb fpga_methodology_drc_routed.pb -rpx fpga_methodology_drc_routed.rpx
+INFO: [Constraints 18-632] set_output_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:50]
+INFO: [Constraints 18-632] set_input_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:56]
+INFO: [Constraints 18-632] set_input_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:65]
+INFO: [Constraints 18-632] set_output_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:129]
+INFO: [Constraints 18-632] set_input_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:131]
+INFO: [Constraints 18-632] set_output_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:172]
+INFO: [Constraints 18-632] set_input_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:174]
+INFO: [Constraints 18-632] set_output_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:182]
+INFO: [Constraints 18-632] set_input_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:184]
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-133] Running Methodology with 8 threads
+INFO: [Vivado_Tcl 2-1520] The results of Report Methodology are in file /home/weigao/PHY-Project/example/AU200/fpga_10g/fpga/fpga.runs/impl_1/fpga_methodology_drc_routed.rpt.
+report_methodology completed successfully
+report_methodology: Time (s): cpu = 00:00:34 ; elapsed = 00:00:07 . Memory (MB): peak = 6402.586 ; gain = 0.000 ; free physical = 161552 ; free virtual = 189809
+INFO: [runtcl-4] Executing : report_power -file fpga_power_routed.rpt -pb fpga_power_summary_routed.pb -rpx fpga_power_routed.rpx
+Command: report_power -file fpga_power_routed.rpt -pb fpga_power_summary_routed.pb -rpx fpga_power_routed.rpx
+INFO: [Constraints 18-632] set_output_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:50]
+INFO: [Constraints 18-632] set_input_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:56]
+INFO: [Constraints 18-632] set_input_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:65]
+INFO: [Constraints 18-632] set_output_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:129]
+INFO: [Constraints 18-632] set_input_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:131]
+INFO: [Constraints 18-632] set_output_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:172]
+INFO: [Constraints 18-632] set_input_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:174]
+INFO: [Constraints 18-632] set_output_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:182]
+INFO: [Constraints 18-632] set_input_delay: No clock object specified, the clocks will be automatically identified [/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga.xdc:184]
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+WARNING: [Power 33-332] Found switching activity that implies high-fanout reset nets being asserted for excessive periods of time which may result in inaccurate power analysis.
+Resolution: To review and fix problems, please run Power Constraints Advisor in the GUI from Tools > Power Constraints Advisor or run report_power with the -advisory option to generate a text report.
+181 Infos, 3 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+report_power: Time (s): cpu = 00:00:29 ; elapsed = 00:00:13 . Memory (MB): peak = 6402.586 ; gain = 0.000 ; free physical = 161537 ; free virtual = 189808
+INFO: [runtcl-4] Executing : report_route_status -file fpga_route_status.rpt -pb fpga_route_status.pb
+INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -report_unconstrained -file fpga_timing_summary_routed.rpt -pb fpga_timing_summary_routed.pb -rpx fpga_timing_summary_routed.rpx -warn_on_violation 
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Temperature grade: E, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+WARNING: [Timing 38-436] There are set_bus_skew constraint(s) in this design. Please run report_bus_skew to ensure that bus skew requirements are met.
+INFO: [runtcl-4] Executing : report_incremental_reuse -file fpga_incremental_reuse_routed.rpt
+INFO: [Vivado_Tcl 4-1062] Incremental flow is disabled. No incremental reuse Info to report.
+INFO: [runtcl-4] Executing : report_clock_utilization -file fpga_clock_utilization_routed.rpt
+report_clock_utilization: Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 6402.586 ; gain = 0.000 ; free physical = 161506 ; free virtual = 189802
+INFO: [runtcl-4] Executing : report_bus_skew -warn_on_violation -file fpga_bus_skew_routed.rpt -pb fpga_bus_skew_routed.pb -rpx fpga_bus_skew_routed.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Temperature grade: E, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.34 ; elapsed = 00:00:00.07 . Memory (MB): peak = 6402.586 ; gain = 0.000 ; free physical = 161504 ; free virtual = 189807
+Wrote PlaceDB: Time (s): cpu = 00:00:04 ; elapsed = 00:00:01 . Memory (MB): peak = 6402.586 ; gain = 0.000 ; free physical = 161468 ; free virtual = 189806
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 6402.586 ; gain = 0.000 ; free physical = 161468 ; free virtual = 189806
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.57 ; elapsed = 00:00:00.36 . Memory (MB): peak = 6402.586 ; gain = 0.000 ; free physical = 161459 ; free virtual = 189806
+Wrote Netlist Cache: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 6402.586 ; gain = 0.000 ; free physical = 161457 ; free virtual = 189806
+Wrote Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 6402.586 ; gain = 0.000 ; free physical = 161455 ; free virtual = 189806
+Write Physdb Complete: Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 6402.586 ; gain = 0.000 ; free physical = 161455 ; free virtual = 189806
+INFO: [Common 17-1381] The checkpoint '/home/weigao/PHY-Project/example/AU200/fpga_10g/fpga/fpga.runs/impl_1/fpga_routed.dcp' has been generated.
+INFO: [Common 17-206] Exiting Vivado at Sat Nov  9 16:54:26 2024...
