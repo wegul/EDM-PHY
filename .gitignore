@@ -6,5 +6,6 @@
 *.bit
 *.wcfg
 *.ltx
+*.xpr
 
 README.old
