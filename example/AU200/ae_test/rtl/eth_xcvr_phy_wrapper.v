@@ -250,23 +250,27 @@ module eth_xcvr_phy_wrapper #(
 
 
   wire reqq_write, m_axis_sync_valid;
-  reg [9:0] cnt = 0;
-  reg en_reg_gen = 0;
+  reg [15:0] cnt, cnt_next;
+  reg en_reg_gen, en_reg_gen_next;
   wire [DATA_WIDTH-1:0] ipg_req_chunk;
   wire [DATA_WIDTH-1:0] ipg_rresp_chunk, sync_ipg_rresp_chunk;  /*received resp*/
 
   always @(posedge phy_tx_clk) begin
     if (phy_tx_rst) begin
       cnt <= 0;
+      en_reg_gen <= 0;
     end else begin
       cnt <= cnt + 1;
+      en_reg_gen <= en_reg_gen_next;
     end
   end
   always @(*) begin
-    if (cnt == 10'd256 && sync_ipg_rresp_chunk == 0) begin
-      en_reg_gen = 1;
+    cnt_next = 0;
+    en_reg_gen_next = 0;
+    if (cnt == 16'd256) begin
+      en_reg_gen_next = 1;
     end else begin
-      en_reg_gen = 0;
+      en_reg_gen_next = 0;
     end
   end
 
