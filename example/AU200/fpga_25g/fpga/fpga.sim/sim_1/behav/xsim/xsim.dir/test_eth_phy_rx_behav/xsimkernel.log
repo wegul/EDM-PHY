@@ -1,7 +1,0 @@
-Running: xsim.dir/test_eth_phy_rx_behav/xsimk -simmode gui -wdb test_eth_phy_rx_behav.wdb -simrunnum 0 -socket 46093
-Design successfully loaded
-Design Loading Memory Usage: 24132 KB (Peak: 24424 KB)
-Design Loading CPU Usage: 30 ms
-Simulation completed
-Simulation Memory Usage: 110364 KB (Peak: 163400 KB)
-Simulation CPU Usage: 210 ms

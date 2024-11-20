@@ -3,4 +3,8 @@
 *.pyc
 *.vvp
 *.kate-swp
+*.bit
+*.wcfg
+*.ltx
 
+README.old

@@ -1,4 +1,0 @@
-Running: xsim.dir/test_ipg_mac_phy_behav/xsimk -simmode gui -wdb test_ipg_mac_phy_behav.wdb -simrunnum 0 -socket 38835
-Design successfully loaded
-Design Loading Memory Usage: 25636 KB (Peak: 25636 KB)
-Design Loading CPU Usage: 40 ms

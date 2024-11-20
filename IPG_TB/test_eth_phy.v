@@ -37,6 +37,10 @@ module test_eth_phy;
   reg tx_prbs31_enable = 0;
   reg rx_prbs31_enable = 0;
 
+  wire [DATA_WIDTH-1:0] ipg_req_chunk;
+  wire reqq_write;
+
+
   // Outputs
   wire [DATA_WIDTH-1:0] xgmii_rxd;
   wire [CTRL_WIDTH-1:0] xgmii_rxc;
@@ -48,13 +52,18 @@ module test_eth_phy;
   wire rx_block_lock;
   wire rx_high_ber;
 
+  wire [DATA_WIDTH-1:0] ipg_write_chunk;
+  wire [DATA_WIDTH-1:0] ipg_rresp_chunk, sync_ipg_rresp_chunk;  /*received resp*/
+
+
+
+
   initial begin
     //Assign value here as stimulus
-
     // Generate the clock
     clk = 1'b1;
     tx_clk = 1'b1;
-    rx_clk = 1'b1;
+    rx_clk = 1'b0;
     forever begin
       #1 clk = ~clk;
       rx_clk = ~rx_clk;
@@ -71,82 +80,60 @@ module test_eth_phy;
     tx_rst = 1'b0;
   end
 
-  integer i;
-  integer packet_size;
-  initial begin
-    packet_size = 8;
-    #14 xgmii_txd = 64'hd5555555555555fb;  //fake preamble
-    xgmii_txc = 8'h01;
-    #2
-    //warmup
-    //Data input (8 Bytes)
-    xgmii_txd = 64'hdddddaaaddddd;
-    xgmii_txc = 8'h00;
-    #2 xgmii_txd = 64'hecccffccccccc;
-    xgmii_txc = 8'h00;
-    #2 xgmii_txd = 64'hfd2233ee44eeefff;
-    xgmii_txc = 8'h80;
-    #2 xgmii_txd = 64'h0;
-    xgmii_txc = 8'hff;
+  // REQ format: 8'b{reply_len}, 64'b src, 64'b dst
 
-    // serdes_rx_data = 64'h8A8A8A8A8A8A8A78;
-    // serdes_rx_hdr = SYNC_CTRL;
-    // #2 serdes_rx_data = 64'h8B8B8B8B8B8B8A8A;
-    // serdes_rx_hdr = SYNC_DATA;
-    // #2 serdes_rx_data = 64'h8CCCCC8B8CB8B8A8A;
-    // serdes_rx_hdr = SYNC_DATA;
-    // #2 serdes_rx_data = 64'h0100ADDADDADDF1e;
-    // serdes_rx_data[63:62] = 2'b01;
-    // serdes_rx_hdr = 2'b01;
-
-
-    #20 serdes_rx_data = 64'hADDADD8B8B8B8B0c;
-    serdes_rx_hdr = 2'b01;
-    //write payload below
-    for (i = 0; i < 9; i = i + 1) begin
-      #2 serdes_rx_data = 64'hbb3344556699ff1c;
-      serdes_rx_hdr = 2'b01;
+  reg [3:0] cnt = 0;
+  reg en_reg_gen = 0;
+  wire m_axis_sync_valid;
+  always @(posedge tx_clk) begin
+    if (rst) begin
+      cnt <= 0;
+    end else begin
+      cnt <= cnt + 1;
     end
-    #2 serdes_rx_data = 64'hbb3344556699ff2c;
-    serdes_rx_hdr = 2'b01;
-
-    #20;
-
-    #2 serdes_rx_data = 64'haaaaaaaaaaaaaa78;
-    serdes_rx_hdr = 2'b01;
-    #2 serdes_rx_data = 64'h8B8B8B8B8B8B8A8A;
-    serdes_rx_hdr = SYNC_DATA;
-    #2 serdes_rx_data = 64'h8CCCCC8B8CB8B8A8A;
-    serdes_rx_hdr = SYNC_DATA;
-    #2 serdes_rx_data = 64'h0000addaddaddad87;
-    serdes_rx_hdr = SYNC_CTRL;
-
-    #2 serdes_rx_data = 64'hFFFFADDADDADDF1e;
-    serdes_rx_hdr = 2'b01;
-    #2 serdes_rx_data = 64'hcccccccccccccc1e;
-    serdes_rx_hdr = 2'b01;
-
-    //warmup
-    xgmii_txd = 64'hd5555555555555fb;  //fake preamble
-    xgmii_txc = 8'h01;
-    #2 xgmii_txd = 64'hdddddaaaddddd0000;
-    xgmii_txc = 8'h00;
-    #2 xgmii_txd = 64'hecccffccccccc000;
-    xgmii_txc = 8'h00;
-    #2 xgmii_txd = 64'hfd2233ee44eeefff;
-    xgmii_txc = 8'h80;
-    #2 xgmii_txd = 64'h0;
-    xgmii_txc = 8'hff;
-    serdes_rx_data = 64'haaaaaaaaaaaaaa78;
-    serdes_rx_hdr = 2'b01;
-    #2 serdes_rx_data = 64'h8B8B8B8B8B8B8A8A;
-    serdes_rx_hdr = SYNC_DATA;
-    #2 serdes_rx_data = 64'h8CCCCC8B8CB8B8A8A;
-    serdes_rx_hdr = SYNC_DATA;
-    #2 serdes_rx_data = 64'h00000000000000087;
-    serdes_rx_hdr = SYNC_CTRL;
-    #48 $finish;
   end
+  always @(*) begin
+    if (cnt == 4'd8 || cnt == 4'd15 || cnt == 4'd0) begin
+      en_reg_gen = 1;
+    end else begin
+      en_reg_gen = 0;
+    end
+  end
+
+  req_gen gen_inst (
+      .clk(tx_clk),
+      .rst(tx_rst),
+      .enable(en_reg_gen),
+      .ipg_req_chunk(ipg_req_chunk),
+      .valid_req(reqq_write)
+  );
+  axis_fifo #(
+      .DATA_WIDTH(DATA_WIDTH),
+      .DEPTH(2),
+      .KEEP_ENABLE(0),
+      .LAST_ENABLE(0),
+      .DEST_ENABLE(0),
+      .USER_ENABLE(0),
+      .FRAME_FIFO(0),
+      .ID_ENABLE(0)
+  ) asf (
+      // AXI input
+      .clk(rx_clk),
+      .rst(rx_rst),
+      .s_axis_tdata(ipg_rresp_chunk),
+      .s_axis_tkeep(8'hff),
+      .s_axis_tvalid(1),
+      .s_axis_tready(),
+      .s_axis_tlast(0),
+      .s_axis_tid(0),
+      .s_axis_tdest(0),
+      .s_axis_tuser(0),
+
+      // AXI output
+      .m_axis_tdata (sync_ipg_rresp_chunk),
+      .m_axis_tvalid(m_axis_sync_valid),
+      .m_axis_tready(1)
+  );
 
   eth_phy_10g #(
       .DATA_WIDTH(DATA_WIDTH),
@@ -171,15 +158,20 @@ module test_eth_phy;
       .xgmii_rxc(xgmii_rxc),
       .serdes_tx_data(serdes_tx_data),
       .serdes_tx_hdr(serdes_tx_hdr),
-      .serdes_rx_data(serdes_rx_data),
-      .serdes_rx_hdr(serdes_rx_hdr),
+      .serdes_rx_data(serdes_tx_data),
+      .serdes_rx_hdr(serdes_tx_hdr),
       .serdes_rx_bitslip(serdes_rx_bitslip),
       .rx_error_count(rx_error_count),
       .rx_bad_block(rx_bad_block),
       .rx_block_lock(rx_block_lock),
       .rx_high_ber(rx_high_ber),
       .tx_prbs31_enable(tx_prbs31_enable),
-      .rx_prbs31_enable(rx_prbs31_enable)
+      .rx_prbs31_enable(rx_prbs31_enable),
+
+      .ipg_req_chunk(ipg_req_chunk),  //input for ipg_tx
+      .reqq_write(reqq_write),  //input for ipg_tx
+      .ipg_rresp_chunk(ipg_rresp_chunk),  // output from ipg_rx
+      .tx_pause()
   );
 
 endmodule
