@@ -54,7 +54,7 @@ Specifically, we observe a **60~62cycle** gap in between the last frame of `tx_i
 
 The observed latency is much smaller than our paper, where we show EDM's roundtrip for read is ~300ns. This is because our testbed does not contain a switch, so we should remove components accordingly:
 ```
-    real = expect - switch - 2*xcvr - 2*propagation
+    real = expect - switch - 4*xcvr - 2*propagation
          = 299.44 - (4*5.12+28.16) - 4*19 - 2*10
          = 154.8 ns
 ```
